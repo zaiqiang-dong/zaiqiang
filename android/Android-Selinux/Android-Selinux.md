@@ -17,7 +17,7 @@ SELINUX是可以理解为一种android上面的安全机制，是有美国国家
 
 现有的权限:自主式访问控制, DAC<br />
 DAC 访问方式如下图所示：<br />
-![自主式访问控制](./selinux1.png)
+![自主式访问控制](./Android-Selinux-详解/selinux1.png)
  
  上面的这个上关系可以通过以下方法来测试：
  
@@ -161,7 +161,7 @@ domain 需要与 type 搭配,则该程序才能够顺利的读取档案资源啦
 **级别(Range):**<br />
 级别和SELinux为了满足军用和教育行业而设计的Multi-Level Security（MLS）机制有关。但是在Android中，因为只使用了S0所以这里不作更多的介绍。<br />
 **之间的关系如下图所示：**<br />
-![关系](./selinux2.png)
+![关系](./Android-Selinux-详解/selinux2.png)
 
 ## 5.SElinxu为什么可以解决DAC的问题？
 <br />
