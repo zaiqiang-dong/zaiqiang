@@ -1,0 +1,36 @@
+{
+    "title": "Site Title",
+    "author": "Author Name",
+    "authorHomepage": "http://www.example.com",
+    "baiduStatisticsCode": "",
+    "description": "site description",
+    "language": "zh-hans",
+    "copyright": "All Rights Reserved",
+    "variables": {
+	"homePage": "/"
+    },
+    "plugins": [
+	"folding-chapters",
+	"favicon",
+	"prism",
+	"-highlight"
+    ],
+    "pluginsConfig": {
+	"theme-default": {
+	    "showLevel": true
+	},
+	"prism": {
+	    "css": [
+		"prismjs/themes/prism-okaidia.css"
+	 ]
+	},
+	"favicon": {
+	    "shortcut": "assets/images/favicon.ico",
+	    "bookmark": "assets/images/favicon.ico",
+	    "appleTouch": "assets/images/apple-touch-icon.png",
+	    "appleTouchMore": { "120x120": "assets/images/apple-touch-icon-120x120.png",
+		"180x180": "assets/images/apple-touch-icon-180x180.png" }
+	}
+
+    }
+}
