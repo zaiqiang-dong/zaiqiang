@@ -2,6 +2,7 @@
 ##权重计算
 
 ###weight
+
 ```
 static const int prio_to_weight[40] = {
  /* -20 */     88761,     71755,     56483,     46273,     36291,
@@ -13,11 +14,12 @@ static const int prio_to_weight[40] = {
  /*  10 */       110,        87,        70,        56,        45,
  /*  15 */        36,        29,        23,        18,        15,
 };
+
 ```
 ###inverse weight
 
 
-$$$inv\_weight = \frac{2^{32}}{weight}$$$
+$$inv\_weight = \frac{2^{32}}{weight}$$
 
 ```
 static const u32 prio_to_wmult[40] = {
@@ -35,9 +37,9 @@ static const u32 prio_to_wmult[40] = {
 ###vruntime
 
 
-$$$vruntime = \frac{delta*nice\_0\_weight}{weight}$$$
-$$$ = \frac{delta*nice\_0\_weight * 2^{32}}{weight} >>32$$$
-$$$= delta*nice\_0\_weight * inv\_weight >> 32 $$$
+$$vruntime = \frac{delta*nice\_0\_weight}{weight}$$
+$$ = \frac{delta*nice\_0\_weight * 2^{32}}{weight} >>32$$
+$$= delta*nice\_0\_weight * inv\_weight >> 32 $$
 
 
 
@@ -53,9 +55,10 @@ $$$= delta*nice\_0\_weight * inv\_weight >> 32 $$$
 
 ###runnable_avg_yN_inv
 
-原本的衰减因子$$$ y^n ＝  0.5^{\frac{n}{32}}$$$
+原本的衰减因子$$ y^n 0.5^{\frac{n}{32}} $$
 为了不做浮点运算，使用下面的中间结果。
 
+```
 /* Precomputed fixed inverse multiplies for multiplication by y^n */
 static const u32 runnable_avg_yN_inv[] = {
 	0xffffffff, 0xfa83b2da, 0xf5257d14, 0xefe4b99a, 0xeac0c6e6, 0xe5b906e6,
@@ -66,29 +69,35 @@ static const u32 runnable_avg_yN_inv[] = {
 	0x85aac367, 0x82cd8698,
 };
 
-$$$runnable\_avg\_yN\_inv[n] = {(0.5^{\frac{n}{32}})}*2^{32}$$$
+```
+
+$$runnable\_avg\_yN\_inv[n] = {(0.5^{\frac{n}{32}})}*2^{32}$$
 
 ###runnable_avg_yN_sum
+
+```
 static const u32 runnable_avg_yN_sum[] = {
 	    0, 1002, 1982, 2941, 3880, 4798, 5697, 6576, 7437, 8279, 9103,
 	 9909,10698,11470,12226,12966,13690,14398,15091,15769,16433,17082,
 	17718,18340,18949,19545,20128,20698,21256,21802,22336,22859,23371,
 };
-$$$runnable\_avg\_yN\_sum[n] = 1024*(y^1+y^2+y^3.....+y^n)$$$
+
+```
+$$runnable\_avg\_yN\_sum[n] = 1024*(y^1+y^2+y^3.....+y^n)$$
 
 
 ###scale_freq
 表示 当前freq 相对 本cpu最大freq 的比值
-$$$scale\_freq = \frac{cpu\_curr\_freq }{cpu\_max\_freq}*1024$$$
+$$scale\_freq = \frac{cpu\_curr\_freq }{cpu\_max\_freq}*1024$$
 
 ###scale_cpu
 表示 (当前cpu最大运算能力 相对 所有cpu中最大的运算能力 的比值) * (cpufreq_policy的最大频率 相对 本cpu最大频率 的比值)
-$$$scale\_cpu = \frac{cpu\_scale * max\_freq\_scale}{1024}$$$
+$$scale\_cpu = \frac{cpu\_scale * max\_freq\_scale}{1024}$$
 
 ###cpu_scale
 表示 当前cpu最大运算能力 相对 所有cpu中最大的运算能力 的比值.当前cpu的最大运算能力等于当前cpu的最大频率乘以当前cpu每clk的运算能力efficiency，efficiency相当于DMIPS，A53/A73不同架构每个clk的运算能力是不一样的
-$$$cpu\_scale = (\frac{cpu\_max\_freq * efficiency}{max\_cpu\_perf})* 1024$$$
+$$cpu\_scale = (\frac{cpu\_max\_freq * efficiency}{max\_cpu\_perf})* 1024$$
 
 ###max_freq_scale
 表示 cpufreq_policy的最大频率 相对 本cpu最大频率 的比值
-$$$max\_freq\_scale = \frac{policy->max}{cpuinfo->max\_freq} * 1024$$$
+$$max\_freq\_scale = \frac{policy->max}{cpuinfo->max\_freq} * 1024$$
