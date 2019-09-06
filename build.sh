@@ -1,5 +1,8 @@
-git checkout source
 gitbook build . ~/tmp/
 git checkout master
-cp ~/tmp/* . -R
+cp ~/tmp/* . -r
+git add .
+git commit -m "update"
+git push origin master
+git checkout source
 
