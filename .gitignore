@@ -3,3 +3,6 @@ assets/
 book.json
 *.md
 android/
+tmp/
+cover.jpg
+cover_small.jpg
