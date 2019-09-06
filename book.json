@@ -13,7 +13,8 @@
 	"folding-chapters",
 	"favicon",
 	"prism",
-	"-highlight"
+	"-highlight",
+	"mathjax"
     ],
     "pluginsConfig": {
 	"theme-default": {
