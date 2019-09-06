@@ -1,5 +1,4 @@
 node_modules/
-assets/
 book.json
 *.md
 tmp/
