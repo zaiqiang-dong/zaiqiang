@@ -6,3 +6,4 @@ android/
 tmp/
 cover.jpg
 cover_small.jpg
+build.sh
