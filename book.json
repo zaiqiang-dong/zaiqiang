@@ -19,6 +19,11 @@
 	"-highlight"
     ],
     "pluginsConfig": {
+	"fontsettings": {
+            "theme": "white",
+            "family": "sans",
+            "size": 3
+        },
 	"theme-default": {
 	    "showLevel": true
 	},
