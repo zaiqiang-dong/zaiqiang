@@ -13,6 +13,7 @@
 	"folding-chapters",
 	"favicon",
 	"prism",
+	"page-footer-ex",
 	"splitter",
 	"katex",
 	"-highlight"
@@ -32,7 +33,13 @@
 	    "appleTouch": "assets/images/apple-touch-icon.png",
 	    "appleTouchMore": { "120x120": "assets/images/apple-touch-icon-120x120.png",
 		"180x180": "assets/images/apple-touch-icon-180x180.png" }
-	}
+	},
+	"page-footer-ex": {
+            "copyright": "[ZaiQiang Dong](http://www.cxy.wiki)",
+            "markdown": true,
+            "update_label": "<i>updated</i>",
+            "update_format": "YYYY-MM-DD HH:mm:ss"
+        }
 
     }
 }
