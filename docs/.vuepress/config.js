@@ -1,5 +1,4 @@
 module.exports = {
-    base: 'https://zaiqiang-dong.github.io/zaiqiang/',
 	title: '探索者',
 	description: '-> 在 LINUX ANDROID 中不断探索 <-',
     //git hub
