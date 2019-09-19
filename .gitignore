@@ -1,7 +1,0 @@
-node_modules/
-book.json
-*.md
-tmp/
-cover.jpg
-cover_small.jpg
-build.sh
