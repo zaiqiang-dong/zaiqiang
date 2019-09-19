@@ -54,7 +54,7 @@ $$ = delta*nice\_0\_weight * inv\_weight >> 32$$
 
 ### runnable_avg_yN_inv
 
-原本的衰减因子 $$y^n 0.5^{\frac{n}{32}}$$
+原本的衰减因子 $$y^n = 0.5^{\frac{n}{32}}$$
 为了不做浮点运算，使用下面的中间结果。
 
 ```
