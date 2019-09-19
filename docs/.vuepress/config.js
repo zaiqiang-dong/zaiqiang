@@ -38,7 +38,7 @@ module.exports = {
         ['@vuepress/active-header-links'],
 	],
 	themeConfig: {
-        lastUpdated: 'Last Updated ',
+        lastUpdated: '最近更新 ',
 		nav: [{
 			text: 'Home',
 			link: '/'
