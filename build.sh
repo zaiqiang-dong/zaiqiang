@@ -1,3 +1,6 @@
+git add .
+git commit -m "modify blog"
+git push origin source
 rm ~/tmp/ -rf
 mkdir ~/tmp/
 vuepress build docs --no-cache --dest ~/tmp/
