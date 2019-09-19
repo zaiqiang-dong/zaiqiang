@@ -2,10 +2,11 @@ module.exports = {
 	title: '探索者',
 	description: '-> 在 LINUX ANDROID 中不断探索 <-',
 
+    base: 'https://zaiqiang-dong.github.io/zaiqiang/',
     //git hub
-    repo: 'zaiqiang/zaiqiang',
+    repo: 'zaiqiang-dong/zaiqiang',
     repoLabel: '查看源码',
-    docsRepo: 'zaiqiang/zaiqiang',
+    docsRepo: 'zaiqiang-dong/zaiqiang',
     docsDir: 'docs',
     docsBranch: 'source',
     editLinks: true,
