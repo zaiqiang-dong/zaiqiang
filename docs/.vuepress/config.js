@@ -57,7 +57,7 @@ module.exports = {
             {
 				title: '内存管理',
 				collapsable: true,
-				children: ['/linux/memory/memory_modle']
+				children: ['/linux/memory/memory_modle/memory_modle']
 			},
             {
 				title: '并发同步',
