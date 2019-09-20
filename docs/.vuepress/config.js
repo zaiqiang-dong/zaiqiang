@@ -53,7 +53,13 @@ module.exports = {
 		}],
 		sidebarDepth: 3,
 		sidebar: {
-			'/linux/': [{
+			'/linux/': [
+            {
+				title: '内存管理',
+				collapsable: true,
+				children: ['/linux/memory/memory_modle']
+			},
+            {
 				title: '并发同步',
 				collapsable: true,
 				children: ['/linux/concurency/smb']
