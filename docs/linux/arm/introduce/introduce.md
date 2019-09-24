@@ -25,12 +25,14 @@
 |1998|armv5|arm7EJ arm9E arm10E XScale| |
 |2001|armv6|arm11|  |
 |2004|armv7|cortex-A/R/M| |
-|2011|armv8|cortex-A/R/M|64位 ｜
+|2011|armv8|cortex-A/R/M|64位|
 
 ::: tip
 
 A 系列，支持大型嵌入式系统，如手机等；
+
 R 系列，Real-time 处理器，用于比如汽车控制等；
+
 M 系列，单片机市场；
 
 :::
