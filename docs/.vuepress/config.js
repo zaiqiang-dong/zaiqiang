@@ -55,6 +55,11 @@ module.exports = {
 		sidebar: {
 			'/linux/': [
             {
+				title: ' ARM框架',
+				collapsable: true,
+				children: ['/linux/arm/introduce/introduce.md']
+			},
+            {
 				title: '内存管理',
 				collapsable: true,
 				children: ['/linux/memory/modle/modle']
