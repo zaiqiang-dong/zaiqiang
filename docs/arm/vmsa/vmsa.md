@@ -11,7 +11,8 @@
 
 :::　tip 参考文件  
 
-[DDI0487A_e_armv8_arm](./DDI0487A_e_armv8_arm.pdf)
+[ARMv8_white_paper_v5](https://www.arm.com/zh/files/downloads/ARMv8_white_paper_v5.pdf)
+[Armv8-A architecture profile ](https://silver.arm.com/download/ARM_and_AMBA_Architecture/AR150-DA-70000-r0p0-07eac0/DDI0487E_a_armv8_arm.pdf)
 
 :::
 
