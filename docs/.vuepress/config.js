@@ -48,6 +48,10 @@ module.exports = {
 			link: '/linux/'
 		},
 		{
+			text: 'arm',
+			link: '/arm/'
+		},
+		{
 			text: 'selinux',
 			link: '/selinux/'
 		}],
@@ -73,6 +77,12 @@ module.exports = {
 				title: '进程管理',
 				collapsable: true,
 				children: ['/linux/process/weight']
+			}],
+			'/arm/': [
+            {
+				title: 'ARMv8虚拟内存(VMSA)',
+				collapsable: true,
+				children: ['/arm/vmsa/vmsa']
 			}],
 			'/selinux/': [{
                 title: '系统权限',
