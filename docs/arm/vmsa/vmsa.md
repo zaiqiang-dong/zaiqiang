@@ -9,7 +9,11 @@
 
 ---
 
-内容
+:::　tip 参考文件  
+
+[DDI0487A_e_armv8_arm](./DDI0487A_e_armv8_arm.pdf)
+
+:::
 
 ---
 ::: tip  
