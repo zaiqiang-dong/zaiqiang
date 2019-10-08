@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>21</y>
+      <w>21</w>
+      <h>966</h>
+    </coordinates>
+    <panel_attributes>lt=.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1360.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>182</x>
+      <y>7</y>
+      <w>91</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>**_: MainActivity _**
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>210</x>
+      <y>112</y>
+      <w>14</w>
+      <h>364</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>133</x>
+      <y>105</y>
+      <w>91</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+onCreate()</panel_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>441</x>
+      <y>21</y>
+      <w>21</w>
+      <h>994</h>
+    </coordinates>
+    <panel_attributes>lt=.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1400.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>413</x>
+      <y>7</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>**_: VrActivity _**
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>441</x>
+      <y>119</y>
+      <w>14</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>217</x>
+      <y>112</y>
+      <w>238</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+onCreate()</panel_attributes>
+    <additional_attributes>320.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>448</x>
+      <y>161</y>
+      <w>14</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>147</y>
+      <w>140</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+startVRSurface()</panel_attributes>
+    <additional_attributes>20.0;40.0;70.0;40.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>721</x>
+      <y>14</y>
+      <w>21</w>
+      <h>777</h>
+    </coordinates>
+    <panel_attributes>lt=.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1090.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>693</x>
+      <y>0</y>
+      <w>91</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>**_: SurfaceView _**
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>721</x>
+      <y>182</y>
+      <w>14</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>455</x>
+      <y>182</y>
+      <w>280</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+new</panel_attributes>
+    <additional_attributes>380.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>455</x>
+      <y>203</y>
+      <w>280</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;380.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>455</x>
+      <y>231</y>
+      <w>14</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>455</x>
+      <y>217</y>
+      <w>147</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+setContentView()</panel_attributes>
+    <additional_attributes>20.0;40.0;70.0;40.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1015</x>
+      <y>21</y>
+      <w>21</w>
+      <h>763</h>
+    </coordinates>
+    <panel_attributes>lt=.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1070.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>987</x>
+      <y>7</y>
+      <w>84</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>**_: VR360View _**
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1015</x>
+      <y>350</y>
+      <w>14</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>217</x>
+      <y>357</y>
+      <w>812</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+Java_com_oculus_oculus360videossdk_MainActivity_nativeSetAppInterface</panel_attributes>
+    <additional_attributes>1140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1232</x>
+      <y>21</y>
+      <w>21</w>
+      <h>784</h>
+    </coordinates>
+    <panel_attributes>lt=.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1204</x>
+      <y>7</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>**_: VrContext _**
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1232</x>
+      <y>371</y>
+      <w>14</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1022</x>
+      <y>364</y>
+      <w>224</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+SetActivity()</panel_attributes>
+    <additional_attributes>300.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1477</x>
+      <y>371</y>
+      <w>14</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1435</x>
+      <y>21</y>
+      <w>105</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>**_: VrAppAdapter _**
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1477</x>
+      <y>35</y>
+      <w>21</w>
+      <h>896</h>
+    </coordinates>
+    <panel_attributes>lt=.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1239</x>
+      <y>371</y>
+      <w>252</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+SetActivity()</panel_attributes>
+    <additional_attributes>340.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1673</x>
+      <y>28</y>
+      <w>21</w>
+      <h>1449</h>
+    </coordinates>
+    <panel_attributes>lt=.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;2050.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1645</x>
+      <y>14</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>**_: AppLocal _**
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1673</x>
+      <y>399</y>
+      <w>14</w>
+      <h>462</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1484</x>
+      <y>392</y>
+      <w>203</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+StartVrThread()</panel_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1680</x>
+      <y>434</y>
+      <w>14</w>
+      <h>399</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1680</x>
+      <y>413</y>
+      <w>140</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+ThreadStarter()</panel_attributes>
+    <additional_attributes>20.0;50.0;70.0;50.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1708</x>
+      <y>336</y>
+      <w>392</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Note..
+pthread_create(&amp;VrThread, NULL /* default attributes */, &amp;ThreadStarter, this)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1687</x>
+      <y>469</y>
+      <w>14</w>
+      <h>329</h>
+    </coordinates>
+    <panel_attributes>lw=2
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1687</x>
+      <y>455</y>
+      <w>154</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+VrThreadFunction()</panel_attributes>
+    <additional_attributes>20.0;40.0;70.0;40.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1694</x>
+      <y>511</y>
+      <w>14</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1694</x>
+      <y>497</y>
+      <w>105</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+EglSetup()</panel_attributes>
+    <additional_attributes>20.0;40.0;60.0;40.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>441</x>
+      <y>959</y>
+      <w>14</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>952</y>
+      <w>455</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+onResume</panel_attributes>
+    <additional_attributes>630.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>210</x>
+      <y>959</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lw=2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1673</x>
+      <y>973</y>
+      <w>14</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>966</y>
+      <w>1239</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+((AppLocal *)appPtr)-&gt;GetMessageQueue().SendPrintf("resume ");</panel_attributes>
+    <additional_attributes>1750.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>756</x>
+      <y>875</y>
+      <w>609</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Note..
+  void Java_com_mi_dlabs_vr_sdk_VrActivity_nativeResume(JNIEnv *jni, jclass clazz,
+    jlong appPtr) {
+    LOG("%p Java_com_mi_dlabs_vr_sdk_VrActivity_nativeResume", (void *)appPtr);
+    ((AppLocal *)appPtr)-&gt;GetMessageQueue().SendPrintf("resume ");
+  }
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1680</x>
+      <y>1001</y>
+      <w>14</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1680</x>
+      <y>987</y>
+      <w>91</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+Resume</panel_attributes>
+    <additional_attributes>20.0;40.0;60.0;40.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1687</x>
+      <y>1029</y>
+      <w>14</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1687</x>
+      <y>1015</y>
+      <w>147</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+VREnterVrMode</panel_attributes>
+    <additional_attributes>20.0;40.0;80.0;40.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2359</x>
+      <y>21</y>
+      <w>28</w>
+      <h>1330</h>
+    </coordinates>
+    <panel_attributes>lt=.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;1880.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>2303</x>
+      <y>7</y>
+      <w>119</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>**_: TimeWarpLocal _**
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>2366</x>
+      <y>1050</y>
+      <w>14</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1694</x>
+      <y>1043</y>
+      <w>686</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+    TimeWarp *TimeWarp::Factory(TimeWarpParms initParms) {
+        return new TimeWarpLocal(initParms);
+    }
+</panel_attributes>
+    <additional_attributes>960.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>2373</x>
+      <y>1064</y>
+      <w>14</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2373</x>
+      <y>1050</y>
+      <w>224</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+TimeWarpLocal::ThreadStarter</panel_attributes>
+    <additional_attributes>20.0;40.0;90.0;40.0;90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>2380</x>
+      <y>1106</y>
+      <w>14</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2380</x>
+      <y>1085</y>
+      <w>126</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+WarpThread()</panel_attributes>
+    <additional_attributes>20.0;40.0;70.0;40.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>2387</x>
+      <y>1127</y>
+      <w>14</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2387</x>
+      <y>1113</y>
+      <w>154</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+WarpThreadInit();</panel_attributes>
+    <additional_attributes>20.0;40.0;80.0;40.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>2394</x>
+      <y>1162</y>
+      <w>14</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2394</x>
+      <y>1148</y>
+      <w>252</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+InitSingleBuffer(EGL_SINGLE_BUFFER);</panel_attributes>
+    <additional_attributes>10.0;30.0;70.0;30.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>2387</x>
+      <y>1211</y>
+      <w>14</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lw=2
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1673</x>
+      <y>378</y>
+      <w>14</w>
+      <h>14</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1484</x>
+      <y>371</y>
+      <w>203</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+new()</panel_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1694</x>
+      <y>574</y>
+      <w>14</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>lw=2
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1694</x>
+      <y>560</y>
+      <w>357</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+while (!(VrThreadSynced &amp;&amp; CreatedSurface &amp;&amp; ReadyToExit)) </panel_attributes>
+    <additional_attributes>20.0;40.0;50.0;40.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1701</x>
+      <y>609</y>
+      <w>14</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1701</x>
+      <y>595</y>
+      <w>126</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+Command(msg);</panel_attributes>
+    <additional_attributes>20.0;30.0;50.0;30.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1540</x>
+      <y>406</y>
+      <w>98</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Note..</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2324</x>
+      <y>1211</y>
+      <w>77</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0;10.0;80.0;90.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2387</x>
+      <y>1197</y>
+      <w>140</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+WarpToScreen()</panel_attributes>
+    <additional_attributes>20.0;30.0;70.0;30.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1701</x>
+      <y>679</y>
+      <w>14</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1701</x>
+      <y>665</y>
+      <w>210</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2
+appInterface-&gt;Frame(vrFrame)</panel_attributes>
+    <additional_attributes>20.0;30.0;60.0;30.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1631</x>
+      <y>581</y>
+      <w>77</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0;10.0;270.0;90.0;270.0</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>670</y>
+      <w>350</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>OpenGL－－MianThread
+lw=2
+
+
+{innerclass
+eglDisplay
+innerclass}
+{innerclass
+eglMainThreadSurface
+innerclass}
+{innerclass
+eglConfig
+innerclass}
+{innerclass
+eglShareContext
+innerclass}
+{innerclass
+eglPbufferSurface
+innerclass}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>690</y>
+      <w>270</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>OpenGL－－TimeWarp
+lw=2
+
+
+{innerclass
+eglWarpContext
+innerclass}
+{innerclass
+singlebufferSurface
+innerclass}
+{innerclass
+eglDisplay,
+innerclass}
+{innerclass
+eglConfig,
+innerclass}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>740</y>
+      <w>390</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;60.0;370.0;10.0</additional_attributes>
+  </element>
+</diagram>

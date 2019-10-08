@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1380</x>
+      <y>10</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>**IBinder**
+lw=2
+bg=red
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1150</x>
+      <y>280</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>**Binder**
+bg=red
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1180</x>
+      <y>30</y>
+      <w>260</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1400</x>
+      <y>210</y>
+      <w>100</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>**IInterface**
+lw=2
+bg=red
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1710</x>
+      <y>240</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>**BinderProxy**
+bg=red
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1410</x>
+      <y>30</y>
+      <w>380</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;360.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1140</x>
+      <y>560</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>**Stub**
+bg=yellow
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1180</x>
+      <y>310</y>
+      <w>40</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1740</x>
+      <y>640</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>**Proxy**
+bg=yellow
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>230</x>
+      <y>110</y>
+      <w>540</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Note..
+假设我们要做一个Abc的service.
+1.定义一个IAbcManager.aidl
+2.编译后会生成IAbcManager.java 里面会有三个类 IAbcManager Stub Proxy
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>190</x>
+      <y>250</y>
+      <w>700</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>public interface IAbcManager extends android.os.IInterface
+{         
+    /** Local-side IPC implementation stub class. */
+    public static abstract class Stub extends android.os.Binder implements android.IAbcManager
+    {
+        private static final java.lang.String DESCRIPTOR = "android.IAbcManager";
+        public static android.IAbcManager asInterface(android.os.IBinder obj){......}
+        ......
+        private static class Proxy implements android.accounts.IAbcManager{......}
+        ....
+    }
+    ......
+    // IAccountManager.aidl中声明过的函数
+	 public static android.IAbcManager asInterface(android.os.IBinder obj)
+	{
+    	if ((obj==null)) {
+    	    return null;
+    	}
+    	android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
+    	if (((iin!=null)&amp;&amp;(iin instanceof android.accounts.IAccountManager))) {
+        	return ((android.IAbcManager)iin);
+    	}
+    	return new android.IAbcManager.Stub.Proxy(obj);
+	}
+}
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>1390</x>
+      <y>330</y>
+      <w>120</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>**IAbcManager**
+lw=2
+bg=yellow
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1440</x>
+      <y>230</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1190</x>
+      <y>350</y>
+      <w>270</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>250.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1450</x>
+      <y>350</y>
+      <w>360</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;340.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1140</x>
+      <y>680</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>**AbcService**
+bg=green
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1180</x>
+      <y>590</y>
+      <w>30</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1390</x>
+      <y>760</y>
+      <w>250</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>**AbcManager**
+lw=2
+bg=green
+--
+IAbcManager mAbcManager;
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1630</x>
+      <y>670</y>
+      <w>180</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;130.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1420</x>
+      <y>20</y>
+      <w>390</w>
+      <h>640</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2
+mRemot</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;620.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>420</x>
+      <y>700</y>
+      <w>300</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>http://192.168.9.142/gerrit/#/c/67583/
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>360</y>
+      <w>170</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>IAbcManager
+{innerclass
+Stub
+{innerclass
+Proxy
+innerclass}
+--
+asInterface
+innerclass}
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text/>
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1672</x>
+      <y>184</y>
+      <w>280</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>kobject
+lw=2
+--
+
+const char		*name;
+	struct list_head	 entry;
+	struct kobject		*parent;
+	struct kset		*kset;
+	struct kobj_type	*ktype;
+	struct kernfs_node *sd; 
+	struct kref		kref;
+#ifdef CONFIG_DEBUG_KOBJECT_RELEASE
+	struct delayed_work release;
+#endif
+	unsigned int state_initialized:1;
+	unsigned int state_in_sysfs:1;
+	unsigned int state_add_uevent_sent:1;
+	unsigned int state_remove_uevent_sent:1;
+	unsigned int uevent_suppress:1;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>984</x>
+      <y>272</y>
+      <w>448</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>kobj_type
+lw=2
+--
+
+	void (*release)(struct kobject *kobj);
+	const struct sysfs_ops *sysfs_ops;
+	struct attribute **default_attrs;
+	const struct kobj_ns_type_operations *(*child_ns_type)(struct kobject *kobj);
+	const void *(*namespace)(struct kobject *kobj);
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>152</x>
+      <y>384</y>
+      <w>328</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>kobj_attribute
+lw=2
+--
+
+	struct attribute attr;
+	ssize_t (*show)(struct kobject *kobj, struct kobj_attribute *attr,
+			char *buf);
+	ssize_t (*store)(struct kobject *kobj, struct kobj_attribute *attr,
+			 const char *buf, size_t count);
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>608</x>
+      <y>328</y>
+      <w>216</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>attribute
+lw=2
+--
+
+	const char		*name;
+	umode_t			mode;
+#ifdef CONFIG_DEBUG_LOCK_ALLOC
+	bool			ignore_lockdep:1;
+	struct lock_class_key	*key;
+	struct lock_class_key	skey;
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>336</y>
+      <w>152</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;110.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>568</y>
+      <w>512</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>bin_attribute
+lw=2
+--
+
+	struct attribute	attr;
+	size_t			size;
+	void			*private;
+	ssize_t (*read)(struct file *, struct kobject *, struct bin_attribute *,
+			char *, loff_t, size_t);
+	ssize_t (*write)(struct file *, struct kobject *, struct bin_attribute *,
+			 char *, loff_t, size_t);
+	int (*mmap)(struct file *, struct kobject *, struct bin_attribute *attr,
+		    struct vm_area_struct *vma);
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>456</y>
+      <w>216</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>152</x>
+      <y>168</y>
+      <w>320</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>attribute_group
+lw=2
+--
+
+	const char		*name;
+	umode_t			(*is_visible)(struct kobject *,
+					      struct attribute *, int);
+	umode_t			(*is_bin_visible)(struct kobject *,
+						  struct bin_attribute *, int);
+	struct attribute	**attrs;
+	struct bin_attribute	**bin_attrs;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>264</y>
+      <w>160</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1424</x>
+      <y>272</y>
+      <w>264</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>310.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>328</y>
+      <w>184</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1664</x>
+      <y>8</y>
+      <w>280</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>kset
+lw=2
+--
+
+	struct list_head list;
+	spinlock_t list_lock;
+	struct kobject kobj;
+	const struct kset_uevent_ops *uevent_ops;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1792</x>
+      <y>96</y>
+      <w>24</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1536</x>
+      <y>0</y>
+      <w>152</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0;10.0;330.0;170.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1152</x>
+      <y>64</y>
+      <w>296</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>kset_uevent_ops
+lw=2
+--
+
+	int (* const filter)(struct kset *kset, struct kobject *kobj);
+	const char *(* const name)(struct kset *kset, struct kobject *kobj);
+	int (* const uevent)(struct kset *kset, struct kobject *kobj,
+		      struct kobj_uevent_env *env);
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1440</x>
+      <y>64</y>
+      <w>240</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>280.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>112</y>
+      <w>248</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>sysfs_ops
+lw=2
+--
+
+	ssize_t	(*show)(struct kobject *, struct attribute *, char *);
+	ssize_t	(*store)(struct kobject *, struct attribute *, const char *, size_t);
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>112</y>
+      <w>200</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>230.0;270.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1688</x>
+      <y>1360</y>
+      <w>248</w>
+      <h>488</h>
+    </coordinates>
+    <panel_attributes>device
+lw=2
+--
+
+	struct device		*parent;
+
+	struct device_private	*p;
+
+	struct kobject kobj;
+	const char		*init_name; /* initial name of the device */
+	const struct device_type *type;
+
+	struct mutex		mutex;	/* mutex to synchronize calls to
+					 * its driver.
+					 */
+
+	struct bus_type	*bus;		/* type of bus device is on */
+	struct device_driver *driver;	/* which driver has allocated this
+					   device */
+	void		*platform_data;	/* Platform specific data, device
+					   core doesn't touch it */
+	void		*driver_data;	/* Driver data, set and get with
+					   dev_set/get_drvdata */
+	struct dev_links_info	links;
+	struct dev_pm_info	power;
+	struct dev_pm_domain	*pm_domain;
+
+#ifdef CONFIG_GENERIC_MSI_IRQ_DOMAIN
+	struct irq_domain	*msi_domain;
+#endif
+#ifdef CONFIG_PINCTRL
+	struct dev_pin_info	*pins;
+#endif
+#ifdef CONFIG_GENERIC_MSI_IRQ
+	struct list_head	msi_list;
+#endif
+
+#ifdef CONFIG_NUMA
+	int		numa_node;	/* NUMA node this device is close to */
+#endif
+	const struct dma_map_ops *dma_ops;
+	u64		*dma_mask;	/* dma mask (if dma'able device) */
+	u64		coherent_dma_mask;/* Like dma_mask, but for
+					     alloc_coherent mappings as
+					     not all hardware supports
+					     64 bit addresses for consistent
+					     allocations such descriptors. */
+	unsigned long	dma_pfn_offset;
+
+	struct device_dma_parameters *dma_parms;
+
+	struct list_head	dma_pools;	/* dma pools (if dma'ble) */
+
+	struct dma_coherent_mem	*dma_mem; /* internal for coherent mem
+					     override */
+#ifdef CONFIG_DMA_CMA
+	struct cma *cma_area;		/* contiguous memory area for dma
+					   allocations */
+#endif
+	struct removed_region *removed_mem;
+	/* arch specific additions */
+	struct dev_archdata	archdata;
+
+	struct device_node	*of_node; /* associated device tree node */
+	struct fwnode_handle	*fwnode; /* firmware device node */
+
+	dev_t			devt;	/* dev_t, creates the sysfs "dev" */
+	u32			id;	/* device instance */
+
+	spinlock_t		devres_lock;
+	struct list_head	devres_head;
+
+	struct klist_node	knode_class;
+	struct class		*class;
+	const struct attribute_group **groups;	/* optional groups */
+
+	void	(*release)(struct device *dev);
+	struct iommu_group	*iommu_group;
+	struct iommu_fwspec	*iommu_fwspec;
+
+	bool			offline_disabled:1;
+	bool			offline:1;
+	bool			of_node_reused:1;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1800</x>
+      <y>432</y>
+      <w>32</w>
+      <h>944</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;1160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5288</x>
+      <y>568</y>
+      <w>264</w>
+      <h>344</h>
+    </coordinates>
+    <panel_attributes>device_driver
+lw=2
+--
+
+	const char		*name;
+	struct bus_type		*bus;
+
+	struct module		*owner;
+	const char		*mod_name;	/* used for built-in modules */
+
+	bool suppress_bind_attrs;	/* disables bind/unbind via sysfs */
+	enum probe_type probe_type;
+
+	const struct of_device_id	*of_match_table;
+	const struct acpi_device_id	*acpi_match_table;
+
+	int (*probe) (struct device *dev);
+	int (*remove) (struct device *dev);
+	void (*shutdown) (struct device *dev);
+	int (*suspend) (struct device *dev, pm_message_t state);
+	int (*resume) (struct device *dev);
+	const struct attribute_group **groups;
+
+	const struct dev_pm_ops *pm;
+
+	struct driver_private *p;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5056</x>
+      <y>1144</y>
+      <w>296</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>platform_driver
+lw=2
+--
+
+	int (*probe)(struct platform_device *);
+	int (*remove)(struct platform_device *);
+	void (*shutdown)(struct platform_device *);
+	int (*suspend)(struct platform_device *, pm_message_t state);
+	int (*resume)(struct platform_device *);
+	struct device_driver driver;
+	const struct platform_device_id *id_table;
+	bool prevent_deferred_probe;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>896</x>
+      <y>1512</y>
+      <w>288</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>platform_device
+lw=2
+--
+
+	const char	*name;
+	int		id;
+	bool		id_auto;
+	struct device	dev;
+	u32		num_resources;
+	struct resource	*resource;
+
+	const struct platform_device_id	*id_entry;
+	char *driver_override; /* Driver name to force a match */
+
+	/* MFD cell pointer */
+	struct mfd_cell *mfd_cell;
+
+	/* arch specific additions */
+	struct pdev_archdata	archdata;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5568</x>
+      <y>1144</y>
+      <w>208</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>i2c_driver
+lw=2
+--
+
+	unsigned int class;
+
+	/* Notifies the driver that a new bus has appeared. You should avoid
+	 * using this, it will be removed in a near future.
+	 */
+	int (*attach_adapter)(struct i2c_adapter *) __deprecated;
+
+	/* Standard driver model interfaces */
+	int (*probe)(struct i2c_client *, const struct i2c_device_id *);
+	int (*remove)(struct i2c_client *);
+
+	/* New driver model interface to aid the seamless removal of the
+	 * current probe()'s, more commonly unused than used second parameter.
+	 */
+	int (*probe_new)(struct i2c_client *);
+
+	/* driver model interfaces that don't relate to enumeration  */
+	void (*shutdown)(struct i2c_client *);
+
+	/* Alert callback, for example for the SMBus alert protocol.
+	 * The format and meaning of the data value depends on the protocol.
+	 * For the SMBus alert protocol, there is a single bit of data passed
+	 * as the alert response's low bit ("event flag").
+	 * For the SMBus Host Notify protocol, the data corresponds to the
+	 * 16-bit payload data reported by the slave device acting as master.
+	 */
+	void (*alert)(struct i2c_client *, enum i2c_alert_protocol protocol,
+		      unsigned int data);
+
+	/* a ioctl like command that can be used to perform specific functions
+	 * with the device.
+	 */
+	int (*command)(struct i2c_client *client, unsigned int cmd, void *arg);
+
+	struct device_driver driver;
+	const struct i2c_device_id *id_table;
+
+	/* Device detection callback for automatic device creation */
+	int (*detect)(struct i2c_client *, struct i2c_board_info *);
+	const unsigned short *address_list;
+	struct list_head clients;
+
+	bool disable_i2c_core_irq_mapping;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>832</x>
+      <y>784</y>
+      <w>280</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>i2c_client
+lw=2
+--
+
+	unsigned short flags;		/* div., see below		*/
+	unsigned short addr;		/* chip address - NOTE: 7bit	*/
+					/* addresses are stored in the	*/
+					/* _LOWER_ 7 bits		*/
+	char name[I2C_NAME_SIZE];
+	struct i2c_adapter *adapter;	/* the adapter we sit on	*/
+	struct device dev;		/* the device structure		*/
+	int irq;			/* irq issued by device		*/
+	struct list_head detected;
+#if IS_ENABLED(CONFIG_I2C_SLAVE)
+	i2c_slave_cb_t slave_cb;	/* callback for slave mode	*/
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>824</x>
+      <y>1008</y>
+      <w>280</w>
+      <h>384</h>
+    </coordinates>
+    <panel_attributes>i2c_adapter
+lw=2
+--
+
+	struct module *owner;
+	unsigned int class;		  /* classes to allow probing for */
+	const struct i2c_algorithm *algo; /* the algorithm to access the bus */
+	void *algo_data;
+
+	/* data fields that are valid for all devices	*/
+	const struct i2c_lock_operations *lock_ops;
+	struct rt_mutex bus_lock;
+	struct rt_mutex mux_lock;
+
+	int timeout;			/* in jiffies */
+	int retries;
+	struct device dev;		/* the adapter device */
+
+	int nr;
+	char name[48];
+	struct completion dev_released;
+
+	struct mutex userspace_clients_lock;
+	struct list_head userspace_clients;
+
+	struct i2c_bus_recovery_info *bus_recovery_info;
+	const struct i2c_adapter_quirks *quirks;
+
+	struct irq_domain *host_notify_domain;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2448</x>
+      <y>776</y>
+      <w>288</w>
+      <h>376</h>
+    </coordinates>
+    <panel_attributes>spi_device
+lw=2
+--
+
+	struct device		dev;
+	struct spi_controller	*controller;
+	struct spi_controller	*master;	/* compatibility layer */
+	u32			max_speed_hz;
+	u8			chip_select;
+	u8			bits_per_word;
+	u16			mode;
+#define	SPI_CPHA	0x01			/* clock phase */
+#define	SPI_CPOL	0x02			/* clock polarity */
+#define	SPI_MODE_0	(0|0)			/* (original MicroWire) */
+#define	SPI_MODE_1	(0|SPI_CPHA)
+#define	SPI_MODE_2	(SPI_CPOL|0)
+#define	SPI_MODE_3	(SPI_CPOL|SPI_CPHA)
+#define	SPI_CS_HIGH	0x04			/* chipselect active high? */
+#define	SPI_LSB_FIRST	0x08			/* per-word bits-on-wire */
+#define	SPI_3WIRE	0x10			/* SI/SO signals shared */
+#define	SPI_LOOP	0x20			/* loopback mode */
+#define	SPI_NO_CS	0x40			/* 1 dev/bus, no chipselect */
+#define	SPI_READY	0x80			/* slave pulls low to pause */
+#define	SPI_TX_DUAL	0x100			/* transmit with 2 wires */
+#define	SPI_TX_QUAD	0x200			/* transmit with 4 wires */
+#define	SPI_RX_DUAL	0x400			/* receive with 2 wires */
+#define	SPI_RX_QUAD	0x800			/* receive with 4 wires */
+	int			irq;
+	void			*controller_state;
+	void			*controller_data;
+	char			modalias[SPI_NAME_SIZE];
+	int			cs_gpio;	/* chip select gpio */
+
+	/* the statistics */
+	struct spi_statistics	statistics;
+
+	/*
+	 * likely need more hooks for more protocol options affecting how
+	 * the controller talks to each chip, like:
+	 *  - memory packing (12 bit samples into low bits, others zeroed)
+	 *  - priority
+	 *  - drop chipselect after each word
+	 *  - chipselect delays
+	 *  - ...
+	 */
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5928</x>
+      <y>1176</y>
+      <w>296</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>spi_driver
+lw=2
+--
+
+	const struct spi_device_id *id_table;
+	int			(*probe)(struct spi_device *spi);
+	int			(*remove)(struct spi_device *spi);
+	void			(*shutdown)(struct spi_device *spi);
+	struct device_driver	driver;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2432</x>
+      <y>1304</y>
+      <w>264</w>
+      <h>512</h>
+    </coordinates>
+    <panel_attributes>spi_controller
+lw=2
+--
+
+	struct device	dev;
+
+	struct list_head list;
+
+	/* other than negative (== assign one dynamically), bus_num is fully
+	 * board-specific.  usually that simplifies to being SOC-specific.
+	 * example:  one SOC has three SPI controllers, numbered 0..2,
+	 * and one board's schematics might show it using SPI-2.  software
+	 * would normally use bus_num=2 for that controller.
+	 */
+	s16			bus_num;
+
+	/* chipselects will be integral to many controllers; some others
+	 * might use board-specific GPIOs.
+	 */
+	u16			num_chipselect;
+
+	/* some SPI controllers pose alignment requirements on DMAable
+	 * buffers; let protocol drivers know about these requirements.
+	 */
+	u16			dma_alignment;
+
+	/* spi_device.mode flags understood by this controller driver */
+	u16			mode_bits;
+
+	/* bitmask of supported bits_per_word for transfers */
+	u32			bits_per_word_mask;
+#define SPI_BPW_MASK(bits) BIT((bits) - 1)
+#define SPI_BIT_MASK(bits) (((bits) == 32) ? ~0U : (BIT(bits) - 1))
+#define SPI_BPW_RANGE_MASK(min, max) (SPI_BIT_MASK(max) - SPI_BIT_MASK(min - 1))
+
+	/* limits on transfer speed */
+	u32			min_speed_hz;
+	u32			max_speed_hz;
+
+	/* other constraints relevant to this driver */
+	u16			flags;
+#define SPI_CONTROLLER_HALF_DUPLEX	BIT(0)	/* can't do full duplex */
+#define SPI_CONTROLLER_NO_RX		BIT(1)	/* can't do buffer read */
+#define SPI_CONTROLLER_NO_TX		BIT(2)	/* can't do buffer write */
+#define SPI_CONTROLLER_MUST_RX		BIT(3)	/* requires rx */
+#define SPI_CONTROLLER_MUST_TX		BIT(4)	/* requires tx */
+
+#define SPI_MASTER_GPIO_SS		BIT(5)	/* GPIO CS must select slave */
+
+	/* flag indicating this is an SPI slave controller */
+	bool			slave;
+
+	/*
+	 * on some hardware transfer / message size may be constrained
+	 * the limit may depend on device transfer settings
+	 */
+	size_t (*max_transfer_size)(struct spi_device *spi);
+	size_t (*max_message_size)(struct spi_device *spi);
+
+	/* I/O mutex */
+	struct mutex		io_mutex;
+
+	/* lock and mutex for SPI bus locking */
+	spinlock_t		bus_lock_spinlock;
+	struct mutex		bus_lock_mutex;
+
+	/* flag indicating that the SPI bus is locked for exclusive use */
+	bool			bus_lock_flag;
+
+	/* Setup mode and clock, etc (spi driver may call many times).
+	 *
+	 * IMPORTANT:  this may be called when transfers to another
+	 * device are active.  DO NOT UPDATE SHARED REGISTERS in ways
+	 * which could break those transfers.
+	 */
+	int			(*setup)(struct spi_device *spi);
+
+	/* bidirectional bulk transfers
+	 *
+	 * + The transfer() method may not sleep; its main role is
+	 *   just to add the message to the queue.
+	 * + For now there's no remove-from-queue operation, or
+	 *   any other request management
+	 * + To a given spi_device, message queueing is pure fifo
+	 *
+	 * + The controller's main job is to process its message queue,
+	 *   selecting a chip (for masters), then transferring data
+	 * + If there are multiple spi_device children, the i/o queue
+	 *   arbitration algorithm is unspecified (round robin, fifo,
+	 *   priority, reservations, preemption, etc)
+	 *
+	 * + Chipselect stays active during the entire message
+	 *   (unless modified by spi_transfer.cs_change != 0).
+	 * + The message transfers use clock and SPI mode parameters
+	 *   previously established by setup() for this device
+	 */
+	int			(*transfer)(struct spi_device *spi,
+						struct spi_message *mesg);
+
+	/* called on release() to free memory provided by spi_controller */
+	void			(*cleanup)(struct spi_device *spi);
+
+	/*
+	 * Used to enable core support for DMA handling, if can_dma()
+	 * exists and returns true then the transfer will be mapped
+	 * prior to transfer_one() being called.  The driver should
+	 * not modify or store xfer and dma_tx and dma_rx must be set
+	 * while the device is prepared.
+	 */
+	bool			(*can_dma)(struct spi_controller *ctlr,
+					   struct spi_device *spi,
+					   struct spi_transfer *xfer);
+
+	/*
+	 * These hooks are for drivers that want to use the generic
+	 * controller transfer queueing mechanism. If these are used, the
+	 * transfer() function above must NOT be specified by the driver.
+	 * Over time we expect SPI drivers to be phased over to this API.
+	 */
+	bool				queued;
+	struct kthread_worker		kworker;
+	struct task_struct		*kworker_task;
+	struct kthread_work		pump_messages;
+	spinlock_t			queue_lock;
+	struct list_head		queue;
+	struct spi_message		*cur_msg;
+	bool				idling;
+	bool				busy;
+	bool				running;
+	bool				rt;
+	bool				auto_runtime_pm;
+	bool                            cur_msg_prepared;
+	bool				cur_msg_mapped;
+	struct completion               xfer_completion;
+	size_t				max_dma_len;
+
+	int (*prepare_transfer_hardware)(struct spi_controller *ctlr);
+	int (*transfer_one_message)(struct spi_controller *ctlr,
+				    struct spi_message *mesg);
+	int (*unprepare_transfer_hardware)(struct spi_controller *ctlr);
+	int (*prepare_message)(struct spi_controller *ctlr,
+			       struct spi_message *message);
+	int (*unprepare_message)(struct spi_controller *ctlr,
+				 struct spi_message *message);
+	int (*slave_abort)(struct spi_controller *ctlr);
+	int (*spi_flash_read)(struct  spi_device *spi,
+			      struct spi_flash_read_message *msg);
+	bool (*spi_flash_can_dma)(struct spi_device *spi,
+				  struct spi_flash_read_message *msg);
+	bool (*flash_read_supported)(struct spi_device *spi);
+
+	/*
+	 * These hooks are for drivers that use a generic implementation
+	 * of transfer_one_message() provied by the core.
+	 */
+	void (*set_cs)(struct spi_device *spi, bool enable);
+	int (*transfer_one)(struct spi_controller *ctlr, struct spi_device *spi,
+			    struct spi_transfer *transfer);
+	void (*handle_err)(struct spi_controller *ctlr,
+			   struct spi_message *message);
+
+	/* gpio chip select */
+	int			*cs_gpios;
+
+	/* statistics */
+	struct spi_statistics	statistics;
+
+	/* DMA channels for use with core dmaengine helpers */
+	struct dma_chan		*dma_tx;
+	struct dma_chan		*dma_rx;
+
+	/* dummy data for full duplex devices */
+	void			*dummy_rx;
+	void			*dummy_tx;
+
+	int (*fw_translate_cs)(struct spi_controller *ctlr, unsigned cs);
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>944</x>
+      <y>1840</y>
+      <w>288</w>
+      <h>344</h>
+    </coordinates>
+    <panel_attributes>pinctrl_dev
+lw=2
+--
+
+	struct list_head node;
+	struct pinctrl_desc *desc;
+	struct radix_tree_root pin_desc_tree;
+#ifdef CONFIG_GENERIC_PINCTRL_GROUPS
+	struct radix_tree_root pin_group_tree;
+	unsigned int num_groups;
+#endif
+#ifdef CONFIG_GENERIC_PINMUX_FUNCTIONS
+	struct radix_tree_root pin_function_tree;
+	unsigned int num_functions;
+#endif
+	struct list_head gpio_ranges;
+	struct device *dev;
+	struct module *owner;
+	void *driver_data;
+	struct pinctrl *p;
+	struct pinctrl_state *hog_default;
+	struct pinctrl_state *hog_sleep;
+	struct mutex mutex;
+#ifdef CONFIG_DEBUG_FS
+	struct dentry *device_root;
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>944</x>
+      <y>2304</y>
+      <w>304</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lcd_device
+lw=2
+--
+
+	struct lcd_properties props;
+	/* This protects the 'ops' field. If 'ops' is NULL, the driver that
+	   registered this device has been unloaded, and if class_get_devdata()
+	   points to something in the body of that driver, it is also invalid. */
+	struct mutex ops_lock;
+	/* If this is NULL, the backing module is unloaded */
+	struct lcd_ops *ops;
+	/* Serialise access to set_power method */
+	struct mutex update_lock;
+	/* The framebuffer notifier block */
+	struct notifier_block fb_notif;
+
+	struct device dev;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1672</x>
+      <y>2192</y>
+      <w>288</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>input_dev
+lw=2
+--
+
+	const char *name;
+	const char *phys;
+	const char *uniq;
+	struct input_id id;
+
+	unsigned long propbit[BITS_TO_LONGS(INPUT_PROP_CNT)];
+
+	unsigned long evbit[BITS_TO_LONGS(EV_CNT)];
+	unsigned long keybit[BITS_TO_LONGS(KEY_CNT)];
+	unsigned long relbit[BITS_TO_LONGS(REL_CNT)];
+	unsigned long absbit[BITS_TO_LONGS(ABS_CNT)];
+	unsigned long mscbit[BITS_TO_LONGS(MSC_CNT)];
+	unsigned long ledbit[BITS_TO_LONGS(LED_CNT)];
+	unsigned long sndbit[BITS_TO_LONGS(SND_CNT)];
+	unsigned long ffbit[BITS_TO_LONGS(FF_CNT)];
+	unsigned long swbit[BITS_TO_LONGS(SW_CNT)];
+
+	unsigned int hint_events_per_packet;
+
+	unsigned int keycodemax;
+	unsigned int keycodesize;
+	void *keycode;
+
+	int (*setkeycode)(struct input_dev *dev,
+			  const struct input_keymap_entry *ke,
+			  unsigned int *old_keycode);
+	int (*getkeycode)(struct input_dev *dev,
+			  struct input_keymap_entry *ke);
+
+	struct ff_device *ff;
+
+	unsigned int repeat_key;
+	struct timer_list timer;
+
+	int rep[REP_CNT];
+
+	struct input_mt *mt;
+
+	struct input_absinfo *absinfo;
+
+	unsigned long key[BITS_TO_LONGS(KEY_CNT)];
+	unsigned long led[BITS_TO_LONGS(LED_CNT)];
+	unsigned long snd[BITS_TO_LONGS(SND_CNT)];
+	unsigned long sw[BITS_TO_LONGS(SW_CNT)];
+
+	int (*open)(struct input_dev *dev);
+	void (*close)(struct input_dev *dev);
+	int (*flush)(struct input_dev *dev, struct file *file);
+	int (*event)(struct input_dev *dev, unsigned int type, unsigned int code, int value);
+
+	struct input_handle __rcu *grab;
+
+	spinlock_t event_lock;
+	struct mutex mutex;
+
+	unsigned int users;
+	bool going_away;
+
+	struct device dev;
+
+	struct list_head	h_list;
+	struct list_head	node;
+
+	unsigned int num_vals;
+	unsigned int max_vals;
+	struct input_value *vals;
+
+	bool devres_managed;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2472</x>
+      <y>1952</y>
+      <w>296</w>
+      <h>464</h>
+    </coordinates>
+    <panel_attributes>power_supply
+lw=2
+--
+
+	const struct power_supply_desc *desc;
+
+	char **supplied_to;
+	size_t num_supplicants;
+
+	char **supplied_from;
+	size_t num_supplies;
+	struct device_node *of_node;
+
+	/* Driver private data */
+	void *drv_data;
+
+	/* private */
+	struct device dev;
+	struct work_struct changed_work;
+	struct delayed_work deferred_register_work;
+	spinlock_t changed_lock;
+	bool changed;
+	bool initialized;
+	bool removing;
+	atomic_t use_cnt;
+#ifdef CONFIG_THERMAL
+	struct thermal_zone_device *tzd;
+	struct thermal_cooling_device *tcd;
+#endif
+
+#ifdef CONFIG_LEDS_TRIGGERS
+	struct led_trigger *charging_full_trig;
+	char *charging_full_trig_name;
+	struct led_trigger *charging_trig;
+	char *charging_trig_name;
+	struct led_trigger *full_trig;
+	char *full_trig_name;
+	struct led_trigger *online_trig;
+	char *online_trig_name;
+	struct led_trigger *charging_blink_full_solid_trig;
+	char *charging_blink_full_solid_trig_name;
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2192</x>
+      <y>2504</y>
+      <w>320</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>regulator_dev
+lw=2
+--
+
+	const struct regulator_desc *desc;
+	int exclusive;
+	u32 use_count;
+	u32 open_count;
+	u32 open_offset;
+	u32 bypass_count;
+
+	/* lists we belong to */
+	struct list_head list; /* list of all regulators */
+
+	/* lists we own */
+	struct list_head consumer_list; /* consumers we supply */
+
+	struct blocking_notifier_head notifier;
+	struct mutex mutex; /* consumer lock */
+	struct module *owner;
+	struct device dev;
+	struct regulation_constraints *constraints;
+	struct regulator *supply;	/* for tree */
+	const char *supply_name;
+	struct regmap *regmap;
+
+	struct delayed_work disable_work;
+	int deferred_disables;
+
+	void *reg_data;		/* regulator_dev data */
+
+	struct dentry *debugfs;
+
+	struct regulator_enable_gpio *ena_pin;
+	unsigned int ena_gpio_state:1;
+
+	unsigned int is_switch:1;
+
+	/* time when this regulator was disabled last time */
+	unsigned long last_off_jiffy;
+	struct proxy_consumer *proxy_consumer;
+	struct regulator *debug_consumer;
+};
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1104</x>
+      <y>888</y>
+      <w>600</w>
+      <h>568</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>730.0;690.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1928</x>
+      <y>968</y>
+      <w>536</w>
+      <h>504</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;610.0;650.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1928</x>
+      <y>1464</y>
+      <w>520</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;100.0;630.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1928</x>
+      <y>1656</y>
+      <w>560</w>
+      <h>424</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;680.0;510.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>1536</y>
+      <w>528</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>640.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1808</x>
+      <y>1840</y>
+      <w>56</w>
+      <h>368</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1224</x>
+      <y>1664</y>
+      <w>480</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>580.0;10.0;10.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1240</x>
+      <y>1840</y>
+      <w>504</w>
+      <h>504</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>610.0;10.0;10.0;610.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1928</x>
+      <y>1704</y>
+      <w>280</w>
+      <h>816</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;330.0;1000.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2440</x>
+      <y>96</y>
+      <w>256</w>
+      <h>504</h>
+    </coordinates>
+    <panel_attributes>kernfs_node
+lw=2
+--
+
+	atomic_t		count;
+	atomic_t		active;
+#ifdef CONFIG_DEBUG_LOCK_ALLOC
+	struct lockdep_map	dep_map;
+#endif
+	/*
+	 * Use kernfs_get_parent() and kernfs_name/path() instead of
+	 * accessing the following two fields directly.  If the node is
+	 * never moved to a different parent, it is safe to access the
+	 * parent directly.
+	 */
+	struct kernfs_node	*parent;
+	const char		*name;
+
+	struct rb_node		rb;
+
+	const void		*ns;	/* namespace tag */
+	unsigned int		hash;	/* ns + name hash */
+	union {
+		struct kernfs_elem_dir		dir;
+		struct kernfs_elem_symlink	symlink;
+		struct kernfs_elem_attr		attr;
+	};
+
+	void			*priv;
+
+	unsigned short		flags;
+	umode_t			mode;
+	unsigned int		ino;
+	struct kernfs_iattrs	*iattr;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1944</x>
+      <y>104</y>
+      <w>512</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;230.0;620.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>632</y>
+      <w>304</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>device_attribute
+lw=2
+bg=red
+--
+
+	struct attribute	attr;
+	ssize_t (*show)(struct device *dev, struct device_attribute *attr,
+			char *buf);
+	ssize_t (*store)(struct device *dev, struct device_attribute *attr,
+			 const char *buf, size_t count);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>456</y>
+      <w>216</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>250.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+</diagram>
