@@ -75,7 +75,12 @@ module.exports = {
 			}],
 			'/arm/': [
             {
-				title: 'ARMv8虚拟内存(VMSA)',
+				title: 'ARM简介',
+				collapsable: true,
+				children: ['/arm/intro']
+			},
+            {
+				title: '虚拟内存',
 				collapsable: true,
 				children: ['/arm/vmsa/vmsa']
 			}],
