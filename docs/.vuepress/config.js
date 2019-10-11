@@ -82,7 +82,7 @@ module.exports = {
             {
 				title: '虚拟内存',
 				collapsable: true,
-				children: ['/arm/vmsa/vmsa']
+				children: ['/arm/vmsa/vmsa_intro/vmsa_intro']
 			}],
 			'/selinux/': [{
                 title: '系统权限',
