@@ -33,6 +33,9 @@ module.exports = {
 		    before: info => `<div class="theorem"><p class="title">${info}</p>`,
             after: '</div>'
         }],
+        ['@vuepress/google-analytics',{
+            'ga': 'G-FS461F8LDB'
+        }],
         ['@vuepress/back-to-top'],
         ['@vuepress/last-updated'],
         ['@vuepress/active-header-links'],

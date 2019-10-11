@@ -9,3 +9,4 @@ xport PATH="$PATH:/home/zqdong/.yarn/bin"
 yarn global add vuepress
 yarn global add vuepress-plugin-container
 yarn global add @vuepress/plugin-back-to-top -D
+yarn global add @vuepress/plugin-google-analytics -D
