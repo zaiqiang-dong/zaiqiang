@@ -6,6 +6,7 @@ mkdir ~/tmp/
 vuepress build docs --no-cache --dest ~/tmp/
 cp ./CNAME ~/tmp/
 cp ./googlefe3186928c5acc85.html ~/tmp/
+cp ./baidu_verify_aUCs3xXbq4.html ~/tmp/
 git checkout master
 rm * -rf
 cp -R ~/tmp/* .
