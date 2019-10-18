@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text/>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1880</x>
+      <y>270</y>
+      <w>470</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+android::hidl::base::V1_0::IBase</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2160</x>
+      <y>540</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+ILight</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2210</x>
+      <y>300</y>
+      <w>30</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2280</x>
+      <y>740</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+BsLight</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2390</x>
+      <y>270</y>
+      <w>370</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+::android::hardware::details::HidlInstrumentor</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2220</x>
+      <y>570</y>
+      <w>140</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2330</x>
+      <y>300</y>
+      <w>230</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3080</x>
+      <y>500</y>
+      <w>310</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+::android::hidl::base::V1_0::BnHwBase</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3170</x>
+      <y>640</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+BnHwLight</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3220</x>
+      <y>530</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2760</x>
+      <y>400</y>
+      <w>330</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>template=0: ILight
+android::hardware::BpInterface
+lw=2
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2670</x>
+      <y>620</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+BpHwLight</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2710</x>
+      <y>460</y>
+      <w>210</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2600</x>
+      <y>300</y>
+      <w>140</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1460</x>
+      <y>50</y>
+      <w>790</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+RefBase</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2190</x>
+      <y>80</y>
+      <w>30</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2110</x>
+      <y>740</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+BsBase</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1940</x>
+      <y>300</y>
+      <w>220</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2180</x>
+      <y>300</y>
+      <w>310</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>290.0;10.0;10.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2710</x>
+      <y>750</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+IBinder</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1590</x>
+      <y>710</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+BHwBinder</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1610</x>
+      <y>300</y>
+      <w>50</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1770</x>
+      <y>970</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+BnHwBase</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1820</x>
+      <y>300</y>
+      <w>770</w>
+      <h>690</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>750.0;10.0;10.0;670.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1620</x>
+      <y>740</y>
+      <w>230</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1570</x>
+      <y>270</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+IBinder</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1620</x>
+      <y>80</y>
+      <w>30</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2020</x>
+      <y>950</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+BpHwBinder</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1630</x>
+      <y>300</y>
+      <w>460</w>
+      <h>670</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;440.0;650.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2490</x>
+      <y>130</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+IInterface</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2240</x>
+      <y>60</y>
+      <w>320</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>700</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+BHwBinder</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>380</y>
+      <w>130</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>350</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+IBinder</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>120</y>
+      <w>30</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>90</y>
+      <w>790</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+RefBase</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>120</y>
+      <w>30</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>560</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+IInterface</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>820</y>
+      <w>160</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>template=0: INTERFACE
+BpInterface
+lw=2
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>360</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+BpHwRefBase</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>120</y>
+      <w>30</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>590</y>
+      <w>120</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>390</y>
+      <w>190</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>640</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+INTERFACE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>670</y>
+      <w>180</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+</diagram>
