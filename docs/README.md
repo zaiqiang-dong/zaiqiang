@@ -20,7 +20,7 @@ footer: MIT Licensed | Copyright © 2018-Present Zaiqiang Dong
 由于软硬件都在不断发展变化，所以本站文章都是针对特定版本做分析，希望你可以喜欢，另外转载请注明出处！
 
 ::: right
-From [探索者](http://www.cxy.wiki)
+From [探索者](https://www.tsz.wiki)
 
 :::
 
