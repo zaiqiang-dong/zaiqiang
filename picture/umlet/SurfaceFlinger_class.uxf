@@ -633,9 +633,9 @@ lw=2</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>4509</x>
+      <x>4500</x>
       <y>549</y>
-      <w>180</w>
+      <w>198</w>
       <h>81</h>
     </coordinates>
     <panel_attributes>**IGraphicBufferConsumer**
@@ -677,9 +677,9 @@ group=1</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>2178</x>
+      <x>2169</x>
       <y>558</y>
-      <w>180</w>
+      <w>198</w>
       <h>81</h>
     </coordinates>
     <panel_attributes>**ISurfaceComposerClient**
@@ -3208,9 +3208,9 @@ group=2</panel_attributes>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>5580</x>
+      <x>5589</x>
       <y>477</y>
-      <w>99</w>
+      <w>81</w>
       <h>81</h>
     </coordinates>
     <panel_attributes>**IInterface**
