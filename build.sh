@@ -7,6 +7,7 @@ vuepress build docs --no-cache --dest ~/tmp/
 cp ./CNAME ~/tmp/
 cp ./googlefe3186928c5acc85.html ~/tmp/
 cp ./baidu_verify_exRpI53NxY.html ~/tmp/
+cp ./sitemap.xml ~/tmp/
 git checkout master
 rm * -rf
 cp -R ~/tmp/* .
