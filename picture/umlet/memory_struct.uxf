@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1190</x>
+      <x>1860</x>
       <y>1410</y>
       <w>350</w>
       <h>150</h>
@@ -25,7 +25,7 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
+      <x>1300</x>
       <y>1260</y>
       <w>400</w>
       <h>110</h>
@@ -43,7 +43,7 @@ lw=2
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>240</x>
+      <x>910</x>
       <y>1290</y>
       <w>200</w>
       <h>50</h>
@@ -55,7 +55,7 @@ typedef u64 phys_addr_t;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>430</x>
+      <x>1100</x>
       <y>1300</y>
       <w>220</w>
       <h>50</h>
@@ -66,7 +66,7 @@ typedef u64 phys_addr_t;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
+      <x>790</x>
       <y>1490</y>
       <w>360</w>
       <h>130</h>
@@ -86,7 +86,7 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1020</x>
+      <x>1690</x>
       <y>1330</y>
       <w>190</w>
       <h>170</h>
@@ -97,7 +97,7 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1100</x>
+      <x>1770</x>
       <y>2290</y>
       <w>600</w>
       <h>950</h>
@@ -165,7 +165,7 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
+      <x>670</x>
       <y>2580</y>
       <w>320</w>
       <h>380</h>
@@ -394,7 +394,7 @@ enum zone_flags {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
+      <x>730</x>
       <y>2040</y>
       <w>360</w>
       <h>90</h>
@@ -410,7 +410,7 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>310</x>
+      <x>980</x>
       <y>1330</y>
       <w>340</w>
       <h>180</h>
@@ -421,7 +421,7 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>120</x>
+      <x>790</x>
       <y>2120</y>
       <w>30</w>
       <h>480</h>
@@ -432,7 +432,7 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
+      <x>1230</x>
       <y>2060</y>
       <w>440</w>
       <h>50</h>
@@ -447,7 +447,7 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>410</x>
+      <x>1080</x>
       <y>2080</y>
       <w>170</w>
       <h>30</h>
@@ -458,7 +458,7 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>730</x>
+      <x>1400</x>
       <y>2100</y>
       <w>390</w>
       <h>260</h>
@@ -469,7 +469,7 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1110</x>
+      <x>1780</x>
       <y>3720</y>
       <w>310</w>
       <h>270</h>
@@ -659,7 +659,7 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1220</x>
+      <x>1890</x>
       <y>3230</y>
       <w>140</w>
       <h>510</h>
@@ -670,7 +670,7 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
+      <x>1330</x>
       <y>0</y>
       <w>480</w>
       <h>770</h>
@@ -807,7 +807,7 @@ fontsize=17
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>580</x>
+      <x>1250</x>
       <y>2540</y>
       <w>150</w>
       <h>180</h>
@@ -830,7 +830,7 @@ pagen
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
+      <x>1390</x>
       <y>2380</y>
       <w>400</w>
       <h>180</h>
@@ -841,7 +841,7 @@ pagen
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1630</x>
+      <x>2300</x>
       <y>1180</y>
       <w>230</w>
       <h>70</h>
@@ -853,7 +853,7 @@ include/linux/memblock.h</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1530</x>
+      <x>2200</x>
       <y>1240</y>
       <w>120</w>
       <h>190</h>
@@ -861,5 +861,72 @@ include/linux/memblock.h</panel_attributes>
     <panel_attributes>lt=&lt;.
 lw=2</panel_attributes>
     <additional_attributes>10.0;170.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1970</y>
+      <w>290</w>
+      <h>920</h>
+    </coordinates>
+    <panel_attributes>lw=2
+enum zone_type 
+--
+#ifdef CONFIG_ZONE_DMA
+	/*
+	 * ZONE_DMA is used when there are devices that are not able
+	 * to do DMA to all of addressable memory (ZONE_NORMAL). Then we
+	 * carve out the portion of memory that is needed for these devices.
+	 * The range is arch specific.
+	 *
+	 * Some examples
+	 *
+	 * Architecture		Limit
+	 * ---------------------------
+	 * parisc, ia64, sparc	&lt;4G
+	 * s390			&lt;2G
+	 * arm			Various
+	 * alpha		Unlimited or 0-16MB.
+	 *
+	 * i386, x86_64 and multiple other arches
+	 * 			&lt;16M.
+	 */
+	ZONE_DMA,
+#endif
+#ifdef CONFIG_ZONE_DMA32
+	/*
+	 * x86_64 needs two ZONE_DMAs because it supports devices that are
+	 * only able to do DMA to the lower 16M but also 32 bit devices that
+	 * can only do DMA areas below 4G.
+	 */
+	ZONE_DMA32,
+#endif
+	/*
+	 * Normal addressable memory is in ZONE_NORMAL. DMA operations can be
+	 * performed on pages in ZONE_NORMAL if the DMA devices support
+	 * transfers to all addressable memory.
+	 */
+	ZONE_NORMAL,
+#ifdef CONFIG_HIGHMEM
+	/*
+	 * A memory area that is only addressable by the kernel through
+	 * mapping portions into its own address space. This is for example
+	 * used by i386 to allow the kernel to address the memory beyond
+	 * 900MB. The kernel will set up special mappings (page
+	 * table entries on i386) for each page that the kernel needs to
+	 * access.
+	 */
+	ZONE_HIGHMEM,
+#endif
+	ZONE_MOVABLE,
+#ifdef CONFIG_ZONE_DEVICE
+	ZONE_DEVICE,
+#endif
+	__MAX_NR_ZONES
+
+};
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

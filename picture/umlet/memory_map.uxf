@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>712</x>
+      <x>816</x>
       <y>704</y>
       <w>128</w>
       <h>912</h>
@@ -18,7 +18,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>416</x>
+      <x>520</x>
       <y>688</y>
       <w>312</w>
       <h>32</h>
@@ -30,7 +30,7 @@ MODULES_END = PAGE_OFFSET</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>384</x>
+      <x>488</x>
       <y>1600</y>
       <w>344</w>
       <h>32</h>
@@ -42,7 +42,7 @@ MODULES_END = PAGE_OFFSET</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>352</x>
+      <x>456</x>
       <y>584</y>
       <w>352</w>
       <h>48</h>
@@ -55,7 +55,7 @@ MODULES_END = PAGE_OFFSET</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1112</x>
+      <x>1216</x>
       <y>680</y>
       <w>128</w>
       <h>32</h>
@@ -70,7 +70,7 @@ swapper table
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1112</x>
+      <x>1216</x>
       <y>648</y>
       <w>128</w>
       <h>32</h>
@@ -86,7 +86,7 @@ idmap table
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1112</x>
+      <x>1216</x>
       <y>616</y>
       <w>128</w>
       <h>32</h>
@@ -101,7 +101,7 @@ fix map table</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1112</x>
+      <x>1216</x>
       <y>712</y>
       <w>128</w>
       <h>768</h>
@@ -115,7 +115,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1112</x>
+      <x>1216</x>
       <y>560</y>
       <w>128</w>
       <h>56</h>
@@ -129,7 +129,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1112</x>
+      <x>1216</x>
       <y>424</y>
       <w>128</w>
       <h>136</h>
@@ -148,7 +148,7 @@ kernel img
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1112</x>
+      <x>1216</x>
       <y>304</y>
       <w>128</w>
       <h>120</h>
@@ -163,7 +163,7 @@ TEXT_OFFSET</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1112</x>
+      <x>1216</x>
       <y>496</y>
       <w>128</w>
       <h>40</h>
@@ -179,7 +179,7 @@ idmap_text
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>712</x>
+      <x>816</x>
       <y>464</y>
       <w>128</w>
       <h>240</h>
@@ -193,7 +193,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
+      <x>936</x>
       <y>296</y>
       <w>296</w>
       <h>424</h>
@@ -204,7 +204,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
+      <x>936</x>
       <y>456</y>
       <w>296</w>
       <h>272</h>
@@ -215,7 +215,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
+      <x>528</x>
       <y>448</y>
       <w>304</w>
       <h>32</h>
@@ -227,7 +227,7 @@ KERNEL_END</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>712</x>
+      <x>816</x>
       <y>704</y>
       <w>128</w>
       <h>192</h>
@@ -241,7 +241,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
+      <x>944</x>
       <y>696</y>
       <w>48</w>
       <h>216</h>
@@ -253,7 +253,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
+      <x>528</x>
       <y>880</y>
       <w>304</w>
       <h>32</h>
@@ -265,7 +265,7 @@ MODULES_VADDR</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>712</x>
+      <x>816</x>
       <y>944</y>
       <w>128</w>
       <h>120</h>
@@ -279,7 +279,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
+      <x>944</x>
       <y>888</y>
       <w>56</w>
       <h>72</h>
@@ -291,7 +291,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
+      <x>528</x>
       <y>928</y>
       <w>304</w>
       <h>32</h>
@@ -303,7 +303,7 @@ PCI_IO_END</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>432</x>
+      <x>536</x>
       <y>1048</y>
       <w>296</w>
       <h>32</h>
@@ -315,7 +315,7 @@ PCI_IO_START</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
+      <x>944</x>
       <y>936</y>
       <w>48</w>
       <h>144</h>
@@ -327,7 +327,7 @@ PCI_IO_START</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>712</x>
+      <x>816</x>
       <y>1112</y>
       <w>128</w>
       <h>80</h>
@@ -341,7 +341,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
+      <x>528</x>
       <y>1096</y>
       <w>304</w>
       <h>32</h>
@@ -353,7 +353,7 @@ FIXADDR_TOP</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
+      <x>944</x>
       <y>1056</y>
       <w>56</w>
       <h>72</h>
@@ -365,7 +365,7 @@ FIXADDR_TOP</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>392</x>
+      <x>496</x>
       <y>1176</y>
       <w>336</w>
       <h>32</h>
@@ -377,7 +377,7 @@ FIXADDR_START = (FIXADDR_TOP - FIXADDR_SIZE) </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
+      <x>944</x>
       <y>1104</y>
       <w>104</w>
       <h>104</h>
@@ -389,7 +389,7 @@ FIXADDR_SIZE</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1736</x>
+      <x>1840</x>
       <y>744</y>
       <w>128</w>
       <h>152</h>
@@ -403,7 +403,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1112</x>
+      <x>1216</x>
       <y>776</y>
       <w>128</w>
       <h>80</h>
@@ -419,7 +419,7 @@ Device Tree
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1240</x>
+      <x>1344</x>
       <y>296</y>
       <w>112</w>
       <h>144</h>
@@ -431,7 +431,7 @@ Device Tree
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>488</x>
+      <x>592</x>
       <y>1144</y>
       <w>240</w>
       <h>32</h>
@@ -443,7 +443,7 @@ __end_of_permanent_fixed_addresses</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
+      <x>936</x>
       <y>768</y>
       <w>296</w>
       <h>400</h>
@@ -454,7 +454,7 @@ __end_of_permanent_fixed_addresses</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1472</x>
+      <x>1576</x>
       <y>888</y>
       <w>104</w>
       <h>24</h>
@@ -468,7 +468,7 @@ TTBR寄存器
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1568</x>
+      <x>1672</x>
       <y>888</y>
       <w>184</w>
       <h>24</h>
@@ -479,7 +479,7 @@ TTBR寄存器
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1736</x>
+      <x>1840</x>
       <y>720</y>
       <w>128</w>
       <h>24</h>
@@ -494,7 +494,7 @@ PGD
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1736</x>
+      <x>1840</x>
       <y>792</y>
       <w>128</w>
       <h>24</h>
@@ -508,7 +508,7 @@ D-TABLE
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1992</x>
+      <x>2096</x>
       <y>688</y>
       <w>128</w>
       <h>128</h>
@@ -522,7 +522,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1992</x>
+      <x>2096</x>
       <y>656</y>
       <w>128</w>
       <h>32</h>
@@ -536,7 +536,7 @@ PUD
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1856</x>
+      <x>1960</x>
       <y>808</y>
       <w>152</w>
       <h>24</h>
@@ -547,7 +547,7 @@ PUD
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1992</x>
+      <x>2096</x>
       <y>736</y>
       <w>128</w>
       <h>24</h>
@@ -561,7 +561,7 @@ D-TABLE
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2232</x>
+      <x>2336</x>
       <y>632</y>
       <w>128</w>
       <h>128</h>
@@ -575,7 +575,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2232</x>
+      <x>2336</x>
       <y>600</y>
       <w>128</w>
       <h>32</h>
@@ -589,7 +589,7 @@ PMD
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2232</x>
+      <x>2336</x>
       <y>680</y>
       <w>128</w>
       <h>24</h>
@@ -603,7 +603,7 @@ D-BLOCK
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2112</x>
+      <x>2216</x>
       <y>752</y>
       <w>136</w>
       <h>24</h>
@@ -614,7 +614,7 @@ D-BLOCK
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2352</x>
+      <x>2456</x>
       <y>696</y>
       <w>232</w>
       <h>384</h>
@@ -625,7 +625,7 @@ D-BLOCK
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2568</x>
+      <x>2672</x>
       <y>920</y>
       <w>128</w>
       <h>144</h>
@@ -639,7 +639,7 @@ style=wordwrap
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>2048</x>
+      <x>2152</x>
       <y>496</y>
       <w>144</w>
       <h>56</h>
@@ -653,7 +653,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2184</x>
+      <x>2288</x>
       <y>544</y>
       <w>64</w>
       <h>72</h>
@@ -664,7 +664,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>712</x>
+      <x>816</x>
       <y>1192</y>
       <w>128</w>
       <h>120</h>
@@ -682,7 +682,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>352</x>
+      <x>456</x>
       <y>1296</y>
       <w>376</w>
       <h>32</h>
@@ -694,7 +694,7 @@ vmemmap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
+      <x>944</x>
       <y>1304</y>
       <w>64</w>
       <h>328</h>
@@ -706,7 +706,7 @@ vmalloc</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>712</x>
+      <x>816</x>
       <y>1616</y>
       <w>128</w>
       <h>216</h>
@@ -720,7 +720,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>712</x>
+      <x>816</x>
       <y>1832</y>
       <w>128</w>
       <h>464</h>
@@ -734,7 +734,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>320</x>
+      <x>424</x>
       <y>2280</y>
       <w>408</w>
       <h>32</h>
@@ -746,7 +746,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>344</x>
+      <x>448</x>
       <y>1816</y>
       <w>384</w>
       <h>32</h>
@@ -758,7 +758,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2232</x>
+      <x>2336</x>
       <y>720</y>
       <w>128</w>
       <h>24</h>
@@ -772,7 +772,7 @@ D-TABLE
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2520</x>
+      <x>2624</x>
       <y>584</y>
       <w>128</w>
       <h>160</h>
@@ -786,7 +786,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2352</x>
+      <x>2456</x>
       <y>736</y>
       <w>184</w>
       <h>24</h>
@@ -797,7 +797,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2520</x>
+      <x>2624</x>
       <y>560</y>
       <w>128</w>
       <h>24</h>
@@ -811,7 +811,7 @@ PTE
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3040</x>
+      <x>3144</x>
       <y>560</y>
       <w>128</w>
       <h>216</h>
@@ -825,7 +825,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2520</x>
+      <x>2624</x>
       <y>648</y>
       <w>128</w>
       <h>24</h>
@@ -839,7 +839,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3040</x>
+      <x>3144</x>
       <y>536</y>
       <w>128</w>
       <h>24</h>
@@ -852,7 +852,7 @@ PAGE</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1728</x>
+      <x>1832</x>
       <y>344</y>
       <w>1184</w>
       <h>24</h>
@@ -866,7 +866,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1728</x>
+      <x>1832</x>
       <y>344</y>
       <w>208</w>
       <h>24</h>
@@ -880,7 +880,7 @@ PGD
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1936</x>
+      <x>2040</x>
       <y>344</y>
       <w>208</w>
       <h>24</h>
@@ -894,7 +894,7 @@ PUD
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2144</x>
+      <x>2248</x>
       <y>344</y>
       <w>208</w>
       <h>24</h>
@@ -908,7 +908,7 @@ PMD
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2352</x>
+      <x>2456</x>
       <y>344</y>
       <w>208</w>
       <h>24</h>
@@ -922,7 +922,7 @@ PTE
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1720</x>
+      <x>1824</x>
       <y>320</y>
       <w>232</w>
       <h>32</h>
@@ -934,7 +934,7 @@ PTE
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1928</x>
+      <x>2032</x>
       <y>320</y>
       <w>232</w>
       <h>32</h>
@@ -946,7 +946,7 @@ PTE
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2136</x>
+      <x>2240</x>
       <y>320</y>
       <w>232</w>
       <h>32</h>
@@ -958,7 +958,7 @@ PTE
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2344</x>
+      <x>2448</x>
       <y>320</y>
       <w>232</w>
       <h>32</h>
@@ -970,7 +970,7 @@ PTE
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2552</x>
+      <x>2656</x>
       <y>320</y>
       <w>376</w>
       <h>32</h>
@@ -982,7 +982,7 @@ PTE
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1944</x>
+      <x>2048</x>
       <y>264</y>
       <w>128</w>
       <h>32</h>
@@ -996,7 +996,7 @@ VA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3040</x>
+      <x>3144</x>
       <y>648</y>
       <w>128</w>
       <h>24</h>
@@ -1010,7 +1010,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2664</x>
+      <x>2768</x>
       <y>360</y>
       <w>24</w>
       <h>296</h>
@@ -1021,7 +1021,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2648</x>
+      <x>2752</x>
       <y>648</y>
       <w>48</w>
       <h>24</h>
@@ -1035,7 +1035,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2688</x>
+      <x>2792</x>
       <y>664</y>
       <w>368</w>
       <h>24</h>
@@ -1046,7 +1046,7 @@ style=wordwrap
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>2352</x>
+      <x>2456</x>
       <y>424</y>
       <w>144</w>
       <h>56</h>
@@ -1060,7 +1060,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2488</x>
+      <x>2592</x>
       <y>472</y>
       <w>48</w>
       <h>104</h>
@@ -1071,7 +1071,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1248</x>
+      <x>1352</x>
       <y>288</y>
       <w>152</w>
       <h>32</h>
@@ -1083,7 +1083,7 @@ PHYS_OFFSET</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1240</x>
+      <x>1344</x>
       <y>416</y>
       <w>64</w>
       <h>312</h>
@@ -1095,7 +1095,7 @@ vmlinux</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1240</x>
+      <x>1344</x>
       <y>704</y>
       <w>296</w>
       <h>200</h>
@@ -1106,7 +1106,7 @@ vmlinux</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1232</x>
+      <x>1336</x>
       <y>760</y>
       <w>368</w>
       <h>32</h>
@@ -1118,7 +1118,7 @@ __fdt_pointer</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1992</x>
+      <x>2096</x>
       <y>712</y>
       <w>128</w>
       <h>24</h>
@@ -1132,7 +1132,7 @@ D-TABLE
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1992</x>
+      <x>2096</x>
       <y>760</y>
       <w>128</w>
       <h>24</h>
@@ -1146,7 +1146,7 @@ D-TABLE
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1992</x>
+      <x>2096</x>
       <y>784</y>
       <w>128</w>
       <h>24</h>
@@ -1160,7 +1160,7 @@ D-TABLE
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2264</x>
+      <x>2368</x>
       <y>840</y>
       <w>128</w>
       <h>208</h>
@@ -1174,7 +1174,7 @@ style=wordwrap
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2112</x>
+      <x>2216</x>
       <y>776</y>
       <w>168</w>
       <h>80</h>
@@ -1185,7 +1185,7 @@ style=wordwrap
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2264</x>
+      <x>2368</x>
       <y>944</y>
       <w>128</w>
       <h>24</h>
@@ -1199,7 +1199,7 @@ D-TABLE
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1120</x>
+      <x>1224</x>
       <y>1584</y>
       <w>752</w>
       <h>144</h>
@@ -1218,7 +1218,7 @@ dveice tree 			swapper_pg_dir		SWAPPER_MM_MMUFLAGS      __fdt_pointer		__end_of_
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1360</x>
+      <x>1464</x>
       <y>0</y>
       <w>320</w>
       <h>136</h>
@@ -1240,7 +1240,7 @@ KERNEL_START 是虚拟地址
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1352</x>
+      <x>1456</x>
       <y>128</y>
       <w>120</w>
       <h>184</h>
@@ -1252,7 +1252,7 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>448</x>
+      <x>552</x>
       <y>656</y>
       <w>280</w>
       <h>32</h>
@@ -1265,7 +1265,7 @@ PAGE_OFFSET + TEXT_OFFSET</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
+      <x>936</x>
       <y>416</y>
       <w>296</w>
       <h>272</h>
@@ -1277,7 +1277,7 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>704</x>
+      <x>808</x>
       <y>664</y>
       <w>152</w>
       <h>24</h>
