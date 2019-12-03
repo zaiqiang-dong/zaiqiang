@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>270</y>
+      <x>770</x>
+      <y>330</y>
       <w>160</w>
       <h>150</h>
     </coordinates>
@@ -17,8 +17,8 @@ VMALLOC</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>250</y>
+      <x>920</x>
+      <y>310</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -30,8 +30,8 @@ VMALLOC_START = MODULES_END = 0xFFFF200008000000</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>400</y>
+      <x>920</x>
+      <y>460</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -43,8 +43,8 @@ VMALLOC_END = FFFF7DFFBFFF0000</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>2220</x>
-      <y>120</y>
+      <x>1980</x>
+      <y>180</y>
       <w>710</w>
       <h>700</h>
     </coordinates>
@@ -154,8 +154,8 @@ FIXADDR_TOP = 0xFFFF77FFFEE00000 - 0x00200000 = FFFF77FFFEC00000
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>190</y>
+      <x>770</x>
+      <y>250</y>
       <w>160</w>
       <h>80</h>
     </coordinates>
@@ -167,8 +167,8 @@ MODULES</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>130</y>
+      <x>920</x>
+      <y>190</y>
       <w>650</w>
       <h>40</h>
     </coordinates>
@@ -180,8 +180,8 @@ KASAN_SHADOW_START = VA_START = 0xFFFF000000000000</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>600</y>
+      <x>770</x>
+      <y>660</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -193,8 +193,8 @@ VMEMMAP</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>580</y>
+      <x>920</x>
+      <y>640</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -206,8 +206,8 @@ VMEMMAP_START = 0xFFFF7E0000000000</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>620</y>
+      <x>920</x>
+      <y>680</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -219,8 +219,8 @@ VMEMMAP_END = LINER_MAPS = 0xFFFF800000000000</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>520</y>
+      <x>770</x>
+      <y>580</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -232,8 +232,8 @@ PCI_IO</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>540</y>
+      <x>920</x>
+      <y>600</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -245,8 +245,8 @@ PCI_IO_END	= 0xFFFF7DFFFEE00000</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>500</y>
+      <x>920</x>
+      <y>560</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -258,8 +258,8 @@ PCI_IO_START = 0xFFFF7DFFFEE00000</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>290</y>
+      <x>770</x>
+      <y>350</y>
       <w>160</w>
       <h>30</h>
     </coordinates>
@@ -271,8 +271,8 @@ kernol</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>270</y>
+      <x>920</x>
+      <y>330</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -284,8 +284,8 @@ KERNEL_START = _text = 0xFFFF200008080000</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>300</y>
+      <x>920</x>
+      <y>360</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -297,8 +297,8 @@ KERNEL_END</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>150</y>
+      <x>770</x>
+      <y>210</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -309,8 +309,8 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>170</y>
+      <x>920</x>
+      <y>230</y>
       <w>650</w>
       <h>40</h>
     </coordinates>
@@ -322,8 +322,8 @@ MODULES_VADDR = KASAN_SHADOW_END = 0xFFFF200000000000</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>640</y>
+      <x>770</x>
+      <y>700</y>
       <w>160</w>
       <h>190</h>
     </coordinates>
@@ -335,8 +335,8 @@ liner_maps</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>810</y>
+      <x>920</x>
+      <y>870</y>
       <w>620</w>
       <h>40</h>
     </coordinates>
@@ -348,8 +348,8 @@ LINER_MAPS = 0xFFFFFFFFFFFFFFFF</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>450</y>
+      <x>770</x>
+      <y>510</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -361,8 +361,8 @@ FIXADDR_MAP</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>420</y>
+      <x>770</x>
+      <y>480</y>
       <w>160</w>
       <h>180</h>
     </coordinates>
@@ -373,8 +373,8 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>470</y>
+      <x>920</x>
+      <y>530</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -386,8 +386,8 @@ FIXADDR_TOP = FFFF77FFFEC00000</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>430</y>
+      <x>920</x>
+      <y>490</y>
       <w>640</w>
       <h>50</h>
     </coordinates>
@@ -400,8 +400,8 @@ FIXADDR_START =  FIXADDR_TOP - FIXADDR_SIZE
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>90</y>
+      <x>260</x>
+      <y>150</y>
       <w>160</w>
       <h>150</h>
     </coordinates>
@@ -414,8 +414,8 @@ TEXT_OFFSET</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>240</y>
+      <x>260</x>
+      <y>300</y>
       <w>160</w>
       <h>170</h>
     </coordinates>
@@ -433,8 +433,8 @@ kernel img
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>330</y>
+      <x>260</x>
+      <y>390</y>
       <w>160</w>
       <h>50</h>
     </coordinates>
@@ -449,8 +449,8 @@ idmap_text
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>410</y>
+      <x>260</x>
+      <y>470</y>
       <w>160</w>
       <h>70</h>
     </coordinates>
@@ -463,8 +463,8 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>480</y>
+      <x>260</x>
+      <y>540</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -479,8 +479,8 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>520</y>
+      <x>260</x>
+      <y>580</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -494,8 +494,8 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>560</y>
+      <x>260</x>
+      <y>620</y>
       <w>160</w>
       <h>960</h>
     </coordinates>
@@ -508,8 +508,8 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>640</y>
+      <x>260</x>
+      <y>700</y>
       <w>160</w>
       <h>100</h>
     </coordinates>
@@ -524,8 +524,8 @@ Device Tree
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>70</y>
+      <x>0</x>
+      <y>130</y>
       <w>280</w>
       <h>40</h>
     </coordinates>

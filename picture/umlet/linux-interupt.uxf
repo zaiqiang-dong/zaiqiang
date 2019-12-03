@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>890</x>
+      <y>0</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>linux-interupt
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1400</x>
+      <y>700</y>
+      <w>290</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>irq_domain
+lw=2
+--
+	struct list_head link;
+	const char *name;
+	const struct irq_domain_ops *ops;
+	void *host_data;
+	unsigned int flags;
+
+	/* Optional data */
+	struct fwnode_handle *fwnode;
+	enum irq_domain_bus_token bus_token;
+	struct irq_domain_chip_generic *gc;
+#ifdef	CONFIG_IRQ_DOMAIN_HIERARCHY
+	struct irq_domain *parent;
+#endif
+
+	/* reverse map data. The linear map gets appended to the irq_domain */
+	irq_hw_number_t hwirq_max;
+	unsigned int revmap_direct_max_irq;
+	unsigned int revmap_size;
+	struct radix_tree_root revmap_tree;
+	unsigned int linear_revmap[];
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>140</y>
+      <w>450</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>irq_domain_ops
+lw=2
+--
+	int (*match)(struct irq_domain *d, struct device_node *node,
+		     enum irq_domain_bus_token bus_token);
+	int (*select)(struct irq_domain *d, struct irq_fwspec *fwspec,
+		      enum irq_domain_bus_token bus_token);
+	int (*map)(struct irq_domain *d, unsigned int virq, irq_hw_number_t hw);
+	void (*unmap)(struct irq_domain *d, unsigned int virq);
+	int (*xlate)(struct irq_domain *d, struct device_node *node,
+		     const u32 *intspec, unsigned int intsize,
+		     unsigned long *out_hwirq, unsigned int *out_type);
+
+#ifdef	CONFIG_IRQ_DOMAIN_HIERARCHY
+	/* extended V2 interfaces to support hierarchy irq_domains */
+	int (*alloc)(struct irq_domain *d, unsigned int virq,
+		     unsigned int nr_irqs, void *arg);
+	void (*free)(struct irq_domain *d, unsigned int virq,
+		     unsigned int nr_irqs);
+	void (*activate)(struct irq_domain *d, struct irq_data *irq_data);
+	void (*deactivate)(struct irq_domain *d, struct irq_data *irq_data);
+	int (*translate)(struct irq_domain *d, struct irq_fwspec *fwspec,
+			 unsigned long *out_hwirq, unsigned int *out_type);
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>510</y>
+      <w>640</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>620.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1470</x>
+      <y>530</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>irq_domain_list
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1520</x>
+      <y>550</y>
+      <w>30</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>1110</y>
+      <w>340</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>irq_fwspec
+lw=2
+--
+	struct fwnode_handle *fwnode;
+	int param_count;
+	u32 param[IRQ_DOMAIN_IRQ_SPEC_PARAMS];
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>810</y>
+      <w>270</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>fwnode_handle
+lw=2
+--
+	enum fwnode_type type;
+	struct fwnode_handle *secondary;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>880</y>
+      <w>30</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;230.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>840</y>
+      <w>340</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>720</y>
+      <w>220</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>device_node
+lw=2
+--
+	const char *name;
+	const char *type;
+	phandle phandle;
+	const char *full_name;
+	struct fwnode_handle fwnode;
+
+	struct	property *properties;
+	struct	property *deadprops;	/* removed properties */
+	struct	device_node *parent;
+	struct	device_node *child;
+	struct	device_node *sibling;
+	struct	kobject kobj;
+	unsigned long _flags;
+	void	*data;
+#if defined(CONFIG_SPARC)
+	const char *path_component_name;
+	unsigned int unique_id;
+	struct of_irq_controller *irq_trans;
+#endif
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>810</y>
+      <w>420</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+</diagram>
