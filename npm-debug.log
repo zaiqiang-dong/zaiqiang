@@ -1,0 +1,92 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   '--global',
+1 verbose cli   'install',
+1 verbose cli   'yarn' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData yarn
+8 silly fetchNamedPackageData yarn
+9 silly mapToRegistry name yarn
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/yarn
+13 verbose get https://registry.npmjs.org/yarn not expired, no request
+14 silly install normalizeTree
+15 silly loadCurrentTree Finishing
+16 silly loadIdealTree Starting
+17 silly install loadIdealTree
+18 silly cloneCurrentTree Starting
+19 silly install cloneCurrentTreeToIdealTree
+20 silly cloneCurrentTree Finishing
+21 silly loadShrinkwrap Starting
+22 silly install loadShrinkwrap
+23 silly loadShrinkwrap Finishing
+24 silly loadAllDepsIntoIdealTree Starting
+25 silly install loadAllDepsIntoIdealTree
+26 silly resolveWithNewModule yarn@1.21.0 checking installable status
+27 silly cache add args [ 'yarn', null ]
+28 verbose cache add spec yarn
+29 silly cache add parsed spec Result {
+29 silly cache add   raw: 'yarn',
+29 silly cache add   scope: null,
+29 silly cache add   name: 'yarn',
+29 silly cache add   rawSpec: '',
+29 silly cache add   spec: 'latest',
+29 silly cache add   type: 'tag' }
+30 silly addNamed yarn@latest
+31 verbose addNamed "latest" is being treated as a dist-tag for yarn
+32 info addNameTag [ 'yarn', 'latest' ]
+33 silly mapToRegistry name yarn
+34 silly mapToRegistry using default registry
+35 silly mapToRegistry registry https://registry.npmjs.org/
+36 silly mapToRegistry uri https://registry.npmjs.org/yarn
+37 verbose addNameTag registry:https://registry.npmjs.org/yarn not in flight; fetching
+38 verbose get https://registry.npmjs.org/yarn not expired, no request
+39 silly addNameTag next cb for yarn with tag latest
+40 silly addNamed yarn@1.21.0
+41 verbose addNamed "1.21.0" is a plain semver version for yarn
+42 silly cache afterAdd yarn@1.21.0
+43 verbose afterAdd /home/zqdong/.npm/yarn/1.21.0/package/package.json not in flight; writing
+44 verbose afterAdd /home/zqdong/.npm/yarn/1.21.0/package/package.json written
+45 silly loadAllDepsIntoIdealTree Finishing
+46 silly idealTree:prePrune lib
+46 silly idealTree:prePrune └── yarn@1.21.0
+47 silly loadIdealTree Finishing
+48 silly currentTree lib
+48 silly currentTree └── yarn@1.21.0
+49 silly idealTree lib
+49 silly idealTree └── yarn@1.21.0
+50 silly generateActionsToTake Starting
+51 silly install generateActionsToTake
+52 warn checkPermissions Missing write access to /usr/local/lib/node_modules/yarn
+53 warn checkPermissions Missing write access to /usr/local/lib/node_modules
+54 silly rollbackFailedOptional Starting
+55 silly rollbackFailedOptional Finishing
+56 silly runTopLevelLifecycles Starting
+57 silly runTopLevelLifecycles Finishing
+58 silly install printInstalled
+59 verbose stack Error: EACCES: permission denied, access '/usr/local/lib/node_modules/yarn'
+59 verbose stack     at Error (native)
+60 verbose cwd /home/zqdong/code/zaiqiang
+61 error Linux 4.15.0-45-generic
+62 error argv "/usr/bin/nodejs" "/usr/bin/npm" "--global" "install" "yarn"
+63 error node v4.2.6
+64 error npm  v3.5.2
+65 error path /usr/local/lib/node_modules/yarn
+66 error code EACCES
+67 error errno -13
+68 error syscall access
+69 error Error: EACCES: permission denied, access '/usr/local/lib/node_modules/yarn'
+69 error     at Error (native)
+69 error  { [Error: EACCES: permission denied, access '/usr/local/lib/node_modules/yarn']
+69 error   errno: -13,
+69 error   code: 'EACCES',
+69 error   syscall: 'access',
+69 error   path: '/usr/local/lib/node_modules/yarn' }
+70 error Please try running this command again as root/Administrator.
+71 verbose exit [ -13, true ]
