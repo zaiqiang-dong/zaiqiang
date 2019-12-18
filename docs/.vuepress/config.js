@@ -69,7 +69,7 @@ module.exports = {
             {
 				title: '文件系统',
 				collapsable: true,
-				children: ['/linux/filesystem/initrd']
+				children: ['/linux/filesystem/initrd/initrd']
 			},
             {
 				title: '并发同步',
