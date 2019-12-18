@@ -67,6 +67,11 @@ module.exports = {
 				children: ['/linux/memory/modle/modle']
 			},
             {
+				title: '文件系统',
+				collapsable: true,
+				children: ['/linux/filesystem/initrd']
+			},
+            {
 				title: '并发同步',
 				collapsable: true,
 				children: ['/linux/concurency/smb']
