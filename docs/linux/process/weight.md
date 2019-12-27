@@ -40,8 +40,10 @@ $$vruntime = \frac{delta*nice\_0\_weight}{weight}$$
 $$ = \frac{delta*nice\_0\_weight * 2^{32}}{weight} >>32$$
 $$ = delta*nice\_0\_weight * inv\_weight >> 32$$
 
-::: TIP
+::: tip
+
  delta 为调度间隔，一般为6ms.
+
 :::
 
 ### runnable_avg_sum
