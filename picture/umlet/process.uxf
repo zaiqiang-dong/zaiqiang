@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1890</x>
-      <y>0</y>
-      <w>200</w>
-      <h>910</h>
+      <x>0</x>
+      <y>710</y>
+      <w>370</w>
+      <h>1740</h>
     </coordinates>
     <panel_attributes>task_struct
 lw=2
@@ -464,8 +464,8 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1540</x>
-      <y>110</y>
+      <x>1450</x>
+      <y>910</y>
       <w>180</w>
       <h>100</h>
     </coordinates>
@@ -480,13 +480,14 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>990</x>
-      <y>110</y>
+      <x>710</x>
+      <y>1030</y>
       <w>360</w>
-      <h>490</h>
+      <h>530</h>
     </coordinates>
     <panel_attributes>sched_entity
 lw=2
+
 --
 	struct load_weight	load;		/* for load-balancing */
 	struct rb_node		run_node;
@@ -515,7 +516,7 @@ lw=2
 
 #ifdef CONFIG_SMP
 	/* Per entity load average tracking */
-	struct sched_avg	avg;
+	struct sched_avg avg;
 #endif
 </panel_attributes>
     <additional_attributes/>
@@ -523,20 +524,20 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1340</x>
-      <y>110</y>
-      <w>220</w>
-      <h>30</h>
+      <x>1060</x>
+      <y>910</y>
+      <w>410</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;10.0;200.0;10.0</additional_attributes>
+    <additional_attributes>10.0;130.0;390.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1090</x>
-      <y>720</y>
+      <x>1410</x>
+      <y>1740</y>
       <w>260</w>
       <h>100</h>
     </coordinates>
@@ -552,8 +553,8 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>550</x>
-      <y>670</y>
+      <x>1450</x>
+      <y>1310</y>
       <w>170</w>
       <h>310</h>
     </coordinates>
@@ -642,5 +643,254 @@ struct cfs_rq {
 #endif /* CONFIG_FAIR_GROUP_SCHED */
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>1490</y>
+      <w>370</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;350.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>1310</y>
+      <w>410</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;70.0;390.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>1030</y>
+      <w>370</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;40.0;350.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>40</y>
+      <w>350</w>
+      <h>910</h>
+    </coordinates>
+    <panel_attributes>sched_class
+lw=2
+--
+	const struct sched_class *next;
+
+	void (*enqueue_task) (struct rq *rq, struct task_struct *p, int flags);
+	void (*dequeue_task) (struct rq *rq, struct task_struct *p, int flags);
+	void (*yield_task) (struct rq *rq);
+	bool (*yield_to_task) (struct rq *rq, struct task_struct *p, bool preempt);
+
+	void (*check_preempt_curr) (struct rq *rq, struct task_struct *p, int flags);
+
+	/*
+	 * It is the responsibility of the pick_next_task() method that will
+	 * return the next task to call put_prev_task() on the @prev task or
+	 * something equivalent.
+	 *
+	 * May return RETRY_TASK when it finds a higher prio class has runnable
+	 * tasks.
+	 */
+	struct task_struct * (*pick_next_task) (struct rq *rq,
+						struct task_struct *prev,
+						struct pin_cookie cookie);
+	void (*put_prev_task) (struct rq *rq, struct task_struct *p);
+
+#ifdef CONFIG_SMP
+	int  (*select_task_rq)(struct task_struct *p, int task_cpu, int sd_flag, int flags);
+	void (*migrate_task_rq)(struct task_struct *p);
+
+	void (*task_woken) (struct rq *this_rq, struct task_struct *task);
+
+	void (*set_cpus_allowed)(struct task_struct *p,
+				 const struct cpumask *newmask);
+
+	void (*rq_online)(struct rq *rq);
+	void (*rq_offline)(struct rq *rq);
+#endif
+
+	void (*set_curr_task) (struct rq *rq);
+	void (*task_tick) (struct rq *rq, struct task_struct *p, int queued);
+	void (*task_fork) (struct task_struct *p);
+	void (*task_dead) (struct task_struct *p);
+
+	/*
+	 * The switched_from() call is allowed to drop rq-&gt;lock, therefore we
+	 * cannot assume the switched_from/switched_to pair is serliazed by
+	 * rq-&gt;lock. They are however serialized by p-&gt;pi_lock.
+	 */
+	void (*switched_from) (struct rq *this_rq, struct task_struct *task);
+	void (*switched_to) (struct rq *this_rq, struct task_struct *task);
+	void (*prio_changed) (struct rq *this_rq, struct task_struct *task,
+			     int oldprio);
+
+	unsigned int (*get_rr_interval) (struct rq *rq,
+					 struct task_struct *task);
+
+	void (*update_curr) (struct rq *rq);
+
+#define TASK_SET_GROUP  0
+#define TASK_MOVE_GROUP	1
+
+#ifdef CONFIG_FAIR_GROUP_SCHED
+	void (*task_change_group) (struct task_struct *p, int type);
+#endif
+#ifdef CONFIG_SCHED_WALT
+	void (*fixup_walt_sched_stats)(struct rq *rq, struct task_struct *p,
+				      u32 new_task_load, u32 new_pred_demand);
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>50</y>
+      <w>380</w>
+      <h>1020</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;1000.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1530</x>
+      <y>190</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>stop_sched_class
+lw=2
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>180</y>
+      <w>490</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;470.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1560</x>
+      <y>330</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>idle_sched_class
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1590</x>
+      <y>450</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>fair_sched_class
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1590</x>
+      <y>570</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>rt_sched_class
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1600</x>
+      <y>720</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>dl_sched_class
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>330</y>
+      <w>520</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;500.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>450</y>
+      <w>550</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;530.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>580</y>
+      <w>550</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;530.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>720</y>
+      <w>560</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;540.0;10.0</additional_attributes>
   </element>
 </diagram>
