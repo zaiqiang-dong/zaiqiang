@@ -79,8 +79,8 @@ module.exports = {
 			{
 				title: '进程管理',
 				collapsable: true,
-				children: ['/linux/process/weight/weight'],
-				children: ['/linux/process/priority/priority']
+				children: ['/linux/process/weight/weight',
+                           '/linux/process/priority/priority']
 			}],
 			'/arm/': [
             {
