@@ -59,9 +59,23 @@ nice (int incr)
 当我们 man setpriority时，可以看到：
 >The prio argument is a value in the range -20 to 19 (but see NOTES below).
 
-所以在用户空间priority概念只有一个，就是一个-20 to 19整数。
+所以在用户空间priority概念只有一个，就是一个-20（优先级最高）～19（优先级最低)的整数。
+## 内核中的优先级
 
+先看代码：
 
+```
+struct task_struct {
+	...
+    int prio, static_prio, normal_prio;
+	unsigned int rt_priority;
+	...
+    unsigned int policy;
+	...
+}
+```
+
+侍完成...
 
  
 ---
