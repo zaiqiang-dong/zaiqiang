@@ -21,7 +21,9 @@ int getpriority(int which, id_t who);
 int setpriority(int which, id_t who, int value);
 
 ```
+
 其中nice()源码如下：
+
 ```
 int
 nice (int incr)
@@ -51,9 +53,6 @@ nice (int incr)
   __set_errno (save);
   return __getpriority (PRIO_PROCESS, 0);
 }
-
-
-
 ```
 
 所以只有setpriority getpriority.
