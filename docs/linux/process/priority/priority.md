@@ -24,7 +24,7 @@ int setpriority(int which, id_t who, int value);
 
 其中nice()源码如下：
 
-``` c
+```c
 int
 nice (int incr)
 {
