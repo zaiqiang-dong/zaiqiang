@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1130</x>
-      <y>670</y>
-      <w>370</w>
-      <h>1740</h>
+      <x>904</x>
+      <y>536</y>
+      <w>296</w>
+      <h>1392</h>
     </coordinates>
     <panel_attributes>task_struct
 lw=2
@@ -464,10 +464,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2580</x>
-      <y>870</y>
-      <w>180</w>
-      <h>100</h>
+      <x>2064</x>
+      <y>696</y>
+      <w>144</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>load_weight
 lw=2
@@ -480,10 +480,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1840</x>
-      <y>990</y>
-      <w>360</w>
-      <h>530</h>
+      <x>1472</x>
+      <y>792</y>
+      <w>288</w>
+      <h>424</h>
     </coordinates>
     <panel_attributes>sched_entity
 lw=2
@@ -524,10 +524,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2190</x>
-      <y>870</y>
-      <w>410</w>
-      <h>150</h>
+      <x>1752</x>
+      <y>696</y>
+      <w>328</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -536,10 +536,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2540</x>
-      <y>1700</y>
-      <w>260</w>
-      <h>100</h>
+      <x>2032</x>
+      <y>1360</y>
+      <w>208</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>sched_avg
 lw=2
@@ -553,10 +553,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2580</x>
-      <y>1270</y>
-      <w>170</w>
-      <h>310</h>
+      <x>2064</x>
+      <y>1016</y>
+      <w>136</w>
+      <h>248</h>
     </coordinates>
     <panel_attributes>cfs_rq
 lw=2
@@ -647,10 +647,10 @@ struct cfs_rq {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2190</x>
-      <y>1450</y>
-      <w>370</w>
-      <h>280</h>
+      <x>1752</x>
+      <y>1160</y>
+      <w>296</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -659,10 +659,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2190</x>
-      <y>1270</y>
-      <w>410</w>
-      <h>90</h>
+      <x>1752</x>
+      <y>1016</y>
+      <w>328</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -671,10 +671,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1490</x>
-      <y>990</y>
-      <w>370</w>
-      <h>60</h>
+      <x>1192</x>
+      <y>792</y>
+      <w>296</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -683,10 +683,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1850</x>
+      <x>1480</x>
       <y>0</y>
-      <w>350</w>
-      <h>910</h>
+      <w>280</w>
+      <h>728</h>
     </coordinates>
     <panel_attributes>sched_class
 lw=2
@@ -763,10 +763,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1490</x>
-      <y>10</y>
-      <w>380</w>
-      <h>1020</h>
+      <x>1192</x>
+      <y>8</y>
+      <w>304</w>
+      <h>816</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -775,10 +775,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2660</x>
-      <y>150</y>
-      <w>170</w>
-      <h>30</h>
+      <x>2128</x>
+      <y>120</y>
+      <w>136</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>stop_sched_class
 lw=2
@@ -788,10 +788,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2190</x>
-      <y>140</y>
-      <w>490</w>
-      <h>40</h>
+      <x>1752</x>
+      <y>112</y>
+      <w>392</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -800,10 +800,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2690</x>
-      <y>290</y>
-      <w>140</w>
-      <h>30</h>
+      <x>2152</x>
+      <y>232</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>idle_sched_class
 lw=2</panel_attributes>
@@ -812,10 +812,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2720</x>
-      <y>410</y>
-      <w>140</w>
-      <h>30</h>
+      <x>2176</x>
+      <y>328</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>fair_sched_class
 lw=2</panel_attributes>
@@ -824,10 +824,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2720</x>
-      <y>530</y>
-      <w>140</w>
-      <h>30</h>
+      <x>2176</x>
+      <y>424</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>rt_sched_class
 lw=2</panel_attributes>
@@ -836,10 +836,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2730</x>
-      <y>680</y>
-      <w>140</w>
-      <h>30</h>
+      <x>2184</x>
+      <y>544</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>dl_sched_class
 lw=2</panel_attributes>
@@ -848,10 +848,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2190</x>
-      <y>290</y>
-      <w>520</w>
-      <h>30</h>
+      <x>1752</x>
+      <y>232</y>
+      <w>416</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -860,10 +860,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2190</x>
-      <y>410</y>
-      <w>550</w>
-      <h>30</h>
+      <x>1752</x>
+      <y>328</y>
+      <w>440</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -872,10 +872,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2190</x>
-      <y>540</y>
-      <w>550</w>
-      <h>30</h>
+      <x>1752</x>
+      <y>432</y>
+      <w>440</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -884,10 +884,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2190</x>
-      <y>680</y>
-      <w>560</w>
-      <h>30</h>
+      <x>1752</x>
+      <y>544</y>
+      <w>448</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -897,9 +897,9 @@ lw=2</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>1250</y>
-      <w>350</w>
-      <h>920</h>
+      <y>1000</y>
+      <w>280</w>
+      <h>736</h>
     </coordinates>
     <panel_attributes>mm_struct
 lw=2
@@ -1041,13 +1041,483 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>340</x>
-      <y>1250</y>
-      <w>810</w>
-      <h>490</h>
+      <x>272</x>
+      <y>1000</y>
+      <w>648</w>
+      <h>392</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
     <additional_attributes>790.0;470.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1504</x>
+      <y>1496</y>
+      <w>272</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes> sched_rt_entity
+--
+	struct list_head		run_list;
+	unsigned long			timeout;
+	unsigned long			watchdog_stamp;
+	unsigned int			time_slice;
+	unsigned short			on_rq;
+	unsigned short			on_list;
+
+	struct sched_rt_entity		*back;
+#ifdef CONFIG_RT_GROUP_SCHED
+	struct sched_rt_entity		*parent;
+	/* rq on which this entity is (to be) queued: */
+	struct rt_rq			*rt_rq;
+	/* rq "owned" by this entity/group: */
+	struct rt_rq			*my_q;
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1192</x>
+      <y>832</y>
+      <w>328</w>
+      <h>688</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;390.0;840.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1496</x>
+      <y>1800</y>
+      <w>240</w>
+      <h>872</h>
+    </coordinates>
+    <panel_attributes>sched_dl_entity
+--
+	struct rb_node			rb_node;
+
+	/*
+	 * Original scheduling parameters. Copied here from sched_attr
+	 * during sched_setattr(), they will remain the same until
+	 * the next sched_setattr().
+	 */
+	u64				dl_runtime;	/* Maximum runtime for each instance	*/
+	u64				dl_deadline;	/* Relative deadline of each instance	*/
+	u64				dl_period;	/* Separation of two instances (period) */
+	u64				dl_bw;		/* dl_runtime / dl_period		*/
+	u64				dl_density;	/* dl_runtime / dl_deadline		*/
+
+	/*
+	 * Actual scheduling parameters. Initialized with the values above,
+	 * they are continously updated during task execution. Note that
+	 * the remaining runtime could be &lt; 0 in case we are in overrun.
+	 */
+	s64				runtime;	/* Remaining runtime for this instance	*/
+	u64				deadline;	/* Absolute deadline for this instance	*/
+	unsigned int			flags;		/* Specifying the scheduler behaviour	*/
+
+	/*
+	 * Some bool flags:
+	 *
+	 * @dl_throttled tells if we exhausted the runtime. If so, the
+	 * task has to wait for a replenishment to be performed at the
+	 * next firing of dl_timer.
+	 *
+	 * @dl_boosted tells if we are boosted due to DI. If so we are
+	 * outside bandwidth enforcement mechanism (but only until we
+	 * exit the critical section);
+	 *
+	 * @dl_yielded tells if task gave up the CPU before consuming
+	 * all its available runtime during the last job.
+	 *
+	 * @dl_non_contending tells if the task is inactive while still
+	 * contributing to the active utilization. In other words, it
+	 * indicates if the inactive timer has been armed and its handler
+	 * has not been executed yet. This flag is useful to avoid race
+	 * conditions between the inactive timer handler and the wakeup
+	 * code.
+	 */
+	int				dl_throttled;
+	int				dl_boosted;
+	int				dl_yielded;
+	int				dl_non_contending;
+
+	/*
+	 * Bandwidth enforcement timer. Each -deadline task has its
+	 * own bandwidth to be enforced, thus we need one timer per task.
+	 */
+	struct hrtimer			dl_timer;
+
+	/*
+	 * Inactive timer, responsible for decreasing the active utilization
+	 * at the "0-lag time". When a -deadline task blocks, it contributes
+	 * to GRUB's active utilization until the "0-lag time", hence a
+	 * timer is needed to decrease the active utilization at the correct
+	 * time.
+	 */
+	struct hrtimer inactive_timer;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1192</x>
+      <y>864</y>
+      <w>320</w>
+      <h>960</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;380.0;1180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2000</x>
+      <y>1672</y>
+      <w>288</w>
+      <h>512</h>
+    </coordinates>
+    <panel_attributes>rt_rq
+--
+	struct rt_prio_array active;
+	unsigned int rt_nr_running;
+	unsigned int rr_nr_running;
+#if defined CONFIG_SMP || defined CONFIG_RT_GROUP_SCHED
+	struct {
+		int curr; /* highest queued rt task prio */
+#ifdef CONFIG_SMP
+		int next; /* next highest */
+#endif
+	} highest_prio;
+#endif
+#ifdef CONFIG_SMP
+	unsigned long rt_nr_migratory;
+	unsigned long rt_nr_total;
+	int overloaded;
+	struct plist_head pushable_tasks;
+#ifdef HAVE_RT_PUSH_IPI
+	int push_flags;
+	int push_cpu;
+	struct irq_work push_work;
+	raw_spinlock_t push_lock;
+#endif
+#endif /* CONFIG_SMP */
+	int rt_queued;
+
+	int rt_throttled;
+	u64 rt_time;
+	u64 rt_runtime;
+	/* Nests inside the rq lock: */
+	raw_spinlock_t rt_runtime_lock;
+
+#ifdef CONFIG_RT_GROUP_SCHED
+	unsigned long rt_nr_boosted;
+
+	struct rq *rq;
+	struct task_group *tg;
+#endif
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1768</x>
+      <y>1656</y>
+      <w>248</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2040</x>
+      <y>2320</y>
+      <w>248</w>
+      <h>344</h>
+    </coordinates>
+    <panel_attributes>dl_rq 
+--
+	/* runqueue is an rbtree, ordered by deadline */
+	struct rb_root_cached root;
+
+	unsigned long dl_nr_running;
+
+#ifdef CONFIG_SMP
+	/*
+	 * Deadline values of the currently executing and the
+	 * earliest ready task on this rq. Caching these facilitates
+	 * the decision wether or not a ready but not running task
+	 * should migrate somewhere else.
+	 */
+	struct {
+		u64 curr;
+		u64 next;
+	} earliest_dl;
+
+	unsigned long dl_nr_migratory;
+	int overloaded;
+
+	/*
+	 * Tasks on this rq that can be pushed away. They are kept in
+	 * an rb-tree, ordered by tasks' deadlines, with caching
+	 * of the leftmost (earliest deadline) element.
+	 */
+	struct rb_root_cached pushable_dl_tasks_root;
+#else
+	struct dl_bw dl_bw;
+#endif
+	/*
+	 * "Active utilization" for this runqueue: increased when a
+	 * task wakes up (becomes TASK_RUNNING) and decreased when a
+	 * task blocks
+	 */
+	u64 running_bw;
+
+	/*
+	 * Utilization of the tasks "assigned" to this runqueue (including
+	 * the tasks that are in runqueue and the tasks that executed on this
+	 * CPU and blocked). Increased when a task moves to this runqueue, and
+	 * decreased when the task moves away (migrates, changes scheduling
+	 * policy, or terminates).
+	 * This is needed to compute the "inactive utilization" for the
+	 * runqueue (inactive utilization = this_bw - running_bw).
+	 */
+	u64 this_bw;
+	u64 extra_bw;
+
+	/*
+	 * Inverse of the fraction of CPU utilization that can be reclaimed
+	 * by the GRUB algorithm.
+	 */
+	u64 bw_ratio;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2992</x>
+      <y>1648</y>
+      <w>320</w>
+      <h>768</h>
+    </coordinates>
+    <panel_attributes>rq
+--
+	/* runqueue lock: */
+	raw_spinlock_t lock;
+
+	/*
+	 * nr_running and cpu_load should be in the same cacheline because
+	 * remote CPUs use both these fields when doing load calculation.
+	 */
+	unsigned int nr_running;
+#ifdef CONFIG_NUMA_BALANCING
+	unsigned int nr_numa_running;
+	unsigned int nr_preferred_running;
+#endif
+	#define CPU_LOAD_IDX_MAX 5
+	unsigned long cpu_load[CPU_LOAD_IDX_MAX];
+#ifdef CONFIG_NO_HZ_COMMON
+#ifdef CONFIG_SMP
+	unsigned long last_load_update_tick;
+#endif /* CONFIG_SMP */
+	unsigned long nohz_flags;
+#endif /* CONFIG_NO_HZ_COMMON */
+#ifdef CONFIG_NO_HZ_FULL
+	unsigned long last_sched_tick;
+#endif
+	/* capture load from *all* tasks on this cpu: */
+	struct load_weight load;
+	unsigned long nr_load_updates;
+	u64 nr_switches;
+
+	struct cfs_rq cfs;
+	struct rt_rq rt;
+	struct dl_rq dl;
+
+#ifdef CONFIG_FAIR_GROUP_SCHED
+	/* list of leaf cfs_rq on this cpu: */
+	struct list_head leaf_cfs_rq_list;
+	struct list_head *tmp_alone_branch;
+#endif /* CONFIG_FAIR_GROUP_SCHED */
+
+	/*
+	 * This is part of a global counter where only the total sum
+	 * over all CPUs matters. A task can increase this counter on
+	 * one CPU and if it got migrated afterwards it may decrease
+	 * it on another CPU. Always updated under the runqueue lock:
+	 */
+	unsigned long nr_uninterruptible;
+
+	struct task_struct *curr, *idle, *stop;
+	unsigned long next_balance;
+	struct mm_struct *prev_mm;
+
+	unsigned int clock_update_flags;
+	u64 clock;
+	u64 clock_task;
+
+	atomic_t nr_iowait;
+
+#ifdef CONFIG_SMP
+	struct root_domain *rd;
+	struct sched_domain *sd;
+
+	unsigned long cpu_capacity;
+	unsigned long cpu_capacity_orig;
+
+	struct callback_head *balance_callback;
+
+	unsigned char idle_balance;
+	/* For active balancing */
+	int active_balance;
+	int push_cpu;
+	struct cpu_stop_work active_balance_work;
+	/* cpu of this runqueue: */
+	int cpu;
+	int online;
+
+	struct list_head cfs_tasks;
+
+	u64 rt_avg;
+	u64 age_stamp;
+	u64 idle_stamp;
+	u64 avg_idle;
+
+	/* This is used to determine avg_idle's max value */
+	u64 max_idle_balance_cost;
+#endif
+
+#ifdef CONFIG_IRQ_TIME_ACCOUNTING
+	u64 prev_irq_time;
+#endif
+#ifdef CONFIG_PARAVIRT
+	u64 prev_steal_time;
+#endif
+#ifdef CONFIG_PARAVIRT_TIME_ACCOUNTING
+	u64 prev_steal_time_rq;
+#endif
+
+	/* calc_load related fields */
+	unsigned long calc_load_update;
+	long calc_load_active;
+
+#ifdef CONFIG_SCHED_HRTICK
+#ifdef CONFIG_SMP
+	int hrtick_csd_pending;
+	call_single_data_t hrtick_csd;
+#endif
+	struct hrtimer hrtick_timer;
+#endif
+
+#ifdef CONFIG_SCHEDSTATS
+	/* latency stats */
+	struct sched_info rq_sched_info;
+	unsigned long long rq_cpu_time;
+	/* could above be rq-&gt;cfs_rq.exec_clock + rq-&gt;rt_rq.rt_runtime ? */
+
+	/* sys_sched_yield() stats */
+	unsigned int yld_count;
+
+	/* schedule() stats */
+	unsigned int sched_count;
+	unsigned int sched_goidle;
+
+	/* try_to_wake_up() stats */
+	unsigned int ttwu_count;
+	unsigned int ttwu_local;
+#endif
+
+#ifdef CONFIG_SMP
+	struct llist_head wake_list;
+#endif
+
+#ifdef CONFIG_CPU_IDLE
+	/* Must be inspected within a rcu lock section */
+	struct cpuidle_state *idle_state;
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2280</x>
+      <y>1656</y>
+      <w>728</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;370.0;890.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2192</x>
+      <y>1136</y>
+      <w>816</w>
+      <h>544</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;1000.0;660.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2280</x>
+      <y>1656</y>
+      <w>728</w>
+      <h>808</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;990.0;890.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2192</x>
+      <y>1016</y>
+      <w>816</w>
+      <h>1040</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>1000.0;1280.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2280</x>
+      <y>1680</y>
+      <w>728</w>
+      <h>384</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>890.0;460.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2280</x>
+      <y>2056</y>
+      <w>728</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>890.0;10.0;10.0;340.0</additional_attributes>
   </element>
 </diagram>

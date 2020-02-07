@@ -230,7 +230,7 @@ static int effective_prio(struct task_struct *p)
 
 ```
 
-这段代码很简单，就是如果不是实时进程，我们就不去改变他的prio，直接返回它自己的prio.
+这段代码很简单，就是如果是实时进程，我们就不去改变他的prio，直接返回它自己的prio.其他情况，返回normal_prio.
 
 ## 总结
 
