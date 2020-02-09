@@ -2,7 +2,20 @@
 
 ### weight
 
-```
+```c
+/*
+ * Nice levels are multiplicative, with a gentle 10% change for every
+ * nice level changed. I.e. when a CPU-bound task goes from nice 0 to
+ * nice 1, it will get ~10% less CPU time than another CPU-bound task
+ * that remained on nice 0.
+ *
+ * The "10% effect" is relative and cumulative: from _any_ nice level,
+ * if you go up 1 level, it's -10% CPU usage, if you go down 1 level
+ * it's +10% CPU usage. (to achieve that we use a multiplier of 1.25.
+ * If a task goes up by ~10% and another task goes down by ~10% then
+ * the relative distance between them is ~25%.)
+ */
+
 static const int prio_to_weight[40] = {
  /* -20 */     88761,     71755,     56483,     46273,     36291,
  /* -15 */     29154,     23254,     18705,     14949,     11916,
@@ -15,6 +28,16 @@ static const int prio_to_weight[40] = {
 };
 
 ```
+这里有一个10%效应和一个1.25系数，这里假设有两个进程A和B，优先级均为120（对应用户态就是nice=0）,那两个进程在系统中应该各使用505的cpu.通过注释可以看出，如果一个进程优先级上升1个级别，它将少使用至少~10%的cpu,如果下降一个level则多使用至少10%的cpu.假设B进程优先级变121,A保持不变，那么B应比A多使用10%的cpu.也就是B使用55%，A使用45%。也就是10效应。那么1.25系数怎么来的，因为内核设定优先级120权重值为1024.在A和B这种情况下，A的优先级没有变化，那么权重为1024,设B的权重为x 那么
+
+$$
+\frac{1024}{1024+x} = 0.45 
+$$
+那么x 就是1251.555555556, 然后
+$$
+\frac{1251}{1024} 大约为1.25 
+$$
+这个系数就是这样来的。
 ### inverse weight
 
 
