@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>110</y>
+      <w>400</w>
+      <h>580</h>
+    </coordinates>
+    <panel_attributes>
+*struct trace_array trace_array*
+--
+
+struct list_head       list_head
+struct list_head       list
+char *                 name
+struct trace_buffer    trace_buffer
+struct trace_buffer    trace_buffer
+struct trace_pid_list  trace_pid_list
+struct trace_pid_list  __rcu
+int                    max_lock
+int                    buffer_disabled
+int                    stop_count
+int                    clock_id
+int                    nr_topts
+struct tracer          tracer
+struct tracer *        current_trace
+unsigned int           trace_flags
+unsigned char          trace_flags_index
+unsigned int           flags
+int                    start_lock
+struct dentry          dentry
+struct dentry *        dir
+struct dentry *        options
+struct dentry *        percpu_dir
+struct dentry *        event_dir
+struct trace_options   trace_options
+struct trace_options * topts
+struct list_head       systems
+struct list_head       events
+int                    tracing_cpumask
+int                    ref
+struct ftrace_ops      ftrace_ops
+struct ftrace_ops *    ops
+int                    function_enabled
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>30</y>
+      <w>400</w>
+      <h>205</h>
+    </coordinates>
+    <panel_attributes>
+*struct trace_buffer trace_buffer*
+--
+
+struct trace_array *   tr
+struct ring_buffer     ring_buffer
+struct ring_buffer *   buffer
+struct trace_array_cpu trace_array_cpu
+struct trace_array_cpu __percpu
+int                    time_start
+int                    cpu
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>370</y>
+      <w>400</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>
+*struct ring_buffer ring_buffer*
+--
+
+unsigned int                  flags
+int                           cpus
+int                           record_disabled
+int                           resize_disabled
+int                           cpumask
+struct lock_class_key         lock_class_key
+struct lock_class_key *       reader_lock_key
+struct mutex                  mutex
+struct mutex                  mutex
+struct ring_buffer_per_cpu    ring_buffer_per_cpu
+struct ring_buffer_per_cpu ** buffers
+struct notifier_block         notifier_block
+struct notifier_block         cpu_notify
+int ((int *))(void)           u64
+struct rb_irq_work            rb_irq_work
+struct rb_irq_work            irq_work
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1210</x>
+      <y>340</y>
+      <w>400</w>
+      <h>610</h>
+    </coordinates>
+    <panel_attributes>
+*struct ring_buffer_per_cpu ring_buffer_per_cpu*
+--
+
+int                   cpu
+int                   record_disabled
+struct ring_buffer *  buffer
+int                   reader_lock
+int                   lock
+struct lock_class_key lock_key
+unsigned long         nr_pages
+unsigned int          current_context
+struct list_head *    pages
+struct buffer_page    buffer_page
+struct buffer_page *  head_page
+struct buffer_page *  tail_page
+struct buffer_page *  commit_page
+struct buffer_page *  reader_page
+unsigned long         lost_events
+unsigned long         last_overrun
+int                   entries_bytes
+int                   entries
+int                   overrun
+int                   commit_overrun
+int                   dropped_events
+int                   committing
+int                   commits
+unsigned long         read
+unsigned long         read_bytes
+int                   write_stamp
+int                   read_stamp
+long                  nr_pages_to_update
+struct list_head      new_pages
+struct work_struct    work_struct
+struct work_struct    update_pages_work
+struct completion     completion
+struct completion     update_done
+struct rb_irq_work    irq_work
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1830</x>
+      <y>440</y>
+      <w>400</w>
+      <h>205</h>
+    </coordinates>
+    <panel_attributes>
+*struct buffer_page buffer_page*
+--
+
+struct list_head          list
+int                       write
+unsigned int              read
+int                       entries
+unsigned long             real_end
+struct buffer_data_page   buffer_data_page
+struct buffer_data_page * page
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1860</x>
+      <y>710</y>
+      <w>400</w>
+      <h>145</h>
+    </coordinates>
+    <panel_attributes>
+*struct buffer_data_page buffer_data_page*
+--
+
+int              time_stamp
+int              commit
+unsigned char [] data
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1860</x>
+      <y>960</y>
+      <w>400</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>
+*struct ring_buffer_event ring_buffer_event*
+--
+
+int () kmemcheck_bitfield_begin
+int    type_len
+int    time_delta
+int () kmemcheck_bitfield_end
+int [] array
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
