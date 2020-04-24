@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>12</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2550</x>
-      <y>1410</y>
-      <w>350</w>
-      <h>150</h>
+      <x>5028</x>
+      <y>276</y>
+      <w>420</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>memblock
 lw=2
@@ -19,16 +19,18 @@ lw=2
 #ifdef CONFIG_HAVE_MEMBLOCK_PHYS_MAP
 	struct memblock_type physmem;
 #endif
-</panel_attributes>
+
+fg=black
+bg=black</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1990</x>
-      <y>1260</y>
-      <w>400</w>
-      <h>110</h>
+      <x>4356</x>
+      <y>96</y>
+      <w>480</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>memblock_type
 lw=2
@@ -43,10 +45,10 @@ lw=2
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1600</x>
-      <y>1290</y>
-      <w>200</w>
-      <h>50</h>
+      <x>3888</x>
+      <y>132</y>
+      <w>240</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>Note..
 typedef u64 phys_addr_t;</panel_attributes>
@@ -55,10 +57,10 @@ typedef u64 phys_addr_t;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1790</x>
-      <y>1300</y>
-      <w>220</w>
-      <h>50</h>
+      <x>4116</x>
+      <y>144</y>
+      <w>264</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>200.0;30.0;10.0;10.0</additional_attributes>
@@ -66,10 +68,10 @@ typedef u64 phys_addr_t;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1480</x>
-      <y>1490</y>
-      <w>360</w>
-      <h>130</h>
+      <x>3744</x>
+      <y>372</y>
+      <w>432</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>memblock_region
 lw=2
@@ -86,10 +88,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2380</x>
-      <y>1330</y>
-      <w>190</w>
-      <h>170</h>
+      <x>4824</x>
+      <y>180</y>
+      <w>228</w>
+      <h>204</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>170.0;150.0;10.0;10.0</additional_attributes>
@@ -97,12 +99,12 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2460</x>
-      <y>2290</y>
-      <w>600</w>
-      <h>950</h>
+      <x>4884</x>
+      <y>1512</y>
+      <w>720</w>
+      <h>1140</h>
     </coordinates>
-    <panel_attributes>pg_data_t
+    <panel_attributes>typedef struct pglist_data pg_data_t
 lw=2
 --
 	struct zone node_zones[MAX_NR_ZONES];
@@ -165,10 +167,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1360</x>
-      <y>2580</y>
-      <w>320</w>
-      <h>780</h>
+      <x>4032</x>
+      <y>1536</y>
+      <w>384</w>
+      <h>924</h>
     </coordinates>
     <panel_attributes>zone
 lw=2
@@ -394,10 +396,10 @@ enum zone_flags {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1420</x>
-      <y>2040</y>
-      <w>360</w>
-      <h>90</h>
+      <x>4104</x>
+      <y>1248</y>
+      <w>432</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>zoneref
 lw=2
@@ -410,10 +412,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1670</x>
-      <y>1330</y>
-      <w>340</w>
-      <h>180</h>
+      <x>3972</x>
+      <y>180</y>
+      <w>408</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;10.0;160.0</additional_attributes>
@@ -421,21 +423,21 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1480</x>
-      <y>2120</y>
-      <w>30</w>
-      <h>480</h>
+      <x>4176</x>
+      <y>1344</y>
+      <w>36</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;460.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1920</x>
-      <y>2060</y>
-      <w>440</w>
-      <h>50</h>
+      <x>4608</x>
+      <y>1272</y>
+      <w>528</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>zonelist
 lw=2
@@ -447,32 +449,32 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1770</x>
-      <y>2080</y>
-      <w>170</w>
-      <h>30</h>
+      <x>4524</x>
+      <y>1296</y>
+      <w>108</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2090</x>
-      <y>2100</y>
-      <w>390</w>
-      <h>260</h>
+      <x>4812</x>
+      <y>1320</y>
+      <w>96</w>
+      <h>276</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>370.0;240.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;210.0;10.0;210.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2470</x>
-      <y>3720</y>
-      <w>310</w>
-      <h>270</h>
+      <x>5148</x>
+      <y>3228</y>
+      <w>372</w>
+      <h>888</h>
     </coordinates>
     <panel_attributes>page
 lw=2
@@ -659,158 +661,21 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2580</x>
-      <y>3230</y>
-      <w>140</w>
-      <h>510</h>
+      <x>5160</x>
+      <y>2640</y>
+      <w>156</w>
+      <h>612</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>120.0;10.0;10.0;490.0</additional_attributes>
+    <additional_attributes>10.0;10.0;110.0;490.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2020</x>
-      <y>0</y>
-      <w>480</w>
-      <h>770</h>
-    </coordinates>
-    <panel_attributes>*mm_struct*
-lw=2
-fontsize=17
---
-
-	struct vm_area_struct *mmap;		/* list of VMAs */
-	struct rb_root mm_rb;
-	u32 vmacache_seqnum;                   /* per-thread vmacache */
-#ifdef CONFIG_MMU
-	unsigned long (*get_unmapped_area) (struct file *filp,
-				unsigned long addr, unsigned long len,
-				unsigned long pgoff, unsigned long flags);
-#endif
-	unsigned long mmap_base;		/* base of mmap area */
-	unsigned long mmap_legacy_base;         /* base of mmap area in bottom-up allocations */
-	unsigned long task_size;		/* size of task vm space */
-	unsigned long highest_vm_end;		/* highest vma end address */
-	pgd_t * pgd;
-	atomic_t mm_users;			/* How many users with user space? */
-	atomic_t mm_count;			/* How many references to "struct mm_struct" (users count as 1) */
-	atomic_long_t nr_ptes;			/* PTE page table pages */
-#if CONFIG_PGTABLE_LEVELS &gt; 2
-	atomic_long_t nr_pmds;			/* PMD page table pages */
-#endif
-	int map_count;				/* number of VMAs */
-
-	spinlock_t page_table_lock;		/* Protects page tables and some counters */
-	struct rw_semaphore mmap_sem;
-
-	struct list_head mmlist;		/* List of maybe swapped mm's.	These are globally strung
-						 * together off init_mm.mmlist, and are protected
-						 * by mmlist_lock
-						 */
-
-
-	unsigned long hiwater_rss;	/* High-watermark of RSS usage */
-	unsigned long hiwater_vm;	/* High-water virtual memory usage */
-
-	unsigned long total_vm;		/* Total pages mapped */
-	unsigned long locked_vm;	/* Pages that have PG_mlocked set */
-	unsigned long pinned_vm;	/* Refcount permanently increased */
-	unsigned long shared_vm;	/* Shared pages (files) */
-	unsigned long exec_vm;		/* VM_EXEC &amp; ~VM_WRITE */
-	unsigned long stack_vm;		/* VM_GROWSUP/DOWN */
-	unsigned long def_flags;
-	unsigned long start_code, end_code, start_data, end_data;
-	unsigned long start_brk, brk, start_stack;
-	unsigned long arg_start, arg_end, env_start, env_end;
-
-	unsigned long saved_auxv[AT_VECTOR_SIZE]; /* for /proc/PID/auxv */
-
-	/*
-	 * Special counters, in some configurations protected by the
-	 * page_table_lock, in other configurations by being atomic.
-	 */
-	struct mm_rss_stat rss_stat;
-
-	struct linux_binfmt *binfmt;
-
-	cpumask_var_t cpu_vm_mask_var;
-
-	/* Architecture-specific MM context */
-	mm_context_t context;
-
-	unsigned long flags; /* Must use atomic bitops to access the bits */
-
-	struct core_state *core_state; /* coredumping support */
-#ifdef CONFIG_AIO
-	spinlock_t			ioctx_lock;
-	struct kioctx_table __rcu	*ioctx_table;
-#endif
-#ifdef CONFIG_MEMCG
-	/*
-	 * "owner" points to a task that is regarded as the canonical
-	 * user/owner of this mm. All of the following must be true in
-	 * order for it to be changed:
-	 *
-	 * current == mm-&gt;owner
-	 * current-&gt;mm != mm
-	 * new_owner-&gt;mm == mm
-	 * new_owner-&gt;alloc_lock is held
-	 */
-	struct task_struct __rcu *owner;
-#endif
-
-	/* store ref to file /proc/&lt;pid&gt;/exe symlink points to */
-	struct file __rcu *exe_file;
-#ifdef CONFIG_MMU_NOTIFIER
-	struct mmu_notifier_mm *mmu_notifier_mm;
-#endif
-#if defined(CONFIG_TRANSPARENT_HUGEPAGE) &amp;&amp; !USE_SPLIT_PMD_PTLOCKS
-	pgtable_t pmd_huge_pte; /* protected by page_table_lock */
-#endif
-#ifdef CONFIG_CPUMASK_OFFSTACK
-	struct cpumask cpumask_allocation;
-#endif
-#ifdef CONFIG_NUMA_BALANCING
-	/*
-	 * numa_next_scan is the next time that the PTEs will be marked
-	 * pte_numa. NUMA hinting faults will gather statistics and migrate
-	 * pages to new nodes if necessary.
-	 */
-	unsigned long numa_next_scan;
-
-	/* Restart point for scanning and setting pte_numa */
-	unsigned long numa_scan_offset;
-
-	/* numa_scan_seq prevents two threads setting pte_numa */
-	int numa_scan_seq;
-#endif
-#if defined(CONFIG_NUMA_BALANCING) || defined(CONFIG_COMPACTION)
-	/*
-	 * An operation with batched TLB flushing is going on. Anything that
-	 * can move process memory needs to flush the TLB when moving a
-	 * PROT_NONE or PROT_NUMA mapped page.
-	 */
-	bool tlb_flush_pending;
-#endif
-	struct uprobes_state uprobes_state;
-#ifdef CONFIG_X86_INTEL_MPX
-	/* address of the bounds directory */
-	void __user *bd_addr;
-#endif
-#ifdef CONFIG_HUGETLB_PAGE
-	atomic_long_t hugetlb_usage;
-#endif
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1990</x>
-      <y>2630</y>
-      <w>150</w>
-      <h>180</h>
+      <x>4500</x>
+      <y>1632</y>
+      <w>180</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>node_mem_map[]
 lw=2
@@ -830,21 +695,21 @@ pagen
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2130</x>
-      <y>2380</y>
-      <w>350</w>
-      <h>270</h>
+      <x>4668</x>
+      <y>1620</y>
+      <w>240</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>330.0;10.0;10.0;250.0</additional_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>2990</x>
-      <y>1180</y>
-      <w>230</w>
-      <h>70</h>
+      <x>5556</x>
+      <y>0</y>
+      <w>276</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>Note..
 include/linux/memblock.h</panel_attributes>
@@ -853,10 +718,10 @@ include/linux/memblock.h</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2890</x>
-      <y>1240</y>
-      <w>120</w>
-      <h>190</h>
+      <x>5436</x>
+      <y>72</y>
+      <w>144</w>
+      <h>228</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 lw=2</panel_attributes>
@@ -865,10 +730,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>1810</y>
-      <w>290</w>
-      <h>920</h>
+      <x>3120</x>
+      <y>744</y>
+      <w>636</w>
+      <h>1104</h>
     </coordinates>
     <panel_attributes>lw=2
 enum zone_type 
@@ -932,10 +797,10 @@ enum zone_type
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3880</x>
-      <y>1450</y>
-      <w>310</w>
-      <h>740</h>
+      <x>6840</x>
+      <y>504</y>
+      <w>372</w>
+      <h>888</h>
     </coordinates>
     <panel_attributes>mm_struct
 lw=2
@@ -1068,10 +933,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>300</x>
-      <y>3110</y>
-      <w>320</w>
-      <h>70</h>
+      <x>2544</x>
+      <y>2496</y>
+      <w>384</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>free_area
 lw=2
@@ -1085,10 +950,10 @@ unsigned long nr_free;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>3110</y>
-      <w>340</w>
-      <h>30</h>
+      <x>3264</x>
+      <y>2496</y>
+      <w>408</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>struct free_area free_area[MAX_ORDER];
 
@@ -1098,25 +963,349 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1230</x>
-      <y>3110</y>
-      <w>150</w>
-      <h>30</h>
+      <x>3660</x>
+      <y>2172</y>
+      <w>396</w>
+      <h>360</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>310.0;10.0;10.0;280.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>610</x>
-      <y>3120</y>
-      <w>310</w>
-      <h>30</h>
+      <x>2916</x>
+      <y>2508</y>
+      <w>372</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
     <additional_attributes>290.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1272</x>
+      <y>1440</y>
+      <w>624</w>
+      <h>876</h>
+    </coordinates>
+    <panel_attributes>kmem_cache
+lw=2
+--
+	struct kmem_cache_cpu __percpu *cpu_slab;
+	/* Used for retriving partial slabs etc */
+	unsigned long flags;
+	unsigned long min_partial;
+	int size;		/* The size of an object including meta data */
+	int object_size;	/* The size of an object without meta data */
+	int offset;		/* Free pointer offset. */
+	int cpu_partial;	/* Number of per cpu partial objects to keep around */
+	struct kmem_cache_order_objects oo;
+
+	/* Allocation and freeing of slabs */
+	struct kmem_cache_order_objects max;
+	struct kmem_cache_order_objects min;
+	gfp_t allocflags;	/* gfp flags to use on each alloc */
+	int refcount;		/* Refcount for slab cache destroy */
+	void (*ctor)(void *);
+	int inuse;		/* Offset to metadata */
+	int align;		/* Alignment */
+	int reserved;		/* Reserved bytes at the end of slabs */
+	const char *name;	/* Name (only for display!) */
+	struct list_head list;	/* List of slab caches */
+#ifdef CONFIG_SYSFS
+	struct kobject kobj;	/* For sysfs */
+#endif
+#ifdef CONFIG_MEMCG_KMEM
+	struct memcg_cache_params memcg_params;
+	int max_attr_size; /* for propagation, maximum size of a stored attr */
+#ifdef CONFIG_SYSFS
+	struct kset *memcg_kset;
+#endif
+#endif
+
+#ifdef CONFIG_NUMA
+	/*
+	 * Defragmentation by allocating from a remote node.
+	 */
+	int remote_node_defrag_ratio;
+#endif
+	struct kmem_cache_node *node[MAX_NUMNODES];
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>1464</y>
+      <w>540</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>kmem_cache_cpu
+lw=2
+--
+	void **freelist;	/* Pointer to next available object */
+	unsigned long tid;	/* Globally unique transaction id */
+	struct page *page;	/* The slab from which we are allocating */
+	struct page *partial;	/* Partially allocated frozen slabs */
+#ifdef CONFIG_SLUB_STATS
+	unsigned stat[NR_SLUB_STAT_ITEMS];
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>924</x>
+      <y>1464</y>
+      <w>372</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>290.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>2208</y>
+      <w>348</w>
+      <h>516</h>
+    </coordinates>
+    <panel_attributes>kmem_cache_node
+lw=2
+--
+	spinlock_t list_lock;
+
+#ifdef CONFIG_SLAB
+	struct list_head slabs_partial;	/* partial list first, better asm code */
+	struct list_head slabs_full;
+	struct list_head slabs_free;
+	unsigned long free_objects;
+	unsigned int free_limit;
+	unsigned int colour_next;	/* Per-node cache coloring */
+	struct array_cache *shared;	/* shared per node */
+	struct alien_cache **alien;	/* on other nodes */
+	unsigned long next_reap;	/* updated without locking */
+	int free_touched;		/* updated without locking */
+#endif
+
+#ifdef CONFIG_SLUB
+	unsigned long nr_partial;
+	struct list_head partial;
+#ifdef CONFIG_SLUB_DEBUG
+	atomic_long_t nr_slabs;
+	atomic_long_t total_objects;
+	struct list_head full;
+#endif
+#endif
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>888</x>
+      <y>2208</y>
+      <w>408</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1416</x>
+      <y>1260</y>
+      <w>324</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>LIST_HEAD(slab_caches)
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1596</x>
+      <y>1284</y>
+      <w>36</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5388</x>
+      <y>1236</y>
+      <w>444</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>#define NODE_DATA(nid)		(node_data[(nid)])
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5352</x>
+      <y>1260</y>
+      <w>288</w>
+      <h>276</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4404</x>
+      <y>1536</y>
+      <w>504</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>400.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4272</x>
+      <y>2616</y>
+      <w>408</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>struct per_cpu_pageset 
+--
+	struct per_cpu_pages pcp;
+#ifdef CONFIG_NUMA
+	s8 expire;
+#endif
+#ifdef CONFIG_SMP
+	s8 stat_threshold;
+	s8 vm_stat_diff[NR_VM_ZONE_STAT_ITEMS];
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4404</x>
+      <y>2124</y>
+      <w>144</w>
+      <h>516</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0;100.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3528</x>
+      <y>2628</y>
+      <w>564</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>struct per_cpu_pages
+--
+	int count;		/* number of pages in the list */
+	int high;		/* high watermark, emptying needed */
+	int batch;		/* chunk size for buddy add/remove */
+
+	/* Lists of pages, one per migrate type stored on the pcp-lists */
+	struct list_head lists[MIGRATE_PCPTYPES];
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4080</x>
+      <y>2628</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3504</x>
+      <y>1992</y>
+      <w>180</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>boot_pageset
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3672</x>
+      <y>1884</y>
+      <w>384</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>300.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2940</x>
+      <y>2004</y>
+      <w>408</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>struct per_cpu_pageset
+--
+	struct per_cpu_pages pcp;
+#ifdef CONFIG_NUMA
+	s8 expire;
+#endif
+#ifdef CONFIG_SMP
+	s8 stat_threshold;
+	s8 vm_stat_diff[NR_VM_ZONE_STAT_ITEMS];
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3336</x>
+      <y>2004</y>
+      <w>192</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
   </element>
 </diagram>

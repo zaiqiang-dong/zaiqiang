@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>330</y>
+      <y>440</y>
       <w>160</w>
       <h>150</h>
     </coordinates>
@@ -18,7 +18,7 @@ VMALLOC</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>310</y>
+      <y>420</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -31,7 +31,7 @@ VMALLOC_START = MODULES_END = 0xFFFF200008000000</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>460</y>
+      <y>570</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -44,7 +44,7 @@ VMALLOC_END = FFFF7DFFBFFF0000</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>1980</x>
-      <y>180</y>
+      <y>290</y>
       <w>710</w>
       <h>700</h>
     </coordinates>
@@ -155,7 +155,7 @@ FIXADDR_TOP = 0xFFFF77FFFEE00000 - 0x00200000 = FFFF77FFFEC00000
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>250</y>
+      <y>360</y>
       <w>160</w>
       <h>80</h>
     </coordinates>
@@ -168,7 +168,7 @@ MODULES</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>190</y>
+      <y>300</y>
       <w>650</w>
       <h>40</h>
     </coordinates>
@@ -181,7 +181,7 @@ KASAN_SHADOW_START = VA_START = 0xFFFF000000000000</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>660</y>
+      <y>770</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -194,7 +194,7 @@ VMEMMAP</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>640</y>
+      <y>750</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -207,7 +207,7 @@ VMEMMAP_START = 0xFFFF7E0000000000</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>680</y>
+      <y>790</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -220,7 +220,7 @@ VMEMMAP_END = LINER_MAPS = 0xFFFF800000000000</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>580</y>
+      <y>690</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -233,7 +233,7 @@ PCI_IO</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>600</y>
+      <y>710</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -246,7 +246,7 @@ PCI_IO_END	= 0xFFFF7DFFFEE00000</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>560</y>
+      <y>670</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -259,7 +259,7 @@ PCI_IO_START = 0xFFFF7DFFFEE00000</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>350</y>
+      <y>460</y>
       <w>160</w>
       <h>30</h>
     </coordinates>
@@ -272,7 +272,7 @@ kernol</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>330</y>
+      <y>440</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -285,7 +285,7 @@ KERNEL_START = _text = 0xFFFF200008080000</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>360</y>
+      <y>470</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -298,7 +298,7 @@ KERNEL_END</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>210</y>
+      <y>320</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -310,7 +310,7 @@ valign=center</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>230</y>
+      <y>340</y>
       <w>650</w>
       <h>40</h>
     </coordinates>
@@ -323,7 +323,7 @@ MODULES_VADDR = KASAN_SHADOW_END = 0xFFFF200000000000</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>700</y>
+      <y>810</y>
       <w>160</w>
       <h>190</h>
     </coordinates>
@@ -336,7 +336,7 @@ liner_maps</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>870</y>
+      <y>980</y>
       <w>620</w>
       <h>40</h>
     </coordinates>
@@ -349,7 +349,7 @@ LINER_MAPS = 0xFFFFFFFFFFFFFFFF</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>510</y>
+      <y>620</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -362,7 +362,7 @@ FIXADDR_MAP</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>480</y>
+      <y>590</y>
       <w>160</w>
       <h>180</h>
     </coordinates>
@@ -374,7 +374,7 @@ valign=center</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>530</y>
+      <y>640</y>
       <w>640</w>
       <h>40</h>
     </coordinates>
@@ -387,7 +387,7 @@ FIXADDR_TOP = FFFF77FFFEC00000</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>920</x>
-      <y>490</y>
+      <y>600</y>
       <w>640</w>
       <h>50</h>
     </coordinates>
@@ -401,7 +401,7 @@ FIXADDR_START =  FIXADDR_TOP - FIXADDR_SIZE
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>150</y>
+      <y>260</y>
       <w>160</w>
       <h>150</h>
     </coordinates>
@@ -415,7 +415,7 @@ TEXT_OFFSET</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>300</y>
+      <y>410</y>
       <w>160</w>
       <h>170</h>
     </coordinates>
@@ -434,7 +434,7 @@ kernel img
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>390</y>
+      <y>500</y>
       <w>160</w>
       <h>50</h>
     </coordinates>
@@ -450,7 +450,7 @@ idmap_text
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>470</y>
+      <y>580</y>
       <w>160</w>
       <h>70</h>
     </coordinates>
@@ -464,7 +464,7 @@ lw=2
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>540</y>
+      <y>650</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -480,7 +480,7 @@ lw=2
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>580</y>
+      <y>690</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -495,7 +495,7 @@ lw=2</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>620</y>
+      <y>730</y>
       <w>160</w>
       <h>960</h>
     </coordinates>
@@ -509,7 +509,7 @@ lw=2
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>700</y>
+      <y>810</y>
       <w>160</w>
       <h>100</h>
     </coordinates>
@@ -525,7 +525,7 @@ Device Tree
     <id>Relation</id>
     <coordinates>
       <x>0</x>
-      <y>130</y>
+      <y>240</y>
       <w>280</w>
       <h>40</h>
     </coordinates>
@@ -533,5 +533,875 @@ Device Tree
 lw=2
 PHYS_OFFSET</panel_attributes>
     <additional_attributes>260.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2880</x>
+      <y>850</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+halign=center
+style=wordwrap
+swapper table
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2880</x>
+      <y>810</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+halign=center
+style=wordwrap
+idmap table
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2880</x>
+      <y>770</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=left
+halign=center
+style=wordwrap
+
+fix map table</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2880</x>
+      <y>890</y>
+      <w>160</w>
+      <h>960</h>
+    </coordinates>
+    <panel_attributes>halign=left
+style=wordwrap
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2880</x>
+      <y>700</y>
+      <w>160</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>halign=left
+style=wordwrap
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2880</x>
+      <y>530</y>
+      <w>160</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>halign=left
+style=wordwrap
+halign=center
+
+
+
+
+kernel img
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2880</x>
+      <y>380</y>
+      <w>160</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>halign=left
+style=wordwrap
+halign=center
+
+TEXT_OFFSET</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2880</x>
+      <y>620</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>halign=left
+style=wordwrap
+halign=center
+
+idmap_text
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3660</x>
+      <y>930</y>
+      <w>160</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>halign=left
+style=wordwrap
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2880</x>
+      <y>970</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+
+
+Device Tree
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3040</x>
+      <y>370</y>
+      <w>140</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=|&lt;-&gt;|
+0x80000=512k</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3330</x>
+      <y>1110</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=left
+style=wordwrap
+TTBR寄存器
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3450</x>
+      <y>1110</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3660</x>
+      <y>900</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+PGD
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3660</x>
+      <y>990</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+D-TABLE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3980</x>
+      <y>860</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3980</x>
+      <y>820</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+PUD
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3810</x>
+      <y>1010</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3980</x>
+      <y>920</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+D-TABLE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4280</x>
+      <y>790</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4280</x>
+      <y>750</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+PMD
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4280</x>
+      <y>850</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+D-BLOCK
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4130</x>
+      <y>940</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4430</x>
+      <y>870</y>
+      <w>290</w>
+      <h>480</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>270.0;460.0;90.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4700</x>
+      <y>1150</y>
+      <w>160</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+
+2M内存空间</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>4050</x>
+      <y>620</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Note..
+4k/8字节=512
+512×2M = 1G
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4220</x>
+      <y>680</y>
+      <w>80</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4280</x>
+      <y>900</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+D-TABLE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4640</x>
+      <y>730</y>
+      <w>160</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>halign=left
+style=wordwrap
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4430</x>
+      <y>920</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4640</x>
+      <y>700</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+PTE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5290</x>
+      <y>700</y>
+      <w>160</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+
+4k</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4640</x>
+      <y>810</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+高36 BIT地址
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5290</x>
+      <y>670</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+PAGE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3650</x>
+      <y>430</y>
+      <w>1480</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3650</x>
+      <y>430</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+PGD
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3910</x>
+      <y>430</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+PUD
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4170</x>
+      <y>430</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+PMD
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4430</x>
+      <y>430</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+PTE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3640</x>
+      <y>400</y>
+      <w>290</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=|&lt;-&gt;|
+9BIT</panel_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3900</x>
+      <y>400</y>
+      <w>290</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=|&lt;-&gt;|
+9BIT</panel_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4160</x>
+      <y>400</y>
+      <w>290</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=|&lt;-&gt;|
+9BIT</panel_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4420</x>
+      <y>400</y>
+      <w>290</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=|&lt;-&gt;|
+9BIT</panel_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4680</x>
+      <y>400</y>
+      <w>470</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=|&lt;-&gt;|
+12BIT</panel_attributes>
+    <additional_attributes>450.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3920</x>
+      <y>330</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+VA
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5290</x>
+      <y>810</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4820</x>
+      <y>450</y>
+      <w>30</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;350.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4800</x>
+      <y>810</y>
+      <w>60</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+0-12
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4850</x>
+      <y>830</y>
+      <w>460</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>440.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>4430</x>
+      <y>530</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Note..
+4k/8字节=512 PTE
+512×4k = 2M
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4600</x>
+      <y>590</y>
+      <w>60</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>40.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3050</x>
+      <y>360</y>
+      <w>190</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+PHYS_OFFSET</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3040</x>
+      <y>520</y>
+      <w>80</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>lt=|&lt;-&gt;|
+vmlinux</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;370.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3040</x>
+      <y>880</y>
+      <w>370</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>350.0;230.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3030</x>
+      <y>950</y>
+      <w>460</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+__fdt_pointer</panel_attributes>
+    <additional_attributes>10.0;20.0;440.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3980</x>
+      <y>890</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+D-TABLE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3980</x>
+      <y>950</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+D-TABLE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3980</x>
+      <y>980</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+D-TABLE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4320</x>
+      <y>1050</y>
+      <w>160</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4130</x>
+      <y>970</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4320</x>
+      <y>1180</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>halign=center
+style=wordwrap
+D-TABLE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>2890</x>
+      <y>1980</y>
+      <w>940</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>Note..
+create_block_map, 		tbl, 			flags, 			phys, 			start, 			end 
+
+idmap				idmap_pg_dir		SWAPPER_MM_MMUFLAGS	__idmap_text_start	__idmap_text_start	__idmap_text_end
+
+swappermap			swapper_pg_dir		SWAPPER_MM_MMUFLAGS	adrp __PHYS_OFFSET		PAGE_OFFSET		KERNEL_END
+
+dveice tree 			swapper_pg_dir		SWAPPER_MM_MMUFLAGS      __fdt_pointer		__end_of_permanent_fixed_addresses  FIXADDR_TOP
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>3190</x>
+      <y>0</y>
+      <w>400</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Note..
+__PHYS_OFFSET    (KERNEL_START - TEXT_OFFSET) 
+KERNEL_START 是虚拟地址
+理论上讲__PHYS_OFFSET 也应该是虚拟地址
+但是通过技巧可以拿到其物理地址
+编译器在编译这一条指令的时候，把该指令所在的虚拟地址
+和__PHYS_OFFSET的offset保存在了指令的imm域。
+当实际运行的时候，x24被赋值为当前PC值＋offset，
+也就是内存的物理地址了。BTW，上面说的实际上是需要对齐
+到page size的。
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3180</x>
+      <y>160</y>
+      <w>150</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;210.0;130.0;10.0</additional_attributes>
   </element>
 </diagram>
