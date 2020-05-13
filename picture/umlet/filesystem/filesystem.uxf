@@ -594,7 +594,7 @@ lw=2</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>660</x>
-      <y>2700</y>
+      <y>2630</y>
       <w>400</w>
       <h>340</h>
     </coordinates>
@@ -627,11 +627,11 @@ lw=2</panel_attributes>
       <x>760</x>
       <y>2360</y>
       <w>130</w>
-      <h>360</h>
+      <h>290</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>110.0;10.0;10.0;10.0;10.0;340.0</additional_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0;10.0;270.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -649,13 +649,13 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>850</x>
-      <y>3030</y>
+      <y>2960</y>
       <w>220</w>
-      <h>210</h>
+      <h>280</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>200.0;190.0;10.0;190.0;10.0;10.0</additional_attributes>
+    <additional_attributes>200.0;260.0;10.0;260.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -2306,5 +2306,138 @@ lw=2</panel_attributes>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4060</x>
+      <y>2040</y>
+      <w>1820</w>
+      <h>1130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>1800.0;1110.0;1590.0;1110.0;1590.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>1650</y>
+      <w>340</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>struct fdtable
+--
+	unsigned int max_fds;
+	struct file __rcu **fd;      /* current fd array */
+	unsigned long *close_on_exec;
+	unsigned long *open_fds;
+	struct rcu_head rcu;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>1690</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>2910</y>
+      <w>800</w>
+      <h>1360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1340.0;780.0;1340.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1160</x>
+      <y>1180</y>
+      <w>1000</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;210.0;80.0;210.0;80.0;10.0;980.0;10.0;980.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>3280</y>
+      <w>510</w>
+      <h>710</h>
+    </coordinates>
+    <panel_attributes>struct address_space_operations
+--
+	int (*writepage)(struct page *page, struct writeback_control *wbc);
+	int (*readpage)(struct file *, struct page *);
+
+	/* Write back some dirty pages from this mapping. */
+	int (*writepages)(struct address_space *, struct writeback_control *);
+
+	/* Set a page dirty.  Return true if this dirtied it */
+	int (*set_page_dirty)(struct page *page);
+
+	int (*readpages)(struct file *filp, struct address_space *mapping,
+			struct list_head *pages, unsigned nr_pages);
+
+	int (*write_begin)(struct file *, struct address_space *mapping,
+				loff_t pos, unsigned len, unsigned flags,
+				struct page **pagep, void **fsdata);
+	int (*write_end)(struct file *, struct address_space *mapping,
+				loff_t pos, unsigned len, unsigned copied,
+				struct page *page, void *fsdata);
+
+	/* Unfortunately this kludge is needed for FIBMAP. Don't use it */
+	sector_t (*bmap)(struct address_space *, sector_t);
+	void (*invalidatepage) (struct page *, unsigned int, unsigned int);
+	int (*releasepage) (struct page *, gfp_t);
+	void (*freepage)(struct page *);
+	ssize_t (*direct_IO)(int, struct kiocb *, struct iov_iter *iter, loff_t offset);
+	/*
+	 * migrate the contents of a page to the specified target. If
+	 * migrate_mode is MIGRATE_ASYNC, it must not block.
+	 */
+	int (*migratepage) (struct address_space *,
+			struct page *, struct page *, enum migrate_mode);
+	int (*launder_page) (struct page *);
+	int (*is_partially_uptodate) (struct page *, unsigned long,
+					unsigned long);
+	void (*is_dirty_writeback) (struct page *, bool *, bool *);
+	int (*error_remove_page)(struct address_space *, struct page *);
+
+	/* swapfile support */
+	int (*swap_activate)(struct swap_info_struct *sis, struct file *file,
+				sector_t *span);
+	void (*swap_deactivate)(struct file *file);
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>2830</y>
+      <w>140</w>
+      <h>470</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0;10.0;450.0</additional_attributes>
   </element>
 </diagram>
