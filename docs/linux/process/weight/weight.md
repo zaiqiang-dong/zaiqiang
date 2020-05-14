@@ -107,18 +107,14 @@ static const u32 runnable_avg_yN_inv[] = {
 假设一个进程从一个102us开始跑，跑了n个1024us,这个他的负载贡献怎么计算
 
 $$S_n = a_1 + a_2 + a_3 +  .... +a_n$$
-
 $$a_1 = 1024 * y^n$$
-
 $$a_2 = 1024 * y^{n - 1}$$
-
 $$.$$
-
 $$a_n = 1024 * y$$
-
 $$S_n = 1024*(y^1 + y^2 + . . . + y^n)$$
 
 为了计算方便内核计算了n=0到n=32的和，如下所示：
+
 ```c
 static const u32 runnable_avg_yN_sum[] = {
 	    0, 1002, 1982, 2941, 3880, 4798, 5697, 6576, 7437, 8279, 9103,
@@ -127,9 +123,7 @@ static const u32 runnable_avg_yN_sum[] = {
 };
 
 ```
-$$
-runnable\_avg\_yN\_sum[n] = 1024*(y^1+y^2+y^3.....+y^n)
-$$
+$$runnable\_avg\_yN\_sum[n] = 1024*(y^1+y^2+y^3.....+y^n)$$
 
 
 ### scale_freq
