@@ -35,7 +35,7 @@ static const int prio_to_weight[40] = {
 
 $$inv\_weight = \frac{2^{32}}{weight}$$
 
-```
+```c
 static const u32 prio_to_wmult[40] = {
  /* -20 */     48388,     59856,     76040,     92818,    118348,
  /* -15 */    147320,    184698,    229616,    287308,    360437,
@@ -58,7 +58,9 @@ $$ = delta\_exec*nice\_0\_weight * inv\_weight >> 32$$
 ::: tip
 
  delta_exec 为调度周期，如果进程数小于8,delta_exec = 6ms.否则：
- $$$delta\_exec = 进程数 * 0.75$$$
+ $$
+ delta\_exec = 进程数 * 0.75
+ $$
 
 :::
 
@@ -95,7 +97,7 @@ $$
 $$$(y^n * 2^{32})$$$
 从n=0到n=31提前计算好放到数组中，如下所示：
 
-```
+```c
 /* Precomputed fixed inverse multiplies for multiplication by y^n */
 static const u32 runnable_avg_yN_inv[] = {
 	0xffffffff, 0xfa83b2da, 0xf5257d14, 0xefe4b99a, 0xeac0c6e6, 0xe5b906e6,
@@ -115,15 +117,19 @@ static const u32 runnable_avg_yN_inv[] = {
 $$
 S_n = a_1 + a_2 + a_3 +  .... +a_n
 $$
+
 $$
 a_1 = 1024 * y^n
 $$
+
 $$
 a_2 = 1024 * y^{n - 1}
 $$
+
 $$
 .
 $$
+
 $$
 a_n = 1024 * y
 $$
@@ -133,7 +139,7 @@ S_n = 1024*(y^1 + y^2 + . . . + y^n)
 $$
 
 为了计算方便内核计算了n=0到n=32的和，如下所示：
-```
+```c
 static const u32 runnable_avg_yN_sum[] = {
 	    0, 1002, 1982, 2941, 3880, 4798, 5697, 6576, 7437, 8279, 9103,
 	 9909,10698,11470,12226,12966,13690,14398,15091,15769,16433,17082,
@@ -141,7 +147,9 @@ static const u32 runnable_avg_yN_sum[] = {
 };
 
 ```
-$$runnable\_avg\_yN\_sum[n] = 1024*(y^1+y^2+y^3.....+y^n)$$
+$$
+runnable\_avg\_yN\_sum[n] = 1024*(y^1+y^2+y^3.....+y^n)
+$$
 
 
 ### scale_freq
@@ -158,4 +166,6 @@ $$cpu\_scale = (\frac{cpu\_max\_freq * efficiency}{max\_cpu\_perf})* 1024$$
 
 ### max_freq_scale
 表示 cpufreq_policy的最大频率 相对 本cpu最大频率 的比值
-$$max\_freq\_scale = \frac{policy->max}{cpuinfo->max\_freq} * 1024$$
+$$
+max\_freq\_scale = \frac{policy->max}{cpuinfo->max\_freq} * 1024
+$$
