@@ -103,6 +103,7 @@ static const u32 runnable_avg_yN_inv[] = {
 ```
 
 ### runnable_avg_yN_sum
+$$aa = 1024 * y^n$$
 
 假设一个进程从一个102us开始跑，跑了n个1024us,这个他的负载贡献怎么计算
 
