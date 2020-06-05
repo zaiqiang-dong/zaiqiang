@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text/>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1080</x>
+      <y>110</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>workqueue
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>380</y>
+      <w>630</w>
+      <h>590</h>
+    </coordinates>
+    <panel_attributes>struct workqueue_struct
+--
+	struct list_head	pwqs;		/* WR: all pwqs of this wq */
+	struct list_head	list;		/* PL: list of all workqueues */
+
+	struct mutex		mutex;		/* protects this wq */
+	int			work_color;	/* WQ: current work color */
+	int			flush_color;	/* WQ: current flush color */
+	atomic_t		nr_pwqs_to_flush; /* flush in progress */
+	struct wq_flusher	*first_flusher;	/* WQ: first flusher */
+	struct list_head	flusher_queue;	/* WQ: flush waiters */
+	struct list_head	flusher_overflow; /* WQ: flush overflow list */
+
+	struct list_head	maydays;	/* MD: pwqs requesting rescue */
+	struct worker		*rescuer;	/* I: rescue worker */
+
+	int			nr_drainers;	/* WQ: drain in progress */
+	int			saved_max_active; /* WQ: saved pwq max_active */
+
+	struct workqueue_attrs	*unbound_attrs;	/* WQ: only for unbound wqs */
+	struct pool_workqueue	*dfl_pwq;	/* WQ: only for unbound wqs */
+
+#ifdef CONFIG_SYSFS
+	struct wq_device	*wq_dev;	/* I: for sysfs interface */
+#endif
+#ifdef CONFIG_LOCKDEP
+	struct lockdep_map	lockdep_map;
+#endif
+	char			name[WQ_NAME_LEN]; /* I: workqueue name */
+
+	/* hot fields used during command issue, aligned to cacheline */
+	unsigned int		flags ____cacheline_aligned; /* WQ: WQ_* flags */
+	struct pool_workqueue __percpu *cpu_pwqs; /* I: per-cpu pwqs */
+	struct pool_workqueue __rcu *numa_pwq_tbl[]; /* FR: unbound pwqs indexed by node */
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1410</x>
+      <y>570</y>
+      <w>480</w>
+      <h>580</h>
+    </coordinates>
+    <panel_attributes>struct worker 
+--
+	/* on idle list while idle, on busy hash table while busy */
+	union {
+		struct list_head	entry;	/* L: while idle */
+		struct hlist_node	hentry;	/* L: while busy */
+	};
+
+	struct work_struct	*current_work;	/* L: work being processed */
+	work_func_t		current_func;	/* L: current_work's fn */
+	struct pool_workqueue	*current_pwq; /* L: current_work's pwq */
+	bool			desc_valid;	/* -&gt;desc is valid */
+	struct list_head	scheduled;	/* L: scheduled works */
+
+	/* 64 bytes boundary on 64bit, 32 on 32bit */
+
+	struct task_struct	*task;		/* I: worker task */
+	struct worker_pool	*pool;		/* I: the associated pool */
+						/* L: for rescuers */
+	struct list_head	node;		/* A: anchored at pool-&gt;workers */
+						/* A: runs through worker-&gt;node */
+
+	unsigned long		last_active;	/* L: last active timestamp */
+	unsigned int		flags;		/* X: flags */
+	int			id;		/* I: worker id */
+
+	/*
+	 * Opaque string set with work_set_desc().  Printed out with task
+	 * dump for debugging - WARN, BUG, panic or sysrq.
+	 */
+	char			desc[WORKER_DESC_LEN];
+
+	/* used only by rescuers to point to the target workqueue */
+	struct workqueue_struct	*rescue_wq;	/* I: the workqueue to rescue */
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1130</x>
+      <y>580</y>
+      <w>300</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>1390</y>
+      <w>540</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>struct pool_workqueue
+--
+	struct worker_pool	*pool;		/* I: the associated pool */
+	struct workqueue_struct *wq;		/* I: the owning workqueue */
+	int			work_color;	/* L: current color */
+	int			flush_color;	/* L: flushing color */
+	int			refcnt;		/* L: reference count */
+	int			nr_in_flight[WORK_NR_COLORS];
+						/* L: nr of in_flight works */
+	int			nr_active;	/* L: nr of active works */
+	int			max_active;	/* L: max active works */
+	struct list_head	delayed_works;	/* L: delayed works */
+	struct list_head	pwqs_node;	/* WR: node on wq-&gt;pwqs */
+	struct list_head	mayday_node;	/* MD: node on wq-&gt;maydays */
+
+	/*
+	 * Release of unbound pwq is punted to system_wq.  See put_pwq()
+	 * and pwq_unbound_release_workfn() for details.  pool_workqueue
+	 * itself is also sched-RCU protected so that the first pwq can be
+	 * determined without grabbing wq-&gt;mutex.
+	 */
+	struct work_struct	unbound_release_work;
+	struct rcu_head		rcu;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>960</y>
+      <w>30</w>
+      <h>450</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1410</x>
+      <y>1400</y>
+      <w>510</w>
+      <h>770</h>
+    </coordinates>
+    <panel_attributes>struct worker_pool
+--
+	spinlock_t		lock;		/* the pool lock */
+	int			cpu;		/* I: the associated cpu */
+	int			node;		/* I: the associated node ID */
+	int			id;		/* I: pool ID */
+	unsigned int		flags;		/* X: flags */
+
+	struct list_head	worklist;	/* L: list of pending works */
+	int			nr_workers;	/* L: total number of workers */
+
+	/* nr_idle includes the ones off idle_list for rebinding */
+	int			nr_idle;	/* L: currently idle ones */
+
+	struct list_head	idle_list;	/* X: list of idle workers */
+	struct timer_list	idle_timer;	/* L: worker idle timeout */
+	struct timer_list	mayday_timer;	/* L: SOS timer for workers */
+
+	/* a workers is either on busy_hash or idle_list, or the manager */
+	DECLARE_HASHTABLE(busy_hash, BUSY_WORKER_HASH_ORDER);
+						/* L: hash of busy workers */
+
+	/* see manage_workers() for details on the two manager mutexes */
+	struct mutex		manager_arb;	/* manager arbitration */
+	struct mutex		attach_mutex;	/* attach/detach exclusion */
+	struct list_head	workers;	/* A: attached workers */
+	struct completion	*detach_completion; /* all workers detached */
+
+	struct ida		worker_ida;	/* worker IDs for task name */
+
+	struct workqueue_attrs	*attrs;		/* I: worker attributes */
+	struct hlist_node	hash_node;	/* PL: unbound_pool_hash node */
+	int			refcnt;		/* PL: refcnt for unbound pools */
+
+	/*
+	 * The current concurrency level.  As it's likely to be accessed
+	 * from other CPUs during try_to_wake_up(), put it in a separate
+	 * cacheline.
+	 */
+	atomic_t		nr_running ____cacheline_aligned_in_smp;
+
+	/*
+	 * Destruction of pool is sched-RCU protected to allow dereferences
+	 * from get_work_pool().
+	 */
+	struct rcu_head		rcu;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>1410</y>
+      <w>390</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>960</y>
+      <w>80</w>
+      <h>500</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;480.0;10.0;480.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1270</x>
+      <y>830</y>
+      <w>160</w>
+      <h>590</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0;10.0;570.0;140.0;570.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2150</x>
+      <y>690</y>
+      <w>290</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>struct work_struct 
+--
+	atomic_long_t data;
+	struct list_head entry;
+	work_func_t func;
+#ifdef CONFIG_LOCKDEP
+	struct lockdep_map lockdep_map;
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1880</x>
+      <y>690</y>
+      <w>290</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2600</x>
+      <y>750</y>
+      <w>420</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>typedef void (*work_func_t)(struct work_struct *work);
+
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2430</x>
+      <y>750</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>720</y>
+      <w>390</w>
+      <h>700</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>370.0;10.0;210.0;10.0;210.0;680.0;10.0;680.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>220</y>
+      <w>560</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>static LIST_HEAD(workqueues);		/* PL: list of all workqueues */
+
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>240</y>
+      <w>70</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>50.0;160.0;10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>220</y>
+      <w>600</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;580.0;10.0;580.0;170.0;500.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1250</x>
+      <y>380</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>struct workqueue_struct
+lw=2
+--
+...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1130</x>
+      <y>380</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>560</x>
+      <x>616</x>
       <y>0</y>
-      <w>110</w>
-      <h>40</h>
+      <w>121</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>Interrupt
 lw=2</panel_attributes>
@@ -16,10 +16,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1680</x>
-      <y>1070</y>
-      <w>350</w>
-      <h>640</h>
+      <x>1848</x>
+      <y>1177</y>
+      <w>385</w>
+      <h>704</h>
     </coordinates>
     <panel_attributes>irq_domain
 lw=2
@@ -68,10 +68,10 @@ enum {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2200</x>
-      <y>1140</y>
-      <w>220</w>
-      <h>370</h>
+      <x>2420</x>
+      <y>1254</y>
+      <w>242</w>
+      <h>407</h>
     </coordinates>
     <panel_attributes>irq_domain_ops
 lw=2
@@ -101,10 +101,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2020</x>
-      <y>1140</y>
-      <w>200</w>
-      <h>30</h>
+      <x>2222</x>
+      <y>1254</y>
+      <w>220</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -114,9 +114,9 @@ lw=2</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>910</y>
-      <w>590</w>
-      <h>120</h>
+      <y>1001</y>
+      <w>649</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lw=2
 struct irq_desc irq_desc[NR_IRQS] __cacheline_aligned_in_smp = {
@@ -133,10 +133,10 @@ struct irq_desc irq_desc[NR_IRQS] __cacheline_aligned_in_smp = {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>920</y>
-      <w>340</w>
-      <h>700</h>
+      <x>770</x>
+      <y>1012</y>
+      <w>374</w>
+      <h>770</h>
     </coordinates>
     <panel_attributes>irq_desc
 lw=2
@@ -188,10 +188,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>580</x>
-      <y>920</y>
-      <w>140</w>
-      <h>30</h>
+      <x>638</x>
+      <y>1012</y>
+      <w>154</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -200,10 +200,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1210</x>
-      <y>960</y>
-      <w>260</w>
-      <h>200</h>
+      <x>1331</x>
+      <y>1056</y>
+      <w>286</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>irq_data
 lw=2
@@ -225,10 +225,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1030</x>
-      <y>960</y>
-      <w>200</w>
-      <h>30</h>
+      <x>1133</x>
+      <y>1056</y>
+      <w>220</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -237,10 +237,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1460</x>
-      <y>1070</y>
-      <w>240</w>
-      <h>30</h>
+      <x>1606</x>
+      <y>1177</y>
+      <w>264</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -249,10 +249,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1680</x>
-      <y>840</y>
-      <w>350</w>
-      <h>190</h>
+      <x>1848</x>
+      <y>924</y>
+      <w>385</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>irq_chip
 lw=2
@@ -306,13 +306,143 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1460</x>
-      <y>850</y>
-      <w>240</w>
-      <h>230</h>
+      <x>1606</x>
+      <y>935</y>
+      <w>264</w>
+      <h>253</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
     <additional_attributes>10.0;210.0;110.0;210.0;110.0;10.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>781</x>
+      <y>2761</y>
+      <w>407</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>typedef struct irq_cpustat_t
+--
+	unsigned int __softirq_pending;
+#ifdef CONFIG_SMP
+	unsigned int ipi_irqs[NR_IPI];
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>682</x>
+      <y>3102</y>
+      <w>682</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>irq_cpustat_t irq_stat[NR_CPUS] ____cacheline_aligned;
+
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>979</x>
+      <y>2882</y>
+      <w>33</w>
+      <h>242</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1639</x>
+      <y>3080</y>
+      <w>847</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>static struct softirq_action softirq_vec[NR_SOFTIRQS] __cacheline_aligned_in_smp;
+
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1661</x>
+      <y>2772</y>
+      <w>396</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>struct softirq_action
+--
+	void	(*action)(struct softirq_action *);
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1793</x>
+      <y>2838</y>
+      <w>33</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>847</x>
+      <y>3586</y>
+      <w>319</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>struct tasklet_struct
+--
+	struct tasklet_struct *next;
+	unsigned long state;
+	atomic_t count;
+	void (*func)(unsigned long);
+	unsigned long data;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>825</x>
+      <y>3905</y>
+      <w>264</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>struct tasklet_head 
+--
+	struct tasklet_struct *head;
+	struct tasklet_struct **tail;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>4092</y>
+      <w>473</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>static DEFINE_PER_CPU(struct tasklet_head, tasklet_vec);
+static DEFINE_PER_CPU(struct tasklet_head, tasklet_hi_vec);
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
