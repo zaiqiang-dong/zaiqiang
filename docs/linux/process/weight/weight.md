@@ -55,11 +55,50 @@ $$vruntime = \frac{delta\_exec,*nice\_0\_weight}{weight}$$
 $$ = \frac{delta\_exec,*nice\_0\_weight * 2^{32}}{weight} >>32$$
 $$ = delta\_exec*nice\_0\_weight * inv\_weight >> 32$$
 
+内核实现函数如下
+
+```c
+static u64 __calc_delta(u64 delta_exec, unsigned long weight, struct load_weight *lw)
+{
+	u64 fact = scale_load_down(weight);
+	int shift = WMULT_SHIFT;
+
+	__update_inv_weight(lw);
+
+	if (unlikely(fact >> 32)) {
+		while (fact >> 32) {
+			fact >>= 1;
+			shift--;
+		}
+	}
+
+	/* hint to use a 32x32->64 mul */
+	fact = (u64)(u32)fact * lw->inv_weight;
+
+	while (fact >> 32) {
+		fact >>= 1;
+		shift--;
+	}
+
+	return mul_u64_u32_shr(delta_exec, fact, shift);
+}
+
+```
+
 ::: tip
 
+ 这个函数有两个功能：
+1. 计算调度实体se的权重占整个就绪队列权重的比例，然后乘以调度周期时间即可得到当前调度实体应该运行的时间。
  delta_exec 为调度周期，如果进程数小于8,delta_exec = 6ms.否则：
  $$delta\_exec = n * 0.75$$
  n为进程数
+ weight 为进程的权重值
+ lw 为整个 cfs_rq的load_weight load值。
+2. 计算进程运行时间转换成虚拟时间
+ delta_exec 为	delta_exec = now - curr->exec_start;
+ weight 为NICE_0_LOAD
+ lw 为当前里程的load_weight load值。
+ 
 
 :::
 
