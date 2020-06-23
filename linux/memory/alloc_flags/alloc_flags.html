@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>页分配掩码 | 探索者</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/hero.png">
+    <meta name="description" content="-> 在 LINUX ANDROID 中不断探索 <-">
+    <link rel="preload" href="/assets/css/0.styles.4c6acab7.css" as="style"><link rel="preload" href="/assets/js/app.79675a4a.js" as="script"><link rel="preload" href="/assets/js/2.47bccc41.js" as="script"><link rel="preload" href="/assets/js/15.e40acf02.js" as="script"><link rel="prefetch" href="/assets/js/10.d7df56cd.js"><link rel="prefetch" href="/assets/js/11.6353f97b.js"><link rel="prefetch" href="/assets/js/12.2d7cc76d.js"><link rel="prefetch" href="/assets/js/13.6c855935.js"><link rel="prefetch" href="/assets/js/14.080cedfb.js"><link rel="prefetch" href="/assets/js/16.18522c43.js"><link rel="prefetch" href="/assets/js/17.e23ba8b9.js"><link rel="prefetch" href="/assets/js/18.67b3a649.js"><link rel="prefetch" href="/assets/js/3.f2899c20.js"><link rel="prefetch" href="/assets/js/4.c8b8dcdf.js"><link rel="prefetch" href="/assets/js/5.8647143e.js"><link rel="prefetch" href="/assets/js/6.a4949d3a.js"><link rel="prefetch" href="/assets/js/7.11e0dbac.js"><link rel="prefetch" href="/assets/js/8.9898cadc.js"><link rel="prefetch" href="/assets/js/9.ca1fc55f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4c6acab7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">探索者</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  linux
+</a></div><div class="nav-item"><a href="/arm/" class="nav-link">
+  arm
+</a></div><div class="nav-item"><a href="/selinux/" class="nav-link">
+  selinux
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  linux
+</a></div><div class="nav-item"><a href="/arm/" class="nav-link">
+  arm
+</a></div><div class="nav-item"><a href="/selinux/" class="nav-link">
+  selinux
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>内存管理</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/linux/memory/modle/modle.html" class="sidebar-link">内存模型</a></li><li><a href="/linux/memory/alloc_flags/alloc_flags.html" class="active sidebar-link">页分配掩码</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>文件系统</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>并发同步</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进程管理</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="页分配掩码"><a href="#页分配掩码" class="header-anchor">#</a> 页分配掩码</h1> <hr> <table><thead><tr><th>软件版本</th> <th>硬件版本</th> <th>更新内容</th></tr></thead> <tbody><tr><td>linux 4.7</td> <td>arm64</td> <td></td></tr></tbody></table> <hr> <p>内容</p> <hr> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>转载请注明出处！ <a href="http://www.cxy.wiki" target="_blank" rel="noopener noreferrer">探索者<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新 :</span> <span class="time">6/23/2020, 3:29:09 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/linux/memory/modle/modle.html" class="prev">
+        内存模型
+      </a></span> <span class="next"><a href="/linux/filesystem/initrd/initrd.html">
+        Initrd机制
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.79675a4a.js" defer></script><script src="/assets/js/2.47bccc41.js" defer></script><script src="/assets/js/15.e40acf02.js" defer></script>
+  </body>
+</html>
