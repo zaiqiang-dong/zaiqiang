@@ -64,13 +64,34 @@ module.exports = {
             {
 				title: '内存管理',
 				collapsable: true,
-				children: ['/linux/memory/common/modle/modle',
-                           '/linux/memory/buddy/alloc-flags/alloc-flags']
+                children: [
+                    {
+                        title: 'COMMON',
+				        collapsable: true,
+				        children: ['/linux/memory/common/modle/modle']
+                    },
+                    {
+                        title: 'BUDDY',
+				        collapsable: true,
+				        children: ['/linux/memory/buddy/alloc-flags/alloc-flags']
+                    },
+                    {
+                        title: 'SLXB',
+				        collapsable: true,
+				        children: []
+                    }
+                ]
 			},
             {
 				title: '文件系统',
 				collapsable: true,
-				children: ['/linux/filesystem/initrd/initrd']
+                children: [
+                    {
+                        title: 'COMMON',
+				        collapsable: true,
+				        children: ['/linux/filesystem/initrd/initrd']
+                    }
+                ]
 			},
             {
 				title: '并发同步',
