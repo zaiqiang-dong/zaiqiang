@@ -64,8 +64,8 @@ module.exports = {
             {
 				title: '内存管理',
 				collapsable: true,
-				children: ['/linux/memory/common/1-modle/modle',
-                           '/linux/memory/buddy/1-alloc-flags/alloc-flags']
+				children: ['/linux/memory/common/modle/modle',
+                           '/linux/memory/buddy/alloc-flags/alloc-flags']
 			},
             {
 				title: '文件系统',
