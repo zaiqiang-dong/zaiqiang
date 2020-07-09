@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <help_text/>
-  <zoom_level>8</zoom_level>
+  <help_text>color=red
+</help_text>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1520</x>
-      <y>328</y>
-      <w>280</w>
-      <h>256</h>
+      <x>2412</x>
+      <y>4014</y>
+      <w>315</w>
+      <h>288</h>
     </coordinates>
     <panel_attributes>kobject
 lw=2
@@ -36,10 +37,10 @@ const char		*name;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>832</x>
-      <y>416</y>
-      <w>448</w>
-      <h>120</h>
+      <x>1593</x>
+      <y>4113</y>
+      <w>549</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>kobj_type
 lw=2
@@ -57,10 +58,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>528</y>
-      <w>328</w>
-      <h>120</h>
+      <x>1062</x>
+      <y>4563</y>
+      <w>369</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>kobj_attribute
 lw=2
@@ -78,10 +79,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>456</x>
-      <y>472</y>
-      <w>216</w>
-      <h>136</h>
+      <x>1035</x>
+      <y>4176</y>
+      <w>297</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>attribute
 lw=2
@@ -99,24 +100,12 @@ lw=2
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>320</x>
-      <y>480</y>
-      <w>152</w>
-      <h>104</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-lw=2</panel_attributes>
-    <additional_attributes>10.0;110.0;170.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>568</x>
-      <y>712</y>
-      <w>512</w>
-      <h>168</h>
+      <x>1476</x>
+      <y>4563</y>
+      <w>576</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>bin_attribute
 lw=2
@@ -138,22 +127,22 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>552</x>
-      <y>600</y>
-      <w>216</w>
-      <h>128</h>
+      <x>1215</x>
+      <y>4320</y>
+      <w>486</w>
+      <h>261</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;10.0;250.0;140.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;520.0;110.0;520.0;270.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>312</y>
-      <w>320</w>
-      <h>144</h>
+      <x>558</x>
+      <y>2862</y>
+      <w>360</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>attribute_group
 lw=2
@@ -173,46 +162,22 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>312</x>
-      <y>408</y>
-      <w>160</w>
-      <h>88</h>
+      <x>1323</x>
+      <y>4176</y>
+      <w>288</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1272</x>
-      <y>416</y>
-      <w>264</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-lw=2</panel_attributes>
-    <additional_attributes>310.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>664</x>
-      <y>472</y>
-      <w>184</w>
-      <h>24</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-lw=2</panel_attributes>
-    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>300.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1512</x>
-      <y>152</y>
-      <w>280</w>
-      <h>96</h>
+      <x>2403</x>
+      <y>3816</y>
+      <w>315</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>kset
 lw=2
@@ -229,10 +194,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1640</x>
-      <y>240</y>
-      <w>24</w>
-      <h>104</h>
+      <x>2547</x>
+      <y>3915</y>
+      <w>27</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -241,10 +206,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1384</x>
-      <y>144</y>
-      <w>152</w>
-      <h>280</h>
+      <x>2259</x>
+      <y>3807</y>
+      <w>171</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 lw=2</panel_attributes>
@@ -253,10 +218,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1000</x>
-      <y>208</y>
-      <w>296</w>
-      <h>96</h>
+      <x>1539</x>
+      <y>3708</y>
+      <w>441</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>kset_uevent_ops
 lw=2
@@ -273,22 +238,22 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1288</x>
-      <y>208</y>
-      <w>240</w>
-      <h>40</h>
+      <x>1971</x>
+      <y>3708</y>
+      <w>450</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>280.0;30.0;10.0;10.0</additional_attributes>
+    <additional_attributes>480.0;220.0;130.0;220.0;130.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>408</x>
-      <y>256</y>
-      <w>248</w>
-      <h>80</h>
+      <x>1539</x>
+      <y>3897</y>
+      <w>297</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>sysfs_ops
 lw=2
@@ -303,22 +268,22 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
-      <y>256</y>
-      <w>200</w>
-      <h>232</h>
+      <x>1521</x>
+      <y>3933</y>
+      <w>90</w>
+      <h>261</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>230.0;270.0;10.0;10.0</additional_attributes>
+    <additional_attributes>80.0;270.0;10.0;270.0;10.0;10.0;20.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1536</x>
-      <y>1504</y>
-      <w>248</w>
-      <h>488</h>
+      <x>2421</x>
+      <y>6300</y>
+      <w>432</w>
+      <h>1206</h>
     </coordinates>
     <panel_attributes>device
 lw=2
@@ -410,22 +375,22 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1648</x>
-      <y>576</y>
-      <w>32</w>
-      <h>944</h>
+      <x>2556</x>
+      <y>4293</y>
+      <w>27</w>
+      <h>2025</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;10.0;20.0;1160.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;2230.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5136</x>
-      <y>712</y>
-      <w>264</w>
-      <h>344</h>
+      <x>4878</x>
+      <y>6363</y>
+      <w>297</w>
+      <h>387</h>
     </coordinates>
     <panel_attributes>device_driver
 lw=2
@@ -460,10 +425,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4904</x>
-      <y>1288</y>
-      <w>296</w>
-      <h>176</h>
+      <x>4329</x>
+      <y>7272</y>
+      <w>333</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>platform_driver
 lw=2
@@ -483,10 +448,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>744</x>
-      <y>1656</y>
-      <w>288</w>
-      <h>240</h>
+      <x>1962</x>
+      <y>7893</y>
+      <w>324</w>
+      <h>270</h>
     </coordinates>
     <panel_attributes>platform_device
 lw=2
@@ -514,10 +479,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5416</x>
-      <y>1288</y>
-      <w>208</w>
-      <h>248</h>
+      <x>4914</x>
+      <y>7263</y>
+      <w>234</w>
+      <h>279</h>
     </coordinates>
     <panel_attributes>i2c_driver
 lw=2
@@ -573,10 +538,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>928</y>
-      <w>280</w>
-      <h>216</h>
+      <x>1575</x>
+      <y>7902</y>
+      <w>315</w>
+      <h>243</h>
     </coordinates>
     <panel_attributes>i2c_client
 lw=2
@@ -601,10 +566,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>672</x>
-      <y>1152</y>
-      <w>280</w>
-      <h>384</h>
+      <x>1125</x>
+      <y>7911</y>
+      <w>315</w>
+      <h>432</h>
     </coordinates>
     <panel_attributes>i2c_adapter
 lw=2
@@ -642,10 +607,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2296</x>
-      <y>920</y>
-      <w>288</w>
-      <h>376</h>
+      <x>3186</x>
+      <y>7875</y>
+      <w>324</w>
+      <h>423</h>
     </coordinates>
     <panel_attributes>spi_device
 lw=2
@@ -699,10 +664,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5776</x>
-      <y>1320</y>
-      <w>296</w>
-      <h>136</h>
+      <x>5445</x>
+      <y>7272</y>
+      <w>333</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>spi_driver
 lw=2
@@ -720,10 +685,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2280</x>
-      <y>1448</y>
-      <w>264</w>
-      <h>512</h>
+      <x>2844</x>
+      <y>7866</y>
+      <w>297</w>
+      <h>576</h>
     </coordinates>
     <panel_attributes>spi_controller
 lw=2
@@ -908,77 +873,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
-      <y>1984</y>
-      <w>288</w>
-      <h>344</h>
-    </coordinates>
-    <panel_attributes>pinctrl_dev
-lw=2
---
-
-	struct list_head node;
-	struct pinctrl_desc *desc;
-	struct radix_tree_root pin_desc_tree;
-#ifdef CONFIG_GENERIC_PINCTRL_GROUPS
-	struct radix_tree_root pin_group_tree;
-	unsigned int num_groups;
-#endif
-#ifdef CONFIG_GENERIC_PINMUX_FUNCTIONS
-	struct radix_tree_root pin_function_tree;
-	unsigned int num_functions;
-#endif
-	struct list_head gpio_ranges;
-	struct device *dev;
-	struct module *owner;
-	void *driver_data;
-	struct pinctrl *p;
-	struct pinctrl_state *hog_default;
-	struct pinctrl_state *hog_sleep;
-	struct mutex mutex;
-#ifdef CONFIG_DEBUG_FS
-	struct dentry *device_root;
-#endif
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>792</x>
-      <y>2448</y>
-      <w>304</w>
-      <h>216</h>
-    </coordinates>
-    <panel_attributes>lcd_device
-lw=2
---
-
-	struct lcd_properties props;
-	/* This protects the 'ops' field. If 'ops' is NULL, the driver that
-	   registered this device has been unloaded, and if class_get_devdata()
-	   points to something in the body of that driver, it is also invalid. */
-	struct mutex ops_lock;
-	/* If this is NULL, the backing module is unloaded */
-	struct lcd_ops *ops;
-	/* Serialise access to set_power method */
-	struct mutex update_lock;
-	/* The framebuffer notifier block */
-	struct notifier_block fb_notif;
-
-	struct device dev;
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1520</x>
-      <y>2336</y>
-      <w>288</w>
-      <h>288</h>
+      <x>2421</x>
+      <y>7893</y>
+      <w>324</w>
+      <h>324</h>
     </coordinates>
     <panel_attributes>input_dev
 lw=2
@@ -1057,228 +955,72 @@ lw=2
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>Relation</id>
     <coordinates>
-      <x>2320</x>
-      <y>2096</y>
-      <w>296</w>
-      <h>464</h>
+      <x>1737</x>
+      <y>7497</y>
+      <w>765</w>
+      <h>423</h>
     </coordinates>
-    <panel_attributes>power_supply
-lw=2
---
-
-	const struct power_supply_desc *desc;
-
-	char **supplied_to;
-	size_t num_supplicants;
-
-	char **supplied_from;
-	size_t num_supplies;
-	struct device_node *of_node;
-
-	/* Driver private data */
-	void *drv_data;
-
-	/* private */
-	struct device dev;
-	struct work_struct changed_work;
-	struct delayed_work deferred_register_work;
-	spinlock_t changed_lock;
-	bool changed;
-	bool initialized;
-	bool removing;
-	atomic_t use_cnt;
-#ifdef CONFIG_THERMAL
-	struct thermal_zone_device *tzd;
-	struct thermal_cooling_device *tcd;
-#endif
-
-#ifdef CONFIG_LEDS_TRIGGERS
-	struct led_trigger *charging_full_trig;
-	char *charging_full_trig_name;
-	struct led_trigger *charging_trig;
-	char *charging_trig_name;
-	struct led_trigger *full_trig;
-	char *full_trig_name;
-	struct led_trigger *online_trig;
-	char *online_trig_name;
-	struct led_trigger *charging_blink_full_solid_trig;
-	char *charging_blink_full_solid_trig_name;
-#endif
-
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>2040</x>
-      <y>2648</y>
-      <w>320</w>
-      <h>400</h>
-    </coordinates>
-    <panel_attributes>regulator_dev
-lw=2
---
-
-	const struct regulator_desc *desc;
-	int exclusive;
-	u32 use_count;
-	u32 open_count;
-	u32 open_offset;
-	u32 bypass_count;
-
-	/* lists we belong to */
-	struct list_head list; /* list of all regulators */
-
-	/* lists we own */
-	struct list_head consumer_list; /* consumers we supply */
-
-	struct blocking_notifier_head notifier;
-	struct mutex mutex; /* consumer lock */
-	struct module *owner;
-	struct device dev;
-	struct regulation_constraints *constraints;
-	struct regulator *supply;	/* for tree */
-	const char *supply_name;
-	struct regmap *regmap;
-
-	struct delayed_work disable_work;
-	int deferred_disables;
-
-	void *reg_data;		/* regulator_dev data */
-
-	struct dentry *debugfs;
-
-	struct regulator_enable_gpio *ena_pin;
-	unsigned int ena_gpio_state:1;
-
-	unsigned int is_switch:1;
-
-	/* time when this regulator was disabled last time */
-	unsigned long last_off_jiffy;
-	struct proxy_consumer *proxy_consumer;
-	struct regulator *debug_consumer;
-};
-</panel_attributes>
-    <additional_attributes/>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>830.0;10.0;830.0;330.0;10.0;330.0;10.0;450.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>952</x>
-      <y>1032</y>
-      <w>600</w>
-      <h>568</h>
+      <x>2655</x>
+      <y>7497</y>
+      <w>693</w>
+      <h>396</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>730.0;690.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;320.0;750.0;320.0;750.0;420.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1776</x>
-      <y>1112</y>
-      <w>536</w>
-      <h>504</h>
+      <x>2610</x>
+      <y>7497</y>
+      <w>396</w>
+      <h>387</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;610.0;650.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;360.0;420.0;360.0;420.0;410.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1776</x>
-      <y>1608</y>
-      <w>520</w>
-      <h>96</h>
+      <x>2124</x>
+      <y>7497</y>
+      <w>423</w>
+      <h>414</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;100.0;630.0;10.0</additional_attributes>
+    <additional_attributes>450.0;10.0;450.0;360.0;10.0;360.0;10.0;440.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1776</x>
-      <y>1800</y>
-      <w>560</w>
-      <h>424</h>
+      <x>2574</x>
+      <y>7497</y>
+      <w>27</w>
+      <h>414</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;10.0;680.0;510.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1024</x>
-      <y>1680</y>
-      <w>528</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-lw=2</panel_attributes>
-    <additional_attributes>640.0;10.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1656</x>
-      <y>1984</y>
-      <w>56</w>
-      <h>368</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-lw=2</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;440.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1072</x>
-      <y>1808</y>
-      <w>480</w>
-      <h>360</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-lw=2</panel_attributes>
-    <additional_attributes>580.0;10.0;10.0;430.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1088</x>
-      <y>1984</y>
-      <w>504</w>
-      <h>504</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-lw=2</panel_attributes>
-    <additional_attributes>610.0;10.0;10.0;610.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1776</x>
-      <y>1848</y>
-      <w>280</w>
-      <h>816</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
-lw=2</panel_attributes>
-    <additional_attributes>10.0;10.0;330.0;1000.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;440.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2288</x>
-      <y>240</y>
-      <w>256</w>
-      <h>504</h>
+      <x>3087</x>
+      <y>4113</y>
+      <w>288</w>
+      <h>567</h>
     </coordinates>
     <panel_attributes>kernfs_node
 lw=2
@@ -1321,22 +1063,22 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1792</x>
-      <y>248</y>
-      <w>512</w>
-      <h>200</h>
+      <x>2718</x>
+      <y>4122</y>
+      <w>387</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;230.0;620.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;410.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>216</x>
-      <y>776</y>
-      <w>304</w>
-      <h>120</h>
+      <x>657</x>
+      <y>4563</y>
+      <w>342</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>device_attribute
 lw=2
@@ -1354,13 +1096,925 @@ bg=red
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>600</y>
-      <w>216</w>
-      <h>192</h>
+      <x>819</x>
+      <y>4320</y>
+      <w>306</w>
+      <h>261</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>250.0;10.0;10.0;220.0</additional_attributes>
+    <additional_attributes>320.0;10.0;320.0;110.0;10.0;110.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>2961</y>
+      <w>396</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct attribute *[] 
+
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>387</x>
+      <y>2970</y>
+      <w>189</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>2979</y>
+      <w>477</w>
+      <h>1674</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1840.0;510.0;1840.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2718</x>
+      <y>4014</y>
+      <w>387</w>
+      <h>513</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2
+bg=red</panel_attributes>
+    <additional_attributes>410.0;550.0;170.0;550.0;170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2025</x>
+      <y>135</y>
+      <w>423</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>struct fdt_header
+--
+	fdt32_t magic;			 /* magic word FDT_MAGIC */
+	fdt32_t totalsize;		 /* total size of DT block */
+	fdt32_t off_dt_struct;		 /* offset to structure */
+	fdt32_t off_dt_strings;		 /* offset to strings */
+	fdt32_t off_mem_rsvmap;		 /* offset to memory reserve map */
+	fdt32_t version;		 /* format version */
+	fdt32_t last_comp_version;	 /* last compatible version */
+
+	/* version 2 fields below */
+	fdt32_t boot_cpuid_phys;	 /* Which physical CPU id we're
+					    booting on */
+	/* version 3 fields below */
+	fdt32_t size_dt_strings;	 /* size of the strings block */
+
+	/* version 17 fields below */
+	fdt32_t size_dt_struct;		 /* size of the structure block */
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1278</x>
+      <y>117</y>
+      <w>225</w>
+      <h>342</h>
+    </coordinates>
+    <panel_attributes>device-tree.dtb
+lw=2
+--
+
+
+header
+
+
+--
+
+
+fill_area
+
+
+--
+
+
+dt_struct
+
+
+--
+
+
+dt_string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>873</x>
+      <y>216</y>
+      <w>279</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Note..
+lw=2
+填充大小为
+off_dt_struct – sizeof(struct fdt_header)
+填充的值为0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1143</x>
+      <y>234</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>873</x>
+      <y>306</y>
+      <w>270</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Note..
+lw=2
+dt_struct存储节点数值及名称相关信息
+还有属性值</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>873</x>
+      <y>378</y>
+      <w>153</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Note..
+lw=2
+dt_string存储属性名</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1134</x>
+      <y>315</y>
+      <w>162</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>396</y>
+      <w>279</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>290.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2061</x>
+      <y>549</y>
+      <w>180</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>struct fdt_node_header
+--
+	fdt32_t tag;
+	char name[0];
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2295</x>
+      <y>540</y>
+      <w>180</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>struct fdt_property
+--
+	fdt32_t tag;
+	fdt32_t len;
+	fdt32_t nameoff;
+	char data[0];
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>873</x>
+      <y>153</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>Note..
+lw=2
+头部信息</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>990</x>
+      <y>162</y>
+      <w>306</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1278</x>
+      <y>0</y>
+      <w>216</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Note..
+lw=2
+使用dtc工具
+将dts文件编译成
+dtb文件</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1386</x>
+      <y>54</y>
+      <w>27</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1215</x>
+      <y>6426</y>
+      <w>630</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>struct device_node 
+--
+	const char *name;
+	const char *type;
+	phandle phandle;
+	const char *full_name;
+	struct fwnode_handle fwnode;
+
+	struct	property *properties;
+	struct	property *deadprops;	/* removed properties */
+	struct	device_node *parent;
+	struct	device_node *child;
+	struct	device_node *sibling;
+	struct	kobject kobj;
+	unsigned long _flags;
+	void	*data;
+#if defined(CONFIG_SPARC)
+	const char *path_component_name;
+	unsigned int unique_id;
+	struct of_irq_controller *irq_trans;
+#endif</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>6111</y>
+      <w>234</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>struct property
+--
+	char	*name;
+	int	length;
+	void	*value;
+	struct property *next;
+	unsigned long _flags;
+	unsigned int unique_id;
+	struct bin_attribute attr;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1431</x>
+      <y>6111</y>
+      <w>243</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>struct property
+--
+
+
+...
+	struct property *next;
+...
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1764</x>
+      <y>6111</y>
+      <w>252</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>struct property
+--
+
+
+...
+	struct property *next;
+...
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1341</x>
+      <y>6111</y>
+      <w>108</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>100.0;10.0;60.0;10.0;60.0;80.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1665</x>
+      <y>6120</y>
+      <w>117</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>110.0;10.0;70.0;10.0;70.0;80.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>999</x>
+      <y>6120</y>
+      <w>234</w>
+      <h>450</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>240.0;480.0;10.0;480.0;10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1161</x>
+      <y>4320</y>
+      <w>27</w>
+      <h>261</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>126</x>
+      <y>2979</y>
+      <w>1152</w>
+      <h>1782</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1960.0;1260.0;1960.0;1260.0;1910.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>27</x>
+      <y>2979</y>
+      <w>1764</w>
+      <h>1872</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;2060.0;1940.0;2060.0;1940.0;1970.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1197</x>
+      <y>2475</y>
+      <w>288</w>
+      <h>567</h>
+    </coordinates>
+    <panel_attributes>kernfs_node
+lw=2
+--
+
+	atomic_t		count;
+	atomic_t		active;
+#ifdef CONFIG_DEBUG_LOCK_ALLOC
+	struct lockdep_map	dep_map;
+#endif
+	/*
+	 * Use kernfs_get_parent() and kernfs_name/path() instead of
+	 * accessing the following two fields directly.  If the node is
+	 * never moved to a different parent, it is safe to access the
+	 * parent directly.
+	 */
+	struct kernfs_node	*parent;
+	const char		*name;
+
+	struct rb_node		rb;
+
+	const void		*ns;	/* namespace tag */
+	unsigned int		hash;	/* ns + name hash */
+	union {
+		struct kernfs_elem_dir		dir;
+		struct kernfs_elem_symlink	symlink;
+		struct kernfs_elem_attr		attr;
+	};
+
+	void			*priv;
+
+	unsigned short		flags;
+	umode_t			mode;
+	unsigned int		ino;
+	struct kernfs_iattrs	*iattr;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>909</x>
+      <y>2862</y>
+      <w>306</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1476</x>
+      <y>2664</y>
+      <w>1782</w>
+      <h>1467</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>1960.0;1610.0;1960.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1674</x>
+      <y>2817</y>
+      <w>396</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>struct kernfs_elem_attr
+--
+	const struct kernfs_ops	*ops;
+	struct kernfs_open_node	*open;
+	loff_t			size;
+	struct kernfs_node	*notify_next;	/* for kernfs_notify() */
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1476</x>
+      <y>2817</y>
+      <w>216</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2241</x>
+      <y>2817</y>
+      <w>450</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>struct kernfs_ops
+--
+	int (*seq_show)(struct seq_file *sf, void *v);
+	void *(*seq_start)(struct seq_file *sf, loff_t *ppos);
+	void *(*seq_next)(struct seq_file *sf, void *v, loff_t *ppos);
+	void (*seq_stop)(struct seq_file *sf, void *v);
+	ssize_t (*read)(struct kernfs_open_file *of, char *buf, size_t bytes,
+			loff_t off);
+	size_t atomic_write_len;
+	bool prealloc;
+	ssize_t (*write)(struct kernfs_open_file *of, char *buf, size_t bytes,
+			 loff_t off);
+	int (*mmap)(struct kernfs_open_file *of, struct vm_area_struct *vma);
+#ifdef CONFIG_DEBUG_LOCK_ALLOC
+	struct lock_class_key	lockdep_key;
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2061</x>
+      <y>2835</y>
+      <w>198</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2133</x>
+      <y>4104</y>
+      <w>297</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>310.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5013</x>
+      <y>6741</y>
+      <w>27</w>
+      <h>540</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;580.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4482</x>
+      <y>6741</y>
+      <w>459</w>
+      <h>549</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>490.0;10.0;490.0;460.0;10.0;460.0;10.0;590.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5130</x>
+      <y>6741</y>
+      <w>405</w>
+      <h>549</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;450.0;430.0;450.0;430.0;590.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1269</x>
+      <y>7497</y>
+      <w>1179</w>
+      <h>432</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>1290.0;10.0;1290.0;300.0;10.0;300.0;10.0;460.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1836</x>
+      <y>6426</y>
+      <w>603</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>650.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2844</x>
+      <y>6525</y>
+      <w>2052</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;2260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3204</x>
+      <y>5805</y>
+      <w>441</w>
+      <h>423</h>
+    </coordinates>
+    <panel_attributes>struct bus_type 
+--
+	const char		*name;
+	const char		*dev_name;
+	struct device		*dev_root;
+	struct device_attribute	*dev_attrs;	/* use dev_groups instead */
+	const struct attribute_group **bus_groups;
+	const struct attribute_group **dev_groups;
+	const struct attribute_group **drv_groups;
+
+	int (*match)(struct device *dev, struct device_driver *drv);
+	int (*uevent)(struct device *dev, struct kobj_uevent_env *env);
+	int (*probe)(struct device *dev);
+	int (*remove)(struct device *dev);
+	void (*shutdown)(struct device *dev);
+
+	int (*online)(struct device *dev);
+	int (*offline)(struct device *dev);
+
+	int (*suspend)(struct device *dev, pm_message_t state);
+	int (*resume)(struct device *dev);
+
+	const struct dev_pm_ops *pm;
+
+	const struct iommu_ops *iommu_ops;
+
+	struct subsys_private *p;
+	struct lock_class_key lock_key;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2844</x>
+      <y>5805</y>
+      <w>378</w>
+      <h>729</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;790.0;230.0;790.0;230.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2952</x>
+      <y>6696</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>dev_t
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2844</x>
+      <y>6696</y>
+      <w>126</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6507</x>
+      <y>5913</y>
+      <w>261</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>struct cdev
+--
+	struct kobject kobj;
+	struct module *owner;
+	const struct file_operations *ops;
+	struct list_head list;
+	dev_t dev;
+	unsigned int count;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2610</x>
+      <y>4293</y>
+      <w>4050</w>
+      <h>1638</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1390.0;4480.0;1390.0;4480.0;1800.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>7038</x>
+      <y>5958</y>
+      <w>756</w>
+      <h>576</h>
+    </coordinates>
+    <panel_attributes>struct file_operations
+--
+	struct module *owner;
+	loff_t (*llseek) (struct file *, loff_t, int);
+	ssize_t (*read) (struct file *, char __user *, size_t, loff_t *);
+	ssize_t (*write) (struct file *, const char __user *, size_t, loff_t *);
+	ssize_t (*read_iter) (struct kiocb *, struct iov_iter *);
+	ssize_t (*write_iter) (struct kiocb *, struct iov_iter *);
+	int (*iterate) (struct file *, struct dir_context *);
+	int (*iterate_shared) (struct file *, struct dir_context *);
+	unsigned int (*poll) (struct file *, struct poll_table_struct *);
+	long (*unlocked_ioctl) (struct file *, unsigned int, unsigned long);
+	long (*compat_ioctl) (struct file *, unsigned int, unsigned long);
+	int (*mmap) (struct file *, struct vm_area_struct *);
+	int (*open) (struct inode *, struct file *);
+	int (*flush) (struct file *, fl_owner_t id);
+	int (*release) (struct inode *, struct file *);
+	int (*fsync) (struct file *, loff_t, loff_t, int datasync);
+	int (*fasync) (int, struct file *, int);
+	int (*lock) (struct file *, int, struct file_lock *);
+	ssize_t (*sendpage) (struct file *, struct page *, int, size_t, loff_t *, int);
+	unsigned long (*get_unmapped_area)(struct file *, unsigned long, unsigned long, unsigned long, unsigned long);
+	int (*check_flags)(int);
+	int (*flock) (struct file *, int, struct file_lock *);
+	ssize_t (*splice_write)(struct pipe_inode_info *, struct file *, loff_t *, size_t, unsigned int);
+	ssize_t (*splice_read)(struct file *, loff_t *, struct pipe_inode_info *, size_t, unsigned int);
+	int (*setlease)(struct file *, long, struct file_lock **, void **);
+	long (*fallocate)(struct file *file, int mode, loff_t offset,
+			  loff_t len);
+	void (*show_fdinfo)(struct seq_file *m, struct file *f);
+#ifndef CONFIG_MMU
+	unsigned (*mmap_capabilities)(struct file *);
+#endif
+	ssize_t (*copy_file_range)(struct file *, loff_t, struct file *,
+			loff_t, size_t, unsigned int);
+	int (*clone_file_range)(struct file *, loff_t, struct file *, loff_t,
+			u64);
+	ssize_t (*dedupe_file_range)(struct file *, u64, u64, struct file *,
+			u64);
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6759</x>
+      <y>5958</y>
+      <w>297</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>7002</x>
+      <y>5463</y>
+      <w>234</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>struct kobj_map
+--
+	struct probe {
+		struct probe *next;
+		dev_t dev;
+		unsigned long range;
+		struct module *owner;
+		kobj_probe_t *get;
+		int (*lock)(dev_t, void *);
+		void *data;
+	} *probes[255];
+	struct mutex *lock;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2997</x>
+      <y>6579</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>驱动私有数据
+lw=2
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2844</x>
+      <y>6579</y>
+      <w>171</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1539</x>
+      <y>3501</y>
+      <w>243</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>struct kobj_uevent_env
+--
+	char *argv[3];
+	char *envp[UEVENT_NUM_ENVP];
+	int envp_idx;
+	char buf[UEVENT_BUFFER_SIZE];
+	int buflen;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1638</x>
+      <y>3609</y>
+      <w>27</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
 </diagram>
