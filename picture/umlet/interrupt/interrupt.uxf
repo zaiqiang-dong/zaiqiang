@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>11</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>616</x>
+      <x>581</x>
       <y>0</y>
-      <w>121</w>
-      <h>44</h>
+      <w>77</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>Interrupt
 lw=2</panel_attributes>
@@ -16,10 +16,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1848</x>
-      <y>1177</y>
-      <w>385</w>
-      <h>704</h>
+      <x>1358</x>
+      <y>1148</y>
+      <w>245</w>
+      <h>469</h>
     </coordinates>
     <panel_attributes>irq_domain
 lw=2
@@ -68,10 +68,10 @@ enum {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2420</x>
-      <y>1254</y>
-      <w>242</w>
-      <h>407</h>
+      <x>1687</x>
+      <y>1197</y>
+      <w>399</w>
+      <h>259</h>
     </coordinates>
     <panel_attributes>irq_domain_ops
 lw=2
@@ -101,22 +101,22 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2222</x>
-      <y>1254</y>
-      <w>220</w>
-      <h>33</h>
+      <x>1596</x>
+      <y>1197</y>
+      <w>105</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>1001</y>
-      <w>649</w>
-      <h>132</h>
+      <x>98</x>
+      <y>518</y>
+      <w>413</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lw=2
 struct irq_desc irq_desc[NR_IRQS] __cacheline_aligned_in_smp = {
@@ -133,10 +133,10 @@ struct irq_desc irq_desc[NR_IRQS] __cacheline_aligned_in_smp = {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>770</x>
-      <y>1012</y>
-      <w>374</w>
-      <h>770</h>
+      <x>679</x>
+      <y>644</y>
+      <w>238</w>
+      <h>490</h>
     </coordinates>
     <panel_attributes>irq_desc
 lw=2
@@ -188,22 +188,22 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>638</x>
-      <y>1012</y>
-      <w>154</w>
-      <h>33</h>
+      <x>504</x>
+      <y>525</y>
+      <w>189</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0;100.0;180.0;250.0;180.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1331</x>
-      <y>1056</y>
-      <w>286</w>
-      <h>220</h>
+      <x>1036</x>
+      <y>672</y>
+      <w>182</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>irq_data
 lw=2
@@ -225,10 +225,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1133</x>
-      <y>1056</y>
-      <w>220</w>
-      <h>33</h>
+      <x>910</x>
+      <y>672</y>
+      <w>140</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -237,22 +237,22 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1606</x>
-      <y>1177</y>
-      <w>264</w>
-      <h>33</h>
+      <x>1211</x>
+      <y>749</y>
+      <w>161</w>
+      <h>420</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
-    <additional_attributes>10.0;10.0;220.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0;110.0;580.0;210.0;580.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1848</x>
-      <y>924</y>
-      <w>385</w>
-      <h>209</h>
+      <x>1365</x>
+      <y>588</y>
+      <w>245</w>
+      <h>504</h>
     </coordinates>
     <panel_attributes>irq_chip
 lw=2
@@ -306,10 +306,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1606</x>
-      <y>935</y>
-      <w>264</w>
-      <h>253</h>
+      <x>1211</x>
+      <y>595</y>
+      <w>168</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -318,10 +318,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>781</x>
-      <y>2761</y>
-      <w>407</w>
-      <h>132</h>
+      <x>4130</x>
+      <y>728</y>
+      <w>259</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>typedef struct irq_cpustat_t
 --
@@ -336,10 +336,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>682</x>
-      <y>3102</y>
-      <w>682</w>
-      <h>44</h>
+      <x>4067</x>
+      <y>945</y>
+      <w>434</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>irq_cpustat_t irq_stat[NR_CPUS] ____cacheline_aligned;
 
@@ -349,10 +349,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>979</x>
-      <y>2882</y>
-      <w>33</w>
-      <h>242</h>
+      <x>4256</x>
+      <y>805</y>
+      <w>21</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -361,10 +361,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1639</x>
-      <y>3080</y>
-      <w>847</w>
-      <h>55</h>
+      <x>4676</x>
+      <y>931</y>
+      <w>539</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>static struct softirq_action softirq_vec[NR_SOFTIRQS] __cacheline_aligned_in_smp;
 
@@ -374,10 +374,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1661</x>
-      <y>2772</y>
-      <w>396</w>
-      <h>77</h>
+      <x>4690</x>
+      <y>735</y>
+      <w>252</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>struct softirq_action
 --
@@ -389,10 +389,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1793</x>
-      <y>2838</y>
-      <w>33</w>
-      <h>264</h>
+      <x>4774</x>
+      <y>777</y>
+      <w>21</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -401,10 +401,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>847</x>
-      <y>3586</y>
-      <w>319</w>
-      <h>165</h>
+      <x>4172</x>
+      <y>1253</y>
+      <w>203</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>struct tasklet_struct
 --
@@ -420,10 +420,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>825</x>
-      <y>3905</y>
-      <w>264</w>
-      <h>88</h>
+      <x>4158</x>
+      <y>1456</y>
+      <w>168</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>struct tasklet_head 
 --
@@ -435,14 +435,143 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>770</x>
-      <y>4092</y>
-      <w>473</w>
-      <h>55</h>
+      <x>4123</x>
+      <y>1575</y>
+      <w>301</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>static DEFINE_PER_CPU(struct tasklet_head, tasklet_vec);
 static DEFINE_PER_CPU(struct tasklet_head, tasklet_hi_vec);
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>147</x>
+      <y>385</y>
+      <w>287</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Note..
+lw=2
+kernel/irq/irqdesc.c
+在没有定义CONFIG_SPARSE_IRQ的情况下，才使用数组
+否则，使用红黑树来存储中断描述符
+在64位arm中一般使用红黑树</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>455</y>
+      <w>21</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>98</x>
+      <y>630</y>
+      <w>413</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>红黑树
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>651</y>
+      <w>189</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1001</x>
+      <y>1351</y>
+      <w>252</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>struct gic_chip_data
+--
+	union gic_base dist_base;
+	union gic_base cpu_base;
+#ifdef CONFIG_CPU_PM
+	u32 saved_spi_enable[DIV_ROUND_UP(1020, 32)];
+	u32 saved_spi_conf[DIV_ROUND_UP(1020, 16)];
+	u32 saved_spi_target[DIV_ROUND_UP(1020, 4)];
+	u32 __percpu *saved_ppi_enable;
+	u32 __percpu *saved_ppi_conf;
+#endif
+	struct irq_domain *domain;
+	unsigned int gic_irqs;
+#ifdef CONFIG_GIC_NON_BANKED
+	void __iomem *(*get_base)(union gic_base *);
+#endif
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1246</x>
+      <y>1155</y>
+      <w>126</w>
+      <h>336</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>10.0;460.0;60.0;460.0;60.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>1204</y>
+      <w>196</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>struct irqaction
+--
+	irq_handler_t		handler;
+	void			*dev_id;
+	void __percpu		*percpu_dev_id;
+	struct irqaction	*next;
+	irq_handler_t		thread_fn;
+	struct task_struct	*thread;
+	unsigned int		irq;
+	unsigned int		flags;
+	unsigned long		thread_flags;
+	unsigned long		thread_mask;
+	const char		*name;
+	struct proc_dir_entry	*dir;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>742</y>
+      <w>343</w>
+      <h>476</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+lw=2</panel_attributes>
+    <additional_attributes>470.0;10.0;10.0;10.0;10.0;660.0</additional_attributes>
   </element>
 </diagram>

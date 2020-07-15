@@ -14,7 +14,7 @@
 ---
 ::: tip  
 
-转载请注明出处！ [探索者](http://www.cxy.wiki)
+转载请注明出处！ [探索者](http://www.tsz.wiki)
 
 :::
 
