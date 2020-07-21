@@ -100,7 +100,8 @@ module.exports = {
                     {
                         title: 'BARRIERS',
 				        collapsable: true,
-				        children: ['/linux/concurency/barriers/overview/overview.md']
+				        children: ['/linux/concurency/barriers/overview/overview.md',
+                                    '/linux/concurency/barriers/principle/principle.md']
                     }
                 ]
 			},
