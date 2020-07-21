@@ -1,13 +1,3 @@
----
-title: 内存屏障
-tags:
-  - 同步
-  - 并发
-categories: '同步并发'
-comments: true
-copyright: true
-date: 2018-11-07 10:59:24
----
 # 概述
 
 *理想很丰满，现实很骨感，你的程序也一样，不一定会按照你的预期走*
