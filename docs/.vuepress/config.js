@@ -96,7 +96,13 @@ module.exports = {
             {
 				title: '并发同步',
 				collapsable: true,
-				children: ['/linux/concurency/smb']
+				children: [
+                    {
+                        title: 'BARRIERS',
+				        collapsable: true,
+				        children: ['/linux/concurency/barriers/overview/overview.md']
+                    }
+                ]
 			},
 			{
 				title: '进程管理',
