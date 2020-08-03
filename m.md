@@ -19,3 +19,5 @@
 :::
 
 
+---
+<Vssue :title="$title"/>
