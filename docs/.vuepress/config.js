@@ -1,6 +1,7 @@
 module.exports = {
 	title: '探索者',
 	description: '-> 在 LINUX ANDROID 中不断探索 <-',
+    lang : 'zh-CN',
     //git hub
     repo: 'zaiqiang-dong/zaiqiang',
     repoLabel: '查看源码',
@@ -42,7 +43,7 @@ module.exports = {
         ['@vssue/vuepress-plugin-vssue',{
             platform: 'github',
             owner: 'zaiqiang-dong',
-            repo: 'blog-comment',
+            repo: 'zaiqiang',
             clientId: '01a047c7f3aceebf8a0c',
             clientSecret: '8d7ff3505fe64632440cb6318d7c0eafa4404e3b',
         }],
