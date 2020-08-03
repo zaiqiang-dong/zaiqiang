@@ -20,3 +20,5 @@ CPU经过长时间的发展，硬件构成等各方面都有了很大变化的�
 转载请注明出处！ [探索者](http://www.cxy.wiki)
 
 ::
+
+<Vssue :title="$title" />

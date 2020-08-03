@@ -39,6 +39,13 @@ module.exports = {
         ['@vuepress/back-to-top'],
         ['@vuepress/last-updated'],
         ['@vuepress/active-header-links'],
+        ['@vssue/vuepress-plugin-vssue',{
+            platform: 'github',
+            owner: 'zaiqiang-dong',
+            repo: 'blog-comment',
+            clientId: '01a047c7f3aceebf8a0c',
+            clientSecret: '8d7ff3505fe64632440cb6318d7c0eafa4404e3b',
+        }],
 	],
 	themeConfig: {
         lastUpdated: '最近更新 ',

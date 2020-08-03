@@ -126,3 +126,4 @@ config ARCH_SPARSEMEM_ENABLE
 :::
 
 
+<Vssue :title="$title" />

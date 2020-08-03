@@ -424,3 +424,4 @@
 :::
 
 
+<Vssue :title="$title" />

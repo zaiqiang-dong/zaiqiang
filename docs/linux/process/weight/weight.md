@@ -182,3 +182,6 @@ $$cpu\_scale = (\frac{cpu\_max\_freq * efficiency}{max\_cpu\_perf})* 1024$$
 ### max_freq_scale
 表示 cpufreq_policy的最大频率 相对 本cpu最大频率 的比值
 $$max\_freq\_scale = \frac{policy->max}{cpuinfo->max\_freq} * 1024$$
+
+
+<Vssue :title="$title" />

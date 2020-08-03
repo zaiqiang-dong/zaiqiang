@@ -530,3 +530,5 @@ ___
 5. 加入规则`allow system_server i2c2_device:chr_file { open read write ioctl};`
 
 注意：以上信息要写入合适的文件，要以当时的问题来决定。
+
+<Vssue :title="$title" />

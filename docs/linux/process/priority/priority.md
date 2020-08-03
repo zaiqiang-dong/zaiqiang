@@ -244,3 +244,5 @@ static int effective_prio(struct task_struct *p)
 :::
 
 
+<Vssue :title="$title" />
+
