@@ -511,7 +511,7 @@ allow A_t C_t:file {read write};
 allow B_t C_t:file {read write};
 ```
 
-___
+---
 ## 7.如何快速添加一安全性规则
 
 1. 首先确认你要解的问题的中是那个`进程`要访问那个`文件`
@@ -531,4 +531,5 @@ ___
 
 注意：以上信息要写入合适的文件，要以当时的问题来决定。
 
-<Vssue :title="$title" />
+---
+<Vssue :title="$title"/>
