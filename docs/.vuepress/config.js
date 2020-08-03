@@ -45,7 +45,7 @@ module.exports = {
             owner: 'zaiqiang-dong',
             repo: 'zaiqiang',
             clientId: '01a047c7f3aceebf8a0c',
-            clientSecret: '8d7ff3505fe64632440cb6318d7c0eafa4404e3b',
+            clientSecret: '419c684ff0462df5cbe99c3d43ef0705ae0297a4',
         }],
 	],
 	themeConfig: {
