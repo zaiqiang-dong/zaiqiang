@@ -1,6 +1,9 @@
 // showing default values
 accentColor = #3eaf7c ----- 62,175,124
 textColor = #2c3e50   ----- 44,62,80
-borderColor = #eaecef ----- 234,236,239
+borderColor1 = #eaecef ----- 234,236,239
+borderColor2 = #e7c000 ----- 231,192,0
+borderColor3 = #c00000 ----- 192,0,0
 codeBgColor = #282c34 ----- 40,44,52
+
 
