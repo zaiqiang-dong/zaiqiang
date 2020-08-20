@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>原理 | 探索者</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/hero.png">
+    <meta name="description" content="-> 在 LINUX ANDROID 中不断探索 <-">
+    <link rel="preload" href="/assets/css/0.styles.e32f95c6.css" as="style"><link rel="preload" href="/assets/js/app.6ac7dc1c.js" as="script"><link rel="preload" href="/assets/js/2.30f77a47.js" as="script"><link rel="preload" href="/assets/js/9.4735d6d7.js" as="script"><link rel="prefetch" href="/assets/js/10.61eacf8f.js"><link rel="prefetch" href="/assets/js/11.de3c4a5b.js"><link rel="prefetch" href="/assets/js/12.e71f538d.js"><link rel="prefetch" href="/assets/js/13.047e0158.js"><link rel="prefetch" href="/assets/js/14.9e478c3b.js"><link rel="prefetch" href="/assets/js/15.3d9b1ce0.js"><link rel="prefetch" href="/assets/js/16.17eabafa.js"><link rel="prefetch" href="/assets/js/17.d8cf09a8.js"><link rel="prefetch" href="/assets/js/18.bf45c117.js"><link rel="prefetch" href="/assets/js/19.01525ba1.js"><link rel="prefetch" href="/assets/js/20.a45c53e9.js"><link rel="prefetch" href="/assets/js/21.a5685148.js"><link rel="prefetch" href="/assets/js/3.de52bd27.js"><link rel="prefetch" href="/assets/js/4.9e947dd1.js"><link rel="prefetch" href="/assets/js/5.d7c95a42.js"><link rel="prefetch" href="/assets/js/6.fdcb9a7a.js"><link rel="prefetch" href="/assets/js/7.1bf870a3.js"><link rel="prefetch" href="/assets/js/8.6dabfd48.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e32f95c6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">探索者</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  Linux
+</a></div><div class="nav-item"><a href="/arm/" class="nav-link">
+  Arm
+</a></div><div class="nav-item"><a href="/selinux/" class="nav-link">
+  Selinux
+</a></div><div class="nav-item"><a href="/virtualization/" class="nav-link">
+  Virtualization
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  Linux
+</a></div><div class="nav-item"><a href="/arm/" class="nav-link">
+  Arm
+</a></div><div class="nav-item"><a href="/selinux/" class="nav-link">
+  Selinux
+</a></div><div class="nav-item"><a href="/virtualization/" class="nav-link">
+  Virtualization
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>内存管理</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>文件系统</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>并发同步</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>BARRIERS</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/linux/concurency/barriers/overview/overview.html" class="sidebar-link">概述</a></li><li><a href="/linux/concurency/barriers/principle/principle.html" class="active sidebar-link">原理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/linux/concurency/barriers/principle/principle.html#_1-硬件的样子" class="sidebar-link">1 硬件的样子</a></li></ul></li></ul></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进程管理</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="原理"><a href="#原理" class="header-anchor">#</a> 原理</h1> <p>在内存屏障概述中，我们已经对内存屏障有了大概的了解，也清楚了它的接口，本节主要来了解一下它的原理。</p> <hr> <table><thead><tr><th>软件版本</th> <th>硬件版本</th> <th>更新内容</th></tr></thead> <tbody><tr><td></td> <td></td> <td></td></tr></tbody></table> <hr> <h2 id="_1-硬件的样子"><a href="#_1-硬件的样子" class="header-anchor">#</a> 1 硬件的样子</h2> <p>CPU经过长时间的发展，硬件构成等各方面都有了很大变化的，现代CPU的样子应该如下图所示：
+<img src="/assets/img/cpu-catch-memory_01.c531edff.png" alt=""></p> <hr> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>转载请注明出处！ <a href="http://www.cxy.wiki" target="_blank" rel="noopener noreferrer">探索者<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <hr> <!----></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新 :</span> <span class="time">8/3/2020, 6:03:33 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/linux/concurency/barriers/overview/overview.html" class="prev">
+        概述
+      </a></span> <span class="next"><a href="/linux/process/weight/weight.html">
+        权重计算
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6ac7dc1c.js" defer></script><script src="/assets/js/2.30f77a47.js" defer></script><script src="/assets/js/9.4735d6d7.js" defer></script>
+  </body>
+</html>

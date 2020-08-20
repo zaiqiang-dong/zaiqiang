@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>页分配掩码 | 探索者</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/hero.png">
+    <meta name="description" content="-> 在 LINUX ANDROID 中不断探索 <-">
+    <link rel="preload" href="/assets/css/0.styles.e32f95c6.css" as="style"><link rel="preload" href="/assets/js/app.6ac7dc1c.js" as="script"><link rel="preload" href="/assets/js/2.30f77a47.js" as="script"><link rel="preload" href="/assets/js/16.17eabafa.js" as="script"><link rel="prefetch" href="/assets/js/10.61eacf8f.js"><link rel="prefetch" href="/assets/js/11.de3c4a5b.js"><link rel="prefetch" href="/assets/js/12.e71f538d.js"><link rel="prefetch" href="/assets/js/13.047e0158.js"><link rel="prefetch" href="/assets/js/14.9e478c3b.js"><link rel="prefetch" href="/assets/js/15.3d9b1ce0.js"><link rel="prefetch" href="/assets/js/17.d8cf09a8.js"><link rel="prefetch" href="/assets/js/18.bf45c117.js"><link rel="prefetch" href="/assets/js/19.01525ba1.js"><link rel="prefetch" href="/assets/js/20.a45c53e9.js"><link rel="prefetch" href="/assets/js/21.a5685148.js"><link rel="prefetch" href="/assets/js/3.de52bd27.js"><link rel="prefetch" href="/assets/js/4.9e947dd1.js"><link rel="prefetch" href="/assets/js/5.d7c95a42.js"><link rel="prefetch" href="/assets/js/6.fdcb9a7a.js"><link rel="prefetch" href="/assets/js/7.1bf870a3.js"><link rel="prefetch" href="/assets/js/8.6dabfd48.js"><link rel="prefetch" href="/assets/js/9.4735d6d7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e32f95c6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">探索者</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  Linux
+</a></div><div class="nav-item"><a href="/arm/" class="nav-link">
+  Arm
+</a></div><div class="nav-item"><a href="/selinux/" class="nav-link">
+  Selinux
+</a></div><div class="nav-item"><a href="/virtualization/" class="nav-link">
+  Virtualization
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  Linux
+</a></div><div class="nav-item"><a href="/arm/" class="nav-link">
+  Arm
+</a></div><div class="nav-item"><a href="/selinux/" class="nav-link">
+  Selinux
+</a></div><div class="nav-item"><a href="/virtualization/" class="nav-link">
+  Virtualization
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>内存管理</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>COMMON</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>BUDDY</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/linux/memory/buddy/alloc-flags/alloc-flags.html" class="active sidebar-link">页分配掩码</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/linux/memory/buddy/alloc-flags/alloc-flags.html#第一部分" class="sidebar-link">第一部分</a></li><li class="sidebar-sub-header"><a href="/linux/memory/buddy/alloc-flags/alloc-flags.html#第二部分" class="sidebar-link">第二部分</a></li><li class="sidebar-sub-header"><a href="/linux/memory/buddy/alloc-flags/alloc-flags.html#第三部分" class="sidebar-link">第三部分</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>SLXB</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>文件系统</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>并发同步</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进程管理</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="页分配掩码"><a href="#页分配掩码" class="header-anchor">#</a> 页分配掩码</h1> <hr> <table><thead><tr><th>软件版本</th> <th>硬件版本</th> <th>更新内容</th></tr></thead> <tbody><tr><td>linux 4.19</td> <td>arm64</td> <td></td></tr></tbody></table> <hr> <h2 id="第一部分"><a href="#第一部分" class="header-anchor">#</a> 第一部分</h2> <p>最原始的一部分flags（前面带三个_）,后面的flags基本都是用这部分“或/组合”出来的,具体信息如下：</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code>
+<span class="token comment">/* Plain integer GFP bitmasks. Do not use this directly. */</span>
+
+<span class="token comment">/*
+ * 分配区域指定
+ */</span>
+
+<span class="token comment">//从ZONE_DMA区域分配内存</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_DMA 		0x01u</span>
+
+<span class="token comment">//从ZONE_HIGHMEM活ZONE_NORMAL中分配内存</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_HIGHMEM		0x02u</span>
+
+<span class="token comment">//从ZONE_DMA32中分配内存</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_DMA32		0x04u</span>
+
+<span class="token comment">/*
+ * 分配行为指定
+ */</span>
+
+<span class="token comment">//页是可移动的</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_MOVABLE		0x08u</span>
+
+<span class="token comment">//页是可回收的</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_RECLAIMABLE	0x10u</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_HIGH		0x20u</span>
+
+<span class="token comment">//未知			</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_IO		0x40u</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_FS		0x80u</span>
+
+<span class="token comment">//需要非缓存的冷页</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_COLD		0x100u</span>
+
+<span class="token comment">//禁止分配失败警告</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_NOWARN		0x200u</span>
+
+<span class="token comment">//一直重试直到成功				</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_REPEAT		0x400u</span>
+
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_NOFAIL		0x800u</span>
+
+<span class="token comment">//失败返回不重试</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_NORETRY		0x1000u</span>
+
+<span class="token comment">//使用紧急分配链表</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_MEMALLOC		0x2000u</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_COMP		0x4000u</span>
+
+<span class="token comment">//返回的页面初始化为0</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_ZERO		0x8000u</span>
+
+<span class="token comment">/*
+ * 分配类型指定
+ */</span>
+
+<span class="token comment">//不使用紧急分配链表</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_NOMEMALLOC	0x10000u</span>
+
+<span class="token comment">//只允许在进程允许运行的CPU所关联的PCP分配内存</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_HARDWALL		0x20000u</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_THISNODE		0x40000u</span>
+
+<span class="token comment">//用于原子分配，在任何情况下都不能中断</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_ATOMIC		0x80000u</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_NOACCOUNT	0x100000u</span>
+
+<span class="token comment">//避免被内存检测工具kmemcheck检测</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_NOTRACK		0x200000u</span>
+
+<span class="token comment">//当内存不足时，直接进入内存回收</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_DIRECT_RECLAIM	0x400000u</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_OTHER_NODE	0x800000u</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_WRITE		0x1000000u</span>
+
+
+<span class="token comment">//当内存不足时，唤醒内存回收</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ___GFP_KSWAPD_RECLAIM	0x2000000u</span>
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br></div></div><h2 id="第二部分"><a href="#第二部分" class="header-anchor">#</a> 第二部分</h2> <p>这个部分一分是由第一部分的flags中的一个或者多个组合而成。</p> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token comment">/* If the above are modified, __GFP_BITS_SHIFT may need updating */</span>
+
+<span class="token comment">/*
+ * Physical address zone modifiers (see linux/mmzone.h - low four bits)
+ *
+ * Do not put any conditional on these. If necessary modify the definitions
+ * without the underscores and use them consistently. The definitions here may
+ * be used in bit comparisons.
+ */</span>
+
+<span class="token comment">/*
+ * 这个基本和第一部分一样
+ * 使用了__force修饰的变量可以进行强制类型转换, 没有使用 __force修饰的变量进行强制类型转换时, Sparse会给出警告.
+ */</span>
+
+ <span class="token comment">//和第一部分基本一样</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_DMA	((__force gfp_t)___GFP_DMA)</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_HIGHMEM	((__force gfp_t)___GFP_HIGHMEM)</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_DMA32	((__force gfp_t)___GFP_DMA32)</span>
+
+<span class="token comment">//是页迁移机制所需的标志，可移动的</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_MOVABLE	((__force gfp_t)___GFP_MOVABLE)  </span><span class="token comment">/* Page is movable */</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_MOVABLE	((__force gfp_t)___GFP_MOVABLE)  </span><span class="token comment">/* ZONE_MOVABLE allowed */</span>
+
+<span class="token comment">//第一部分的组合</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_ZONEMASK	(__GFP_DMA|__GFP_HIGHMEM|__GFP_DMA32|__GFP_MOVABLE)</span>
+
+<span class="token comment">/*
+ * Page mobility and placement hints
+ *
+ * These flags provide hints about how mobile the page is. Pages with similar
+ * mobility are placed within the same pageblocks to minimise problems due
+ * to external fragmentation.
+ *
+ * __GFP_MOVABLE (also a zone modifier) indicates that the page can be
+ *   moved by page migration during memory compaction or can be reclaimed.
+ *
+ * __GFP_RECLAIMABLE is used for slab allocations that specify
+ *   SLAB_RECLAIM_ACCOUNT and whose pages can be freed via shrinkers.
+ *
+ * __GFP_WRITE indicates the caller intends to dirty the page. Where possible,
+ *   these pages will be spread between local zones to avoid all the dirty
+ *   pages being in one zone (fair zone allocation policy).
+ *
+ * __GFP_HARDWALL enforces the cpuset memory allocation policy.
+ *
+ * __GFP_THISNODE forces the allocation to be satisified from the requested
+ *   node with no fallbacks or placement policy enforcements.
+ */</span>
+ 
+ <span class="token comment">//是页迁移机制所需的标志，可回收的</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_RECLAIMABLE ((__force gfp_t)___GFP_RECLAIMABLE)</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_WRITE	((__force gfp_t)___GFP_WRITE)</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_HARDWALL   ((__force gfp_t)___GFP_HARDWALL)</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_THISNODE	((__force gfp_t)___GFP_THISNODE)</span>
+
+<span class="token comment">/*
+ * Watermark modifiers -- controls access to emergency reserves
+ *
+ * __GFP_HIGH indicates that the caller is high-priority and that granting
+ *   the request is necessary before the system can make forward progress.
+ *   For example, creating an IO context to clean pages.
+ *
+ * __GFP_ATOMIC indicates that the caller cannot reclaim or sleep and is
+ *   high priority. Users are typically interrupt handlers. This may be
+ *   used in conjunction with __GFP_HIGH
+ *
+ * __GFP_MEMALLOC allows access to all memory. This should only be used when
+ *   the caller guarantees the allocation will allow more memory to be freed
+ *   very shortly e.g. process exiting or swapping. Users either should
+ *   be the MM or co-ordinating closely with the VM (e.g. swap over NFS).
+ *
+ * __GFP_NOMEMALLOC is used to explicitly forbid access to emergency reserves.
+ *   This takes precedence over the __GFP_MEMALLOC flag if both are set.
+ *
+ * __GFP_NOACCOUNT ignores the accounting for kmemcg limit enforcement.
+ */</span>
+
+ <span class="token comment">//中断中分配内存会使用，表明不允许打断</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_ATOMIC	((__force gfp_t)___GFP_ATOMIC)</span>
+
+<span class="token comment">//高优先级分配内存，</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_HIGH	((__force gfp_t)___GFP_HIGH)</span>
+
+<span class="token comment">//调用者需要很快释放分配的内存</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_MEMALLOC	((__force gfp_t)___GFP_MEMALLOC)</span>
+
+<span class="token comment">//禁止从应急的内存空间分配 </span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_NOMEMALLOC ((__force gfp_t)___GFP_NOMEMALLOC)</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_NOACCOUNT	((__force gfp_t)___GFP_NOACCOUNT)</span>
+
+<span class="token comment">/*
+ * Reclaim modifiers
+ *
+ * __GFP_IO can start physical IO.
+ *
+ * __GFP_FS can call down to the low-level FS. Clearing the flag avoids the
+ *   allocator recursing into the filesystem which might already be holding
+ *   locks.
+ *
+ * __GFP_DIRECT_RECLAIM indicates that the caller may enter direct reclaim.
+ *   This flag can be cleared to avoid unnecessary delays when a fallback
+ *   option is available.
+ *
+ * __GFP_KSWAPD_RECLAIM indicates that the caller wants to wake kswapd when
+ *   the low watermark is reached and have it reclaim pages until the high
+ *   watermark is reached. A caller may wish to clear this flag when fallback
+ *   options are available and the reclaim is likely to disrupt the system. The
+ *   canonical example is THP allocation where a fallback is cheap but
+ *   reclaim/compaction may cause indirect stalls.
+ *
+ * __GFP_RECLAIM is shorthand to allow/forbid both direct and kswapd reclaim.
+ *
+ * __GFP_REPEAT: Try hard to allocate the memory, but the allocation attempt
+ *   _might_ fail.  This depends upon the particular VM implementation.
+ *
+ * __GFP_NOFAIL: The VM implementation _must_ retry infinitely: the caller
+ *   cannot handle allocation failures. New users should be evaluated carefully
+ *   (and the flag should be used only when there is no reasonable failure
+ *   policy) but it is definitely preferable to use the flag rather than
+ *   opencode endless loop around allocator.
+ *
+ * __GFP_NORETRY: The VM implementation must not retry indefinitely and will
+ *   return NULL when direct reclaim and memory compaction have failed to allow
+ *   the allocation to succeed.  The OOM killer is not called with the current
+ *   implementation.
+ */</span>
+
+ <span class="token comment">//说明在查找空闲内存期间内核可以进行I/O操作</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_IO	((__force gfp_t)___GFP_IO)</span>
+
+<span class="token comment">//允许内核执行VFS操作</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_FS	((__force gfp_t)___GFP_FS)</span>
+
+<span class="token comment">//当内存不足时，直接进入内存回收</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_DIRECT_RECLAIM	((__force gfp_t)___GFP_DIRECT_RECLAIM) </span><span class="token comment">/* Caller can reclaim */</span>
+
+<span class="token comment">//当内存不足时，希望唤醒内存回收，回收成功后分配</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_KSWAPD_RECLAIM	((__force gfp_t)___GFP_KSWAPD_RECLAIM) </span><span class="token comment">/* kswapd can wake */</span>
+
+<span class="token comment">//上面两个flag的组合</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_RECLAIM ((__force gfp_t)(___GFP_DIRECT_RECLAIM|___GFP_KSWAPD_RECLAIM))</span>
+
+<span class="token comment">//在分配失败后自动重试，但在尝试若干次之后会停止</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_REPEAT	((__force gfp_t)___GFP_REPEAT)</span>
+
+<span class="token comment">//在分配失败后一直重试，直至成功</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_NOFAIL	((__force gfp_t)___GFP_NOFAIL)</span>
+
+<span class="token comment">//在分配失败后不重试直接返回</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_NORETRY	((__force gfp_t)___GFP_NORETRY)</span>
+
+<span class="token comment">/*
+ * Action modifiers
+ *
+ * __GFP_COLD indicates that the caller does not expect to be used in the near
+ *   future. Where possible, a cache-cold page will be returned.
+ *
+ * __GFP_NOWARN suppresses allocation failure reports.
+ *
+ * __GFP_COMP address compound page metadata.
+ *
+ * __GFP_ZERO returns a zeroed page on success.
+ *
+ * __GFP_NOTRACK avoids tracking with kmemcheck.
+ *
+ * __GFP_NOTRACK_FALSE_POSITIVE is an alias of __GFP_NOTRACK. It's a means of
+ *   distinguishing in the source between false positives and allocations that
+ *   cannot be supported (e.g. page tables).
+ *
+ * __GFP_OTHER_NODE is for allocations that are on a remote node but that
+ *   should not be accounted for as a remote allocation in vmstat. A
+ *   typical user would be khugepaged collapsing a huge page on a remote
+ *   node.
+ */</span>
+
+ <span class="token comment">//分配一个不在cpu 缓存中的内存</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_COLD	((__force gfp_t)___GFP_COLD)</span>
+
+<span class="token comment">//在分配失败时禁止内核故障警告</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_NOWARN	((__force gfp_t)___GFP_NOWARN)</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_COMP	((__force gfp_t)___GFP_COMP)</span>
+
+<span class="token comment">//返回的页面初始化为0</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_ZERO	((__force gfp_t)___GFP_ZERO)</span>
+
+<span class="token comment">//避免被内存检测工具kmemcheck检测</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_NOTRACK	((__force gfp_t)___GFP_NOTRACK)</span>
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_NOTRACK_FALSE_POSITIVE (__GFP_NOTRACK)</span>
+
+
+<span class="token comment">//未知</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_OTHER_NODE ((__force gfp_t)___GFP_OTHER_NODE)</span>
+
+<span class="token comment">/* Room for N __GFP_FOO bits */</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_BITS_SHIFT 26</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> __GFP_BITS_MASK ((__force gfp_t)((1 &lt;&lt; __GFP_BITS_SHIFT) - 1))</span>
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br></div></div><h2 id="第三部分"><a href="#第三部分" class="header-anchor">#</a> 第三部分</h2> <div class="language-c line-numbers-mode"><pre class="language-c"><code><span class="token comment">/*
+ * Useful GFP flag combinations that are commonly used. It is recommended
+ * that subsystems start with one of these combinations and then set/clear
+ * __GFP_FOO flags as necessary.
+ *
+ * GFP_ATOMIC users can not sleep and need the allocation to succeed. A lower
+ *   watermark is applied to allow access to &quot;atomic reserves&quot;
+ *
+ * GFP_KERNEL is typical for kernel-internal allocations. The caller requires
+ *   ZONE_NORMAL or a lower zone for direct access but can direct reclaim.
+ *
+ * GFP_NOWAIT is for kernel allocations that should not stall for direct
+ *   reclaim, start physical IO or use any filesystem callback.
+ *
+ * GFP_NOIO will use direct reclaim to discard clean pages or slab pages
+ *   that do not require the starting of any physical IO.
+ *
+ * GFP_NOFS will use direct reclaim but will not use any filesystem interfaces.
+ *
+ * GFP_USER is for userspace allocations that also need to be directly
+ *   accessibly by the kernel or hardware. It is typically used by hardware
+ *   for buffers that are mapped to userspace (e.g. graphics) that hardware
+ *   still must DMA to. cpuset limits are enforced for these allocations.
+ *
+ * GFP_DMA exists for historical reasons and should be avoided where possible.
+ *   The flags indicates that the caller requires that the lowest zone be
+ *   used (ZONE_DMA or 16M on x86-64). Ideally, this would be removed but
+ *   it would require careful auditing as some users really require it and
+ *   others use the flag to avoid lowmem reserves in ZONE_DMA and treat the
+ *   lowest zone as a type of emergency reserve.
+ *
+ * GFP_DMA32 is similar to GFP_DMA except that the caller requires a 32-bit
+ *   address.
+ *
+ * GFP_HIGHUSER is for userspace allocations that may be mapped to userspace,
+ *   do not need to be directly accessible by the kernel but that cannot
+ *   move once in use. An example may be a hardware allocation that maps
+ *   data directly into userspace but has no addressing limitations.
+ *
+ * GFP_HIGHUSER_MOVABLE is for userspace allocations that the kernel does not
+ *   need direct access to but can use kmap() when access is required. They
+ *   are expected to be movable via page reclaim or page migration. Typically,
+ *   pages on the LRU would also be allocated with GFP_HIGHUSER_MOVABLE.
+ *
+ * GFP_TRANSHUGE is used for THP allocations. They are compound allocations
+ *   that will fail quickly if memory is not available and will not wake
+ *   kswapd on failure.
+ */</span>
+
+ <span class="token comment">//用于原子分配，在任何情况下都不能中断, 可能使用紧急分配链表中的内存, 这个标志用在中断处理程序, 下半部, </span>
+ <span class="token comment">//持有自旋锁以及其他不能睡眠的地方</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_ATOMIC	(__GFP_HIGH|__GFP_ATOMIC|__GFP_KSWAPD_RECLAIM)</span>
+
+<span class="token comment">//这是一种常规的分配方式, 可能会阻塞. 这个标志在睡眠安全时用在进程的长下文代码中. 为了获取调用者所需的内存,</span>
+<span class="token comment">//内核会尽力而为. 这个标志应该是首选标志</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_KERNEL	(__GFP_RECLAIM | __GFP_IO | __GFP_FS)</span>
+
+<span class="token comment">//与GFP_ATOMIC类似, 不同之处在于, 调用不会退给紧急内存池, 这就增加了内存分配失败的可能性</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_NOWAIT	(__GFP_KSWAPD_RECLAIM)</span>
+
+<span class="token comment">//这种分配可以阻塞, 但不会启动磁盘I/O, 这个标志在不能引发更多的磁盘I/O时阻塞I/O代码</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_NOIO	(__GFP_RECLAIM)</span>
+
+<span class="token comment">//这种分配在必要时可以阻塞, 但是也可能启动磁盘, 但是不会启动文件系统操作</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_NOFS	(__GFP_RECLAIM | __GFP_IO)</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_TEMPORARY	(__GFP_RECLAIM | __GFP_IO | __GFP_FS | \
+			 __GFP_RECLAIMABLE)</span>
+
+<span class="token comment">//这是一种常规的分配方式, 可能会阻塞. 这个标志用于为用户空间进程分配内存时使用</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_USER	(__GFP_RECLAIM | __GFP_IO | __GFP_FS | __GFP_HARDWALL)</span>
+
+<span class="token comment">//用于分配适用于DMA的内存</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_DMA		__GFP_DMA</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_DMA32	__GFP_DMA32</span>
+
+<span class="token comment">//是GFP_USER的一个扩展, 也用于用户空间. 它允许分配无法直接映射的高端内存</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_HIGHUSER	(GFP_USER | __GFP_HIGHMEM)</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_HIGHUSER_MOVABLE	(GFP_HIGHUSER | __GFP_MOVABLE)</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> GFP_TRANSHUGE	((GFP_HIGHUSER_MOVABLE | __GFP_COMP | \
+			 __GFP_NOMEMALLOC | __GFP_NORETRY | __GFP_NOWARN) &amp; \
+			 ~__GFP_KSWAPD_RECLAIM)</span>
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br></div></div><hr> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>转载请注明出处！ <a href="http://www.cxy.wiki" target="_blank" rel="noopener noreferrer">探索者<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <!----></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新 :</span> <span class="time">8/3/2020, 4:13:31 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/linux/memory/common/modle/modle.html" class="prev">
+        内存模型
+      </a></span> <span class="next"><a href="/linux/filesystem/initrd-principles/initrd-principles.html">
+        根文件系统原理
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6ac7dc1c.js" defer></script><script src="/assets/js/2.30f77a47.js" defer></script><script src="/assets/js/16.17eabafa.js" defer></script>
+  </body>
+</html>
