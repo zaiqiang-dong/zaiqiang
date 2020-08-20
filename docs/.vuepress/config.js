@@ -50,91 +50,108 @@ module.exports = {
 	],
 	themeConfig: {
         lastUpdated: '最近更新 ',
-		nav: [{
-			text: 'Home',
-			link: '/'
-		},
-		{
-			text: 'linux',
-			link: '/linux/'
-		},
-		{
-			text: 'arm',
-			link: '/arm/'
-		},
-		{
-			text: 'selinux',
-			link: '/selinux/'
-		}],
+		nav: [
+            {
+			    text: 'Home',
+			    link: '/'
+		    },
+		    {
+			    text: 'Linux',
+			    link: '/linux/'
+		    },
+		    {
+		    	text: 'Arm',
+		    	link: '/arm/'
+		    },
+		    {
+		    	text: 'Selinux',
+		    	link: '/selinux/'
+		    },
+		    {
+		    	text: 'Virtualization',
+		    	link: '/virtualization/'
+		    }
+        ],
 		sidebarDepth: 3,
 		sidebar: {
 			'/linux/': [
-            {
-				title: '内存管理',
-				collapsable: true,
-                children: [
-                    {
-                        title: 'COMMON',
-				        collapsable: true,
-				        children: ['/linux/memory/common/modle/modle']
-                    },
-                    {
-                        title: 'BUDDY',
-				        collapsable: true,
-				        children: ['/linux/memory/buddy/alloc-flags/alloc-flags']
-                    },
-                    {
-                        title: 'SLXB',
-				        collapsable: true,
-				        children: []
-                    }
-                ]
-			},
-            {
-				title: '文件系统',
-				collapsable: true,
-                children: [
-                    {
-                        title: 'COMMON',
-				        collapsable: true,
-				        children: ['/linux/filesystem/initrd/initrd']
-                    }
-                ]
-			},
-            {
-				title: '并发同步',
-				collapsable: true,
-				children: [
-                    {
-                        title: 'BARRIERS',
-				        collapsable: true,
-				        children: ['/linux/concurency/barriers/overview/overview.md',
-                                    '/linux/concurency/barriers/principle/principle.md']
-                    }
-                ]
-			},
-			{
-				title: '进程管理',
-				collapsable: true,
-				children: ['/linux/process/weight/weight',
-                           '/linux/process/priority/priority']
-			}],
+                {
+			    	title: '内存管理',
+			    	collapsable: true,
+                    children: [
+                        {
+                            title: 'COMMON',
+			    	        collapsable: true,
+			    	        children: ['/linux/memory/common/modle/modle']
+                        },
+                        {
+                            title: 'BUDDY',
+			    	        collapsable: true,
+			    	        children: ['/linux/memory/buddy/alloc-flags/alloc-flags']
+                        },
+                        {
+                            title: 'SLXB',
+			    	        collapsable: true,
+			    	        children: []
+                        }
+                    ]
+			    },
+                {
+			    	title: '文件系统',
+			    	collapsable: true,
+                    children: [
+                        {
+                            title: 'ROOT-FS',
+			    	        collapsable: true,
+			    	        children: ['/linux/filesystem/initrd-principles/initrd-principles']
+                        }
+                    ]
+			    },
+                {
+			    	title: '并发同步',
+			    	collapsable: true,
+			    	children: [
+                        {
+                            title: 'BARRIERS',
+			    	        collapsable: true,
+			    	        children: ['/linux/concurency/barriers/overview/overview.md',
+                                        '/linux/concurency/barriers/principle/principle.md']
+                        }
+                    ]
+			    },
+			    {
+			    	title: '进程管理',
+			    	collapsable: true,
+			    	children: ['/linux/process/weight/weight',
+                               '/linux/process/priority/priority']
+			    }
+            ],
 			'/arm/': [
-            {
-				title: 'ARM简介',
-				collapsable: true,
-				children: ['/arm/intro']
-			},
-            {
-				title: '虚拟内存',
-				collapsable: true,
-				children: ['/arm/vmsa/vmsa_intro/vmsa_intro','/arm/vmsa/vmsa_page/vmsa_page']
-			}],
-			'/selinux/': [{
-                title: '系统权限',
-				collapsable: true,
-                children: ['/selinux/AndroidSelinux/Selinux']
-            }],
+                {
+			    	title: 'ARM简介',
+			    	collapsable: true,
+			    	children: ['/arm/intro']
+			    },
+                {
+			    	title: '虚拟内存',
+			    	collapsable: true,
+			    	children: ['/arm/vmsa/vmsa_intro/vmsa_intro','/arm/vmsa/vmsa_page/vmsa_page']
+			    }
+            ],
+			'/selinux/': [
+                {
+                    title: '系统权限',
+				    collapsable: true,
+                    children: ['/selinux/AndroidSelinux/Selinux']
+                }
+            ],
+			'/virtualization/': [
+                {
+                    title: '管理工具',
+				    collapsable: true,
+                    children: ['/virtualization/tools/virt-install/virt-install']
+                }
+            ],
 		}
 	},
 }
