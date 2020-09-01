@@ -166,9 +166,9 @@ static inline u64 calc_delta_fair(u64 delta, struct sched_entity *se)
  对于功能1 `__update_inv_weight(lw);`在这个计算过程中因为`lw->inv_weight == 0`,所以会起作用。
 $$fact = se->load.weight$$
 $$lw->inv\_weight = \frac{2^{32} - 1}{lw->weight}$$
-$$fact = se->load.weight * \frac{2^{32} - 1}{lw->weight} $$
+$$fact = se->load.weight * \frac{2^{32} - 1}{lw->weight}$$
 $$ret\_value = delta\_exec * se->load.weight * \frac{2^{32} - 1}{lw->weight}   >> 32$$
-$$ret\_value = delta\_exec * \frac{se->load.weight}{lw->weight} $$
+$$ret\_value = delta\_exec * \frac{se->load.weight}{lw->weight}$$
 
 也就是说，一个进程的理想运行时间就是它的权重与总的权重之和的比例再乘以调度周期。
 
