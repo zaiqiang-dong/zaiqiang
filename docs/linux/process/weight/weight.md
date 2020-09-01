@@ -52,12 +52,39 @@ static const u32 prio_to_wmult[40] = {
 
 
 $$vruntime = \frac{delta\_exec,*nice\_0\_weight}{weight}$$
-$$ = \frac{delta\_exec,*nice\_0\_weight * 2^{32}}{weight} >>32$$
+$$ = \frac{delta\_exec*nice\_0\_weight * 2^{32}}{weight} >>32$$
+$$ = delta\_exec*nice\_0\_weight *\frac{ 2^{32}}{weight} >>32$$
 $$ = delta\_exec*nice\_0\_weight * inv\_weight >> 32$$
 
 内核实现函数如下
 
 ```c
+static inline u64 mul_u64_u32_shr(u64 a, u32 mul, unsigned int shift)
+{
+	return (u64)(((unsigned __int128)a * mul) >> shift);
+}
+
+
+#define WMULT_CONST	(~0U)
+#define WMULT_SHIFT	32
+
+static void __update_inv_weight(struct load_weight *lw)
+{
+	unsigned long w;
+
+	if (likely(lw->inv_weight))
+		return;
+
+	w = scale_load_down(lw->weight);
+
+	if (BITS_PER_LONG > 32 && unlikely(w >= WMULT_CONST))
+		lw->inv_weight = 1;
+	else if (unlikely(!w))
+		lw->inv_weight = WMULT_CONST;
+	else
+		lw->inv_weight = WMULT_CONST / w;
+}
+
 static u64 __calc_delta(u64 delta_exec, unsigned long weight, struct load_weight *lw)
 {
 	u64 fact = scale_load_down(weight);
@@ -83,24 +110,76 @@ static u64 __calc_delta(u64 delta_exec, unsigned long weight, struct load_weight
 	return mul_u64_u32_shr(delta_exec, fact, shift);
 }
 
+/*
+ * We calculate the wall-time slice from the period by taking a part
+ * proportional to the weight.
+ *
+ * s = p*P[w/rw]
+ */
+static u64 sched_slice(struct cfs_rq *cfs_rq, struct sched_entity *se)
+{
+	u64 slice = __sched_period(cfs_rq->nr_running + !se->on_rq);
+
+	for_each_sched_entity(se) {
+		struct load_weight *load;
+		struct load_weight lw;
+
+		cfs_rq = cfs_rq_of(se);
+		load = &cfs_rq->load;
+
+		if (unlikely(!se->on_rq)) {
+			lw = cfs_rq->load;
+
+			update_load_add(&lw, se->load.weight);
+			load = &lw;
+		}
+		slice = __calc_delta(slice, se->load.weight, load);
+	}
+	return slice;
+}
+
+/*
+ * delta /= w
+ */
+static inline u64 calc_delta_fair(u64 delta, struct sched_entity *se)
+{
+	if (unlikely(se->load.weight != NICE_0_LOAD))
+		delta = __calc_delta(delta, NICE_0_LOAD, &se->load);
+
+	return delta;
+}
+
 ```
 
-::: tip
-
- 这个函数有两个功能：
+ `__calc_delta`函数功能：
 1. 计算调度实体se的权重占整个就绪队列权重的比例，然后乘以调度周期时间即可得到当前调度实体应该运行的时间。
  delta_exec 为调度周期，如果进程数小于8,delta_exec = 6ms.否则：
- $$delta\_exec = n * 0.75$$
- n为进程数
- weight 为进程的权重值
- lw 为整个 cfs_rq的load_weight load值。
+ $$delta\_exec = n * 0.75$$ 
+ n为进程数、weight 为进程的权重值、lw 为整个 cfs_rq的load_weight load值。
+
 2. 计算进程运行时间转换成虚拟时间
  delta_exec 为	delta_exec = now - curr->exec_start;
  weight 为NICE_0_LOAD
  lw 为当前里程的load_weight load值。
- 
 
-:::
+ `__calc_delta`计算过程
+ 对于功能1 `__update_inv_weight(lw);`在这个计算过程中因为`lw->inv_weight == 0`,所以会起作用。
+$$fact = se->load.weight$$
+$$lw->inv\_weight = \frac{2^{32} - 1}{lw->weight}$$
+$$fact = se->load.weight * \frac{2^{32} - 1}{lw->weight} $$
+$$ret\_value = delta\_exec * se->load.weight * \frac{2^{32} - 1}{lw->weight}   >> 32$$
+$$ret\_value = delta\_exec * \frac{se->load.weight}{lw->weight} $$
+
+也就是说，一个进程的理想运行时间就是它的权重与总的权重之和的比例再乘以调度周期。
+
+
+ 对于功能2如下：`__update_inv_weight(lw);`在这个计算过程中因为`lw->inv_weight == 0`,所以会起作用。
+$$ret\_value = delta\_exec * fact >> shift$$
+$$ = delta\_exec * fact * inv\_weight >> shift$$
+$$ = delta\_exec * weight * inv\_weight >> shift$$
+
+这部分在开头也就过程推导，这里不再细说。
+ 
 
 ### runnable_avg_sum
 调试实体在就绪队列里可运行状态下总的衰减累加时间
@@ -126,7 +205,7 @@ $$y^{32} = 0.5$$
 $$a_n = a * y^n = \frac{a * (y^n * 2^{32})}{2^{32}} = a * (y^n * 2^{32}) >> 32$$
 
 之所以做上面的公式变换是为了不做浮点运算，提高计算效率。怎么提高,就是把
-$$$(y^n * 2^{32})$$$
+$$(y^n * 2^{32})$$
 从n=0到n=31提前计算好放到数组中，如下所示：
 
 ```c
