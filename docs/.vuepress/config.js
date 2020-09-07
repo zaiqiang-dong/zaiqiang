@@ -60,8 +60,8 @@ module.exports = {
 			    link: '/linux/'
 		    },
 		    {
-		    	text: 'Arm',
-		    	link: '/arm/'
+		    	text: 'Hardware',
+		    	link: '/hardware/'
 		    },
 		    {
 		    	text: 'Selinux',
@@ -126,16 +126,38 @@ module.exports = {
                                '/linux/process/priority/priority']
 			    }
             ],
-			'/arm/': [
+			'/hardware/': [
                 {
-			    	title: 'ARM简介',
+			    	title: '处理器',
 			    	collapsable: true,
-			    	children: ['/arm/intro']
+			    	children: [
+                        {
+                            title: 'COMMON',
+			    	        collapsable: true,
+			    	        children: []
+                        },
+                        {
+                            title: 'ARM',
+			    	        collapsable: true,
+			    	        children: ['/hardware/arm/intro/intro']
+                        }
+                    ]
 			    },
                 {
-			    	title: '虚拟内存',
+			    	title: '内存',
 			    	collapsable: true,
-			    	children: ['/arm/vmsa/vmsa_intro/vmsa_intro','/arm/vmsa/vmsa_page/vmsa_page']
+			    	children: [
+                        {
+                            title: 'COMMON',
+			    	        collapsable: true,
+			    	        children: []
+                        },
+                        {
+                            title: 'ARM',
+			    	        collapsable: true,
+			    	        children: ['/hardware/arm/vmsa/vmsa_intro/vmsa_intro','/hardware/arm/vmsa/vmsa_page/vmsa_page']
+                        }
+                    ]
 			    }
             ],
 			'/selinux/': [
