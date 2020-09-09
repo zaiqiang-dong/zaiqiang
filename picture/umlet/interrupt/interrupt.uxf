@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.3.0">
-  <zoom_level>7</zoom_level>
+<diagram program="umlet" version="13.3">
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>581</x>
+      <x>621</x>
       <y>0</y>
-      <w>77</w>
-      <h>28</h>
+      <w>99</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>Interrupt
 lw=2</panel_attributes>
@@ -16,10 +16,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1358</x>
-      <y>1148</y>
-      <w>245</w>
-      <h>469</h>
+      <x>1620</x>
+      <y>1476</y>
+      <w>315</w>
+      <h>603</h>
     </coordinates>
     <panel_attributes>irq_domain
 lw=2
@@ -68,10 +68,10 @@ enum {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1687</x>
-      <y>1197</y>
-      <w>399</w>
-      <h>259</h>
+      <x>2043</x>
+      <y>1539</y>
+      <w>513</w>
+      <h>333</h>
     </coordinates>
     <panel_attributes>irq_domain_ops
 lw=2
@@ -101,10 +101,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1596</x>
-      <y>1197</y>
-      <w>105</w>
-      <h>21</h>
+      <x>1926</x>
+      <y>1539</y>
+      <w>135</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -113,10 +113,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>98</x>
-      <y>518</y>
-      <w>413</w>
-      <h>84</h>
+      <x>0</x>
+      <y>666</y>
+      <w>531</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lw=2
 struct irq_desc irq_desc[NR_IRQS] __cacheline_aligned_in_smp = {
@@ -133,10 +133,10 @@ struct irq_desc irq_desc[NR_IRQS] __cacheline_aligned_in_smp = {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>679</x>
-      <y>644</y>
-      <w>238</w>
-      <h>490</h>
+      <x>747</x>
+      <y>828</y>
+      <w>306</w>
+      <h>630</h>
     </coordinates>
     <panel_attributes>irq_desc
 lw=2
@@ -188,10 +188,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>504</x>
-      <y>525</y>
-      <w>189</w>
-      <h>140</h>
+      <x>522</x>
+      <y>675</y>
+      <w>243</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -200,10 +200,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1036</x>
-      <y>672</y>
-      <w>182</w>
-      <h>140</h>
+      <x>1206</x>
+      <y>864</y>
+      <w>234</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>irq_data
 lw=2
@@ -225,10 +225,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>672</y>
-      <w>140</w>
-      <h>21</h>
+      <x>1044</x>
+      <y>864</y>
+      <w>180</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -237,10 +237,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1211</x>
-      <y>749</y>
-      <w>161</w>
-      <h>420</h>
+      <x>1431</x>
+      <y>963</y>
+      <w>207</w>
+      <h>540</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -249,10 +249,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1365</x>
-      <y>588</y>
-      <w>245</w>
-      <h>504</h>
+      <x>1629</x>
+      <y>756</y>
+      <w>315</w>
+      <h>648</h>
     </coordinates>
     <panel_attributes>irq_chip
 lw=2
@@ -306,10 +306,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1211</x>
-      <y>595</y>
-      <w>168</w>
-      <h>161</h>
+      <x>1431</x>
+      <y>765</y>
+      <w>216</w>
+      <h>207</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -318,10 +318,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4130</x>
-      <y>728</y>
-      <w>259</w>
-      <h>84</h>
+      <x>3537</x>
+      <y>504</y>
+      <w>333</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>typedef struct irq_cpustat_t
 --
@@ -336,10 +336,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4067</x>
-      <y>945</y>
-      <w>434</w>
-      <h>28</h>
+      <x>3456</x>
+      <y>783</y>
+      <w>558</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>irq_cpustat_t irq_stat[NR_CPUS] ____cacheline_aligned;
 
@@ -349,10 +349,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4256</x>
-      <y>805</y>
-      <w>21</w>
-      <h>154</h>
+      <x>3699</x>
+      <y>603</y>
+      <w>27</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -361,10 +361,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4676</x>
-      <y>931</y>
-      <w>539</w>
-      <h>35</h>
+      <x>4239</x>
+      <y>765</y>
+      <w>693</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>static struct softirq_action softirq_vec[NR_SOFTIRQS] __cacheline_aligned_in_smp;
 
@@ -374,10 +374,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4690</x>
-      <y>735</y>
-      <w>252</w>
-      <h>49</h>
+      <x>4257</x>
+      <y>513</y>
+      <w>324</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>struct softirq_action
 --
@@ -389,10 +389,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4774</x>
-      <y>777</y>
-      <w>21</w>
-      <h>168</h>
+      <x>4365</x>
+      <y>567</y>
+      <w>27</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -401,10 +401,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4172</x>
-      <y>1253</y>
-      <w>203</w>
-      <h>105</h>
+      <x>3591</x>
+      <y>1215</y>
+      <w>261</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>struct tasklet_struct
 --
@@ -420,10 +420,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4158</x>
-      <y>1456</y>
-      <w>168</w>
-      <h>56</h>
+      <x>3627</x>
+      <y>1440</y>
+      <w>216</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>struct tasklet_head 
 --
@@ -435,10 +435,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4123</x>
-      <y>1575</y>
-      <w>301</w>
-      <h>35</h>
+      <x>3537</x>
+      <y>1674</y>
+      <w>387</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>static DEFINE_PER_CPU(struct tasklet_head, tasklet_vec);
 static DEFINE_PER_CPU(struct tasklet_head, tasklet_hi_vec);
@@ -448,10 +448,10 @@ static DEFINE_PER_CPU(struct tasklet_head, tasklet_hi_vec);
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>147</x>
-      <y>385</y>
-      <w>287</w>
-      <h>77</h>
+      <x>63</x>
+      <y>495</y>
+      <w>369</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>Note..
 lw=2
@@ -464,10 +464,10 @@ kernel/irq/irqdesc.c
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>455</y>
-      <w>21</w>
-      <h>77</h>
+      <x>234</x>
+      <y>585</y>
+      <w>27</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 lw=2</panel_attributes>
@@ -476,10 +476,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>98</x>
-      <y>630</y>
-      <w>413</w>
-      <h>56</h>
+      <x>0</x>
+      <y>810</y>
+      <w>531</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>红黑树
 lw=2</panel_attributes>
@@ -488,10 +488,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>504</x>
-      <y>651</y>
-      <w>189</w>
-      <h>21</h>
+      <x>522</x>
+      <y>837</y>
+      <w>243</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -500,10 +500,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1001</x>
-      <y>1351</y>
-      <w>252</w>
-      <h>196</h>
+      <x>1161</x>
+      <y>1737</y>
+      <w>324</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>struct gic_chip_data
 --
@@ -527,10 +527,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1246</x>
-      <y>1155</y>
-      <w>126</w>
-      <h>336</h>
+      <x>1476</x>
+      <y>1485</y>
+      <w>162</w>
+      <h>432</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -539,10 +539,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>252</x>
-      <y>1204</y>
-      <w>196</w>
-      <h>189</h>
+      <x>198</x>
+      <y>1548</y>
+      <w>252</w>
+      <h>243</h>
     </coordinates>
     <panel_attributes>struct irqaction
 --
@@ -565,13 +565,510 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>742</y>
-      <w>343</w>
-      <h>476</h>
+      <x>324</x>
+      <y>954</y>
+      <w>441</w>
+      <h>612</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
     <additional_attributes>470.0;10.0;10.0;10.0;10.0;660.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3717</x>
+      <y>1341</y>
+      <w>27</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3717</x>
+      <y>1503</y>
+      <w>27</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4095</x>
+      <y>1692</y>
+      <w>396</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>DEFINE_PER_CPU(struct task_struct *, ksoftirqd);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3438</x>
+      <y>2241</y>
+      <w>621</w>
+      <h>639</h>
+    </coordinates>
+    <panel_attributes>struct workqueue_struct 
+--
+	struct list_head	pwqs;		/* WR: all pwqs of this wq */
+	struct list_head	list;		/* PR: list of all workqueues */
+
+	struct mutex		mutex;		/* protects this wq */
+	int			work_color;	/* WQ: current work color */
+	int			flush_color;	/* WQ: current flush color */
+	atomic_t		nr_pwqs_to_flush; /* flush in progress */
+	struct wq_flusher	*first_flusher;	/* WQ: first flusher */
+	struct list_head	flusher_queue;	/* WQ: flush waiters */
+	struct list_head	flusher_overflow; /* WQ: flush overflow list */
+
+	struct list_head	maydays;	/* MD: pwqs requesting rescue */
+	struct worker		*rescuer;	/* I: rescue worker */
+
+	int			nr_drainers;	/* WQ: drain in progress */
+	int			saved_max_active; /* WQ: saved pwq max_active */
+
+	struct workqueue_attrs	*unbound_attrs;	/* PW: only for unbound wqs */
+	struct pool_workqueue	*dfl_pwq;	/* PW: only for unbound wqs */
+
+#ifdef CONFIG_SYSFS
+	struct wq_device	*wq_dev;	/* I: for sysfs interface */
+#endif
+#ifdef CONFIG_LOCKDEP
+	struct lockdep_map	lockdep_map;
+#endif
+	char			name[WQ_NAME_LEN]; /* I: workqueue name */
+
+	/*
+	 * Destruction of workqueue_struct is sched-RCU protected to allow
+	 * walking the workqueues list without grabbing wq_pool_mutex.
+	 * This is used to dump all workqueues from sysrq.
+	 */
+	struct rcu_head		rcu;
+
+	/* hot fields used during command issue, aligned to cacheline */
+	unsigned int		flags ____cacheline_aligned; /* WQ: WQ_* flags */
+	struct pool_workqueue __percpu *cpu_pwqs; /* I: per-cpu pwqs */
+	struct pool_workqueue __rcu *numa_pwq_tbl[]; /* PWR: unbound pwqs indexed by node */
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4572</x>
+      <y>2412</y>
+      <w>477</w>
+      <h>495</h>
+    </coordinates>
+    <panel_attributes>struct worker
+--
+	/* on idle list while idle, on busy hash table while busy */
+	union {
+		struct list_head	entry;	/* L: while idle */
+		struct hlist_node	hentry;	/* L: while busy */
+	};
+
+	struct work_struct	*current_work;	/* L: work being processed */
+	work_func_t		current_func;	/* L: current_work's fn */
+	struct pool_workqueue	*current_pwq; /* L: current_work's pwq */
+	struct list_head	scheduled;	/* L: scheduled works */
+
+	/* 64 bytes boundary on 64bit, 32 on 32bit */
+
+	struct task_struct	*task;		/* I: worker task */
+	struct worker_pool	*pool;		/* A: the associated pool */
+						/* L: for rescuers */
+	struct list_head	node;		/* A: anchored at pool-&gt;workers */
+						/* A: runs through worker-&gt;node */
+
+	unsigned long		last_active;	/* L: last active timestamp */
+	unsigned int		flags;		/* X: flags */
+	int			id;		/* I: worker id */
+
+	/*
+	 * Opaque string set with work_set_desc().  Printed out with task
+	 * dump for debugging - WARN, BUG, panic or sysrq.
+	 */
+	char			desc[WORKER_DESC_LEN];
+
+	/* used only by rescuers to point to the target workqueue */
+	struct workqueue_struct	*rescue_wq;	/* I: the workqueue to rescue */
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4050</x>
+      <y>2412</y>
+      <w>540</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2619</x>
+      <y>2475</y>
+      <w>504</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>struct workqueue_attrs
+--
+	/**
+	 * @nice: nice level
+	 */
+	int nice;
+
+	/**
+	 * @cpumask: allowed CPUs
+	 */
+	cpumask_var_t cpumask;
+
+	/**
+	 * @no_numa: disable NUMA affinity
+	 *
+	 * Unlike other fields, ``no_numa`` isn't a property of a worker_pool. It
+	 * only modifies how :c:func:`apply_workqueue_attrs` select pools and thus
+	 * doesn't participate in pool hash calculations or equality comparisons.
+	 */
+	bool no_numa;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3114</x>
+      <y>2475</y>
+      <w>342</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>360.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4023</x>
+      <y>3366</y>
+      <w>558</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>struct pool_workqueue
+--
+	struct worker_pool	*pool;		/* I: the associated pool */
+	struct workqueue_struct *wq;		/* I: the owning workqueue */
+	int			work_color;	/* L: current color */
+	int			flush_color;	/* L: flushing color */
+	int			refcnt;		/* L: reference count */
+	int			nr_in_flight[WORK_NR_COLORS];
+						/* L: nr of in_flight works */
+	int			nr_active;	/* L: nr of active works */
+	int			max_active;	/* L: max active works */
+	struct list_head	delayed_works;	/* L: delayed works */
+	struct list_head	pwqs_node;	/* WR: node on wq-&gt;pwqs */
+	struct list_head	mayday_node;	/* MD: node on wq-&gt;maydays */
+
+	/*
+	 * Release of unbound pwq is punted to system_wq.  See put_pwq()
+	 * and pwq_unbound_release_workfn() for details.  pool_workqueue
+	 * itself is also sched-RCU protected so that the first pwq can be
+	 * determined without grabbing wq-&gt;mutex.
+	 */
+	struct work_struct	unbound_release_work;
+	struct rcu_head		rcu;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4050</x>
+      <y>2484</y>
+      <w>279</w>
+      <h>900</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;10.0;290.0;980.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5400</x>
+      <y>2412</y>
+      <w>288</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>struct work_struct
+--
+	atomic_long_t data;
+	struct list_head entry;
+	work_func_t func;
+#ifdef CONFIG_LOCKDEP
+	struct lockdep_map lockdep_map;
+#endif
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5040</x>
+      <y>2412</y>
+      <w>378</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;150.0;270.0;150.0;270.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5400</x>
+      <y>2646</y>
+      <w>207</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>struct task_struct</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5040</x>
+      <y>2646</y>
+      <w>378</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5400</x>
+      <y>2889</y>
+      <w>558</w>
+      <h>675</h>
+    </coordinates>
+    <panel_attributes>struct worker_pool
+--
+	spinlock_t		lock;		/* the pool lock */
+	int			cpu;		/* I: the associated cpu */
+	int			node;		/* I: the associated node ID */
+	int			id;		/* I: pool ID */
+	unsigned int		flags;		/* X: flags */
+
+	unsigned long		watchdog_ts;	/* L: watchdog timestamp */
+
+	struct list_head	worklist;	/* L: list of pending works */
+
+	int			nr_workers;	/* L: total number of workers */
+	int			nr_idle;	/* L: currently idle workers */
+
+	struct list_head	idle_list;	/* X: list of idle workers */
+	struct timer_list	idle_timer;	/* L: worker idle timeout */
+	struct timer_list	mayday_timer;	/* L: SOS timer for workers */
+
+	/* a workers is either on busy_hash or idle_list, or the manager */
+	DECLARE_HASHTABLE(busy_hash, BUSY_WORKER_HASH_ORDER);
+						/* L: hash of busy workers */
+
+	struct worker		*manager;	/* L: purely informational */
+	struct list_head	workers;	/* A: attached workers */
+	struct completion	*detach_completion; /* all workers detached */
+
+	struct ida		worker_ida;	/* worker IDs for task name */
+
+	struct workqueue_attrs	*attrs;		/* I: worker attributes */
+	struct hlist_node	hash_node;	/* PL: unbound_pool_hash node */
+	int			refcnt;		/* PL: refcnt for unbound pools */
+
+	/*
+	 * The current concurrency level.  As it's likely to be accessed
+	 * from other CPUs during try_to_wake_up(), put it in a separate
+	 * cacheline.
+	 */
+	atomic_t		nr_running ____cacheline_aligned_in_smp;
+
+	/*
+	 * Destruction of pool is sched-RCU protected to allow dereferences
+	 * from get_work_pool().
+	 */
+	struct rcu_head		rcu;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5040</x>
+      <y>2754</y>
+      <w>378</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0;260.0;160.0;400.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4050</x>
+      <y>2448</y>
+      <w>540</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>580.0;260.0;440.0;260.0;440.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4572</x>
+      <y>2898</y>
+      <w>846</w>
+      <h>594</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;640.0;780.0;640.0;780.0;10.0;920.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3717</x>
+      <y>2871</y>
+      <w>324</w>
+      <h>585</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>340.0;630.0;10.0;630.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4572</x>
+      <y>2412</y>
+      <w>1782</w>
+      <h>1215</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;1330.0;1960.0;1330.0;1960.0;10.0;1240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5040</x>
+      <y>2691</y>
+      <w>1071</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>1020.0;500.0;1170.0;500.0;1170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3447</x>
+      <y>2016</y>
+      <w>477</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static LIST_HEAD(workqueues);		/* PR: list of all workqueues */
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3627</x>
+      <y>2034</y>
+      <w>27</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5319</x>
+      <y>3762</y>
+      <w>747</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static DEFINE_PER_CPU_SHARED_ALIGNED(struct worker_pool [NR_STD_WORKER_POOLS], cpu_worker_pools);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5661</x>
+      <y>3555</y>
+      <w>27</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;230.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2268</x>
+      <y>2943</y>
+      <w>540</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct workqueue_attrs *unbound_std_wq_attrs[NR_STD_WORKER_POOLS];
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2889</x>
+      <y>2943</y>
+      <w>522</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct workqueue_attrs *ordered_wq_attrs[NR_STD_WORKER_POOLS];
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2988</x>
+      <y>2772</y>
+      <w>27</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2754</x>
+      <y>2772</y>
+      <w>27</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
