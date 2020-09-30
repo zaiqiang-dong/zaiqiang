@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>110</y>
-      <w>400</w>
-      <h>580</h>
+      <x>4050</x>
+      <y>621</y>
+      <w>360</w>
+      <h>639</h>
     </coordinates>
     <panel_attributes>
-*struct trace_array trace_array*
+*struct  trace_array*
 --
 
 struct list_head       list_head
@@ -44,6 +44,11 @@ int                    tracing_cpumask
 int                    ref
 struct ftrace_ops      ftrace_ops
 struct ftrace_ops *    ops
+struct trace_pid_list	__rcu *function_pids;
+struct list_head  func_probes;
+struct list_head  mod_trace;
+struct list_head  mod_notrace;
+
 int                    function_enabled
 
 </panel_attributes>
@@ -52,10 +57,10 @@ int                    function_enabled
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>30</y>
-      <w>400</w>
-      <h>205</h>
+      <x>4698</x>
+      <y>702</y>
+      <w>360</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>
 *struct trace_buffer trace_buffer*
@@ -75,10 +80,10 @@ int                    cpu
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>370</y>
-      <w>400</w>
-      <h>340</h>
+      <x>4032</x>
+      <y>1449</y>
+      <w>360</w>
+      <h>306</h>
     </coordinates>
     <panel_attributes>
 *struct ring_buffer ring_buffer*
@@ -107,10 +112,10 @@ struct rb_irq_work            irq_work
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1210</x>
-      <y>340</y>
-      <w>400</w>
-      <h>610</h>
+      <x>4662</x>
+      <y>1737</y>
+      <w>360</w>
+      <h>549</h>
     </coordinates>
     <panel_attributes>
 *struct ring_buffer_per_cpu ring_buffer_per_cpu*
@@ -157,22 +162,357 @@ struct rb_irq_work    irq_work
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1830</x>
-      <y>440</y>
-      <w>400</w>
-      <h>205</h>
+      <x>4671</x>
+      <y>1566</y>
+      <w>288</w>
+      <h>27</h>
     </coordinates>
-    <panel_attributes>
-*struct buffer_page buffer_page*
+    <panel_attributes>struct ring_buffer_per_cpu[NR_CPU]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4383</x>
+      <y>1566</y>
+      <w>306</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4806</x>
+      <y>1584</y>
+      <w>27</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5301</x>
+      <y>2133</y>
+      <w>360</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>struct ring_buffer 
 --
+	unsigned			flags;
+	int				cpus;
+	atomic_t			record_disabled;
+	atomic_t			resize_disabled;
+	cpumask_var_t			cpumask;
 
-struct list_head          list
-int                       write
-unsigned int              read
-int                       entries
-unsigned long             real_end
-struct buffer_data_page   buffer_data_page
-struct buffer_data_page * page
+	struct lock_class_key		*reader_lock_key;
+
+	struct mutex			mutex;
+
+	struct ring_buffer_per_cpu	**buffers;
+
+#ifdef CONFIG_HOTPLUG_CPU
+	struct notifier_block		cpu_notify;
+#endif
+	u64				(*clock)(void);
+
+	struct rb_irq_work		irq_work;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5004</x>
+      <y>2133</y>
+      <w>315</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;330.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5319</x>
+      <y>1674</y>
+      <w>234</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>struct work_struct
+--
+	atomic_long_t data;
+	struct list_head entry;
+	work_func_t func;
+#ifdef CONFIG_LOCKDEP
+	struct lockdep_map lockdep_map;
+#endif
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5013</x>
+      <y>1674</y>
+      <w>324</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;160.0;170.0;160.0;170.0;10.0;340.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5319</x>
+      <y>1935</y>
+      <w>279</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>struct rb_irq_work
+--
+	struct irq_work			work;
+	wait_queue_head_t		waiters;
+	wait_queue_head_t		full_waiters;
+	bool				waiters_pending;
+	bool				full_waiters_pending;
+	bool				wakeup_full;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5013</x>
+      <y>1935</y>
+      <w>324</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;340.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5454</x>
+      <y>2061</y>
+      <w>27</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3519</x>
+      <y>1458</y>
+      <w>378</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct ring_buffer *temp_buffer;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3888</x>
+      <y>1458</y>
+      <w>162</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3519</x>
+      <y>630</y>
+      <w>270</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct trace_array	global_trace;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3780</x>
+      <y>630</y>
+      <w>288</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4221</x>
+      <y>1251</y>
+      <w>27</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4401</x>
+      <y>702</y>
+      <w>315</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;330.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4725</x>
+      <y>0</y>
+      <w>342</w>
+      <h>630</h>
+    </coordinates>
+    <panel_attributes>struct tracer
+--
+	const char		*name;
+	int			(*init)(struct trace_array *tr);
+	void			(*reset)(struct trace_array *tr);
+	void			(*start)(struct trace_array *tr);
+	void			(*stop)(struct trace_array *tr);
+	int			(*update_thresh)(struct trace_array *tr);
+	void			(*open)(struct trace_iterator *iter);
+	void			(*pipe_open)(struct trace_iterator *iter);
+	void			(*close)(struct trace_iterator *iter);
+	void			(*pipe_close)(struct trace_iterator *iter);
+	ssize_t			(*read)(struct trace_iterator *iter,
+					struct file *filp, char __user *ubuf,
+					size_t cnt, loff_t *ppos);
+	ssize_t			(*splice_read)(struct trace_iterator *iter,
+					       struct file *filp,
+					       loff_t *ppos,
+					       struct pipe_inode_info *pipe,
+					       size_t len,
+					       unsigned int flags);
+#ifdef CONFIG_FTRACE_STARTUP_TEST
+	int			(*selftest)(struct tracer *trace,
+					    struct trace_array *tr);
+#endif
+	void			(*print_header)(struct seq_file *m);
+	enum print_line_t	(*print_line)(struct trace_iterator *iter);
+	/* If you handled the flag setting, return 0 */
+	int			(*set_flag)(struct trace_array *tr,
+					    u32 old_flags, u32 bit, int set);
+	/* Return 0 if OK with change, else return non-zero */
+	int			(*flag_changed)(struct trace_array *tr,
+						u32 mask, int set);
+	struct tracer		*next;
+	struct tracer_flags	*flags;
+	int			enabled;
+	int			ref;
+	bool			print_max;
+	bool			allow_instances;
+#ifdef CONFIG_TRACER_MAX_TRACE
+	bool			use_max_tr;
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4401</x>
+      <y>0</y>
+      <w>342</w>
+      <h>702</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;760.0;240.0;760.0;240.0;10.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5319</x>
+      <y>2556</y>
+      <w>360</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>struct buffer_page
+--
+	struct list_head list;		/* list of buffer pages */
+	local_t		 write;		/* index for next write */
+	unsigned	 read;		/* index for next read */
+	local_t		 entries;	/* entries on this page */
+	unsigned long	 real_end;	/* real end of data */
+	struct buffer_data_page *page;	/* Actual data page */
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5013</x>
+      <y>2241</y>
+      <w>324</w>
+      <h>342</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;160.0;360.0;340.0;360.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6255</x>
+      <y>2925</y>
+      <w>396</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>enum ring_buffer_type
+--
+	RINGBUF_TYPE_DATA_TYPE_LEN_MAX = 28,
+	RINGBUF_TYPE_PADDING,
+	RINGBUF_TYPE_TIME_EXTEND,
+	/* FIXME: RINGBUF_TYPE_TIME_STAMP not implemented */
+	RINGBUF_TYPE_TIME_STAMP,
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6642</x>
+      <y>2781</y>
+      <w>45</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>30.0;10.0;30.0;180.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>1242</y>
+      <w>333</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>struct tracepoint
+--
+	const char *name;		/* Tracepoint name */
+	struct static_key key;
+	void (*regfunc)(void);
+	void (*unregfunc)(void);
+	struct tracepoint_func __rcu *funcs;
 
 </panel_attributes>
     <additional_attributes/>
@@ -180,18 +520,51 @@ struct buffer_data_page * page
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1860</x>
-      <y>710</y>
-      <w>400</w>
-      <h>145</h>
+      <x>1062</x>
+      <y>1323</y>
+      <w>234</w>
+      <h>99</h>
     </coordinates>
-    <panel_attributes>
-*struct buffer_data_page buffer_data_page*
+    <panel_attributes>struct tracepoint_func
 --
-
-int              time_stamp
-int              commit
-unsigned char [] data
+	void *func;
+	void *data;
+	int prio;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>1323</y>
+      <w>180</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1971</y>
+      <w>378</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>struct trace_event_class 
+--
+	const char		*system;
+	void			*probe;
+#ifdef CONFIG_PERF_EVENTS
+	void			*perf_probe;
+#endif
+	int			(*reg)(struct trace_event_call *event,
+				       enum trace_reg type, void *data);
+	int			(*define_fields)(struct trace_event_call *);
+	struct list_head	*(*get_fields)(struct trace_event_call *);
+	struct list_head	fields;
+	int			(*raw_init)(struct trace_event_call *);
 
 </panel_attributes>
     <additional_attributes/>
@@ -199,22 +572,971 @@ unsigned char [] data
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1860</x>
-      <y>960</y>
-      <w>400</w>
-      <h>175</h>
+      <x>558</x>
+      <y>1782</y>
+      <w>405</w>
+      <h>522</h>
     </coordinates>
-    <panel_attributes>
-*struct ring_buffer_event ring_buffer_event*
+    <panel_attributes>struct trace_event_call
 --
+	struct list_head	list;
+	struct trace_event_class *class;
+	union {
+		char			*name;
+		/* Set TRACE_EVENT_FL_TRACEPOINT flag when using "tp" */
+		struct tracepoint	*tp;
+	};
+	struct trace_event	event;
+	char			*print_fmt;
+	struct event_filter	*filter;
+	void			*mod;
+	void			*data;
+	/*
+	 *   bit 0:		filter_active
+	 *   bit 1:		allow trace by non root (cap any)
+	 *   bit 2:		failed to apply filter
+	 *   bit 3:		trace internal event (do not enable)
+	 *   bit 4:		Event was enabled by module
+	 *   bit 5:		use call filter rather than file filter
+	 *   bit 6:		Event is a tracepoint
+	 */
+	int			flags; /* static flags of different events */
 
-int () kmemcheck_bitfield_begin
-int    type_len
-int    time_delta
-int () kmemcheck_bitfield_end
-int [] array
+#ifdef CONFIG_PERF_EVENTS
+	int				perf_refcount;
+	struct hlist_head __percpu	*perf_events;
+	struct bpf_prog			*prog;
+	struct perf_event		*bpf_prog_owner;
+
+	int	(*perf_perm)(struct trace_event_call *,
+			     struct perf_event *);
+#endif
 
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>1971</y>
+      <w>207</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>1638</y>
+      <w>216</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>LIST_HEAD(ftrace_events);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>459</x>
+      <y>1638</y>
+      <w>171</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;190.0;10.0;190.0;10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>954</x>
+      <y>1809</y>
+      <w>126</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1062</x>
+      <y>1809</y>
+      <w>324</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes> ...  struct trace_event_call ...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>819</x>
+      <y>1638</y>
+      <w>666</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;720.0;10.0;720.0;210.0;630.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>297</x>
+      <y>1242</y>
+      <w>297</w>
+      <h>666</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>290.0;720.0;10.0;720.0;10.0;10.0;310.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5922</x>
+      <y>2655</y>
+      <w>477</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>struct buffer_data_page 
+--
+	u64		 time_stamp;	/* page time stamp */
+	local_t		 commit;	/* write committed index */
+	unsigned char	 data[] RB_ALIGN_DATA;	/* data of buffer page */
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>5670</x>
+      <y>2655</y>
+      <w>270</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6543</x>
+      <y>2709</y>
+      <w>288</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>struct ring_buffer_event
+--
+	u32		type_len:5, time_delta:27;
+
+	u32		array[];
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6390</x>
+      <y>2709</y>
+      <w>171</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6930</x>
+      <y>2763</y>
+      <w>297</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>struct trace_entry 
+--
+	unsigned short		type;
+	unsigned char		flags;
+	unsigned char		preempt_count;
+	int			pid;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>6822</x>
+      <y>2763</y>
+      <w>126</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1863</x>
+      <y>432</y>
+      <w>432</w>
+      <h>666</h>
+    </coordinates>
+    <panel_attributes>struct tracer
+--
+	const char		*name;
+	int			(*init)(struct trace_array *tr);
+	void			(*reset)(struct trace_array *tr);
+	void			(*start)(struct trace_array *tr);
+	void			(*stop)(struct trace_array *tr);
+	int			(*update_thresh)(struct trace_array *tr);
+	void			(*open)(struct trace_iterator *iter);
+	void			(*pipe_open)(struct trace_iterator *iter);
+	void			(*close)(struct trace_iterator *iter);
+	void			(*pipe_close)(struct trace_iterator *iter);
+	ssize_t			(*read)(struct trace_iterator *iter,
+					struct file *filp, char __user *ubuf,
+					size_t cnt, loff_t *ppos);
+	ssize_t			(*splice_read)(struct trace_iterator *iter,
+					       struct file *filp,
+					       loff_t *ppos,
+					       struct pipe_inode_info *pipe,
+					       size_t len,
+					       unsigned int flags);
+#ifdef CONFIG_FTRACE_STARTUP_TEST
+	int			(*selftest)(struct tracer *trace,
+					    struct trace_array *tr);
+#endif
+	void			(*print_header)(struct seq_file *m);
+	enum print_line_t	(*print_line)(struct trace_iterator *iter);
+	/* If you handled the flag setting, return 0 */
+	int			(*set_flag)(struct trace_array *tr,
+					    u32 old_flags, u32 bit, int set);
+	/* Return 0 if OK with change, else return non-zero */
+	int			(*flag_changed)(struct trace_array *tr,
+						u32 mask, int set);
+	struct tracer		*next;
+	struct tracer_flags	*flags;
+	int			enabled;
+	int			ref;
+	bool			print_max;
+	bool			allow_instances;
+#ifdef CONFIG_TRACER_MAX_TRACE
+	bool			use_max_tr;
+#endif
+	/* True if tracer cannot be enabled in kernel param */
+	bool			noboot;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1062</x>
+      <y>423</y>
+      <w>495</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct tracer		*trace_types __read_mostly;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1548</x>
+      <y>432</y>
+      <w>333</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>350.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2538</x>
+      <y>900</y>
+      <w>198</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>struct tracer
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2286</x>
+      <y>900</y>
+      <w>270</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1314</x>
+      <y>306</y>
+      <w>1548</w>
+      <h>648</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;20.0;1700.0;10.0;1700.0;700.0;1580.0;700.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2655</x>
+      <y>3420</y>
+      <w>396</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>struct dyn_ftrace
+--
+	unsigned long		ip; /* address of mcount call-site */
+	unsigned long		flags;
+	struct dyn_arch_ftrace	arch;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1836</x>
+      <y>1485</y>
+      <w>342</w>
+      <h>261</h>
+    </coordinates>
+    <panel_attributes>struct ftrace_ops
+--
+	ftrace_func_t			func;
+	struct ftrace_ops __rcu		*next;
+	unsigned long			flags;
+	void				*private;
+	ftrace_func_t			saved_func;
+	int __percpu			*disabled;
+#ifdef CONFIG_DYNAMIC_FTRACE
+	struct ftrace_ops_hash		local_hash;
+	struct ftrace_ops_hash		*func_hash;
+	struct ftrace_ops_hash		old_hash;
+	unsigned long			trampoline;
+	unsigned long			trampoline_size;
+#endif
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1836</x>
+      <y>1899</y>
+      <w>630</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct ftrace_ops __rcu *ftrace_ops_list __read_mostly = &amp;ftrace_list_end;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1863</x>
+      <y>1332</y>
+      <w>261</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct ftrace_ops global_ops;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2412</x>
+      <y>1620</y>
+      <w>351</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>struct ftrace_ops_hash
+--
+	struct ftrace_hash __rcu	*notrace_hash;
+	struct ftrace_hash __rcu	*filter_hash;
+	struct mutex			regex_lock;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2169</x>
+      <y>1629</y>
+      <w>261</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2916</x>
+      <y>1638</y>
+      <w>261</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>struct ftrace_hash
+--
+	unsigned long		size_bits;
+	struct hlist_head	*buckets;
+	unsigned long		count;
+	unsigned long		flags;
+	struct rcu_head		rcu;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2754</x>
+      <y>1638</y>
+      <w>180</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3168</x>
+      <y>1674</y>
+      <w>135</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1728</x>
+      <y>3447</y>
+      <w>234</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>struct ftrace_page
+--
+	struct ftrace_page	*next;
+	struct dyn_ftrace	*records;
+	int			index;
+	int			size;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2061</x>
+      <y>3429</y>
+      <w>333</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct ftrace_page	*ftrace_pages_start;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2061</x>
+      <y>3492</y>
+      <w>297</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct ftrace_page	*ftrace_pages;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1953</x>
+      <y>3429</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1953</x>
+      <y>3447</y>
+      <w>126</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2385</x>
+      <y>3429</y>
+      <w>288</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3285</x>
+      <y>1674</y>
+      <w>234</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>struct ftrace_func_entry[]
+--
+buckets[0]
+-
+buckets[1]
+-
+buckets[2]
+-
+.
+.
+.
+-
+buckets[n-2]
+-
+buckets[n-1]
+-
+buckets[n]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2070</x>
+      <y>999</y>
+      <w>1998</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>2200.0;10.0;1540.0;10.0;1540.0;160.0;10.0;160.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1962</x>
+      <y>1179</y>
+      <w>2115</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>2330.0;10.0;1980.0;10.0;1980.0;140.0;10.0;140.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1962</x>
+      <y>1350</y>
+      <w>27</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2358</x>
+      <y>1485</y>
+      <w>522</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>typedef void (*ftrace_func_t)(unsigned long ip, unsigned long parent_ip,
+			      struct ftrace_ops *op, struct pt_regs *regs);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2169</x>
+      <y>1503</y>
+      <w>207</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2025</x>
+      <y>1737</y>
+      <w>27</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2349</x>
+      <y>2106</y>
+      <w>288</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>struct ftrace_func_command
+--
+	struct list_head	list;
+	char			*name;
+	int			(*func)(struct trace_array *tr,
+					struct ftrace_hash *hash,
+					char *func, char *cmd,
+					char *params, int enable);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1800</x>
+      <y>2196</y>
+      <w>396</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>static struct ftrace_func_command ftrace_traceoff_cmd
+--
+	.name			= "traceoff",
+	.func			= ftrace_trace_onoff_callback,
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2187</x>
+      <y>2205</y>
+      <w>180</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1800</x>
+      <y>2106</y>
+      <w>387</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>static struct ftrace_func_command ftrace_traceon_cmd
+--
+	.name			= "traceon",
+	.func			= ftrace_trace_onoff_callback,
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2817</x>
+      <y>2106</y>
+      <w>387</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>static struct ftrace_func_command ftrace_stacktrace_cmd
+--
+	.name			= "stacktrace",
+	.func			= ftrace_stacktrace_callback,</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2817</x>
+      <y>2196</y>
+      <w>378</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>static struct ftrace_func_command ftrace_dump_cmd
+--
+	.name			= "dump",
+	.func			= ftrace_dump_callback,
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2178</x>
+      <y>2124</y>
+      <w>189</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2628</x>
+      <y>2124</y>
+      <w>207</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2628</x>
+      <y>2214</y>
+      <w>207</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2259</x>
+      <y>2367</y>
+      <w>405</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>static struct ftrace_func_command ftrace_cpudump_cmd
+--
+	.name			= "cpudump",
+	.func			= ftrace_cpudump_callback,</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2439</x>
+      <y>2223</y>
+      <w>27</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2295</x>
+      <y>2628</y>
+      <w>270</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static LIST_HEAD(ftrace_commands);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2439</x>
+      <y>2421</y>
+      <w>27</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2655</x>
+      <y>2259</y>
+      <w>369</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>390.0;10.0;390.0;160.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1989</x>
+      <y>2034</y>
+      <w>1044</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0;1140.0;10.0;1140.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1989</x>
+      <y>2160</y>
+      <w>27</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3006</x>
+      <y>2169</y>
+      <w>27</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1989</x>
+      <y>2259</y>
+      <w>324</w>
+      <h>405</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>340.0;430.0;10.0;430.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1575</x>
+      <y>2853</y>
+      <w>342</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>struct ftrace_func_probe
+--
+	struct ftrace_probe_ops	*probe_ops;
+	struct ftrace_ops	ops;
+	struct trace_array	*tr;
+	struct list_head	list;
+	void			*data;
+	int			ref;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1962</x>
+      <y>2871</y>
+      <w>333</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>struct ftrace_probe_ops
+--
+	void			(*func)(unsigned long ip,
+					unsigned long parent_ip,
+					struct trace_array *tr,
+					struct ftrace_probe_ops *ops,
+					void *data);
+	int			(*init)(struct ftrace_probe_ops *ops,
+					struct trace_array *tr,
+					unsigned long ip, void *init_data,
+					void **data);
+	void			(*free)(struct ftrace_probe_ops *ops,
+					struct trace_array *tr,
+					unsigned long ip, void *data);
+	int			(*print)(struct seq_file *m,
+					 unsigned long ip,
+					 struct ftrace_probe_ops *ops,
+					 void *data);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1908</x>
+      <y>2871</y>
+      <w>72</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1674</x>
+      <y>1566</y>
+      <w>180</w>
+      <h>1305</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;1430.0;10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>1161</y>
+      <w>2466</w>
+      <h>1710</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;1880.0;10.0;80.0;2130.0;80.0;2130.0;10.0;2720.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1494</x>
+      <y>1026</y>
+      <w>2574</w>
+      <h>1935</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>90.0;2120.0;10.0;2130.0;20.0;190.0;2210.0;180.0;2210.0;10.0;2840.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>585</x>
+      <y>2475</y>
+      <w>306</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>struct trace_event
+--
+	struct hlist_node		node;
+	struct list_head		list;
+	int				type;
+	struct trace_event_functions	*funcs;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>738</x>
+      <y>2295</y>
+      <w>27</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
   </element>
 </diagram>
