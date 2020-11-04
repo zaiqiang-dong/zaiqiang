@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
+      <x>595</x>
       <y>0</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>timesystem
-
-lw=2</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>190</x>
-      <y>300</y>
-      <w>470</w>
-      <h>740</h>
+      <w>329</w>
+      <h>518</h>
     </coordinates>
     <panel_attributes>struct timekeeper
 --
@@ -72,10 +59,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>990</x>
-      <y>330</y>
-      <w>260</w>
-      <h>170</h>
+      <x>1155</x>
+      <y>21</y>
+      <w>182</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>struct tk_read_base
 --
@@ -93,10 +80,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>650</x>
-      <y>330</y>
-      <w>360</w>
-      <h>30</h>
+      <x>917</x>
+      <y>21</y>
+      <w>252</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -105,10 +92,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1640</x>
-      <y>340</y>
-      <w>390</w>
-      <h>480</h>
+      <x>1610</x>
+      <y>28</y>
+      <w>273</w>
+      <h>336</h>
     </coordinates>
     <panel_attributes>struct clocksource
 --
@@ -146,10 +133,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1240</x>
-      <y>350</y>
-      <w>420</w>
-      <h>30</h>
+      <x>1330</x>
+      <y>35</y>
+      <w>294</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -158,10 +145,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>1240</y>
-      <w>270</w>
-      <h>90</h>
+      <x>1085</x>
+      <y>882</y>
+      <w>189</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>struct tick_device
 --
@@ -174,10 +161,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>760</x>
-      <y>1260</y>
-      <w>520</w>
-      <h>540</h>
+      <x>1491</x>
+      <y>896</y>
+      <w>364</w>
+      <h>378</h>
     </coordinates>
     <panel_attributes>struct clock_event_device
 --
@@ -219,10 +206,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>1260</y>
-      <w>340</w>
-      <h>30</h>
+      <x>1267</x>
+      <y>896</y>
+      <w>238</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -231,10 +218,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>530</x>
-      <y>1280</y>
-      <w>200</w>
-      <h>80</h>
+      <x>1330</x>
+      <y>910</y>
+      <w>140</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>enum tick_device_mode
 --
@@ -247,10 +234,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>1280</y>
-      <w>110</w>
-      <h>30</h>
+      <x>1267</x>
+      <y>910</y>
+      <w>77</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -259,10 +246,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>1530</y>
-      <w>280</w>
-      <h>60</h>
+      <x>1085</x>
+      <y>1085</y>
+      <w>196</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>struct arch_timer 
 --
@@ -275,10 +262,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>1570</y>
-      <w>330</w>
-      <h>30</h>
+      <x>1274</x>
+      <y>1113</y>
+      <w>231</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -287,10 +274,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>1950</y>
-      <w>520</w>
-      <h>370</h>
+      <x>553</x>
+      <y>1463</y>
+      <w>364</w>
+      <h>259</h>
     </coordinates>
     <panel_attributes>struct hrtimer_cpu_base 
 --
@@ -321,10 +308,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>960</x>
-      <y>2290</y>
-      <w>300</w>
-      <h>140</h>
+      <x>1148</x>
+      <y>1701</y>
+      <w>210</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>struct hrtimer_clock_base
 --
@@ -341,10 +328,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>620</x>
-      <y>2280</y>
-      <w>360</w>
-      <h>30</h>
+      <x>910</x>
+      <y>1694</y>
+      <w>252</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -353,10 +340,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1480</x>
-      <y>2360</y>
-      <w>280</w>
-      <h>70</h>
+      <x>1512</x>
+      <y>1750</y>
+      <w>196</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>struct timerqueue_head
 --
@@ -369,10 +356,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1250</x>
-      <y>2360</y>
-      <w>250</w>
-      <h>30</h>
+      <x>1351</x>
+      <y>1750</y>
+      <w>175</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -381,10 +368,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1920</x>
-      <y>2400</y>
-      <w>200</w>
-      <h>70</h>
+      <x>1820</x>
+      <y>1778</y>
+      <w>140</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>struct timerqueue_node
 --
@@ -397,13 +384,301 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1750</x>
-      <y>2400</y>
-      <w>190</w>
-      <h>30</h>
+      <x>1701</x>
+      <y>1778</y>
+      <w>133</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2485</x>
+      <y>28</y>
+      <w>329</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>tiemr class
+--
+CLOCK_REALTIME
+CLOCK_MONOTONIC
+CLOCK_MONOTONIC_RAW
+CLOCK_PROCESS_CPUTIME_ID
+CLOCK_THREAD_CPUTIME_ID</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>581</x>
+      <y>889</y>
+      <w>308</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>DECLARE_PER_CPU(struct tick_device, tick_cpu_device);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>882</x>
+      <y>889</y>
+      <w>217</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1582</x>
+      <y>756</y>
+      <w>245</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>static LIST_HEAD(clockevent_devices);
+static LIST_HEAD(clockevents_released);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1694</x>
+      <y>784</y>
+      <w>21</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>553</x>
+      <y>1953</y>
+      <w>315</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>static DEFINE_PER_CPU(struct tick_sched, tick_cpu_sched);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>553</x>
+      <y>2016</y>
+      <w>315</w>
+      <h>294</h>
+    </coordinates>
+    <panel_attributes>struct tick_sched
+--
+	struct hrtimer			sched_timer;
+	unsigned long			check_clocks;
+	enum tick_nohz_mode		nohz_mode;
+	ktime_t				last_tick;
+	int				inidle;
+	int				tick_stopped;
+	unsigned long			idle_jiffies;
+	unsigned long			idle_calls;
+	unsigned long			idle_sleeps;
+	int				idle_active;
+	ktime_t				idle_entrytime;
+	ktime_t				idle_waketime;
+	ktime_t				idle_exittime;
+	ktime_t				idle_sleeptime;
+	ktime_t				iowait_sleeptime;
+	ktime_t				sleep_length;
+	unsigned long			last_jiffies;
+	u64				next_timer;
+	ktime_t				idle_expires;
+	int				do_timer_last;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1190</x>
+      <y>2044</y>
+      <w>427</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>struct hrtimer
+--
+	struct timerqueue_node		node;
+	ktime_t				_softexpires;
+	enum hrtimer_restart		(*function)(struct hrtimer *);
+	struct hrtimer_clock_base	*base;
+	u8				state;
+	u8				is_rel;
+#ifdef CONFIG_TIMER_STATS
+	int				start_pid;
+	void				*start_site;
+	char				start_comm[16];
+#endif
+};
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>1967</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>861</x>
+      <y>2044</y>
+      <w>343</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;470.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1771</x>
+      <y>2065</y>
+      <w>238</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>struct timerqueue_node
+--
+	struct rb_node node;
+	ktime_t expires;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1610</x>
+      <y>2065</y>
+      <w>175</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1771</x>
+      <y>2198</y>
+      <w>315</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>struct hrtimer_clock_base
+--
+	struct hrtimer_cpu_base	*cpu_base;
+	int			index;
+	clockid_t		clockid;
+	struct timerqueue_head	active;
+	ktime_t			(*get_time)(void);
+	ktime_t			offset;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1610</x>
+      <y>2093</y>
+      <w>175</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0;130.0;160.0;230.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>553</x>
+      <y>1372</y>
+      <w>378</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>DEFINE_PER_CPU(struct hrtimer_cpu_base, hrtimer_bases)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>1386</y>
+      <w>21</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>910</x>
+      <y>1498</y>
+      <w>294</w>
+      <h>560</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;10.0;250.0;780.0;400.0;780.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2387</x>
+      <y>1470</y>
+      <w>280</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>struct notifier_block
+--
+	notifier_fn_t notifier_call;
+	struct notifier_block __rcu *next;
+	int priority;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2387</x>
+      <y>1624</y>
+      <w>280</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>static struct notifier_block hrtimers_nb
+--
+	.notifier_call = hrtimer_cpu_notify,
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2506</x>
+      <y>1540</y>
+      <w>21</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

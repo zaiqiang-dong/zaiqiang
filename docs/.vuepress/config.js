@@ -64,6 +64,14 @@ module.exports = {
 		    	link: '/hardware/'
 		    },
 		    {
+		    	text: 'Tools',
+		    	link: '/tools/'
+		    },
+		    {
+		    	text: 'Coding',
+		    	link: '/coding/'
+		    },
+		    {
 		    	text: 'Selinux',
 		    	link: '/selinux/'
 		    },
@@ -80,17 +88,17 @@ module.exports = {
 			    	collapsable: true,
                     children: [
                         {
-                            title: 'COMMON',
+                            title: 'common',
 			    	        collapsable: true,
 			    	        children: ['/linux/memory/common/modle/modle']
                         },
                         {
-                            title: 'BUDDY',
+                            title: 'buddy',
 			    	        collapsable: true,
 			    	        children: ['/linux/memory/buddy/alloc-flags/alloc-flags']
                         },
                         {
-                            title: 'SLXB',
+                            title: 'slxb',
 			    	        collapsable: true,
 			    	        children: []
                         }
@@ -101,7 +109,7 @@ module.exports = {
 			    	collapsable: true,
                     children: [
                         {
-                            title: 'ROOT-FS',
+                            title: 'root-fs',
 			    	        collapsable: true,
 			    	        children: ['/linux/filesystem/initrd-principles/initrd-principles']
                         }
@@ -112,7 +120,7 @@ module.exports = {
 			    	collapsable: true,
 			    	children: [
                         {
-                            title: 'BARRIERS',
+                            title: 'barriers',
 			    	        collapsable: true,
 			    	        children: ['/linux/concurency/barriers/overview/overview.md',
                                         '/linux/concurency/barriers/principle/principle.md']
@@ -124,6 +132,43 @@ module.exports = {
 			    	collapsable: true,
 			    	children: ['/linux/process/weight/weight',
                                '/linux/process/priority/priority']
+			    },
+                {
+			    	title: '中断系统',
+			    	collapsable: true,
+			    	children: [
+                        {
+                            title: 'common',
+			    	        collapsable: true,
+			    	        children: ['/linux/interrupt/common/interrupt-sleep/interrupt-sleep.md']
+                        }
+                    ]
+			    },
+                {
+			    	title: '系统工具',
+			    	collapsable: true,
+                    children: [
+                        {
+                            title: 'common',
+			    	        collapsable: true,
+			    	        children: []
+                        },
+                        {
+                            title: 'ftrace',
+			    	        collapsable: true,
+			    	        children: ['../linux/tools/ftrace/file-interface/file-interface.md']
+                        },
+                        {
+                            title: 'perf',
+			    	        collapsable: true,
+			    	        children: []
+                        },
+                        {
+                            title: 'bpf',
+			    	        collapsable: true,
+			    	        children: []
+                        }
+                    ]
 			    }
             ],
 			'/hardware/': [
@@ -159,6 +204,50 @@ module.exports = {
                         }
                     ]
 			    }
+            ],
+			'/tools/': [
+                {
+                    title: '编译工具',
+				    collapsable: true,
+                    children: ['/tools/builder/builder.md']
+                },
+                {
+                    title: '调试工具',
+				    collapsable: true,
+                    children: ['/tools/debugger/debugger.md']
+                },
+                {
+                    title: '分析工具',
+				    collapsable: true,
+                    children: ['/tools/analysis/analysis.md']
+                },
+                {
+                    title: '编辑工具',
+				    collapsable: true,
+                    children: ['/tools/editor/editor.md']
+                }
+            ],
+			'/coding/': [
+                {
+                    title: '数据结构',
+				    collapsable: true,
+                    children: ['/coding/datastruct/datastruct.md']
+                },
+                {
+                    title: '算法分析',
+				    collapsable: true,
+                    children: ['/coding/algorithm/algorithm.md']
+                },
+                {
+                    title: '并行编程',
+				    collapsable: true,
+                    children: ['/coding/parallel/parallel.md']
+                },
+                {
+                    title: '编程技巧',
+				    collapsable: true,
+                    children: ['/coding/skills/skills.md']
+                }
             ],
 			'/selinux/': [
                 {

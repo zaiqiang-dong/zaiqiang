@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="13.3">
-  <zoom_level>9</zoom_level>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>675</x>
-      <y>1017</y>
-      <w>333</w>
-      <h>1566</h>
+      <x>600</x>
+      <y>904</y>
+      <w>296</w>
+      <h>5792</h>
     </coordinates>
     <panel_attributes>task_struct
 lw=2
@@ -464,10 +464,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2250</x>
-      <y>1062</y>
-      <w>162</w>
-      <h>90</h>
+      <x>2000</x>
+      <y>944</y>
+      <w>144</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>load_weight
 lw=2
@@ -480,10 +480,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1836</x>
-      <y>1026</y>
-      <w>324</w>
-      <h>477</h>
+      <x>1632</x>
+      <y>912</y>
+      <w>288</w>
+      <h>424</h>
     </coordinates>
     <panel_attributes>sched_entity
 lw=2
@@ -524,10 +524,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2151</x>
-      <y>1062</y>
-      <w>117</w>
-      <h>27</h>
+      <x>1912</x>
+      <y>944</y>
+      <w>104</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -536,10 +536,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2196</x>
-      <y>1890</y>
-      <w>234</w>
-      <h>90</h>
+      <x>1952</x>
+      <y>1680</y>
+      <w>208</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>sched_avg
 lw=2
@@ -553,10 +553,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2592</x>
-      <y>1035</y>
-      <w>396</w>
-      <h>1215</h>
+      <x>2304</x>
+      <y>920</y>
+      <w>352</w>
+      <h>1080</h>
     </coordinates>
     <panel_attributes>cfs_rq
 lw=2
@@ -647,10 +647,10 @@ struct cfs_rq {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2151</x>
-      <y>1440</y>
-      <w>180</w>
-      <h>468</h>
+      <x>1912</x>
+      <y>1280</y>
+      <w>160</w>
+      <h>416</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -659,10 +659,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2151</x>
-      <y>1035</y>
-      <w>459</w>
-      <h>324</h>
+      <x>1912</x>
+      <y>920</y>
+      <w>408</w>
+      <h>288</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -671,10 +671,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>999</x>
-      <y>1026</y>
-      <w>855</w>
-      <h>333</h>
+      <x>888</x>
+      <y>912</y>
+      <w>760</w>
+      <h>296</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -683,10 +683,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2115</x>
+      <x>1880</x>
       <y>0</y>
-      <w>315</w>
-      <h>819</h>
+      <w>280</w>
+      <h>728</h>
     </coordinates>
     <panel_attributes>sched_class
 lw=2
@@ -763,10 +763,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>999</x>
-      <y>9</y>
-      <w>1134</w>
-      <h>1332</h>
+      <x>888</x>
+      <y>8</y>
+      <w>1008</w>
+      <h>1184</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -775,10 +775,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2808</x>
-      <y>126</y>
-      <w>153</w>
-      <h>27</h>
+      <x>2496</x>
+      <y>112</y>
+      <w>136</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>stop_sched_class
 lw=2
@@ -788,10 +788,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2421</x>
-      <y>126</y>
-      <w>405</w>
-      <h>27</h>
+      <x>2152</x>
+      <y>112</y>
+      <w>360</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -800,10 +800,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2808</x>
-      <y>261</y>
-      <w>126</w>
-      <h>27</h>
+      <x>2496</x>
+      <y>232</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>idle_sched_class
 lw=2</panel_attributes>
@@ -812,10 +812,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2808</x>
-      <y>369</y>
-      <w>126</w>
-      <h>27</h>
+      <x>2496</x>
+      <y>328</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>fair_sched_class
 lw=2</panel_attributes>
@@ -824,10 +824,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2808</x>
-      <y>477</y>
-      <w>126</w>
-      <h>36</h>
+      <x>2496</x>
+      <y>424</y>
+      <w>112</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>rt_sched_class
 lw=2</panel_attributes>
@@ -836,10 +836,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2808</x>
-      <y>612</y>
-      <w>126</w>
-      <h>27</h>
+      <x>2496</x>
+      <y>544</y>
+      <w>112</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>dl_sched_class
 lw=2</panel_attributes>
@@ -848,10 +848,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2421</x>
-      <y>261</y>
-      <w>405</w>
-      <h>27</h>
+      <x>2152</x>
+      <y>232</y>
+      <w>360</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -860,10 +860,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2421</x>
-      <y>369</y>
-      <w>405</w>
-      <h>27</h>
+      <x>2152</x>
+      <y>328</y>
+      <w>360</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -872,10 +872,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2421</x>
-      <y>486</y>
-      <w>405</w>
-      <h>27</h>
+      <x>2152</x>
+      <y>432</y>
+      <w>360</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -884,10 +884,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2421</x>
-      <y>612</y>
-      <w>405</w>
-      <h>27</h>
+      <x>2152</x>
+      <y>544</y>
+      <w>360</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 lw=2</panel_attributes>
@@ -897,9 +897,9 @@ lw=2</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>1953</y>
-      <w>315</w>
-      <h>828</h>
+      <y>1736</y>
+      <w>280</w>
+      <h>736</h>
     </coordinates>
     <panel_attributes>mm_struct
 lw=2
@@ -1041,10 +1041,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>306</x>
-      <y>1953</y>
-      <w>387</w>
-      <h>27</h>
+      <x>272</x>
+      <y>1736</y>
+      <w>344</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1053,10 +1053,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1863</x>
-      <y>2547</y>
-      <w>306</w>
-      <h>261</h>
+      <x>1656</x>
+      <y>2264</y>
+      <w>272</w>
+      <h>232</h>
     </coordinates>
     <panel_attributes> sched_rt_entity
 --
@@ -1082,10 +1082,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>999</x>
-      <y>1350</y>
-      <w>882</w>
-      <h>1224</h>
+      <x>888</x>
+      <y>1200</y>
+      <w>784</w>
+      <h>1088</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1094,10 +1094,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1863</x>
-      <y>3798</y>
-      <w>270</w>
-      <h>981</h>
+      <x>1656</x>
+      <y>3376</y>
+      <w>240</w>
+      <h>872</h>
     </coordinates>
     <panel_attributes>sched_dl_entity
 --
@@ -1170,10 +1170,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>999</x>
-      <y>1386</y>
-      <w>882</w>
-      <h>2439</h>
+      <x>888</x>
+      <y>1232</y>
+      <w>784</w>
+      <h>2168</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1182,10 +1182,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2628</x>
-      <y>2727</y>
-      <w>324</w>
-      <h>576</h>
+      <x>2336</x>
+      <y>2424</y>
+      <w>288</w>
+      <h>512</h>
     </coordinates>
     <panel_attributes>rt_rq
 lw=2
@@ -1235,10 +1235,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2160</x>
-      <y>2727</y>
-      <w>486</w>
-      <h>27</h>
+      <x>1920</x>
+      <y>2424</y>
+      <w>432</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1247,10 +1247,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2952</x>
-      <y>3699</y>
-      <w>279</w>
-      <h>387</h>
+      <x>2624</x>
+      <y>3288</y>
+      <w>248</w>
+      <h>344</h>
     </coordinates>
     <panel_attributes>dl_rq 
 lw=2
@@ -1315,10 +1315,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3681</x>
-      <y>1962</y>
-      <w>360</w>
-      <h>1980</h>
+      <x>3272</x>
+      <y>1744</y>
+      <w>320</w>
+      <h>1760</h>
     </coordinates>
     <panel_attributes>rq
 lw=2
@@ -1463,10 +1463,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2943</x>
-      <y>1971</y>
-      <w>756</w>
-      <h>1089</h>
+      <x>2616</x>
+      <y>1752</y>
+      <w>672</w>
+      <h>968</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1475,10 +1475,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2979</x>
-      <y>1170</y>
-      <w>720</w>
-      <h>828</h>
+      <x>2648</x>
+      <y>1040</y>
+      <w>640</w>
+      <h>736</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1487,10 +1487,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3222</x>
-      <y>1971</y>
-      <w>477</w>
-      <h>1890</h>
+      <x>2864</x>
+      <y>1752</y>
+      <w>424</w>
+      <h>1680</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1499,10 +1499,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2979</x>
-      <y>1035</y>
-      <w>720</w>
-      <h>1386</h>
+      <x>2648</x>
+      <y>920</y>
+      <w>640</w>
+      <h>1232</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1511,10 +1511,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2772</x>
-      <y>2403</y>
-      <w>927</w>
-      <h>342</h>
+      <x>2464</x>
+      <y>2136</y>
+      <w>824</w>
+      <h>304</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1523,10 +1523,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3078</x>
-      <y>2421</y>
-      <w>621</w>
-      <h>1296</h>
+      <x>2736</x>
+      <y>2152</y>
+      <w>552</w>
+      <h>1152</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1535,10 +1535,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2403</x>
-      <y>1062</y>
-      <w>207</w>
-      <h>81</h>
+      <x>2136</x>
+      <y>944</y>
+      <w>184</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1547,10 +1547,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1512</x>
-      <y>5445</y>
-      <w>621</w>
-      <h>1278</h>
+      <x>1344</x>
+      <y>4840</y>
+      <w>552</w>
+      <h>1136</h>
     </coordinates>
     <panel_attributes>struct sched_domain
   precpu
@@ -1643,10 +1643,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2421</x>
-      <y>5508</y>
-      <w>468</w>
-      <h>315</h>
+      <x>2152</x>
+      <y>4896</y>
+      <w>416</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>struct sched_group 
 	percpu
@@ -1673,10 +1673,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3186</x>
-      <y>5517</y>
-      <w>513</w>
-      <h>279</h>
+      <x>2832</x>
+      <y>4904</y>
+      <w>456</w>
+      <h>248</h>
     </coordinates>
     <panel_attributes>struct sched_group_capacity
 --
@@ -1702,10 +1702,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3312</x>
-      <y>6210</y>
-      <w>261</w>
-      <h>99</h>
+      <x>2944</x>
+      <y>5520</y>
+      <w>232</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>struct sched_domain_shared
 --
@@ -1719,10 +1719,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2475</x>
-      <y>6210</y>
-      <w>351</w>
-      <h>99</h>
+      <x>2200</x>
+      <y>5520</y>
+      <w>312</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>struct sd_data
 --
@@ -1737,10 +1737,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2475</x>
-      <y>6516</y>
-      <w>369</w>
-      <h>162</h>
+      <x>2200</x>
+      <y>5792</y>
+      <w>328</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>struct sched_domain_topology_level
 --
@@ -1758,10 +1758,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2817</x>
-      <y>6255</y>
-      <w>513</w>
-      <h>27</h>
+      <x>2504</x>
+      <y>5560</y>
+      <w>456</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;550.0;10.0</additional_attributes>
@@ -1769,10 +1769,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2817</x>
-      <y>5634</y>
-      <w>387</w>
-      <h>621</h>
+      <x>2504</x>
+      <y>5008</y>
+      <w>344</w>
+      <h>552</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;670.0;250.0;670.0;250.0;10.0;410.0;10.0</additional_attributes>
@@ -1780,10 +1780,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2628</x>
-      <y>5814</y>
-      <w>27</w>
-      <h>414</h>
+      <x>2336</x>
+      <y>5168</y>
+      <w>24</w>
+      <h>368</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;440.0;10.0;10.0</additional_attributes>
@@ -1791,10 +1791,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2124</x>
-      <y>6246</y>
-      <w>369</w>
-      <h>27</h>
+      <x>1888</x>
+      <y>5552</y>
+      <w>328</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>390.0;10.0;10.0;10.0</additional_attributes>
@@ -1802,10 +1802,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2628</x>
-      <y>6300</y>
-      <w>27</w>
-      <h>234</h>
+      <x>2336</x>
+      <y>5600</y>
+      <w>24</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;240.0;10.0;10.0</additional_attributes>
@@ -1813,10 +1813,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2394</x>
-      <y>6822</y>
-      <w>522</w>
-      <h>171</h>
+      <x>2128</x>
+      <y>6064</y>
+      <w>464</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>static struct sched_domain_topology_level default_topology[]
 --
@@ -1835,10 +1835,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2637</x>
-      <y>6669</y>
-      <w>27</w>
-      <h>171</h>
+      <x>2344</x>
+      <y>5928</y>
+      <w>24</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
@@ -1846,10 +1846,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3339</x>
-      <y>6534</y>
-      <w>234</w>
-      <h>153</h>
+      <x>2968</x>
+      <y>5808</y>
+      <w>208</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>struct cpu_topology
 --
@@ -1867,10 +1867,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3303</x>
-      <y>6858</y>
-      <w>333</w>
-      <h>27</h>
+      <x>2936</x>
+      <y>6096</y>
+      <w>296</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes> struct cpu_topology cpu_topology[NR_CPUS];</panel_attributes>
     <additional_attributes/>
@@ -1878,10 +1878,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3447</x>
-      <y>6678</y>
-      <w>27</w>
-      <h>198</h>
+      <x>3064</x>
+      <y>5936</y>
+      <w>24</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;200.0;10.0;10.0</additional_attributes>
@@ -1889,10 +1889,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4455</x>
-      <y>6246</y>
-      <w>486</w>
-      <h>657</h>
+      <x>3960</x>
+      <y>5552</y>
+      <w>432</w>
+      <h>584</h>
     </coordinates>
     <panel_attributes>struct root_domain
 --
@@ -1941,10 +1941,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3960</x>
-      <y>6228</y>
-      <w>297</w>
-      <h>81</h>
+      <x>3520</x>
+      <y>5536</y>
+      <w>264</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>struct s_data
 --
@@ -1956,10 +1956,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4248</x>
-      <y>6255</y>
-      <w>225</w>
-      <h>27</h>
+      <x>3776</x>
+      <y>5560</y>
+      <w>200</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;230.0;10.0</additional_attributes>
@@ -1967,10 +1967,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4032</x>
-      <y>2889</y>
-      <w>693</w>
-      <h>3375</h>
+      <x>3584</x>
+      <y>2568</y>
+      <w>616</w>
+      <h>3000</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1979,10 +1979,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2457</x>
-      <y>7254</y>
-      <w>531</w>
-      <h>279</h>
+      <x>2184</x>
+      <y>6448</y>
+      <w>472</w>
+      <h>248</h>
     </coordinates>
     <panel_attributes>struct sg_lb_stats
 --
@@ -2008,10 +2008,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>2142</x>
-      <y>7182</y>
-      <w>207</w>
-      <h>63</h>
+      <x>1904</x>
+      <y>6384</y>
+      <w>184</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>Note..
 stats of a sched_group required for load_balancing
@@ -2021,10 +2021,10 @@ stats of a sched_group required for load_balancing
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2340</x>
-      <y>7209</y>
-      <w>135</w>
-      <h>72</h>
+      <x>2080</x>
+      <y>6408</y>
+      <w>120</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>130.0;60.0;10.0;10.0</additional_attributes>
@@ -2032,10 +2032,10 @@ stats of a sched_group required for load_balancing
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3312</x>
-      <y>7254</y>
-      <w>504</w>
-      <h>189</h>
+      <x>2944</x>
+      <y>6448</y>
+      <w>448</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>struct sd_lb_stats
 --
