@@ -72,10 +72,6 @@ module.exports = {
 		    	link: '/coding/'
 		    },
 		    {
-		    	text: 'Selinux',
-		    	link: '/selinux/'
-		    },
-		    {
 		    	text: 'Virtualization',
 		    	link: '/virtualization/'
 		    }
@@ -143,6 +139,11 @@ module.exports = {
 			    	        children: ['/linux/interrupt/common/interrupt-sleep/interrupt-sleep.md']
                         }
                     ]
+			    },
+                {
+			    	title: '安全机制',
+			    	collapsable: true,
+			    	children: [ '../linux/selinux/AndroidSelinux/Selinux.md']
 			    },
                 {
 			    	title: '系统工具',
@@ -247,13 +248,6 @@ module.exports = {
                     title: '编程技巧',
 				    collapsable: true,
                     children: ['/coding/skills/skills.md']
-                }
-            ],
-			'/selinux/': [
-                {
-                    title: '系统权限',
-				    collapsable: true,
-                    children: ['/selinux/AndroidSelinux/Selinux']
                 }
             ],
 			'/virtualization/': [
