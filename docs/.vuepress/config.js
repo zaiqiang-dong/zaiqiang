@@ -52,27 +52,27 @@ module.exports = {
         lastUpdated: '最近更新 ',
 		nav: [
             {
-			    text: 'Home',
+			    text: '主页',
 			    link: '/'
 		    },
 		    {
-			    text: 'Linux',
+			    text: '内核',
 			    link: '/linux/'
 		    },
 		    {
-		    	text: 'Hardware',
+		    	text: '硬件',
 		    	link: '/hardware/'
 		    },
 		    {
-		    	text: 'Tools',
+		    	text: '工具',
 		    	link: '/tools/'
 		    },
 		    {
-		    	text: 'Coding',
+		    	text: '编码',
 		    	link: '/coding/'
 		    },
 		    {
-		    	text: 'Virtualization',
+		    	text: '虚拟化',
 		    	link: '/virtualization/'
 		    }
         ],
