@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>1</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1226</x>
-      <y>988</y>
-      <w>30</w>
-      <h>7</h>
+      <x>3537</x>
+      <y>4185</y>
+      <w>270</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>struct idr
 --
@@ -18,10 +18,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1227</x>
-      <y>1008</y>
-      <w>26</w>
-      <h>3</h>
+      <x>3546</x>
+      <y>4365</y>
+      <w>234</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>static struct idr pmu_idr;
 </panel_attributes>
@@ -30,10 +30,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1238</x>
-      <y>994</y>
-      <w>3</w>
-      <h>16</h>
+      <x>3645</x>
+      <y>4239</y>
+      <w>27</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
@@ -41,10 +41,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1226</x>
-      <y>1029</y>
-      <w>53</w>
-      <h>44</h>
+      <x>3537</x>
+      <y>4554</y>
+      <w>477</w>
+      <h>396</h>
     </coordinates>
     <panel_attributes>struct srcu_struct
 --
@@ -77,10 +77,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1230</x>
-      <y>1096</y>
-      <w>40</w>
-      <h>3</h>
+      <x>3573</x>
+      <y>5157</y>
+      <w>360</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>static struct srcu_struct pmus_srcu;
 </panel_attributes>
@@ -89,10 +89,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1249</x>
-      <y>1072</y>
-      <w>3</w>
-      <h>26</h>
+      <x>3744</x>
+      <y>4941</y>
+      <w>27</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
@@ -100,10 +100,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>935</x>
-      <y>538</y>
-      <w>85</w>
-      <h>336</h>
+      <x>918</x>
+      <y>135</y>
+      <w>765</w>
+      <h>3024</h>
     </coordinates>
     <panel_attributes>struct pmu
 --
@@ -317,10 +317,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>925</x>
-      <y>893</y>
-      <w>30</w>
-      <h>22</h>
+      <x>828</x>
+      <y>3330</y>
+      <w>270</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>static struct pmu perf_swevent
 --
@@ -340,10 +340,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>938</x>
-      <y>873</y>
-      <w>3</w>
-      <h>22</h>
+      <x>945</x>
+      <y>3150</y>
+      <w>27</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
@@ -351,10 +351,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>958</x>
-      <y>893</y>
-      <w>32</w>
-      <h>24</h>
+      <x>1125</x>
+      <y>3330</y>
+      <w>288</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>static struct pmu perf_cpu_clock
 --
@@ -374,10 +374,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>971</x>
-      <y>873</y>
-      <w>3</w>
-      <h>22</h>
+      <x>1242</x>
+      <y>3150</y>
+      <w>27</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
@@ -385,10 +385,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>996</x>
-      <y>894</y>
-      <w>33</w>
-      <h>23</h>
+      <x>1467</x>
+      <y>3339</y>
+      <w>297</w>
+      <h>207</h>
     </coordinates>
     <panel_attributes>static struct pmu perf_task_clock
 --
@@ -408,10 +408,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1005</x>
-      <y>873</y>
-      <w>3</w>
-      <h>23</h>
+      <x>1548</x>
+      <y>3150</y>
+      <w>27</w>
+      <h>207</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
@@ -419,10 +419,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>987</x>
-      <y>993</y>
-      <w>32</w>
-      <h>10</h>
+      <x>1386</x>
+      <y>4230</y>
+      <w>288</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>struct notifier_block
 --
@@ -436,10 +436,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>982</x>
-      <y>1021</y>
-      <w>38</w>
-      <h>9</h>
+      <x>1341</x>
+      <y>4482</y>
+      <w>342</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>static struct notifier_block perf_reboot_notifier
 --
@@ -451,10 +451,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1000</x>
-      <y>1002</y>
-      <w>3</w>
-      <h>21</h>
+      <x>1503</x>
+      <y>4311</y>
+      <w>27</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
@@ -462,10 +462,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>989</x>
-      <y>1060</y>
-      <w>32</w>
-      <h>8</h>
+      <x>1404</x>
+      <y>4833</y>
+      <w>288</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>static struct bus_type pmu_bus
 --
@@ -478,10 +478,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>996</x>
-      <y>1049</y>
-      <w>17</w>
-      <h>3</h>
+      <x>1467</x>
+      <y>4734</y>
+      <w>153</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>struct bus_type</panel_attributes>
     <additional_attributes/>
@@ -489,10 +489,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1001</x>
-      <y>1051</y>
-      <w>3</w>
-      <h>11</h>
+      <x>1512</x>
+      <y>4752</y>
+      <w>27</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
@@ -500,10 +500,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>833</x>
-      <y>905</y>
-      <w>30</w>
-      <h>4</h>
+      <x>0</x>
+      <y>3438</y>
+      <w>270</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>static LIST_HEAD(pmus);
 </panel_attributes>
@@ -512,10 +512,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>907</x>
-      <y>902</y>
-      <w>19</w>
-      <h>3</h>
+      <x>666</x>
+      <y>3411</y>
+      <w>171</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
@@ -523,10 +523,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>954</x>
-      <y>903</y>
-      <w>6</w>
-      <h>3</h>
+      <x>1089</x>
+      <y>3420</y>
+      <w>54</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
@@ -534,10 +534,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>989</x>
-      <y>905</y>
-      <w>9</w>
-      <h>3</h>
+      <x>1404</x>
+      <y>3438</y>
+      <w>81</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
@@ -545,10 +545,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>843</x>
-      <y>908</y>
-      <w>233</w>
-      <h>17</h>
+      <x>90</x>
+      <y>3465</y>
+      <w>2097</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;150.0;2310.0;140.0</additional_attributes>
@@ -556,10 +556,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1116</x>
-      <y>538</y>
-      <w>57</w>
-      <h>92</h>
+      <x>2547</x>
+      <y>135</y>
+      <w>513</w>
+      <h>828</h>
     </coordinates>
     <panel_attributes>struct perf_event_context
 --
@@ -615,10 +615,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1019</x>
-      <y>538</y>
-      <w>99</w>
-      <h>3</h>
+      <x>1674</x>
+      <y>135</y>
+      <w>891</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>970.0;10.0;10.0;10.0</additional_attributes>
@@ -626,10 +626,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1219</x>
-      <y>546</y>
-      <w>54</w>
-      <h>10</h>
+      <x>3474</x>
+      <y>207</y>
+      <w>486</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>struct task_struct
 --
@@ -642,10 +642,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1172</x>
-      <y>546</y>
-      <w>49</w>
-      <h>3</h>
+      <x>3051</x>
+      <y>207</y>
+      <w>441</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;470.0;10.0</additional_attributes>
@@ -653,10 +653,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1049</x>
-      <y>560</y>
-      <w>34</w>
-      <h>35</h>
+      <x>1944</x>
+      <y>333</y>
+      <w>306</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>struct perf_cpu_context
 --
@@ -684,10 +684,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1082</x>
-      <y>563</y>
-      <w>36</w>
-      <h>3</h>
+      <x>2241</x>
+      <y>360</y>
+      <w>324</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;340.0;10.0</additional_attributes>
@@ -695,10 +695,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1211</x>
-      <y>613</y>
-      <w>56</w>
-      <h>274</h>
+      <x>3402</x>
+      <y>810</y>
+      <w>504</w>
+      <h>2466</h>
     </coordinates>
     <panel_attributes>struct perf_event
 --
@@ -873,10 +873,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1172</x>
-      <y>613</y>
-      <w>41</w>
-      <h>3</h>
+      <x>3051</x>
+      <y>810</y>
+      <w>369</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>390.0;10.0;10.0;10.0</additional_attributes>
@@ -884,10 +884,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1019</x>
-      <y>560</y>
-      <w>32</w>
-      <h>3</h>
+      <x>1674</x>
+      <y>333</y>
+      <w>288</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
@@ -895,10 +895,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1172</x>
-      <y>548</y>
-      <w>49</w>
-      <h>3</h>
+      <x>3051</x>
+      <y>225</y>
+      <w>441</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>470.0;10.0;10.0;10.0</additional_attributes>
@@ -906,10 +906,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1293</x>
-      <y>613</y>
-      <w>56</w>
-      <h>274</h>
+      <x>4140</x>
+      <y>810</y>
+      <w>504</w>
+      <h>2466</h>
     </coordinates>
     <panel_attributes>struct perf_event
 --
@@ -1084,10 +1084,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1279</x>
-      <y>645</y>
-      <w>6</w>
-      <h>3</h>
+      <x>4014</x>
+      <y>1098</y>
+      <w>54</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>`...</panel_attributes>
     <additional_attributes/>
@@ -1095,10 +1095,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1266</x>
-      <y>646</y>
-      <w>15</w>
-      <h>3</h>
+      <x>3897</x>
+      <y>1107</y>
+      <w>135</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
@@ -1106,10 +1106,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1284</x>
-      <y>646</y>
-      <w>11</w>
-      <h>3</h>
+      <x>4059</x>
+      <y>1107</y>
+      <w>99</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
@@ -1117,10 +1117,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1172</x>
-      <y>586</y>
-      <w>197</w>
-      <h>63</h>
+      <x>3051</x>
+      <y>567</y>
+      <w>1773</w>
+      <h>567</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;20.0;1940.0;10.0;1950.0;610.0;1770.0;610.0</additional_attributes>
@@ -1128,10 +1128,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1378</x>
-      <y>706</y>
-      <w>29</w>
-      <h>3</h>
+      <x>4905</x>
+      <y>1647</y>
+      <w>261</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>	struct ring_buffer</panel_attributes>
     <additional_attributes/>
@@ -1139,10 +1139,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1348</x>
-      <y>706</y>
-      <w>32</w>
-      <h>3</h>
+      <x>4635</x>
+      <y>1647</y>
+      <w>288</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
@@ -1150,10 +1150,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1378</x>
-      <y>675</y>
-      <w>33</w>
-      <h>16</h>
+      <x>4905</x>
+      <y>1368</y>
+      <w>297</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>enum perf_event_active_state
 --
@@ -1169,10 +1169,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1348</x>
-      <y>675</y>
-      <w>32</w>
-      <h>3</h>
+      <x>4635</x>
+      <y>1368</y>
+      <w>288</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
@@ -1180,10 +1180,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1095</x>
-      <y>1007</y>
-      <w>41</w>
-      <h>16</h>
+      <x>2358</x>
+      <y>4356</y>
+      <w>369</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>struct swevent_htable
 --
@@ -1199,10 +1199,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1152</x>
-      <y>1014</y>
-      <w>39</w>
-      <h>7</h>
+      <x>2871</x>
+      <y>4419</y>
+      <w>351</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>struct swevent_hlist
 --
@@ -1215,10 +1215,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1135</x>
-      <y>1014</y>
-      <w>19</w>
-      <h>3</h>
+      <x>2718</x>
+      <y>4419</y>
+      <w>171</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
@@ -1226,10 +1226,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1092</x>
-      <y>1036</y>
-      <w>48</w>
-      <h>3</h>
+      <x>2331</x>
+      <y>4617</y>
+      <w>432</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>static DEFINE_PER_CPU(struct swevent_htable, swevent_htable);
 </panel_attributes>
@@ -1238,10 +1238,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1115</x>
-      <y>1022</y>
-      <w>3</w>
-      <h>16</h>
+      <x>2538</x>
+      <y>4491</y>
+      <w>27</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
@@ -1249,10 +1249,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>935</x>
-      <y>949</y>
-      <w>96</w>
-      <h>3</h>
+      <x>918</x>
+      <y>3834</y>
+      <w>864</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>static struct idr pmu_idr;
 </panel_attributes>
@@ -1261,10 +1261,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>937</x>
-      <y>914</y>
-      <w>3</w>
-      <h>37</h>
+      <x>936</x>
+      <y>3519</y>
+      <w>27</w>
+      <h>333</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;350.0</additional_attributes>
@@ -1272,10 +1272,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>977</x>
-      <y>916</y>
-      <w>3</w>
-      <h>35</h>
+      <x>1296</x>
+      <y>3537</y>
+      <w>27</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
@@ -1283,10 +1283,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1018</x>
-      <y>916</y>
-      <w>3</w>
-      <h>35</h>
+      <x>1665</x>
+      <y>3537</y>
+      <w>27</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
@@ -1294,10 +1294,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1074</x>
-      <y>894</y>
-      <w>65</w>
-      <h>62</h>
+      <x>2169</x>
+      <y>3339</y>
+      <w>585</w>
+      <h>558</h>
     </coordinates>
     <panel_attributes>struct arm_pmu
 --
@@ -1341,10 +1341,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1017</x>
-      <y>873</y>
-      <w>93</w>
-      <h>23</h>
+      <x>1656</x>
+      <y>3150</y>
+      <w>837</w>
+      <h>207</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;60.0;910.0;60.0;910.0;210.0</additional_attributes>
@@ -1352,10 +1352,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1210</x>
-      <y>908</y>
-      <w>61</w>
-      <h>43</h>
+      <x>3393</x>
+      <y>3465</y>
+      <w>549</w>
+      <h>387</h>
     </coordinates>
     <panel_attributes>struct pmu_hw_events
 --
@@ -1389,10 +1389,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1138</x>
-      <y>908</y>
-      <w>74</w>
-      <h>3</h>
+      <x>2745</x>
+      <y>3465</y>
+      <w>666</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;720.0;10.0</additional_attributes>
@@ -1400,10 +1400,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1238</x>
-      <y>886</y>
-      <w>3</w>
-      <h>24</h>
+      <x>3645</x>
+      <y>3267</y>
+      <w>27</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
@@ -1411,10 +1411,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1028</x>
-      <y>907</y>
-      <w>48</w>
-      <h>3</h>
+      <x>1755</x>
+      <y>3456</y>
+      <w>432</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>460.0;10.0;10.0;10.0</additional_attributes>
@@ -1422,10 +1422,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>879</x>
-      <y>895</y>
-      <w>29</w>
-      <h>21</h>
+      <x>414</x>
+      <y>3348</y>
+      <w>261</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>static struct pmu perf_tracepoint
 --
@@ -1444,10 +1444,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>862</x>
-      <y>905</y>
-      <w>19</w>
-      <h>3</h>
+      <x>261</x>
+      <y>3438</y>
+      <w>171</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
@@ -1455,10 +1455,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1082</x>
-      <y>523</y>
-      <w>158</w>
-      <h>45</h>
+      <x>2241</x>
+      <y>0</y>
+      <w>1422</w>
+      <h>405</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;430.0;150.0;430.0;150.0;10.0;1560.0;10.0;1560.0;230.0</additional_attributes>
