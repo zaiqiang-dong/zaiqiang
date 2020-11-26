@@ -91,7 +91,8 @@ module.exports = {
                         {
                             title: 'buddy',
 			    	        collapsable: true,
-			    	        children: ['/linux/memory/buddy/alloc-flags/alloc-flags']
+			    	        children: ['/linux/memory/buddy/alloc-flags/alloc-flags',
+                                       '/linux/memory/buddy/wartermark/watermark']
                         },
                         {
                             title: 'slxb',
