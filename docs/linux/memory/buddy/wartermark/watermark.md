@@ -192,16 +192,12 @@ static void __setup_per_zone_wmarks(void)
   就是对各个zone都计算一下水位线。
 - 代码27～28行：
   这两个是整个函数的核心，这里的`pages_min`就是`min_free_kbytes`除以4转化为整个系统应该保留的最小页面数。那这里的`tmp`计算出来就应该是当前循环的zone所应保留的最小页面数，具体公式如下
-  $$
-  tmp = \frac{pages\_min * zone\_managed\_pages(zone)}{lowmem_pages} 
-  $$
-  $$
-  = \frac{整个系统保留最少页面数 * 当前zone的页面数}{所有zone总的页面数}
-  $$
 
-  $$
-  = 整个系统保留最少页面数 * \frac{当前zone的页面数}{当前zone的页面数}
-  $$
+  $$tmp = \frac{pages\_min * zone\_managed\_pages(zone)}{lowmem_pages} $$
+
+  $$ = \frac{整个系统保留最少页面数 * 当前zone的页面数}{所有zone总的页面数}$$
+
+  $$ = 整个系统保留最少页面数 * \frac{当前zone的页面数}{当前zone的页面数}$$
 
 - 代码49行：
   设置`zone->_watermark[WMARK_MIN]`值
@@ -214,7 +210,7 @@ static void __setup_per_zone_wmarks(void)
 
 ## 3. 小结
 
-  `zone->_watermark[WMARK_MIN]`是通过一个平方的公式计算出来的，而``zone->_watermark[WMARK_LOW]`是等于`zone->_watermark[WMARK_MIN]`的1.25倍，``zone->_watermark[WMARK_HIGH]`是`zone->_watermark[WMARK_MIN]`的1.5倍。
+  `zone->_watermark[WMARK_MIN]`是通过一个平方的公式计算出来的，而`zone->_watermark[WMARK_LOW]`是等于`zone->_watermark[WMARK_MIN]`的1.25倍，`zone->_watermark[WMARK_HIGH]`是`zone->_watermark[WMARK_MIN]`的1.5倍。
 
 ---
 ::: tip  
