@@ -193,7 +193,7 @@ static void __setup_per_zone_wmarks(void)
 - 代码27～28行：
   这两个是整个函数的核心，这里的`pages_min`就是`min_free_kbytes`除以4转化为整个系统应该保留的最小页面数。那这里的`tmp`计算出来就应该是当前循环的zone所应保留的最小页面数，具体公式如下
 
-  $$tmp = \frac{pages\_min * zone\_managed\_pages(zone)}{lowmem_pages} $$
+  $$tmp = \frac{pages\_min * zone\_managed\_pages(zone)}{lowmem\_pages}$$
 
   $$ = \frac{整个系统保留最少页面数 * 当前zone的页面数}{所有zone总的页面数}$$
 
