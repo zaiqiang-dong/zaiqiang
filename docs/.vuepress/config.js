@@ -97,7 +97,7 @@ module.exports = {
                         {
                             title: 'slxb',
 			    	        collapsable: true,
-			    	        children: []
+			    	        children: [`../linux/memory/slub/slub_order/slub_order`]
                         }
                     ]
 			    },
