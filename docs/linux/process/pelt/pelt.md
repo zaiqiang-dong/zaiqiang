@@ -36,7 +36,7 @@ $$S_n=\frac{p_1*(1-y^n)}{1-y}=\frac{p_1-p_ny}{1-y} = \frac{p_ny-p_1}{y-1},(y\ne1
 $$S_{max}=47742$$
 
 为什么可以这样取值，可以看下面的这个等比数列求和曲线：
-![cal3](process_05.png)
+![cal3](./process_05.png)
 
 ### 2.2 计算过程
 
