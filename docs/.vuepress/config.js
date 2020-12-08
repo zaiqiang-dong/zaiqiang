@@ -128,7 +128,8 @@ module.exports = {
 			    	title: '进程管理',
 			    	collapsable: true,
 			    	children: ['/linux/process/weight/weight',
-                               '/linux/process/priority/priority']
+                               '/linux/process/priority/priority',
+                               '/linux/process/pelt/pelt']
 			    },
                 {
 			    	title: '中断系统',
