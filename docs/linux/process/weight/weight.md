@@ -1,6 +1,20 @@
-## 权重计算
 
-### weight
+# 虚拟运行时间计算
+
+---
+
+| 软件版本  | 硬件版本 | 更新内容 |
+|---------|--------|----------|
+|linux 5.8.18| arm64   |        |
+
+---
+
+虚拟运行时间计算，在内核中使用了一些计算技巧，使得计算过程不是那么容易理解，这里我们详细说明一个这个值的计算过程。
+
+
+## 1. 权重初始化
+
+在进程fork的时候，会设置进程的权重值，具体代码如下，代码的说明都在代码注释中。
 
 ```c
 /*
@@ -15,8 +29,7 @@
  * If a task goes up by ~10% and another task goes down by ~10% then
  * the relative distance between them is ~25%.)
  */
-
-static const int prio_to_weight[40] = {
+const int sched_prio_to_weight[40] = {
  /* -20 */     88761,     71755,     56483,     46273,     36291,
  /* -15 */     29154,     23254,     18705,     14949,     11916,
  /* -10 */      9548,      7620,      6100,      4904,      3906,
@@ -27,16 +40,15 @@ static const int prio_to_weight[40] = {
  /*  15 */        36,        29,        23,        18,        15,
 };
 
-```
-这里有一个10%效应和一个1.25系数，这里假设有两个进程A和B，优先级均为120（对应用户态就是nice=0）,那两个进程在系统中应该各使用505的cpu.通过注释可以看出，如果一个进程优先级上升1个级别，它将少使用大约10%的cpu,如果下降一个level则多使用大约10%的cpu.这样两个之间相关大约25%，也就是一个1.25的系数.
 
-### inverse weight
-这个中间weight值仅仅是为了计算方便，避免系统进行除法运算，预先计算好一个值，后面会看到怎么使用这个中间值。公式如下：
-
-$$inv\_weight = \frac{2^{32}}{weight}$$
-
-```c
-static const u32 prio_to_wmult[40] = {
+/*
+ * Inverse (2^32/x) values of the sched_prio_to_weight[] array, precalculated.
+ *
+ * In cases where the weight does not change often, we can use the
+ * precalculated inverse to speed up arithmetics by turning divisions
+ * into multiplications:
+ */
+const u32 sched_prio_to_wmult[40] = {
  /* -20 */     48388,     59856,     76040,     92818,    118348,
  /* -15 */    147320,    184698,    229616,    287308,    360437,
  /* -10 */    449829,    563644,    704093,    875809,   1099582,
@@ -47,43 +59,120 @@ static const u32 prio_to_wmult[40] = {
  /*  15 */ 119304647, 148102320, 186737708, 238609294, 286331153,
 };
 
+static void set_load_weight(struct task_struct *p, bool update_load)
+{
+	int prio = p->static_prio - MAX_RT_PRIO;
+	struct load_weight *load = &p->se.load;
+
+	/*
+	 * SCHED_IDLE tasks get minimal weight:
+	 */
+
+	/*
+	 * idle进程的weight设置, 我们这里不关心这个
+	 *
+	 * */
+	if (task_has_idle_policy(p)) {
+		load->weight = scale_load(WEIGHT_IDLEPRIO);
+		load->inv_weight = WMULT_IDLEPRIO;
+		return;
+	}
+
+	/*
+	 * SCHED_OTHER tasks have to update their load when changing their
+	 * weight
+	 */
+	/*
+	 * 进程设置 weight, 基本用户态的进程 weight 都是由这里设置的
+	 *
+	 * if 和 else两个分支设置的东西差不多
+	 * 主要就是设置 weight 和 inv_weight 两个值
+	 *
+	 */
+	if (update_load && p->sched_class == &fair_sched_class) {
+		reweight_task(p, prio);
+	} else {
+		load->weight = scale_load(sched_prio_to_weight[prio]);
+		load->inv_weight = sched_prio_to_wmult[prio];
+	}
+}
+
+void reweight_task(struct task_struct *p, int prio)
+{
+	struct sched_entity *se = &p->se;
+	struct cfs_rq *cfs_rq = cfs_rq_of(se);
+	struct load_weight *load = &se->load;
+	/*
+	 * 从 sched_prio_to_weight 这个数组中查找对应该的weight
+	 * scale_load 暂时可以不用关心，就是为了方便处理加入的移位
+	 *
+	 */
+	unsigned long weight = scale_load(sched_prio_to_weight[prio]);
+
+	/*
+	 * 这里就是把 weight 赋值给 lw->weight
+	 *
+	 */
+	reweight_entity(cfs_rq, se, weight);
+
+	/*
+	 * 这里就是设置 inv_weight ,这个是用来计算 vruntime
+	 * 主要是为了简化计算过程，比如不使用除法，把除法转化为乘法和移位操作
+	 *
+	 * 这里的 inv_weight = 2^32 / weight
+	 * 后面我们会通过公式推导得出为什么 inv_weight 是这样一个值
+	 */
+	load->inv_weight = sched_prio_to_wmult[prio];
+}
+
+
+
 ```
-### vruntime
 
+## 2. 计算过程
 
-$$vruntime = \frac{delta\_exec,*nice\_0\_weight}{weight}$$
-$$ = \frac{delta\_exec*nice\_0\_weight * 2^{32}}{weight} >>32$$
+在内核中，vruntime的定义的计算公式如下：
+
+$$vruntime = \frac{delta\_exec*nice\_0\_weight}{weight}$$
+
+但是这个公式计算过程中有除法，为了提高计算效率，我们需要对公式做一个变换，使它更加适合CPU的习惯。变换过程如下：
+
+$$vruntime = \frac{delta\_exec*nice\_0\_weight * 2^{32}}{weight} >>32$$
 $$ = delta\_exec*nice\_0\_weight *\frac{ 2^{32}}{weight} >>32$$
 $$ = delta\_exec*nice\_0\_weight * inv\_weight >> 32$$
 
-内核实现函数如下
+其中的$\frac{2^{32}}{weight}$，因为对于CFS调度的进程NICE值只有40个，也就是从-20～19.这40个NICE值，我们把它们转化为权重值，也就是 sched_prio_to_weight 这个数组,因此这个值也可以提前计算好放入 sched_prio_to_wmult 这个数组，这样使用的时候直接使用。
 
 ```c
-static inline u64 mul_u64_u32_shr(u64 a, u32 mul, unsigned int shift)
+static void update_curr(struct cfs_rq *cfs_rq)
 {
-	return (u64)(((unsigned __int128)a * mul) >> shift);
+    ...
+
+    curr->vruntime += calc_delta_fair(delta_exec, curr);
+
+    ...
+}
+
+static inline u64 calc_delta_fair(u64 delta, struct sched_entity *se)
+{
+
+	/*
+	 * 按照 vruntime 的计算公式，如果NICE值等于0,那计算结果就是等于
+	 * delta_exec,直接返回就行。
+	 *
+	 */
+	if (unlikely(se->load.weight != NICE_0_LOAD))
+		delta = __calc_delta(delta, NICE_0_LOAD, &se->load);
+
+	return delta;
 }
 
 
-#define WMULT_CONST	(~0U)
+```
+
+```c
+
 #define WMULT_SHIFT	32
-
-static void __update_inv_weight(struct load_weight *lw)
-{
-	unsigned long w;
-
-	if (likely(lw->inv_weight))
-		return;
-
-	w = scale_load_down(lw->weight);
-
-	if (BITS_PER_LONG > 32 && unlikely(w >= WMULT_CONST))
-		lw->inv_weight = 1;
-	else if (unlikely(!w))
-		lw->inv_weight = WMULT_CONST;
-	else
-		lw->inv_weight = WMULT_CONST / w;
-}
 
 static u64 __calc_delta(u64 delta_exec, unsigned long weight, struct load_weight *lw)
 {
@@ -99,8 +188,7 @@ static u64 __calc_delta(u64 delta_exec, unsigned long weight, struct load_weight
 		}
 	}
 
-	/* hint to use a 32x32->64 mul */
-	fact = (u64)(u32)fact * lw->inv_weight;
+	fact = mul_u32_u32(fact, lw->inv_weight);
 
 	while (fact >> 32) {
 		fact >>= 1;
@@ -110,157 +198,31 @@ static u64 __calc_delta(u64 delta_exec, unsigned long weight, struct load_weight
 	return mul_u64_u32_shr(delta_exec, fact, shift);
 }
 
-/*
- * We calculate the wall-time slice from the period by taking a part
- * proportional to the weight.
- *
- * s = p*P[w/rw]
- */
-static u64 sched_slice(struct cfs_rq *cfs_rq, struct sched_entity *se)
-{
-	u64 slice = __sched_period(cfs_rq->nr_running + !se->on_rq);
-
-	for_each_sched_entity(se) {
-		struct load_weight *load;
-		struct load_weight lw;
-
-		cfs_rq = cfs_rq_of(se);
-		load = &cfs_rq->load;
-
-		if (unlikely(!se->on_rq)) {
-			lw = cfs_rq->load;
-
-			update_load_add(&lw, se->load.weight);
-			load = &lw;
-		}
-		slice = __calc_delta(slice, se->load.weight, load);
-	}
-	return slice;
-}
-
-/*
- * delta /= w
- */
-static inline u64 calc_delta_fair(u64 delta, struct sched_entity *se)
-{
-	if (unlikely(se->load.weight != NICE_0_LOAD))
-		delta = __calc_delta(delta, NICE_0_LOAD, &se->load);
-
-	return delta;
-}
-
 ```
-
- `__calc_delta`函数功能：
-1. 计算调度实体se的权重占整个就绪队列权重的比例，然后乘以调度周期时间即可得到当前调度实体应该运行的时间。
- delta_exec 为调度周期，如果进程数小于8,delta_exec = 6ms.否则：
- $$delta\_exec = n * 0.75$$ 
- n为进程数、weight 为进程的权重值、lw 为整个 cfs_rq的load_weight load值。
-
-2. 计算进程运行时间转换成虚拟时间
- delta_exec 为	delta_exec = now - curr->exec_start;
- weight 为NICE_0_LOAD
- lw 为当前里程的load_weight load值。
-
- `__calc_delta`计算过程
- 对于功能1 `__update_inv_weight(lw);`在这个计算过程中因为`lw->inv_weight == 0`,所以会起作用。
-$$fact = se->load.weight$$
-$$lw->inv\_weight = \frac{2^{32} - 1}{lw->weight}$$
-$$fact = se->load.weight * \frac{2^{32} - 1}{lw->weight}$$
-$$ret\_value = delta\_exec * se->load.weight * \frac{2^{32} - 1}{lw->weight}   >> 32$$
-$$ret\_value = delta\_exec * \frac{se->load.weight}{lw->weight}$$
-
-也就是说，一个进程的理想运行时间就是它的权重与总的权重之和的比例再乘以调度周期。
+上面的计算过程用公式表示如下：
 
 
- 对于功能2如下：`__update_inv_weight(lw);`在这个计算过程中因为`lw->inv_weight == 0`,所以会起作用。
-$$ret\_value = delta\_exec * fact >> shift$$
-$$ = delta\_exec * fact * inv\_weight >> shift$$
-$$ = delta\_exec * weight * inv\_weight >> shift$$
+$$fact = weight = NICE\_0\_LOAD$$
+$$fact = fact * inv_weight = weight * inv_weight$$
+$$vruntime = delta\_exec * fact >> shift$$
+$$vruntime = delta\_exec * weight * inv_weight >> WMULT_SHIFT$$
+$$vruntime = delta\_exec * weight * inv_weight >> 32$$
 
-这部分在开头也就过程推导，这里不再细说。
- 
+## 3. 小结
 
-### runnable_avg_sum
-调试实体在就绪队列里可运行状态下总的衰减累加时间
-
-### runnable_avg_period
-调试实体在系统中总的衰减累加时间
-
-### load_avg_contrib
-进程平均负载贡献度
+虚拟运行时间计算，其实还是比较简单，只是使用一个技巧来简化计算过程。
 
 
-### runnable_avg_yN_inv
 
-一个进程的负载贡献在当前1024us为a0,在下一个1024us,这个值对未来的影响应该衰减（这个就好像你因为一件事，生一个人的气，随着时间推移，会慢慢减小），这里假设为a1，假设衰减因子为y,那么a1,a0,y会存在如下关系：
-$$a_1=a_0*y$$
+---
+::: tip Tip 
 
-这里面的y是由内核的大神确定的，基本的原理，就是希望贡献在32个周期之后衰减为原来的一半，也就是
-$$y^{32} = 0.5$$
+欢迎评论、探讨,如果发现错误请指正。转载请注明出处！ [探索者](http://www.tsz.wiki) 
 
-所以y = 0.978520621
-
-那第计算一个贡献在a在经过n周期（1024us）后衰减为：
-$$a_n = a * y^n = \frac{a * (y^n * 2^{32})}{2^{32}} = a * (y^n * 2^{32}) >> 32$$
-
-之所以做上面的公式变换是为了不做浮点运算，提高计算效率。怎么提高,就是把
-$$(y^n * 2^{32})$$
-从n=0到n=31提前计算好放到数组中，如下所示：
-
-```c
-/* Precomputed fixed inverse multiplies for multiplication by y^n */
-static const u32 runnable_avg_yN_inv[] = {
-	0xffffffff, 0xfa83b2da, 0xf5257d14, 0xefe4b99a, 0xeac0c6e6, 0xe5b906e6,
-	0xe0ccdeeb, 0xdbfbb796, 0xd744fcc9, 0xd2a81d91, 0xce248c14, 0xc9b9bd85,
-	0xc5672a10, 0xc12c4cc9, 0xbd08a39e, 0xb8fbaf46, 0xb504f333, 0xb123f581,
-	0xad583ee9, 0xa9a15ab4, 0xa5fed6a9, 0xa2704302, 0x9ef5325f, 0x9b8d39b9,
-	0x9837f050, 0x94f4efa8, 0x91c3d373, 0x8ea4398a, 0x8b95c1e3, 0x88980e80,
-	0x85aac367, 0x82cd8698,
-};
-
-```
-
-### runnable_avg_yN_sum
+:::
 
 
-假设一个进程从一个102us开始跑，跑了n个1024us,这个他的负载贡献怎么计算
 
-$$S_n = a_1 + a_2 + a_3 +  .... +a_n$$
-$$a_1 = 1024 * y^n$$
-$$a_2 = 1024 * y^{n - 1}$$
-$$.$$
-$$a_n = 1024 * y$$
-$$S_n = 1024*(y^1 + y^2 + . . . + y^n)$$
+---
+<Vssue :title="$title"/>
 
-为了计算方便内核计算了n=0到n=32的和，如下所示：
-
-```c
-static const u32 runnable_avg_yN_sum[] = {
-	    0, 1002, 1982, 2941, 3880, 4798, 5697, 6576, 7437, 8279, 9103,
-	 9909,10698,11470,12226,12966,13690,14398,15091,15769,16433,17082,
-	17718,18340,18949,19545,20128,20698,21256,21802,22336,22859,23371,
-};
-
-```
-$$runnable\_avg\_yN\_sum[n] = 1024*(y^1+y^2+y^3.....+y^n)$$
-
-
-### scale_freq
-表示 当前freq 相对 本cpu最大freq 的比值
-$$scale\_freq = \frac{cpu\_curr\_freq }{cpu\_max\_freq}*1024$$
-
-### scale_cpu
-表示 (当前cpu最大运算能力 相对 所有cpu中最大的运算能力 的比值) * (cpufreq_policy的最大频率 相对 本cpu最大频率 的比值)
-$$scale\_cpu = \frac{cpu\_scale * max\_freq\_scale}{1024}$$
-
-### cpu_scale
-表示 当前cpu最大运算能力 相对 所有cpu中最大的运算能力 的比值.当前cpu的最大运算能力等于当前cpu的最大频率乘以当前cpu每clk的运算能力efficiency，efficiency相当于DMIPS，A53/A73不同架构每个clk的运算能力是不一样的
-$$cpu\_scale = (\frac{cpu\_max\_freq * efficiency}{max\_cpu\_perf})* 1024$$
-
-### max_freq_scale
-表示 cpufreq_policy的最大频率 相对 本cpu最大频率 的比值
-$$max\_freq\_scale = \frac{policy->max}{cpuinfo->max\_freq} * 1024$$
-
-
-<Vssue :title="$title" />
