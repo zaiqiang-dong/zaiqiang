@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>15</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10890</x>
-      <y>720</y>
-      <w>525</w>
-      <h>225</h>
+      <x>4098</x>
+      <y>288</y>
+      <w>210</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>memblock
 lw=2
@@ -27,10 +27,10 @@ bg=black</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10050</x>
-      <y>495</y>
-      <w>600</w>
-      <h>165</h>
+      <x>3762</x>
+      <y>198</y>
+      <w>240</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>memblock_type
 lw=2
@@ -45,10 +45,10 @@ lw=2
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>9465</x>
-      <y>540</y>
-      <w>300</w>
-      <h>75</h>
+      <x>3528</x>
+      <y>216</y>
+      <w>120</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>Note..
 typedef u64 phys_addr_t;</panel_attributes>
@@ -57,10 +57,10 @@ typedef u64 phys_addr_t;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>9750</x>
-      <y>555</y>
-      <w>330</w>
-      <h>75</h>
+      <x>3642</x>
+      <y>222</y>
+      <w>132</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>200.0;30.0;10.0;10.0</additional_attributes>
@@ -68,10 +68,10 @@ typedef u64 phys_addr_t;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>9285</x>
-      <y>840</y>
-      <w>540</w>
-      <h>195</h>
+      <x>3456</x>
+      <y>336</y>
+      <w>216</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>memblock_region
 lw=2
@@ -88,10 +88,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>10635</x>
-      <y>600</y>
-      <w>285</w>
-      <h>255</h>
+      <x>3996</x>
+      <y>240</y>
+      <w>114</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>170.0;150.0;10.0;10.0</additional_attributes>
@@ -99,10 +99,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10710</x>
-      <y>2265</y>
-      <w>900</w>
-      <h>1425</h>
+      <x>4026</x>
+      <y>906</y>
+      <w>360</w>
+      <h>570</h>
     </coordinates>
     <panel_attributes>typedef struct pglist_data pg_data_t
 lw=2
@@ -167,10 +167,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6915</x>
-      <y>2310</y>
-      <w>480</w>
-      <h>4905</h>
+      <x>2508</x>
+      <y>924</y>
+      <w>192</w>
+      <h>1962</h>
     </coordinates>
     <panel_attributes>zone
 lw=2
@@ -381,10 +381,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>7005</x>
-      <y>1950</y>
-      <w>540</w>
-      <h>135</h>
+      <x>2544</x>
+      <y>780</y>
+      <w>216</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>zoneref
 lw=2
@@ -397,10 +397,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>9570</x>
-      <y>600</y>
-      <w>510</w>
-      <h>270</h>
+      <x>3570</x>
+      <y>240</y>
+      <w>204</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>320.0;10.0;10.0;160.0</additional_attributes>
@@ -408,10 +408,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>7095</x>
-      <y>2070</y>
-      <w>45</w>
-      <h>270</h>
+      <x>2580</x>
+      <y>828</y>
+      <w>18</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
@@ -419,10 +419,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10365</x>
-      <y>1965</y>
-      <w>660</w>
-      <h>75</h>
+      <x>3888</x>
+      <y>786</y>
+      <w>264</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>zonelist
 lw=2
@@ -434,10 +434,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>10620</x>
-      <y>2025</y>
-      <w>120</w>
-      <h>345</h>
+      <x>3990</x>
+      <y>810</y>
+      <w>48</w>
+      <h>138</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>60.0;210.0;10.0;210.0;10.0;10.0</additional_attributes>
@@ -445,10 +445,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>11040</x>
-      <y>4410</y>
-      <w>465</w>
-      <h>1110</h>
+      <x>4158</x>
+      <y>1764</y>
+      <w>186</w>
+      <h>444</h>
     </coordinates>
     <panel_attributes>page
 lw=2
@@ -635,10 +635,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>11055</x>
-      <y>3675</y>
-      <w>195</w>
-      <h>765</h>
+      <x>4164</x>
+      <y>1470</y>
+      <w>78</w>
+      <h>306</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;110.0;490.0</additional_attributes>
@@ -646,10 +646,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>10365</x>
-      <y>2415</y>
-      <w>225</w>
-      <h>270</h>
+      <x>3888</x>
+      <y>966</y>
+      <w>90</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>node_mem_map[]
 lw=2
@@ -669,10 +669,10 @@ pagen
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>10575</x>
-      <y>2400</y>
-      <w>165</w>
-      <h>45</h>
+      <x>3972</x>
+      <y>960</y>
+      <w>66</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
@@ -680,10 +680,10 @@ pagen
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>11550</x>
-      <y>375</y>
-      <w>345</w>
-      <h>105</h>
+      <x>4362</x>
+      <y>150</y>
+      <w>138</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Note..
 include/linux/memblock.h</panel_attributes>
@@ -692,10 +692,10 @@ include/linux/memblock.h</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>11400</x>
-      <y>465</y>
-      <w>180</w>
-      <h>285</h>
+      <x>4302</x>
+      <y>186</y>
+      <w>72</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 lw=2</panel_attributes>
@@ -704,10 +704,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>8145</x>
+      <x>3000</x>
       <y>0</y>
-      <w>795</w>
-      <h>1380</h>
+      <w>318</w>
+      <h>552</h>
     </coordinates>
     <panel_attributes>lw=2
 enum zone_type 
@@ -771,10 +771,10 @@ enum zone_type
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>13155</x>
-      <y>1005</y>
-      <w>465</w>
-      <h>1110</h>
+      <x>5004</x>
+      <y>402</y>
+      <w>186</w>
+      <h>444</h>
     </coordinates>
     <panel_attributes>mm_struct
 lw=2
@@ -907,10 +907,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5055</x>
-      <y>3510</y>
-      <w>480</w>
-      <h>135</h>
+      <x>1764</x>
+      <y>1404</y>
+      <w>192</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>free_area
 lw=2
@@ -924,10 +924,10 @@ unsigned long nr_free;
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5955</x>
-      <y>3510</y>
-      <w>510</w>
-      <h>45</h>
+      <x>2124</x>
+      <y>1404</y>
+      <w>204</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>struct free_area free_area[MAX_ORDER];
 
@@ -937,10 +937,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>6450</x>
-      <y>3105</y>
-      <w>495</w>
-      <h>450</h>
+      <x>2322</x>
+      <y>1242</y>
+      <w>198</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -949,10 +949,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>5520</x>
-      <y>3525</y>
-      <w>465</w>
-      <h>45</h>
+      <x>1950</x>
+      <y>1410</y>
+      <w>186</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -961,10 +961,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1740</x>
-      <y>2640</y>
-      <w>780</w>
-      <h>1095</h>
+      <x>438</x>
+      <y>1056</y>
+      <w>312</w>
+      <h>438</h>
     </coordinates>
     <panel_attributes>kmem_cache
 lw=2
@@ -1015,10 +1015,10 @@ lw=2
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>645</x>
-      <y>2670</y>
-      <w>675</w>
-      <h>240</h>
+      <x>0</x>
+      <y>1068</y>
+      <w>270</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>kmem_cache_cpu
 lw=2
@@ -1037,10 +1037,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1305</x>
-      <y>2670</y>
-      <w>465</w>
-      <h>45</h>
+      <x>264</x>
+      <y>1068</y>
+      <w>186</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1049,10 +1049,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>840</x>
-      <y>3600</y>
-      <w>435</w>
-      <h>645</h>
+      <x>78</x>
+      <y>1440</y>
+      <w>174</w>
+      <h>258</h>
     </coordinates>
     <panel_attributes>kmem_cache_node
 lw=2
@@ -1089,10 +1089,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1260</x>
-      <y>3600</y>
-      <w>510</w>
-      <h>45</h>
+      <x>246</x>
+      <y>1440</y>
+      <w>204</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1101,10 +1101,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1920</x>
-      <y>2415</y>
-      <w>405</w>
-      <h>45</h>
+      <x>510</x>
+      <y>966</y>
+      <w>162</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>LIST_HEAD(slab_caches)
 lw=2</panel_attributes>
@@ -1113,10 +1113,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2145</x>
-      <y>2445</y>
-      <w>45</w>
-      <h>225</h>
+      <x>600</x>
+      <y>978</y>
+      <w>18</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 lw=2</panel_attributes>
@@ -1125,10 +1125,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>11340</x>
-      <y>1920</y>
-      <w>555</w>
-      <h>45</h>
+      <x>4278</x>
+      <y>768</y>
+      <w>222</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>#define NODE_DATA(nid)		(node_data[(nid)])
 lw=2</panel_attributes>
@@ -1137,10 +1137,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>11295</x>
-      <y>1950</y>
-      <w>360</w>
-      <h>345</h>
+      <x>4260</x>
+      <y>780</y>
+      <w>144</w>
+      <h>138</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1149,10 +1149,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>7380</x>
-      <y>2295</y>
-      <w>3360</w>
-      <h>60</h>
+      <x>2694</x>
+      <y>918</y>
+      <w>1344</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1161,10 +1161,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>7650</x>
-      <y>2430</y>
-      <w>510</w>
-      <h>270</h>
+      <x>2802</x>
+      <y>972</y>
+      <w>204</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>struct per_cpu_pageset 
 --
@@ -1183,10 +1183,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>7380</x>
-      <y>2430</y>
-      <w>300</w>
-      <h>660</h>
+      <x>2694</x>
+      <y>972</y>
+      <w>120</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1195,10 +1195,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>8430</x>
-      <y>2460</y>
-      <w>705</w>
-      <h>225</h>
+      <x>3114</x>
+      <y>984</y>
+      <w>282</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>struct per_cpu_pages
 --
@@ -1215,10 +1215,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>8145</x>
-      <y>2460</y>
-      <w>315</w>
-      <h>45</h>
+      <x>3000</x>
+      <y>984</y>
+      <w>126</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1227,10 +1227,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5985</x>
-      <y>2745</y>
-      <w>225</w>
-      <h>45</h>
+      <x>2136</x>
+      <y>1098</y>
+      <w>90</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>boot_pageset
 lw=2</panel_attributes>
@@ -1239,10 +1239,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>6195</x>
-      <y>2745</y>
-      <w>750</w>
-      <h>45</h>
+      <x>2220</x>
+      <y>1098</y>
+      <w>300</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1251,10 +1251,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5235</x>
-      <y>2760</y>
-      <w>510</w>
-      <h>240</h>
+      <x>1836</x>
+      <y>1104</y>
+      <w>204</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>struct per_cpu_pageset
 --
@@ -1273,10 +1273,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>5730</x>
-      <y>2760</y>
-      <w>285</w>
-      <h>45</h>
+      <x>2034</x>
+      <y>1104</y>
+      <w>114</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 lw=2</panel_attributes>
@@ -1285,10 +1285,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6000</x>
-      <y>2415</y>
-      <w>360</w>
-      <h>180</h>
+      <x>2142</x>
+      <y>966</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>watermark
 lw=2
@@ -1306,10 +1306,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>6345</x>
-      <y>2415</y>
-      <w>600</w>
-      <h>45</h>
+      <x>2280</x>
+      <y>966</y>
+      <w>240</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1318,10 +1318,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>7650</x>
-      <y>7155</y>
-      <w>585</w>
-      <h>510</h>
+      <x>2802</x>
+      <y>2862</y>
+      <w>234</w>
+      <h>204</h>
     </coordinates>
     <panel_attributes>vm_stat[NR_VM_ZONE_STAT_ITEMS]
 lw=2
@@ -1377,10 +1377,10 @@ lw=2
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>7380</x>
-      <y>7140</y>
-      <w>300</w>
-      <h>45</h>
+      <x>2694</x>
+      <y>2856</y>
+      <w>120</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 lw=2</panel_attributes>
@@ -1389,10 +1389,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1110</x>
-      <y>5985</y>
-      <w>315</w>
-      <h>285</h>
+      <x>186</x>
+      <y>2394</y>
+      <w>126</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>struct vm_struct 
 --
@@ -1410,10 +1410,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1905</x>
-      <y>5970</y>
-      <w>705</w>
-      <h>285</h>
+      <x>504</x>
+      <y>2388</y>
+      <w>282</w>
+      <h>114</h>
     </coordinates>
     <panel_attributes>struct vmap_area 
 --
@@ -1431,10 +1431,10 @@ lw=2</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>6465</x>
-      <y>6240</y>
-      <w>480</w>
-      <h>45</h>
+      <x>2328</x>
+      <y>2496</y>
+      <w>192</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>300.0;10.0;10.0;10.0</additional_attributes>
@@ -1442,10 +1442,10 @@ lw=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6030</x>
-      <y>6240</y>
-      <w>450</w>
-      <h>195</h>
+      <x>2154</x>
+      <y>2496</y>
+      <w>180</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>struct lruvec 
 --
@@ -1457,5 +1457,71 @@ lw=2</panel_attributes>
 
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3468</x>
+      <y>1320</y>
+      <w>312</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>struct lruvec
+--
+	struct list_head		lists[NR_LRU_LISTS];
+	/*
+	 * These track the cost of reclaiming one LRU - file or anon -
+	 * over the other. As the observed cost of reclaiming one LRU
+	 * increases, the reclaim scan balance tips toward the other.
+	 */
+	unsigned long			anon_cost;
+	unsigned long			file_cost;
+	/* Non-resident age, driven by LRU movement */
+	atomic_long_t			nonresident_age;
+	/* Refaults at the time of last reclaim cycle */
+	unsigned long			refaults;
+	/* Various lruvec state flags (enum lruvec_flags) */
+	unsigned long			flags;
+#ifdef CONFIG_MEMCG
+	struct pglist_data *pgdat;
+#endif
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3774</x>
+      <y>1314</y>
+      <w>264</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>420.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>3522</x>
+      <y>1206</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>4.8之前的内核是基于zone的，
+之后是基于node的
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3594</x>
+      <y>1236</y>
+      <w>18</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

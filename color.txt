@@ -6,7 +6,6 @@ borderColor2 = #e7c000 ----- 231,192,0
 borderColor3 = #c00000 ----- 192,0,0
 codeBgColor = #282c34 ----- 40,44,52
 
-yellow -> 255 192 0
-red    -> 204 51  0
-green  -> 146 208 80
+red = #c00000 ----- 192,0,0
+yellow =#e7c000 ---- 231,192,0
 

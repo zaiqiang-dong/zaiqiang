@@ -228,6 +228,11 @@ module.exports = {
                     title: '编辑工具',
 				    collapsable: true,
                     children: ['/tools/editor/editor.md']
+                },
+                {
+                    title: '命令工具',
+				    collapsable: true,
+                    children: ['/tools/cmd/cmd.md']
                 }
             ],
 			'/coding/': [
