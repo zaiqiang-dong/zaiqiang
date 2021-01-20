@@ -217,12 +217,7 @@ module.exports = {
                 {
                     title: '调试工具',
 				    collapsable: true,
-                    children: ['/tools/debugger/debugger.md']
-                },
-                {
-                    title: '分析工具',
-				    collapsable: true,
-                    children: ['/tools/analysis/analysis.md']
+                    children: ['/tools/debugger/ramdump/ramdump.md']
                 },
                 {
                     title: '编辑工具',
