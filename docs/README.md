@@ -2,7 +2,7 @@
 home: true
 heroImage: /hero.png
 heroText: 探索者
-tagline: 在LINUX/ANDROID中不断探索 
+tagline: 博观而约取，厚积而薄发 
 actionText: －联系我－
 actionLink: mailto:7212426@qq.com
 features:
