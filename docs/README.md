@@ -4,7 +4,7 @@ heroImage: /hero.png
 heroText: 探索者
 tagline: 博观而约取，厚积而薄发 
 actionText: －联系我－
-actionLink: mailto:7212426@qq.com
+actionLink: mailto:zaiq.dong@gmail.com
 features:
 - title: 内核
   details: 内核各个模块的分析与实现
