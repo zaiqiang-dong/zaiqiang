@@ -74,6 +74,10 @@ module.exports = {
 		    {
 		    	text: '虚拟化',
 		    	link: '/virtualization/'
+		    },
+		    {
+		    	text: '关于',
+		    	link: '/about/'
 		    }
         ],
 		sidebarDepth: 3,

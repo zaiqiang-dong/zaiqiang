@@ -6,12 +6,18 @@ tagline: 在LINUX/ANDROID中不断探索
 actionText: －联系我－
 actionLink: mailto:7212426@qq.com
 features:
-- title: Linux
-  details: 起今为止，全世界最NB并且开源的OS
-- title: Android
-  details: 基于Linux的自由及开放源代码的OS
-- title: C/C++/JAVA
-  details: 表达程序员的思想，情感（注释）的工具
+- title: 内核
+  details: 内核各个模块的分析与实现
+- title: 硬件
+  details: ARM/X86_64 CPU体系架构研究
+- title: 工具
+  details: 调试编译等工具使用和原理
+- title: 编码
+  details: 编码技术算法分析
+- title: 虚拟化
+  details: 虚拟化原理与实现
+- title: 关于
+  details: 个人信息说明
 footer: MIT Licensed | Copyright © 2018-Present Zaiqiang Dong
 ---
 
