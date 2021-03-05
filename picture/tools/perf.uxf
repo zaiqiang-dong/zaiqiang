@@ -1,0 +1,1466 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3537</x>
+      <y>4185</y>
+      <w>270</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>struct idr
+--
+	struct radix_tree_root	idr_rt;
+	unsigned int		idr_next;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3546</x>
+      <y>4365</y>
+      <w>234</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct idr pmu_idr;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3645</x>
+      <y>4239</y>
+      <w>27</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3537</x>
+      <y>4554</y>
+      <w>477</w>
+      <h>396</h>
+    </coordinates>
+    <panel_attributes>struct srcu_struct
+--
+	struct srcu_node node[NUM_RCU_NODES];	/* Combining tree. */
+	struct srcu_node *level[RCU_NUM_LVLS + 1];
+						/* First node at each level. */
+	struct mutex srcu_cb_mutex;		/* Serialize CB preparation. */
+	raw_spinlock_t __private lock;		/* Protect counters */
+	struct mutex srcu_gp_mutex;		/* Serialize GP work. */
+	unsigned int srcu_idx;			/* Current rdr array element. */
+	unsigned long srcu_gp_seq;		/* Grace-period seq #. */
+	unsigned long srcu_gp_seq_needed;	/* Latest gp_seq needed. */
+	unsigned long srcu_gp_seq_needed_exp;	/* Furthest future exp GP. */
+	unsigned long srcu_last_gp_end;		/* Last GP end timestamp (ns) */
+	struct srcu_data __percpu *sda;		/* Per-CPU srcu_data array. */
+	unsigned long srcu_barrier_seq;		/* srcu_barrier seq #. */
+	struct mutex srcu_barrier_mutex;	/* Serialize barrier ops. */
+	struct completion srcu_barrier_completion;
+						/* Awaken barrier rq at end. */
+	atomic_t srcu_barrier_cpu_cnt;		/* # CPUs not yet posting a */
+						/*  callback for the barrier */
+						/*  operation. */
+	struct delayed_work work;
+#ifdef CONFIG_DEBUG_LOCK_ALLOC
+	struct lockdep_map dep_map;
+#endif /* #ifdef CONFIG_DEBUG_LOCK_ALLOC */
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3573</x>
+      <y>5157</y>
+      <w>360</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct srcu_struct pmus_srcu;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3744</x>
+      <y>4941</y>
+      <w>27</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>918</x>
+      <y>135</y>
+      <w>765</w>
+      <h>3024</h>
+    </coordinates>
+    <panel_attributes>struct pmu
+--
+	struct list_head		entry;
+
+	struct module			*module;
+	struct device			*dev;
+	const struct attribute_group	**attr_groups;
+	const char			*name;
+	int				type;
+
+	/*
+	 * various common per-pmu feature flags
+	 */
+	int				capabilities;
+
+	int * __percpu			pmu_disable_count;
+	struct perf_cpu_context * __percpu pmu_cpu_context;
+	atomic_t			exclusive_cnt; /* &lt; 0: cpu; &gt; 0: tsk */
+	int				task_ctx_nr;
+	int				hrtimer_interval_ms;
+
+	/* number of address filters this PMU can do */
+	unsigned int			nr_addr_filters;
+
+	/*
+	 * Fully disable/enable this PMU, can be used to protect from the PMI
+	 * as well as for lazy/batch writing of the MSRs.
+	 */
+	void (*pmu_enable)		(struct pmu *pmu); /* optional */
+	void (*pmu_disable)		(struct pmu *pmu); /* optional */
+
+	/*
+	 * Try and initialize the event for this PMU.
+	 *
+	 * Returns:
+	 *  -ENOENT	-- @event is not for this PMU
+	 *
+	 *  -ENODEV	-- @event is for this PMU but PMU not present
+	 *  -EBUSY	-- @event is for this PMU but PMU temporarily unavailable
+	 *  -EINVAL	-- @event is for this PMU but @event is not valid
+	 *  -EOPNOTSUPP -- @event is for this PMU, @event is valid, but not supported
+	 *  -EACCESS	-- @event is for this PMU, @event is valid, but no privilidges
+	 *
+	 *  0		-- @event is for this PMU and valid
+	 *
+	 * Other error return values are allowed.
+	 */
+	int (*event_init)		(struct perf_event *event);
+
+	/*
+	 * Notification that the event was mapped or unmapped.  Called
+	 * in the context of the mapping task.
+	 */
+	void (*event_mapped)		(struct perf_event *event, struct mm_struct *mm); /* optional */
+	void (*event_unmapped)		(struct perf_event *event, struct mm_struct *mm); /* optional */
+
+	/*
+	 * Flags for -&gt;add()/-&gt;del()/ -&gt;start()/-&gt;stop(). There are
+	 * matching hw_perf_event::state flags.
+	 */
+#define PERF_EF_START	0x01		/* start the counter when adding    */
+#define PERF_EF_RELOAD	0x02		/* reload the counter when starting */
+#define PERF_EF_UPDATE	0x04		/* update the counter when stopping */
+
+	/*
+	 * Adds/Removes a counter to/from the PMU, can be done inside a
+	 * transaction, see the -&gt;*_txn() methods.
+	 *
+	 * The add/del callbacks will reserve all hardware resources required
+	 * to service the event, this includes any counter constraint
+	 * scheduling etc.
+	 *
+	 * Called with IRQs disabled and the PMU disabled on the CPU the event
+	 * is on.
+	 *
+	 * -&gt;add() called without PERF_EF_START should result in the same state
+	 *  as -&gt;add() followed by -&gt;stop().
+	 *
+	 * -&gt;del() must always PERF_EF_UPDATE stop an event. If it calls
+	 *  -&gt;stop() that must deal with already being stopped without
+	 *  PERF_EF_UPDATE.
+	 */
+	int  (*add)			(struct perf_event *event, int flags);
+	void (*del)			(struct perf_event *event, int flags);
+
+	/*
+	 * Starts/Stops a counter present on the PMU.
+	 *
+	 * The PMI handler should stop the counter when perf_event_overflow()
+	 * returns !0. -&gt;start() will be used to continue.
+	 *
+	 * Also used to change the sample period.
+	 *
+	 * Called with IRQs disabled and the PMU disabled on the CPU the event
+	 * is on -- will be called from NMI context with the PMU generates
+	 * NMIs.
+	 *
+	 * -&gt;stop() with PERF_EF_UPDATE will read the counter and update
+	 *  period/count values like -&gt;read() would.
+	 *
+	 * -&gt;start() with PERF_EF_RELOAD will reprogram the the counter
+	 *  value, must be preceded by a -&gt;stop() with PERF_EF_UPDATE.
+	 */
+	void (*start)			(struct perf_event *event, int flags);
+	void (*stop)			(struct perf_event *event, int flags);
+
+	/*
+	 * Updates the counter value of the event.
+	 *
+	 * For sampling capable PMUs this will also update the software period
+	 * hw_perf_event::period_left field.
+	 */
+	void (*read)			(struct perf_event *event);
+
+	/*
+	 * Group events scheduling is treated as a transaction, add
+	 * group events as a whole and perform one schedulability test.
+	 * If the test fails, roll back the whole group
+	 *
+	 * Start the transaction, after this -&gt;add() doesn't need to
+	 * do schedulability tests.
+	 *
+	 * Optional.
+	 */
+	void (*start_txn)		(struct pmu *pmu, unsigned int txn_flags);
+	/*
+	 * If -&gt;start_txn() disabled the -&gt;add() schedulability test
+	 * then -&gt;commit_txn() is required to perform one. On success
+	 * the transaction is closed. On error the transaction is kept
+	 * open until -&gt;cancel_txn() is called.
+	 *
+	 * Optional.
+	 */
+	int  (*commit_txn)		(struct pmu *pmu);
+	/*
+	 * Will cancel the transaction, assumes -&gt;del() is called
+	 * for each successful -&gt;add() during the transaction.
+	 *
+	 * Optional.
+	 */
+	void (*cancel_txn)		(struct pmu *pmu);
+
+	/*
+	 * Will return the value for perf_event_mmap_page::index for this event,
+	 * if no implementation is provided it will default to: event-&gt;hw.idx + 1.
+	 */
+	int (*event_idx)		(struct perf_event *event); /*optional */
+
+	/*
+	 * context-switches callback
+	 */
+	void (*sched_task)		(struct perf_event_context *ctx,
+					bool sched_in);
+	/*
+	 * PMU specific data size
+	 */
+	size_t				task_ctx_size;
+
+
+	/*
+	 * Set up pmu-private data structures for an AUX area
+	 */
+	void *(*setup_aux)		(int cpu, void **pages,
+					 int nr_pages, bool overwrite);
+					/* optional */
+
+	/*
+	 * Free pmu-private AUX data structures
+	 */
+	void (*free_aux)		(void *aux); /* optional */
+
+	/*
+	 * Validate address range filters: make sure the HW supports the
+	 * requested configuration and number of filters; return 0 if the
+	 * supplied filters are valid, -errno otherwise.
+	 *
+	 * Runs in the context of the ioctl()ing process and is not serialized
+	 * with the rest of the PMU callbacks.
+	 */
+	int (*addr_filters_validate)	(struct list_head *filters);
+					/* optional */
+
+	/*
+	 * Synchronize address range filter configuration:
+	 * translate hw-agnostic filters into hardware configuration in
+	 * event::hw::addr_filters.
+	 *
+	 * Runs as a part of filter sync sequence that is done in -&gt;start()
+	 * callback by calling perf_event_addr_filters_sync().
+	 *
+	 * May (and should) traverse event::addr_filters::list, for which its
+	 * caller provides necessary serialization.
+	 */
+	void (*addr_filters_sync)	(struct perf_event *event);
+					/* optional */
+
+	/*
+	 * Filter events for PMU-specific reasons.
+	 */
+	int (*filter_match)		(struct perf_event *event); /* optional */
+
+	/*
+	 * Check period value for PERF_EVENT_IOC_PERIOD ioctl.
+	 */
+	int (*check_period)		(struct perf_event *event, u64 value); /* optional */
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>828</x>
+      <y>3330</y>
+      <w>270</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>static struct pmu perf_swevent
+--
+	.task_ctx_nr	= perf_sw_context,
+
+	.capabilities	= PERF_PMU_CAP_NO_NMI,
+
+	.event_init	= perf_swevent_init,
+	.add		= perf_swevent_add,
+	.del		= perf_swevent_del,
+	.start		= perf_swevent_start,
+	.stop		= perf_swevent_stop,
+	.read		= perf_swevent_read,
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>945</x>
+      <y>3150</y>
+      <w>27</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1125</x>
+      <y>3330</y>
+      <w>288</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>static struct pmu perf_cpu_clock
+--
+	.task_ctx_nr	= perf_sw_context,
+
+	.capabilities	= PERF_PMU_CAP_NO_NMI,
+
+	.event_init	= cpu_clock_event_init,
+	.add		= cpu_clock_event_add,
+	.del		= cpu_clock_event_del,
+	.start		= cpu_clock_event_start,
+	.stop		= cpu_clock_event_stop,
+	.read		= cpu_clock_event_read,
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1242</x>
+      <y>3150</y>
+      <w>27</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1467</x>
+      <y>3339</y>
+      <w>297</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>static struct pmu perf_task_clock
+--
+	.task_ctx_nr	= perf_sw_context,
+
+	.capabilities	= PERF_PMU_CAP_NO_NMI,
+
+	.event_init	= task_clock_event_init,
+	.add		= task_clock_event_add,
+	.del		= task_clock_event_del,
+	.start		= task_clock_event_start,
+	.stop		= task_clock_event_stop,
+	.read		= task_clock_event_read,
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1548</x>
+      <y>3150</y>
+      <w>27</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1386</x>
+      <y>4230</y>
+      <w>288</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>struct notifier_block
+--
+	notifier_fn_t notifier_call;
+	struct notifier_block __rcu *next;
+	int priority;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1341</x>
+      <y>4482</y>
+      <w>342</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>static struct notifier_block perf_reboot_notifier
+--
+	.notifier_call = perf_reboot,
+	.priority = INT_MIN,
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1503</x>
+      <y>4311</y>
+      <w>27</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1404</x>
+      <y>4833</y>
+      <w>288</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>static struct bus_type pmu_bus
+--
+	.name		= "event_source",
+	.dev_groups	= pmu_dev_groups,
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1467</x>
+      <y>4734</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>struct bus_type</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1512</x>
+      <y>4752</y>
+      <w>27</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>3438</y>
+      <w>270</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>static LIST_HEAD(pmus);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>666</x>
+      <y>3411</y>
+      <w>171</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1089</x>
+      <y>3420</y>
+      <w>54</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1404</x>
+      <y>3438</y>
+      <w>81</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>3465</y>
+      <w>2097</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0;2310.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2547</x>
+      <y>135</y>
+      <w>513</w>
+      <h>828</h>
+    </coordinates>
+    <panel_attributes>struct perf_event_context
+--
+	struct pmu			*pmu;
+	/*
+	 * Protect the states of the events in the list,
+	 * nr_active, and the list:
+	 */
+	raw_spinlock_t			lock;
+	/*
+	 * Protect the list of events.  Locking either mutex or lock
+	 * is sufficient to ensure the list doesn't change; to change
+	 * the list you need to lock both the mutex and the spinlock.
+	 */
+	struct mutex			mutex;
+
+	struct list_head		active_ctx_list;
+	struct list_head		pinned_groups;
+	struct list_head		flexible_groups;
+	struct list_head		event_list;
+	int				nr_events;
+	int				nr_active;
+	int				is_active;
+	int				nr_stat;
+	int				nr_freq;
+	int				rotate_disable;
+	atomic_t			refcount;
+	struct task_struct		*task;
+
+	/*
+	 * Context clock, runs when context enabled.
+	 */
+	u64				time;
+	u64				timestamp;
+
+	/*
+	 * These fields let us detect when two contexts have both
+	 * been cloned (inherited) from a common ancestor.
+	 */
+	struct perf_event_context	*parent_ctx;
+	u64				parent_gen;
+	u64				generation;
+	int				pin_count;
+#ifdef CONFIG_CGROUP_PERF
+	int				nr_cgroups;	 /* cgroup evts */
+#endif
+	void				*task_ctx_data; /* pmu specific data */
+	struct rcu_head			rcu_head;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1674</x>
+      <y>135</y>
+      <w>891</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>970.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3474</x>
+      <y>207</y>
+      <w>486</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>struct task_struct
+--
+	struct perf_event_context	*perf_event_ctxp[perf_nr_task_contexts];
+	struct mutex			perf_event_mutex;
+	struct list_head		perf_event_list;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3051</x>
+      <y>207</y>
+      <w>441</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;470.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1944</x>
+      <y>333</y>
+      <w>306</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>struct perf_cpu_context
+--
+	struct perf_event_context	ctx;
+	struct perf_event_context	*task_ctx;
+	int				active_oncpu;
+	int				exclusive;
+
+	raw_spinlock_t			hrtimer_lock;
+	struct hrtimer			hrtimer;
+	ktime_t				hrtimer_interval;
+	unsigned int			hrtimer_active;
+
+#ifdef CONFIG_CGROUP_PERF
+	struct perf_cgroup		*cgrp;
+	struct list_head		cgrp_cpuctx_entry;
+#endif
+
+	struct list_head		sched_cb_entry;
+	int				sched_cb_usage;
+
+	int				online;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2241</x>
+      <y>360</y>
+      <w>324</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;340.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3402</x>
+      <y>810</y>
+      <w>504</w>
+      <h>2466</h>
+    </coordinates>
+    <panel_attributes>struct perf_event
+--
+#ifdef CONFIG_PERF_EVENTS
+	/*
+	 * entry onto perf_event_context::event_list;
+	 *   modifications require ctx-&gt;lock
+	 *   RCU safe iterations.
+	 */
+	struct list_head		event_entry;
+
+	/*
+	 * XXX: group_entry and sibling_list should be mutually exclusive;
+	 * either you're a sibling on a group, or you're the group leader.
+	 * Rework the code to always use the same list element.
+	 *
+	 * Locked for modification by both ctx-&gt;mutex and ctx-&gt;lock; holding
+	 * either sufficies for read.
+	 */
+	struct list_head		group_entry;
+	struct list_head		sibling_list;
+
+	/*
+	 * We need storage to track the entries in perf_pmu_migrate_context; we
+	 * cannot use the event_entry because of RCU and we want to keep the
+	 * group in tact which avoids us using the other two entries.
+	 */
+	struct list_head		migrate_entry;
+
+	struct hlist_node		hlist_entry;
+	struct list_head		active_entry;
+	int				nr_siblings;
+
+	/* Not serialized. Only written during event initialization. */
+	int				event_caps;
+	/* The cumulative AND of all event_caps for events in this group. */
+	int				group_caps;
+
+	struct perf_event		*group_leader;
+	struct pmu			*pmu;
+	void				*pmu_private;
+
+	enum perf_event_active_state	state;
+	unsigned int			attach_state;
+	local64_t			count;
+	atomic64_t			child_count;
+
+	/*
+	 * These are the total time in nanoseconds that the event
+	 * has been enabled (i.e. eligible to run, and the task has
+	 * been scheduled in, if this is a per-task event)
+	 * and running (scheduled onto the CPU), respectively.
+	 *
+	 * They are computed from tstamp_enabled, tstamp_running and
+	 * tstamp_stopped when the event is in INACTIVE or ACTIVE state.
+	 */
+	u64				total_time_enabled;
+	u64				total_time_running;
+
+	/*
+	 * These are timestamps used for computing total_time_enabled
+	 * and total_time_running when the event is in INACTIVE or
+	 * ACTIVE state, measured in nanoseconds from an arbitrary point
+	 * in time.
+	 * tstamp_enabled: the notional time when the event was enabled
+	 * tstamp_running: the notional time when the event was scheduled on
+	 * tstamp_stopped: in INACTIVE state, the notional time when the
+	 *	event was scheduled off.
+	 */
+	u64				tstamp_enabled;
+	u64				tstamp_running;
+	u64				tstamp_stopped;
+
+	/*
+	 * timestamp shadows the actual context timing but it can
+	 * be safely used in NMI interrupt context. It reflects the
+	 * context time as it was when the event was last scheduled in.
+	 *
+	 * ctx_time already accounts for ctx-&gt;timestamp. Therefore to
+	 * compute ctx_time for a sample, simply add perf_clock().
+	 */
+	u64				shadow_ctx_time;
+
+	struct perf_event_attr		attr;
+	u16				header_size;
+	u16				id_header_size;
+	u16				read_size;
+	struct hw_perf_event		hw;
+
+	struct perf_event_context	*ctx;
+	atomic_long_t			refcount;
+
+	/*
+	 * These accumulate total time (in nanoseconds) that children
+	 * events have been enabled and running, respectively.
+	 */
+	atomic64_t			child_total_time_enabled;
+	atomic64_t			child_total_time_running;
+
+	/*
+	 * Protect attach/detach and child_list:
+	 */
+	struct mutex			child_mutex;
+	struct list_head		child_list;
+	struct perf_event		*parent;
+
+	int				oncpu;
+	int				cpu;
+
+	struct list_head		owner_entry;
+	struct task_struct		*owner;
+
+	/* mmap bits */
+	struct mutex			mmap_mutex;
+	atomic_t			mmap_count;
+
+	struct ring_buffer		*rb;
+	struct list_head		rb_entry;
+	unsigned long			rcu_batches;
+	int				rcu_pending;
+
+	/* poll related */
+	wait_queue_head_t		waitq;
+	struct fasync_struct		*fasync;
+
+	/* delayed work for NMIs and such */
+	int				pending_wakeup;
+	int				pending_kill;
+	int				pending_disable;
+	struct irq_work			pending;
+
+	atomic_t			event_limit;
+
+	/* address range filters */
+	struct perf_addr_filters_head	addr_filters;
+	/* vma address array for file-based filders */
+	unsigned long			*addr_filters_offs;
+	unsigned long			addr_filters_gen;
+
+	void (*destroy)(struct perf_event *);
+	struct rcu_head			rcu_head;
+
+	struct pid_namespace		*ns;
+	u64				id;
+
+	u64				(*clock)(void);
+	perf_overflow_handler_t		overflow_handler;
+	void				*overflow_handler_context;
+#ifdef CONFIG_BPF_SYSCALL
+	perf_overflow_handler_t		orig_overflow_handler;
+	struct bpf_prog			*prog;
+#endif
+
+#ifdef CONFIG_EVENT_TRACING
+	struct trace_event_call		*tp_event;
+	struct event_filter		*filter;
+#ifdef CONFIG_FUNCTION_TRACER
+	struct ftrace_ops               ftrace_ops;
+#endif
+#endif
+
+#ifdef CONFIG_CGROUP_PERF
+	struct perf_cgroup		*cgrp; /* cgroup event is attach to */
+	int				cgrp_defer_enabled;
+#endif
+
+	struct list_head		sb_list;
+#endif /* CONFIG_PERF_EVENTS */
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3051</x>
+      <y>810</y>
+      <w>369</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>390.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1674</x>
+      <y>333</y>
+      <w>288</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3051</x>
+      <y>225</y>
+      <w>441</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>470.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4140</x>
+      <y>810</y>
+      <w>504</w>
+      <h>2466</h>
+    </coordinates>
+    <panel_attributes>struct perf_event
+--
+#ifdef CONFIG_PERF_EVENTS
+	/*
+	 * entry onto perf_event_context::event_list;
+	 *   modifications require ctx-&gt;lock
+	 *   RCU safe iterations.
+	 */
+	struct list_head		event_entry;
+
+	/*
+	 * XXX: group_entry and sibling_list should be mutually exclusive;
+	 * either you're a sibling on a group, or you're the group leader.
+	 * Rework the code to always use the same list element.
+	 *
+	 * Locked for modification by both ctx-&gt;mutex and ctx-&gt;lock; holding
+	 * either sufficies for read.
+	 */
+	struct list_head		group_entry;
+	struct list_head		sibling_list;
+
+	/*
+	 * We need storage to track the entries in perf_pmu_migrate_context; we
+	 * cannot use the event_entry because of RCU and we want to keep the
+	 * group in tact which avoids us using the other two entries.
+	 */
+	struct list_head		migrate_entry;
+
+	struct hlist_node		hlist_entry;
+	struct list_head		active_entry;
+	int				nr_siblings;
+
+	/* Not serialized. Only written during event initialization. */
+	int				event_caps;
+	/* The cumulative AND of all event_caps for events in this group. */
+	int				group_caps;
+
+	struct perf_event		*group_leader;
+	struct pmu			*pmu;
+	void				*pmu_private;
+
+	enum perf_event_active_state	state;
+	unsigned int			attach_state;
+	local64_t			count;
+	atomic64_t			child_count;
+
+	/*
+	 * These are the total time in nanoseconds that the event
+	 * has been enabled (i.e. eligible to run, and the task has
+	 * been scheduled in, if this is a per-task event)
+	 * and running (scheduled onto the CPU), respectively.
+	 *
+	 * They are computed from tstamp_enabled, tstamp_running and
+	 * tstamp_stopped when the event is in INACTIVE or ACTIVE state.
+	 */
+	u64				total_time_enabled;
+	u64				total_time_running;
+
+	/*
+	 * These are timestamps used for computing total_time_enabled
+	 * and total_time_running when the event is in INACTIVE or
+	 * ACTIVE state, measured in nanoseconds from an arbitrary point
+	 * in time.
+	 * tstamp_enabled: the notional time when the event was enabled
+	 * tstamp_running: the notional time when the event was scheduled on
+	 * tstamp_stopped: in INACTIVE state, the notional time when the
+	 *	event was scheduled off.
+	 */
+	u64				tstamp_enabled;
+	u64				tstamp_running;
+	u64				tstamp_stopped;
+
+	/*
+	 * timestamp shadows the actual context timing but it can
+	 * be safely used in NMI interrupt context. It reflects the
+	 * context time as it was when the event was last scheduled in.
+	 *
+	 * ctx_time already accounts for ctx-&gt;timestamp. Therefore to
+	 * compute ctx_time for a sample, simply add perf_clock().
+	 */
+	u64				shadow_ctx_time;
+
+	struct perf_event_attr		attr;
+	u16				header_size;
+	u16				id_header_size;
+	u16				read_size;
+	struct hw_perf_event		hw;
+
+	struct perf_event_context	*ctx;
+	atomic_long_t			refcount;
+
+	/*
+	 * These accumulate total time (in nanoseconds) that children
+	 * events have been enabled and running, respectively.
+	 */
+	atomic64_t			child_total_time_enabled;
+	atomic64_t			child_total_time_running;
+
+	/*
+	 * Protect attach/detach and child_list:
+	 */
+	struct mutex			child_mutex;
+	struct list_head		child_list;
+	struct perf_event		*parent;
+
+	int				oncpu;
+	int				cpu;
+
+	struct list_head		owner_entry;
+	struct task_struct		*owner;
+
+	/* mmap bits */
+	struct mutex			mmap_mutex;
+	atomic_t			mmap_count;
+
+	struct ring_buffer		*rb;
+	struct list_head		rb_entry;
+	unsigned long			rcu_batches;
+	int				rcu_pending;
+
+	/* poll related */
+	wait_queue_head_t		waitq;
+	struct fasync_struct		*fasync;
+
+	/* delayed work for NMIs and such */
+	int				pending_wakeup;
+	int				pending_kill;
+	int				pending_disable;
+	struct irq_work			pending;
+
+	atomic_t			event_limit;
+
+	/* address range filters */
+	struct perf_addr_filters_head	addr_filters;
+	/* vma address array for file-based filders */
+	unsigned long			*addr_filters_offs;
+	unsigned long			addr_filters_gen;
+
+	void (*destroy)(struct perf_event *);
+	struct rcu_head			rcu_head;
+
+	struct pid_namespace		*ns;
+	u64				id;
+
+	u64				(*clock)(void);
+	perf_overflow_handler_t		overflow_handler;
+	void				*overflow_handler_context;
+#ifdef CONFIG_BPF_SYSCALL
+	perf_overflow_handler_t		orig_overflow_handler;
+	struct bpf_prog			*prog;
+#endif
+
+#ifdef CONFIG_EVENT_TRACING
+	struct trace_event_call		*tp_event;
+	struct event_filter		*filter;
+#ifdef CONFIG_FUNCTION_TRACER
+	struct ftrace_ops               ftrace_ops;
+#endif
+#endif
+
+#ifdef CONFIG_CGROUP_PERF
+	struct perf_cgroup		*cgrp; /* cgroup event is attach to */
+	int				cgrp_defer_enabled;
+#endif
+
+	struct list_head		sb_list;
+#endif /* CONFIG_PERF_EVENTS */
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4014</x>
+      <y>1098</y>
+      <w>54</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>`...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3897</x>
+      <y>1107</y>
+      <w>135</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4059</x>
+      <y>1107</y>
+      <w>99</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3051</x>
+      <y>567</y>
+      <w>1773</w>
+      <h>567</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;20.0;1940.0;10.0;1950.0;610.0;1770.0;610.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4905</x>
+      <y>1647</y>
+      <w>261</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>	struct ring_buffer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4635</x>
+      <y>1647</y>
+      <w>288</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4905</x>
+      <y>1368</y>
+      <w>297</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>enum perf_event_active_state
+--
+	PERF_EVENT_STATE_DEAD		= -4,
+	PERF_EVENT_STATE_EXIT		= -3,
+	PERF_EVENT_STATE_ERROR		= -2,
+	PERF_EVENT_STATE_OFF		= -1,
+	PERF_EVENT_STATE_INACTIVE	=  0,
+	PERF_EVENT_STATE_ACTIVE		=  1,
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4635</x>
+      <y>1368</y>
+      <w>288</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2358</x>
+      <y>4356</y>
+      <w>369</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>struct swevent_htable
+--
+	struct swevent_hlist		*swevent_hlist;
+	struct mutex			hlist_mutex;
+	int				hlist_refcount;
+
+	/* Recursion avoidance in each contexts */
+	int				recursion[PERF_NR_CONTEXTS];
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2871</x>
+      <y>4419</y>
+      <w>351</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>struct swevent_hlist
+--
+	struct hlist_head		heads[SWEVENT_HLIST_SIZE];
+	struct rcu_head			rcu_head;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2718</x>
+      <y>4419</y>
+      <w>171</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2331</x>
+      <y>4617</y>
+      <w>432</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static DEFINE_PER_CPU(struct swevent_htable, swevent_htable);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2538</x>
+      <y>4491</y>
+      <w>27</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>918</x>
+      <y>3834</y>
+      <w>864</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>static struct idr pmu_idr;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>936</x>
+      <y>3519</y>
+      <w>27</w>
+      <h>333</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1296</x>
+      <y>3537</y>
+      <w>27</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1665</x>
+      <y>3537</y>
+      <w>27</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2169</x>
+      <y>3339</y>
+      <w>585</w>
+      <h>558</h>
+    </coordinates>
+    <panel_attributes>struct arm_pmu
+--
+	struct pmu	pmu;
+	cpumask_t	active_irqs;
+	cpumask_t	supported_cpus;
+	char		*name;
+	irqreturn_t	(*handle_irq)(int irq_num, void *dev);
+	void		(*enable)(struct perf_event *event);
+	void		(*disable)(struct perf_event *event);
+	int		(*get_event_idx)(struct pmu_hw_events *hw_events,
+					 struct perf_event *event);
+	void		(*clear_event_idx)(struct pmu_hw_events *hw_events,
+					 struct perf_event *event);
+	int		(*set_event_filter)(struct hw_perf_event *evt,
+					    struct perf_event_attr *attr);
+	u32		(*read_counter)(struct perf_event *event);
+	void		(*write_counter)(struct perf_event *event, u32 val);
+	void		(*start)(struct arm_pmu *);
+	void		(*stop)(struct arm_pmu *);
+	void		(*reset)(void *);
+	int		(*map_event)(struct perf_event *event);
+	int		(*filter_match)(struct perf_event *event);
+	int		num_events;
+	u64		max_period;
+	bool		secure_access; /* 32-bit ARM only */
+#define ARMV8_PMUV3_MAX_COMMON_EVENTS 0x40
+	DECLARE_BITMAP(pmceid_bitmap, ARMV8_PMUV3_MAX_COMMON_EVENTS);
+	struct platform_device	*plat_device;
+	struct pmu_hw_events	__percpu *hw_events;
+	struct hlist_node	node;
+	struct notifier_block	cpu_pm_nb;
+	/* the attr_groups array must be NULL-terminated */
+	const struct attribute_group *attr_groups[ARMPMU_NR_ATTR_GROUPS + 1];
+
+	/* Only to be used by ACPI probing code */
+	unsigned long acpi_cpuid;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>3150</y>
+      <w>837</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;910.0;60.0;910.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3393</x>
+      <y>3465</y>
+      <w>549</w>
+      <h>387</h>
+    </coordinates>
+    <panel_attributes>struct pmu_hw_events
+--
+	/*
+	 * The events that are active on the PMU for the given index.
+	 */
+	struct perf_event	*events[ARMPMU_MAX_HWEVENTS];
+
+	/*
+	 * A 1 bit for an index indicates that the counter is being used for
+	 * an event. A 0 means that the counter can be used.
+	 */
+	DECLARE_BITMAP(used_mask, ARMPMU_MAX_HWEVENTS);
+
+	/*
+	 * Hardware lock to serialize accesses to PMU registers. Needed for the
+	 * read/modify/write sequences.
+	 */
+	raw_spinlock_t		pmu_lock;
+
+	/*
+	 * When using percpu IRQs, we need a percpu dev_id. Place it here as we
+	 * already have to allocate this struct per cpu.
+	 */
+	struct arm_pmu		*percpu_pmu;
+
+	int irq;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2745</x>
+      <y>3465</y>
+      <w>666</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;720.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3645</x>
+      <y>3267</y>
+      <w>27</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1755</x>
+      <y>3456</y>
+      <w>432</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>460.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>414</x>
+      <y>3348</y>
+      <w>261</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>static struct pmu perf_tracepoint
+--
+	.task_ctx_nr	= perf_sw_context,
+
+	.event_init	= perf_tp_event_init,
+	.add		= perf_trace_add,
+	.del		= perf_trace_del,
+	.start		= perf_swevent_start,
+	.stop		= perf_swevent_stop,
+	.read		= perf_swevent_read,
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>261</x>
+      <y>3438</y>
+      <w>171</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2241</x>
+      <y>0</y>
+      <w>1422</w>
+      <h>405</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;430.0;150.0;430.0;150.0;10.0;1560.0;10.0;1560.0;230.0</additional_attributes>
+  </element>
+</diagram>

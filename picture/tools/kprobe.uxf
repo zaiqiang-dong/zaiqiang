@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>920</y>
+      <w>310</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>static LIST_HEAD(kprobe_blacklist);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>1450</y>
+      <w>450</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>static struct hlist_head kprobe_table[KPROBE_TABLE_SIZE];
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1590</y>
+      <w>480</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>static struct hlist_head kretprobe_inst_table[KPROBE_TABLE_SIZE];
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>950</x>
+      <y>1210</y>
+      <w>310</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>struct atomic_notifier_head
+--
+	spinlock_t lock;
+	struct notifier_block __rcu *head;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1420</x>
+      <y>1250</y>
+      <w>350</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>struct notifier_block
+--
+	notifier_fn_t notifier_call;
+	struct notifier_block __rcu *next;
+	int priority;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1250</x>
+      <y>1250</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1880</x>
+      <y>1300</y>
+      <w>400</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>typedef	int (*notifier_fn_t)(struct notifier_block *nb,
+			unsigned long action, void *data);</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1760</x>
+      <y>1290</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1210</x>
+      <y>1490</y>
+      <w>390</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>static struct notifier_block kprobe_exceptions_nb
+--
+	.notifier_call = kprobe_exceptions_notify,
+	.priority = 0x7fffffff /* we need to be notified first */
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1500</x>
+      <y>1340</y>
+      <w>30</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1610</x>
+      <y>1490</y>
+      <w>380</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>static struct notifier_block kprobe_module_nb
+--
+	.notifier_call = kprobes_module_callback,
+	.priority = 0
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1720</x>
+      <y>1340</y>
+      <w>30</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1320</x>
+      <y>100</y>
+      <w>510</w>
+      <h>840</h>
+    </coordinates>
+    <panel_attributes>struct kprobe
+--
+	struct hlist_node hlist;
+
+	/* list of kprobes for multi-handler support */
+	struct list_head list;
+
+	/*count the number of times this probe was temporarily disarmed */
+	unsigned long nmissed;
+
+	/* location of the probe point */
+	kprobe_opcode_t *addr;
+
+	/* Allow user to indicate symbol name of the probe point */
+	const char *symbol_name;
+
+	/* Offset into the symbol */
+	unsigned int offset;
+
+	/* Called before addr is executed. */
+	kprobe_pre_handler_t pre_handler;
+
+	/* Called after addr is executed, unless... */
+	kprobe_post_handler_t post_handler;
+
+	/*
+	 * ... called if executing addr causes a fault (eg. page fault).
+	 * Return 1 if it handled fault, otherwise kernel will see it.
+	 */
+	kprobe_fault_handler_t fault_handler;
+
+	/*
+	 * ... called if breakpoint trap occurs in probe handler.
+	 * Return 1 if it handled break, otherwise kernel will see it.
+	 */
+	kprobe_break_handler_t break_handler;
+
+	/* Saved opcode (which has been replaced with breakpoint) */
+	kprobe_opcode_t opcode;
+
+	/* copy of the original instruction */
+	struct arch_specific_insn ainsn;
+
+	/*
+	 * Indicates various status flags.
+	 * Protected by kprobe_mutex after this kprobe is registered.
+	 */
+	u32 flags;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
