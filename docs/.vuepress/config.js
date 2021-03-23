@@ -4,6 +4,7 @@ module.exports = {
     lang : 'zh-CN',
     //git hub
     repo : '/zaiqiang-dong/zaiqiang/',
+    base : '/zaiqiang/'
     repoLabel: '查看源码',
     docsRepo: 'zaiqiang-dong/zaiqiang',
     docsDir: 'docs',
