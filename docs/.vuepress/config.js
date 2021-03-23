@@ -3,7 +3,7 @@ module.exports = {
 	description: '-> 在 LINUX ANDROID 中不断探索 <-',
     lang : 'zh-CN',
     //git hub
-    repo: 'zaiqiang-dong/zaiqiang',
+    repo: '/zaiqiang-dong/zaiqiang/',
     repoLabel: '查看源码',
     docsRepo: 'zaiqiang-dong/zaiqiang',
     docsDir: 'docs',
