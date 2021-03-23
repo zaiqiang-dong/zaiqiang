@@ -258,6 +258,18 @@ module.exports = {
             ],
 			'/virtualization/': [
                 {
+                    title: 'QEMU',
+				    collapsable: true,
+                    children: [
+                        {
+                            title: 'components',
+				            collapsable: true,
+                            children: ['/virtualization/qemu/component/qom/qom.md']
+                        }
+
+                    ]
+                },
+                {
                     title: '管理工具',
 				    collapsable: true,
                     children: ['/virtualization/tools/virt-install/virt-install']
