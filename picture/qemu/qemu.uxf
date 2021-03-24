@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>550</x>
-      <y>480</y>
-      <w>320</w>
-      <h>30</h>
+      <x>91</x>
+      <y>0</y>
+      <w>224</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>static const QEMUOption qemu_options[]</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1030</x>
-      <y>480</y>
-      <w>260</w>
-      <h>110</h>
+      <x>427</x>
+      <y>0</y>
+      <w>182</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>typedef struct QEMUOption 
 --
@@ -33,10 +33,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>860</x>
-      <y>480</y>
-      <w>190</w>
-      <h>30</h>
+      <x>308</x>
+      <y>0</y>
+      <w>133</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
@@ -44,10 +44,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>900</y>
-      <w>380</w>
-      <h>30</h>
+      <x>84</x>
+      <y>294</y>
+      <w>266</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>static QemuOptsList *vm_config_groups[48]</panel_attributes>
     <additional_attributes/>
@@ -55,10 +55,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1080</x>
-      <y>900</y>
-      <w>300</w>
-      <h>130</h>
+      <x>462</x>
+      <y>294</y>
+      <w>210</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>struct QemuOptsList
 --
@@ -74,10 +74,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>910</x>
-      <y>900</y>
-      <w>190</w>
-      <h>30</h>
+      <x>343</x>
+      <y>294</y>
+      <w>133</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
@@ -85,10 +85,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1540</x>
-      <y>990</y>
-      <w>330</w>
-      <h>120</h>
+      <x>784</x>
+      <y>357</y>
+      <w>231</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>typedef struct QemuOptDesc
 --
@@ -102,12 +102,460 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1370</x>
-      <y>990</y>
-      <w>190</w>
-      <h>30</h>
+      <x>665</x>
+      <y>357</y>
+      <w>133</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>21</x>
+      <y>749</y>
+      <w>224</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>init_type_list[MODULE_INIT_MAX]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>35</x>
+      <y>861</y>
+      <w>315</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>typedef QTAILQ_HEAD(, ModuleEntry) ModuleTypeList;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>133</x>
+      <y>763</y>
+      <w>21</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>434</x>
+      <y>861</y>
+      <w>224</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>typedef struct ModuleEntry
+--
+    void (*init)(void);
+    QTAILQ_ENTRY(ModuleEntry) node;
+    module_init_type type;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>861</y>
+      <w>105</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1190</y>
+      <w>175</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>struct InterfaceInfo
+--
+    const char *type;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>735</x>
+      <y>1337</y>
+      <w>315</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>struct TypeInfo
+--
+    const char *name;
+    const char *parent;
+
+    size_t instance_size;
+    size_t instance_align;
+    void (*instance_init)(Object *obj);
+    void (*instance_post_init)(Object *obj);
+    void (*instance_finalize)(Object *obj);
+
+    bool abstract;
+    size_t class_size;
+
+    void (*class_init)(ObjectClass *klass, void *data);
+    void (*class_base_init)(ObjectClass *klass, void *data);
+    void *class_data;
+
+    InterfaceInfo *interfaces;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>721</x>
+      <y>1911</y>
+      <w>343</w>
+      <h>322</h>
+    </coordinates>
+    <panel_attributes>struct TypeImpl
+--
+    const char *name;
+
+    size_t class_size;
+
+    size_t instance_size;
+    size_t instance_align;
+
+    void (*class_init)(ObjectClass *klass, void *data);
+    void (*class_base_init)(ObjectClass *klass, void *data);
+
+    void *class_data;
+
+    void (*instance_init)(Object *obj);
+    void (*instance_post_init)(Object *obj);
+    void (*instance_finalize)(Object *obj);
+
+    bool abstract;
+
+    const char *parent;
+    TypeImpl *parent_type;
+
+    ObjectClass *class;
+
+    int num_interfaces;
+    InterfaceImpl interfaces[MAX_INTERFACES];
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>868</x>
+      <y>1561</y>
+      <w>84</w>
+      <h>364</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+r1=
+m2=1
+r2=
+*type_new v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>2457</y>
+      <w>196</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>    static GHashTable *type_table;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>868</x>
+      <y>2226</y>
+      <w>21</w>
+      <h>245</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1225</x>
+      <y>1918</y>
+      <w>168</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>typedef struct TypeImpl *Type;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1610</x>
+      <y>1897</y>
+      <w>357</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>struct ObjectClass
+--
+    /* private: */
+    Type type;
+    GSList *interfaces;
+
+    const char *object_cast_cache[OBJECT_CLASS_CAST_CACHE];
+    const char *class_cast_cache[OBJECT_CLASS_CAST_CACHE];
+
+    ObjectUnparent *unparent;
+
+    GHashTable *properties;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1358</x>
+      <y>2233</y>
+      <w>399</w>
+      <h>546</h>
+    </coordinates>
+    <panel_attributes>struct DeviceClass
+--
+    /*&lt; private &gt;*/
+    ObjectClass parent_class;
+    /*&lt; public &gt;*/
+
+    DECLARE_BITMAP(categories, DEVICE_CATEGORY_MAX);
+    const char *fw_name;
+    const char *desc;
+
+    /*
+     * The underscore at the end ensures a compile-time error if someone
+     * assigns to dc-&gt;props instead of using device_class_set_props.
+     */
+    Property *props_;
+
+    /*
+     * Can this device be instantiated with -device / device_add?
+     * All devices should support instantiation with device_add, and
+     * this flag should not exist.  But we're not there, yet.  Some
+     * devices fail to instantiate with cryptic error messages.
+     * Others instantiate, but don't work.  Exposing users to such
+     * behavior would be cruel; clearing this flag will protect them.
+     * It should never be cleared without a comment explaining why it
+     * is cleared.
+     * TODO remove once we're there
+     */
+    bool user_creatable;
+    bool hotpluggable;
+
+    /* callbacks */
+    /*
+     * Reset method here is deprecated and replaced by methods in the
+     * resettable class interface to implement a multi-phase reset.
+     * TODO: remove once every reset callback is unused
+     */
+    DeviceReset reset;
+    DeviceRealize realize;
+    DeviceUnrealize unrealize;
+
+    /* device state */
+    const VMStateDescription *vmsd;
+
+    /* Private to qdev / bus.  */
+    const char *bus_type;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1554</x>
+      <y>2037</y>
+      <w>252</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>340.0;10.0;340.0;120.0;10.0;120.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1827</x>
+      <y>2219</y>
+      <w>385</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>typedef struct AccelClass
+--
+    /*&lt; private &gt;*/
+    ObjectClass parent_class;
+    /*&lt; public &gt;*/
+
+    const char *name;
+#ifndef CONFIG_USER_ONLY
+    int (*init_machine)(MachineState *ms);
+    void (*setup_post)(MachineState *ms, AccelState *accel);
+    bool (*has_memory)(MachineState *ms, AddressSpace *as,
+                       hwaddr start_addr, hwaddr size);
+#endif
+    bool *allowed;
+    /*
+     * Array of global properties that would be applied when specific
+     * accelerator is chosen. It works like MachineClass.compat_props
+     * but it's for accelerators not machines. Accelerator-provided
+     * global properties may be overridden by machine-type
+     * compat_props or user-provided global properties.
+     */
+    GPtrArray *compat_props;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1862</x>
+      <y>2037</y>
+      <w>203</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;270.0;120.0;270.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1386</x>
+      <y>1925</y>
+      <w>238</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1057</x>
+      <y>1918</y>
+      <w>182</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2569</x>
+      <y>1897</y>
+      <w>231</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>struct Object
+--
+    /* private: */
+    ObjectClass *class;
+    ObjectFree *free;
+    GHashTable *properties;
+    uint32_t ref;
+    Object *parent;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1960</x>
+      <y>1897</y>
+      <w>623</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;870.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2317</x>
+      <y>2226</y>
+      <w>259</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>struct DeviceState
+--
+    /*&lt; private &gt;*/
+    Object parent_obj;
+    /*&lt; public &gt;*/
+
+    const char *id;
+    char *canonical_path;
+    bool realized;
+    bool pending_deleted_event;
+    QemuOpts *opts;
+    int hotplugged;
+    bool allow_unplug_during_migration;
+    BusState *parent_bus;
+    QLIST_HEAD(, NamedGPIOList) gpios;
+    QLIST_HEAD(, NamedClockList) clocks;
+    QLIST_HEAD(, BusState) child_bus;
+    int num_child_bus;
+    int instance_id_alias;
+    int alias_required_for_version;
+    ResettableState reset;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2415</x>
+      <y>2016</y>
+      <w>280</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>380.0;10.0;380.0;160.0;10.0;160.0;10.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2779</x>
+      <y>2233</y>
+      <w>231</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>typedef struct AccelState
+--
+    /*&lt; private &gt;*/
+    Object parent_obj;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2702</x>
+      <y>2016</y>
+      <w>203</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0;270.0;160.0;270.0;300.0</additional_attributes>
   </element>
 </diagram>

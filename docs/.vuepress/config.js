@@ -254,6 +254,17 @@ module.exports = {
                     title: '编程技巧',
 				    collapsable: true,
                     children: ['/coding/skills/skills.md']
+                },
+                {
+                    title: '常用类库',
+				    collapsable: true,
+                    children: [
+                        {
+                            title: 'glib',
+				            collapsable: true,
+                            children: ['/coding/lib/glib/event-loop.md']
+                        }
+                    ]
                 }
             ],
 			'/virtualization/': [
