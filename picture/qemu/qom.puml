@@ -1,0 +1,42 @@
+@startmindmap
+* QOM
+** ObjectClass
+*** BusClass
+**** PCIBusClass
+
+*** DeviceClass
+**** PCIDeviceClass
+**** SysBusDeviceClass
+**** ISADeviceClass
+
+*** MachineClass
+**** X86MachineClass
+***** PCMachineClass
+
+*** MemoryRegionClass
+
+** Object
+
+*** BusState
+**** PCIBus
+**** ISABus
+
+*** DeviceState
+**** PCIDevice
+***** PCII440FXState
+**** ISADevice
+
+**** SysBusDevice
+***** PCIHostState
+****** I440FXState
+***** FWCfgState
+
+*** MachineState
+**** X86MachineState
+***** PCMachineState
+
+*** MemoryRegion
+
+** TypeInfo
+
+@endmindmap
