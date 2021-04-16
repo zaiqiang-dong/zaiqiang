@@ -112,7 +112,10 @@ module.exports = {
                         {
                             title: 'root-fs',
 			    	        collapsable: true,
-			    	        children: ['/linux/filesystem/initrd-principles/initrd-principles']
+			    	        children: [
+                                        '/linux/filesystem/initrd-principles/initrd-principles',
+                                        '/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd'
+                                      ]
                         }
                     ]
 			    },
