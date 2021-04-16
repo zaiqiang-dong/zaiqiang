@@ -235,7 +235,7 @@ sudo ifconfig tap0 192.168.122.123 netmask 192.168.122.255
 
 其中`enp4s0` 是我的物理网卡，你修改成你自己的网卡,下面是测试的结果
 
-![test](./test.png "test result")
+![test](./test.svg "test result")
 
 注意
 
