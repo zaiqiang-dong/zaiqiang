@@ -268,6 +268,27 @@ module.exports = {
                             children: ['/coding/lib/glib/event-loop.md']
                         }
                     ]
+                },
+                {
+                    title: '编程语言',
+				    collapsable: true,
+                    children: [
+                        {
+                            title: 'c',
+				            collapsable: true,
+                            children: []
+                        },
+                        {
+                            title: 'shell',
+				            collapsable: true,
+                            children: []
+                        },
+                        {
+                            title: 'python',
+				            collapsable: true,
+                            children: []
+                        }
+                    ]
                 }
             ],
 			'/virtualization/': [
