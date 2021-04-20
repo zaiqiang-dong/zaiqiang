@@ -224,7 +224,22 @@ module.exports = {
                 {
                     title: '调试工具',
 				    collapsable: true,
-                    children: ['/tools/debugger/ramdump/ramdump.md']
+                    children: [
+                        {
+                            title: 'gdb',
+			    	        collapsable: true,
+			    	        children: [
+                                '/tools/debugger/gdb/build-gdb/build-gdb.md'
+                            ]
+                        },
+                        {
+                            title: 'ramdump',
+			    	        collapsable: true,
+			    	        children: [
+                                '/tools/debugger/ramdump/ramdump.md'
+                            ]
+                        }
+                    ]
                 },
                 {
                     title: '编辑工具',
