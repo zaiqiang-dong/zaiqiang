@@ -5,7 +5,7 @@
 
 | 软件版本  | 硬件版本 | 更新内容 |
 |---------|--------|----------|
-|gdb-8.3| amd64   |        |
+|gdb-10.1| amd64   |        |
 
 ---
 
@@ -61,7 +61,7 @@ make install
 ### 3.1 下载GDB
 根据需要下载相应的`gdb`版本，我这里下载`8.3`版本
 ```sh
-wget http://ftp.gnu.org/gnu/gdb/gdb-8.3.1.tar.xz
+wget http://ftp.gnu.org/gnu/gdb/gdb-10.1.tar.xz
 ```
 
 ### 3.2 编译带有全功能的gdb
@@ -70,8 +70,8 @@ wget http://ftp.gnu.org/gnu/gdb/gdb-8.3.1.tar.xz
 ```sh
 
 # 解压
-tar -xvf ./gdb-8.3.1.tar.xz
-cd gdb-8.3.1
+tar -xvf ./gdb-10.1.tar.xz
+cd gdb-10.1
 
 # 新建编译目录
 mkdir build
@@ -88,7 +88,7 @@ make
 ### 3.3 测试
 编译完成，`build`目录下的内容如下
 ```sh
-~/Downloads/gdb-8.3.1/build
+~/Downloads/gdb-10.1/build
 ❯ ls
 bfd  config.log  config.status  etc  gdb  intl  libdecnumber  libiberty  Makefile  opcodes  readline  serdep.tmp  sim  zlib
 
