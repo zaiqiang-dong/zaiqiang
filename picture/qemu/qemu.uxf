@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="13.3">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
+      <x>567</x>
       <y>0</y>
-      <w>320</w>
-      <h>30</h>
+      <w>224</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>static const QEMUOption qemu_options[]</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1290</x>
+      <x>903</x>
       <y>0</y>
-      <w>260</w>
-      <h>110</h>
+      <w>182</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>typedef struct QEMUOption 
 --
@@ -33,10 +33,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1120</x>
+      <x>784</x>
       <y>0</y>
-      <w>190</w>
-      <h>30</h>
+      <w>133</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
@@ -44,10 +44,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
-      <y>420</y>
-      <w>380</w>
-      <h>30</h>
+      <x>560</x>
+      <y>294</y>
+      <w>266</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>static QemuOptsList *vm_config_groups[48]</panel_attributes>
     <additional_attributes/>
@@ -55,10 +55,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1340</x>
-      <y>420</y>
-      <w>300</w>
-      <h>130</h>
+      <x>938</x>
+      <y>294</y>
+      <w>210</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>struct QemuOptsList
 --
@@ -74,10 +74,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1170</x>
-      <y>420</y>
-      <w>190</w>
-      <h>30</h>
+      <x>819</x>
+      <y>294</y>
+      <w>133</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
@@ -85,10 +85,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1800</x>
-      <y>510</y>
-      <w>330</w>
-      <h>120</h>
+      <x>1260</x>
+      <y>357</y>
+      <w>231</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>typedef struct QemuOptDesc
 --
@@ -102,10 +102,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1630</x>
-      <y>510</y>
-      <w>190</w>
-      <h>30</h>
+      <x>1141</x>
+      <y>357</y>
+      <w>133</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
@@ -113,10 +113,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>710</x>
-      <y>1070</y>
-      <w>320</w>
-      <h>30</h>
+      <x>497</x>
+      <y>749</y>
+      <w>224</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>init_type_list[MODULE_INIT_MAX]</panel_attributes>
     <additional_attributes/>
@@ -124,10 +124,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
-      <y>1230</y>
-      <w>450</w>
-      <h>30</h>
+      <x>511</x>
+      <y>861</y>
+      <w>315</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>typedef QTAILQ_HEAD(, ModuleEntry) ModuleTypeList;</panel_attributes>
     <additional_attributes/>
@@ -135,10 +135,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>870</x>
-      <y>1090</y>
-      <w>30</w>
-      <h>160</h>
+      <x>609</x>
+      <y>763</y>
+      <w>21</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
@@ -146,10 +146,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1300</x>
-      <y>1230</y>
-      <w>320</w>
-      <h>90</h>
+      <x>910</x>
+      <y>861</y>
+      <w>224</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>typedef struct ModuleEntry
 --
@@ -163,10 +163,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1170</x>
-      <y>1230</y>
-      <w>150</w>
-      <h>30</h>
+      <x>819</x>
+      <y>861</y>
+      <w>105</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
@@ -174,10 +174,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>1700</y>
-      <w>250</w>
-      <h>50</h>
+      <x>476</x>
+      <y>1190</y>
+      <w>175</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>struct InterfaceInfo
 --
@@ -188,10 +188,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1730</x>
-      <y>1910</y>
-      <w>450</w>
-      <h>330</h>
+      <x>1211</x>
+      <y>1337</y>
+      <w>315</w>
+      <h>231</h>
     </coordinates>
     <panel_attributes>struct TypeInfo
 --
@@ -217,10 +217,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1710</x>
-      <y>2730</y>
-      <w>490</w>
-      <h>460</h>
+      <x>1197</x>
+      <y>1911</y>
+      <w>343</w>
+      <h>322</h>
     </coordinates>
     <panel_attributes>struct TypeImpl
 --
@@ -255,10 +255,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1920</x>
-      <y>2230</y>
-      <w>120</w>
-      <h>520</h>
+      <x>1344</x>
+      <y>1561</y>
+      <w>84</w>
+      <h>364</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -271,10 +271,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1800</x>
-      <y>3510</y>
-      <w>280</w>
-      <h>30</h>
+      <x>1260</x>
+      <y>2457</y>
+      <w>196</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>    static GHashTable *type_table;</panel_attributes>
     <additional_attributes/>
@@ -282,10 +282,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1920</x>
-      <y>3180</y>
-      <w>30</w>
-      <h>350</h>
+      <x>1344</x>
+      <y>2226</y>
+      <w>21</w>
+      <h>245</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
@@ -293,10 +293,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2430</x>
-      <y>2740</y>
-      <w>240</w>
-      <h>30</h>
+      <x>1701</x>
+      <y>1918</y>
+      <w>168</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>typedef struct TypeImpl *Type;
 </panel_attributes>
@@ -305,10 +305,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2980</x>
-      <y>2710</y>
-      <w>510</w>
-      <h>210</h>
+      <x>2086</x>
+      <y>1897</y>
+      <w>357</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>struct ObjectClass
 --
@@ -328,10 +328,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1270</x>
-      <y>4160</y>
-      <w>570</w>
-      <h>780</h>
+      <x>889</x>
+      <y>2912</y>
+      <w>399</w>
+      <h>546</h>
     </coordinates>
     <panel_attributes>struct DeviceClass
 --
@@ -384,10 +384,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1550</x>
-      <y>2910</y>
-      <w>1460</w>
-      <h>1270</h>
+      <x>1085</x>
+      <y>2037</y>
+      <w>1022</w>
+      <h>889</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>1440.0;10.0;1440.0;1010.0;10.0;1010.0;10.0;1250.0</additional_attributes>
@@ -395,10 +395,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3960</x>
-      <y>4160</y>
-      <w>550</w>
-      <h>380</h>
+      <x>2772</x>
+      <y>2912</y>
+      <w>385</w>
+      <h>266</h>
     </coordinates>
     <panel_attributes>typedef struct AccelClass
 --
@@ -429,10 +429,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3470</x>
-      <y>2910</y>
-      <w>830</w>
-      <h>1270</h>
+      <x>2429</x>
+      <y>2037</y>
+      <w>581</w>
+      <h>889</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;990.0;810.0;990.0;810.0;1250.0</additional_attributes>
@@ -440,10 +440,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2660</x>
-      <y>2750</y>
-      <w>340</w>
-      <h>30</h>
+      <x>1862</x>
+      <y>1925</y>
+      <w>238</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;320.0;10.0</additional_attributes>
@@ -451,10 +451,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2190</x>
-      <y>2740</y>
-      <w>260</w>
-      <h>30</h>
+      <x>1533</x>
+      <y>1918</y>
+      <w>182</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>240.0;10.0;10.0;10.0</additional_attributes>
@@ -462,10 +462,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6490</x>
-      <y>2710</y>
-      <w>330</w>
-      <h>180</h>
+      <x>4543</x>
+      <y>1897</y>
+      <w>231</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>struct Object
 --
@@ -481,10 +481,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3480</x>
-      <y>2710</y>
-      <w>3030</w>
-      <h>30</h>
+      <x>2436</x>
+      <y>1897</y>
+      <w>2121</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;3010.0;10.0</additional_attributes>
@@ -492,10 +492,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>5330</x>
-      <y>4130</y>
-      <w>370</w>
-      <h>380</h>
+      <x>3731</x>
+      <y>2891</y>
+      <w>259</w>
+      <h>266</h>
     </coordinates>
     <panel_attributes>struct DeviceState
 --
@@ -524,10 +524,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>5460</x>
-      <y>2880</y>
-      <w>1090</w>
-      <h>1270</h>
+      <x>3822</x>
+      <y>2016</y>
+      <w>763</w>
+      <h>889</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>1070.0;10.0;1070.0;160.0;10.0;160.0;20.0;1250.0</additional_attributes>
@@ -535,10 +535,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>8040</x>
-      <y>4040</y>
-      <w>330</w>
-      <h>90</h>
+      <x>5628</x>
+      <y>2828</y>
+      <w>231</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>typedef struct AccelState
 --
@@ -550,10 +550,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>6690</x>
-      <y>2880</y>
-      <w>1540</w>
-      <h>1180</h>
+      <x>4683</x>
+      <y>2016</y>
+      <w>1078</w>
+      <h>826</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;190.0;1520.0;200.0;1520.0;1160.0</additional_attributes>
@@ -561,10 +561,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>4380</y>
-      <w>300</w>
-      <h>260</h>
+      <x>504</x>
+      <y>3066</y>
+      <w>210</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>struct Property 
 --
@@ -587,10 +587,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1010</x>
-      <y>4380</y>
-      <w>280</w>
-      <h>30</h>
+      <x>707</x>
+      <y>3066</y>
+      <w>196</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>260.0;10.0;10.0;10.0</additional_attributes>
@@ -599,9 +599,9 @@ r2=
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>4420</y>
-      <w>530</w>
-      <h>200</h>
+      <y>3094</y>
+      <w>371</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>struct PropertyInfo
 --
@@ -620,10 +620,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>4420</y>
-      <w>220</w>
-      <h>30</h>
+      <x>364</x>
+      <y>3094</y>
+      <w>154</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>200.0;10.0;10.0;10.0</additional_attributes>
@@ -631,10 +631,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1210</x>
-      <y>3140</y>
-      <w>270</w>
-      <h>70</h>
+      <x>847</x>
+      <y>2198</y>
+      <w>189</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>struct InterfaceImpl
 --
@@ -645,10 +645,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1470</x>
-      <y>3140</y>
-      <w>260</w>
-      <h>30</h>
+      <x>1029</x>
+      <y>2198</y>
+      <w>182</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>240.0;10.0;10.0;10.0</additional_attributes>
@@ -656,10 +656,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4170</x>
-      <y>2880</y>
-      <w>280</w>
-      <h>200</h>
+      <x>2919</x>
+      <y>2016</y>
+      <w>196</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>struct ObjectProperty
 --
@@ -679,10 +679,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3480</x>
-      <y>2880</y>
-      <w>710</w>
-      <h>30</h>
+      <x>2436</x>
+      <y>2016</y>
+      <w>497</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;690.0;10.0</additional_attributes>
@@ -690,10 +690,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4440</x>
-      <y>2780</y>
-      <w>2070</w>
-      <h>130</h>
+      <x>3108</x>
+      <y>1946</y>
+      <w>1449</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>2050.0;10.0;330.0;10.0;330.0;110.0;10.0;110.0</additional_attributes>
@@ -701,10 +701,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3310</x>
-      <y>7360</y>
-      <w>460</w>
-      <h>260</h>
+      <x>2317</x>
+      <y>5152</y>
+      <w>322</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>struct AddressSpace
 --
@@ -725,10 +725,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4170</x>
-      <y>7420</y>
-      <w>450</w>
-      <h>660</h>
+      <x>2919</x>
+      <y>5194</y>
+      <w>315</w>
+      <h>462</h>
     </coordinates>
     <panel_attributes>struct MemoryRegion 
 --
@@ -776,10 +776,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3760</x>
-      <y>7420</y>
-      <w>430</w>
-      <h>30</h>
+      <x>2632</x>
+      <y>5194</y>
+      <w>301</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;410.0;10.0</additional_attributes>
@@ -787,10 +787,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2200</x>
-      <y>7480</y>
-      <w>360</w>
-      <h>170</h>
+      <x>1540</x>
+      <y>5236</y>
+      <w>252</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>struct FlatView 
 --
@@ -806,10 +806,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2550</x>
-      <y>7480</y>
-      <w>780</w>
-      <h>30</h>
+      <x>1785</x>
+      <y>5236</y>
+      <w>546</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>760.0;10.0;10.0;10.0</additional_attributes>
@@ -817,10 +817,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2650</x>
-      <y>8190</y>
-      <w>410</w>
-      <h>450</h>
+      <x>1855</x>
+      <y>5733</y>
+      <w>287</w>
+      <h>315</h>
     </coordinates>
     <panel_attributes>struct MemoryListener
 --
@@ -1059,10 +1059,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3050</x>
-      <y>7550</y>
-      <w>280</w>
-      <h>670</h>
+      <x>2135</x>
+      <y>5285</y>
+      <w>196</w>
+      <h>469</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>260.0;10.0;90.0;10.0;90.0;650.0;10.0;650.0</additional_attributes>
@@ -1070,10 +1070,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1690</x>
-      <y>7530</y>
-      <w>210</w>
-      <h>170</h>
+      <x>1183</x>
+      <y>5271</y>
+      <w>147</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>struct FlatRange 
 --
@@ -1090,10 +1090,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1890</x>
-      <y>7530</y>
-      <w>330</w>
-      <h>30</h>
+      <x>1323</x>
+      <y>5271</y>
+      <w>231</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>310.0;10.0;10.0;10.0</additional_attributes>
@@ -1101,10 +1101,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1450</x>
-      <y>7800</y>
-      <w>470</w>
-      <h>130</h>
+      <x>1015</x>
+      <y>5460</y>
+      <w>329</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>struct AddressSpaceDispatch
 --
@@ -1119,10 +1119,10 @@ r2=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1910</x>
-      <y>7580</y>
-      <w>310</w>
-      <h>260</h>
+      <x>1337</x>
+      <y>5306</y>
+      <w>217</w>
+      <h>182</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>290.0;10.0;160.0;10.0;160.0;240.0;10.0;240.0</additional_attributes>
@@ -1130,10 +1130,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6460</x>
-      <y>4110</y>
-      <w>260</w>
-      <h>50</h>
+      <x>4522</x>
+      <y>2877</y>
+      <w>182</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>MachineState</panel_attributes>
     <additional_attributes/>
@@ -1141,10 +1141,10 @@ r2=
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2460</x>
-      <y>4180</y>
-      <w>430</w>
-      <h>550</h>
+      <x>1722</x>
+      <y>2926</y>
+      <w>301</w>
+      <h>385</h>
     </coordinates>
     <panel_attributes>
 struct MachineClass
@@ -1218,10 +1218,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2430</x>
-      <y>4900</y>
-      <w>360</w>
-      <h>180</h>
+      <x>1701</x>
+      <y>3430</y>
+      <w>252</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>struct X86MachineClass 
 --
@@ -1241,10 +1241,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6460</x>
-      <y>4360</y>
-      <w>260</w>
-      <h>50</h>
+      <x>4522</x>
+      <y>3052</y>
+      <w>182</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>X86MachineState</panel_attributes>
     <additional_attributes/>
@@ -1252,10 +1252,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2440</x>
-      <y>5270</y>
-      <w>580</w>
-      <h>760</h>
+      <x>1708</x>
+      <y>3689</y>
+      <w>406</w>
+      <h>532</h>
     </coordinates>
     <panel_attributes>struct PCMachineClass
 --
@@ -1309,10 +1309,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>6460</x>
-      <y>4600</y>
-      <w>260</w>
-      <h>50</h>
+      <x>4522</x>
+      <y>3220</y>
+      <w>182</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>PCMachineState</panel_attributes>
     <additional_attributes/>
@@ -1320,10 +1320,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>6570</x>
-      <y>4150</y>
-      <w>30</w>
-      <h>230</h>
+      <x>4599</x>
+      <y>2905</y>
+      <w>21</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
@@ -1331,10 +1331,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2570</x>
-      <y>4720</y>
-      <w>30</w>
-      <h>200</h>
+      <x>1799</x>
+      <y>3304</y>
+      <w>21</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
@@ -1342,10 +1342,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2570</x>
-      <y>5070</y>
-      <w>30</w>
-      <h>220</h>
+      <x>1799</x>
+      <y>3549</y>
+      <w>21</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
@@ -1353,10 +1353,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>6580</x>
-      <y>4400</y>
-      <w>30</w>
-      <h>220</h>
+      <x>4606</x>
+      <y>3080</y>
+      <w>21</w>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
@@ -1364,10 +1364,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4780</x>
-      <y>7670</y>
-      <w>540</w>
-      <h>670</h>
+      <x>3346</x>
+      <y>5369</y>
+      <w>378</w>
+      <h>469</h>
     </coordinates>
     <panel_attributes>struct RAMBlock
 --
@@ -1414,10 +1414,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4610</x>
-      <y>7670</y>
-      <w>190</w>
-      <h>30</h>
+      <x>3227</x>
+      <y>5369</y>
+      <w>133</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
@@ -1425,10 +1425,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2640</x>
-      <y>2910</y>
-      <w>420</w>
-      <h>1290</h>
+      <x>1848</x>
+      <y>2037</y>
+      <w>294</w>
+      <h>903</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>400.0;10.0;400.0;1100.0;10.0;1100.0;10.0;1270.0</additional_attributes>
@@ -1436,10 +1436,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>6570</x>
-      <y>2880</y>
-      <w>40</w>
-      <h>1250</h>
+      <x>4599</x>
+      <y>2016</y>
+      <w>28</w>
+      <h>875</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>20.0;10.0;10.0;1230.0</additional_attributes>
@@ -1447,10 +1447,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2550</x>
-      <y>9240</y>
-      <w>500</w>
-      <h>160</h>
+      <x>1785</x>
+      <y>6468</y>
+      <w>350</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>struct AddressSpaceDispatch 
 --
@@ -1466,10 +1466,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3210</x>
-      <y>9260</y>
-      <w>360</w>
-      <h>160</h>
+      <x>2247</x>
+      <y>6482</y>
+      <w>252</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>struct MemoryRegionSection
 --
@@ -1486,10 +1486,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3040</x>
-      <y>9260</y>
-      <w>190</w>
-      <h>30</h>
+      <x>2128</x>
+      <y>6482</y>
+      <w>133</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
@@ -1497,10 +1497,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2360</x>
-      <y>7640</y>
-      <w>970</w>
-      <h>1640</h>
+      <x>1652</x>
+      <y>5348</y>
+      <w>679</w>
+      <h>1148</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>950.0;1620.0;950.0;1070.0;10.0;1070.0;10.0;10.0</additional_attributes>
@@ -1508,10 +1508,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3450</x>
-      <y>8070</y>
-      <w>990</w>
-      <h>1210</h>
+      <x>2415</x>
+      <y>5649</y>
+      <w>693</w>
+      <h>847</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;1190.0;10.0;650.0;970.0;650.0;970.0;10.0</additional_attributes>
@@ -1519,10 +1519,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2390</x>
-      <y>7640</y>
-      <w>240</w>
-      <h>1620</h>
+      <x>1673</x>
+      <y>5348</y>
+      <w>168</w>
+      <h>1134</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;250.0;220.0;250.0;220.0;1600.0</additional_attributes>
@@ -1530,10 +1530,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3880</x>
-      <y>11090</y>
-      <w>380</w>
-      <h>70</h>
+      <x>2716</x>
+      <y>7763</y>
+      <w>266</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>typedef struct GSIState
 --
@@ -1544,10 +1544,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3210</x>
-      <y>11060</y>
-      <w>320</w>
-      <h>120</h>
+      <x>2247</x>
+      <y>7742</y>
+      <w>224</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>struct IRQState
 --
@@ -1562,10 +1562,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3210</x>
-      <y>10920</y>
-      <w>330</w>
-      <h>30</h>
+      <x>2247</x>
+      <y>7644</y>
+      <w>231</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>typedef struct IRQState *qemu_irq;
 </panel_attributes>
@@ -1574,10 +1574,10 @@ struct MachineClass
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3360</x>
-      <y>10940</y>
-      <w>30</w>
-      <h>140</h>
+      <x>2352</x>
+      <y>7658</y>
+      <w>21</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
@@ -1585,10 +1585,10 @@ struct MachineClass
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2290</x>
-      <y>11010</y>
-      <w>240</w>
-      <h>190</h>
+      <x>1603</x>
+      <y>7707</y>
+      <w>168</w>
+      <h>133</h>
     </coordinates>
     <panel_attributes>X86MachineState
 --
@@ -1599,10 +1599,10 @@ gsi
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2690</x>
-      <y>11040</y>
-      <w>150</w>
-      <h>130</h>
+      <x>1883</x>
+      <y>7728</y>
+      <w>105</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>qemu_irq[GSI_NUM_PINS]
 --
@@ -1616,10 +1616,10 @@ gsi[4]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2520</x>
-      <y>11040</y>
-      <w>190</w>
-      <h>30</h>
+      <x>1764</x>
+      <y>7728</y>
+      <w>133</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
@@ -1627,10 +1627,10 @@ gsi[4]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2830</x>
-      <y>11070</y>
-      <w>400</w>
-      <h>30</h>
+      <x>1981</x>
+      <y>7749</y>
+      <w>280</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>380.0;10.0;10.0;10.0</additional_attributes>
@@ -1638,10 +1638,10 @@ gsi[4]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3520</x>
-      <y>11090</y>
-      <w>380</w>
-      <h>30</h>
+      <x>2464</x>
+      <y>7763</y>
+      <w>266</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;360.0;10.0</additional_attributes>
@@ -1649,10 +1649,10 @@ gsi[4]</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3540</x>
-      <y>11480</y>
-      <w>150</w>
-      <h>130</h>
+      <x>2478</x>
+      <y>8036</y>
+      <w>105</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>IRQState[]
 --
@@ -1665,10 +1665,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3360</x>
-      <y>11170</y>
-      <w>200</w>
-      <h>370</h>
+      <x>2352</x>
+      <y>7819</y>
+      <w>140</w>
+      <h>259</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;350.0;180.0;350.0</additional_attributes>
@@ -1676,10 +1676,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3680</x>
-      <y>11120</y>
-      <w>220</w>
-      <h>390</h>
+      <x>2576</x>
+      <y>7784</y>
+      <w>154</w>
+      <h>273</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;370.0;110.0;370.0;110.0;10.0;200.0;10.0</additional_attributes>
@@ -1687,10 +1687,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2870</x>
-      <y>13540</y>
-      <w>420</w>
-      <h>80</h>
+      <x>2009</x>
+      <y>9478</y>
+      <w>294</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>struct VirtIOBalloonPCI
 --
@@ -1702,10 +1702,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2830</x>
-      <y>12790</y>
-      <w>360</w>
-      <h>600</h>
+      <x>1981</x>
+      <y>8953</y>
+      <w>252</w>
+      <h>420</h>
     </coordinates>
     <panel_attributes>struct VirtIOPCIProxy
 --
@@ -1747,10 +1747,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3840</x>
-      <y>13770</y>
-      <w>380</w>
-      <h>540</h>
+      <x>2688</x>
+      <y>9639</y>
+      <w>266</w>
+      <h>378</h>
     </coordinates>
     <panel_attributes>struct VirtIOBalloon
 --
@@ -1790,10 +1790,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3280</x>
-      <y>13590</y>
-      <w>580</w>
-      <h>210</h>
+      <x>2296</x>
+      <y>9513</y>
+      <w>406</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;280.0;10.0;280.0;190.0;560.0;190.0</additional_attributes>
@@ -1801,10 +1801,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4790</x>
-      <y>13810</y>
-      <w>570</w>
-      <h>570</h>
+      <x>3353</x>
+      <y>9667</y>
+      <w>399</w>
+      <h>399</h>
     </coordinates>
     <panel_attributes>struct VirtIODevice
 --
@@ -1844,10 +1844,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4210</x>
-      <y>13810</y>
-      <w>600</w>
-      <h>30</h>
+      <x>2947</x>
+      <y>9667</y>
+      <w>420</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;580.0;10.0</additional_attributes>
@@ -1855,10 +1855,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4790</x>
-      <y>14470</y>
-      <w>600</w>
-      <h>610</h>
+      <x>3353</x>
+      <y>10129</y>
+      <w>420</w>
+      <h>427</h>
     </coordinates>
     <panel_attributes>struct VirtQueue
 --
@@ -1903,10 +1903,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4210</x>
-      <y>13820</y>
-      <w>600</w>
-      <h>680</h>
+      <x>2947</x>
+      <y>9674</y>
+      <w>420</w>
+      <h>476</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;290.0;10.0;290.0;660.0;580.0;660.0</additional_attributes>
@@ -1914,10 +1914,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2960</x>
-      <y>12620</y>
-      <w>100</w>
-      <h>30</h>
+      <x>2072</x>
+      <y>8834</y>
+      <w>70</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>PCIDevice</panel_attributes>
     <additional_attributes/>
@@ -1925,10 +1925,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3000</x>
-      <y>12640</y>
-      <w>30</w>
-      <h>170</h>
+      <x>2100</x>
+      <y>8848</y>
+      <w>21</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
@@ -1936,10 +1936,10 @@ IRQState[3]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3030</x>
-      <y>13380</y>
-      <w>30</w>
-      <h>180</h>
+      <x>2121</x>
+      <y>9366</y>
+      <w>21</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>

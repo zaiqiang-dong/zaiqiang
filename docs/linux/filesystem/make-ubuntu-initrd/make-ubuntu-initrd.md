@@ -216,7 +216,7 @@ qemu-system-x86_64 \
     -nographic \
     -net nic,model=e1000,netdev=m \
     -netdev tap,ifname=tap0,script=no,downscript=no,id=m \
-    -append "root=/dev/sda console=ttyS0"
+    -append "root=/dev/sda console=ttyS0 rootfstype=ext4 rw  "
 
 ```
 根据你自己的环境修改你的参数配置,最好可以把它放到一个脚本中，因为这个命令实在是参数太多，方便修改,我这里放到`setup-qemu.sh`,另外命令中`net`的参数是为了我们在启动之后可能有网络使用，所以我这里加入一个tap0虚拟网卡，启动虚拟网卡，可以通过下面的指令：
@@ -239,7 +239,6 @@ sudo ifconfig tap0 192.168.122.123 netmask 192.168.122.255
 
 注意
 
-- 在登录`root`之后，会有一段等待时间，具体原因我还没有查
 - 在视频最后会出现`hostname login: qemu-system-x86_64: terminating on signal 15 from pid 228717 (/bin/zsh)`这不是系统异常通过，而我从为了录制的需要，从另外一个终端`kill`掉了。
 
 ## 4. 小结
