@@ -269,9 +269,9 @@ module.exports = {
                     children: ['/coding/parallel/parallel.md']
                 },
                 {
-                    title: '编程技巧',
+                    title: '系统机制',
 				    collapsable: true,
-                    children: ['/coding/skills/skills.md']
+                    children: ['/coding/mechanism/mechanism.md']
                 },
                 {
                     title: '常用类库',
