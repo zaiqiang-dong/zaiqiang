@@ -91,19 +91,23 @@ module.exports = {
                             title: 'common',
 			    	        collapsable: true,
 			    	        children: [
-                                        '/linux/memory/common/modle/modle',
-                                      ]
+                                '../linux/memory/common/modle/modle.md',
+                            ]
                         },
                         {
                             title: 'buddy',
 			    	        collapsable: true,
-			    	        children: ['/linux/memory/buddy/alloc-flags/alloc-flags',
-                                       '/linux/memory/buddy/wartermark/watermark']
+			    	        children: [
+                                '/linux/memory/buddy/alloc-flags/alloc-flags.md',
+                                '/linux/memory/buddy/wartermark/watermark.md'
+                            ]
                         },
                         {
                             title: 'slxb',
 			    	        collapsable: true,
-			    	        children: [`../linux/memory/slub/slub_order/slub_order`]
+			    	        children: [
+                                '../linux/memory/slub/slub_order/slub_order.md'
+                            ]
                         }
                     ]
 			    },
@@ -115,9 +119,9 @@ module.exports = {
                             title: 'root-fs',
 			    	        collapsable: true,
 			    	        children: [
-                                        '/linux/filesystem/initrd-principles/initrd-principles',
-                                        '/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd'
-                                      ]
+                                '/linux/filesystem/initrd-principles/initrd-principles.md',
+                                '/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd.md'
+                            ]
                         }
                     ]
 			    },
@@ -128,17 +132,21 @@ module.exports = {
                         {
                             title: 'barriers',
 			    	        collapsable: true,
-			    	        children: ['/linux/concurency/barriers/overview/overview.md',
-                                        '/linux/concurency/barriers/principle/principle.md']
+			    	        children: [
+                                '../linux/concurency/barriers/overview/overview.md',
+                                '../linux/concurency/barriers/principle/principle.md'
+                            ]
                         }
                     ]
 			    },
 			    {
 			    	title: '进程管理',
 			    	collapsable: true,
-			    	children: ['/linux/process/weight/weight',
-                               '/linux/process/priority/priority',
-                               '/linux/process/pelt/pelt']
+			    	children: [
+                        '../linux/process/weight/weight.md',
+                        '../linux/process/priority/priority.md',
+                        '../linux/process/pelt/pelt.md'
+                    ]
 			    },
                 {
 			    	title: '中断系统',
@@ -147,14 +155,18 @@ module.exports = {
                         {
                             title: 'common',
 			    	        collapsable: true,
-			    	        children: ['/linux/interrupt/common/interrupt-sleep/interrupt-sleep.md']
+			    	        children: [
+                                '../linux/interrupt/common/interrupt-sleep/interrupt-sleep.md'
+                            ]
                         }
                     ]
 			    },
                 {
 			    	title: '安全机制',
 			    	collapsable: true,
-			    	children: [ '../linux/selinux/AndroidSelinux/Selinux.md']
+			    	children: [
+                        '../linux/selinux/AndroidSelinux/Selinux.md'
+                    ]
 			    },
                 {
 			    	title: '系统工具',
@@ -168,7 +180,9 @@ module.exports = {
                         {
                             title: 'ftrace',
 			    	        collapsable: true,
-			    	        children: ['../linux/tools/ftrace/file-interface/file-interface.md']
+			    	        children: [
+                                '../linux/tools/ftrace/file-interface/file-interface.md'
+                            ]
                         },
                         {
                             title: 'perf',
@@ -196,7 +210,9 @@ module.exports = {
                         {
                             title: 'ARM',
 			    	        collapsable: true,
-			    	        children: ['/hardware/cpu/arm/intro/intro']
+			    	        children: [
+                                '../hardware/cpu/arm/intro/intro.md'
+                            ]
                         }
                     ]
 			    },
@@ -213,8 +229,8 @@ module.exports = {
                             title: 'ARM',
 			    	        collapsable: true,
 			    	        children: [
-                                '/hardware/memory/arm/vmsa/vmsa_intro/vmsa_intro',
-                                '/hardware/memory/arm/vmsa/vmsa_page/vmsa_page'
+                                '../hardware/memory/arm/vmsa/vmsa_intro/vmsa_intro.md',
+                                '../hardware/memory/arm/vmsa/vmsa_page/vmsa_page.md'
                             ]
                         }
                     ]
@@ -227,7 +243,7 @@ module.exports = {
                             title: 'COMMON',
 			    	        collapsable: true,
 			    	        children: [
-                                '/hardware/address-space/common/intro/intro.md',
+                                '../hardware/address-space/common/intro/intro.md',
                             ]
                         },
                         {
@@ -247,7 +263,9 @@ module.exports = {
                 {
                     title: '编译工具',
 				    collapsable: true,
-                    children: ['/tools/builder/builder.md']
+                    children: [
+                        '../tools/builder/builder.md'
+                    ]
                 },
                 {
                     title: '调试工具',
@@ -257,14 +275,14 @@ module.exports = {
                             title: 'gdb',
 			    	        collapsable: true,
 			    	        children: [
-                                '/tools/debugger/gdb/build-gdb/build-gdb.md'
+                                '../tools/debugger/gdb/build-gdb/build-gdb.md'
                             ]
                         },
                         {
                             title: 'ramdump',
 			    	        collapsable: true,
 			    	        children: [
-                                '/tools/debugger/ramdump/ramdump.md'
+                                '../tools/debugger/ramdump/ramdump.md'
                             ]
                         }
                     ]
@@ -272,34 +290,46 @@ module.exports = {
                 {
                     title: '编辑工具',
 				    collapsable: true,
-                    children: ['/tools/editor/editor.md']
+                    children: [
+                        '../tools/editor/editor.md'
+                    ]
                 },
                 {
                     title: '命令工具',
 				    collapsable: true,
-                    children: ['/tools/cmd/cmd.md']
+                    children: [
+                        '../tools/cmd/cmd.md'
+                    ]
                 }
             ],
 			'/coding/': [
                 {
                     title: '数据结构',
 				    collapsable: true,
-                    children: ['/coding/datastruct/datastruct.md']
+                    children: [
+                        '../coding/datastruct/datastruct.md'
+                    ]
                 },
                 {
                     title: '算法分析',
 				    collapsable: true,
-                    children: ['/coding/algorithm/algorithm.md']
+                    children: [
+                        '../coding/algorithm/algorithm.md'
+                    ]
                 },
                 {
                     title: '并行编程',
 				    collapsable: true,
-                    children: ['/coding/parallel/parallel.md']
+                    children: [
+                        '../coding/parallel/parallel.md'
+                    ]
                 },
                 {
                     title: '系统机制',
 				    collapsable: true,
-                    children: ['/coding/mechanism/mechanism.md']
+                    children: [
+                        '../coding/mechanism/mechanism.md'
+                    ]
                 },
                 {
                     title: '常用类库',
@@ -308,7 +338,9 @@ module.exports = {
                         {
                             title: 'glib',
 				            collapsable: true,
-                            children: ['/coding/lib/glib/event-loop.md']
+                            children: [
+                                '../coding/lib/glib/event-loop.md'
+                            ]
                         }
                     ]
                 },
@@ -342,7 +374,9 @@ module.exports = {
                         {
                             title: 'components',
 				            collapsable: true,
-                            children: ['/virtualization/qemu/component/qom/qom.md']
+                            children: [
+                                '../virtualization/qemu/component/qom/qom.md'
+                            ]
                         }
 
                     ]
@@ -350,7 +384,9 @@ module.exports = {
                 {
                     title: '管理工具',
 				    collapsable: true,
-                    children: ['/virtualization/tools/virt-install/virt-install']
+                    children: [
+                        '../virtualization/tools/virt-install/virt-install.md'
+                    ]
                 }
             ],
 		}
