@@ -90,7 +90,9 @@ module.exports = {
                         {
                             title: 'common',
 			    	        collapsable: true,
-			    	        children: ['/linux/memory/common/modle/modle']
+			    	        children: [
+                                        '/linux/memory/common/modle/modle',
+                                      ]
                         },
                         {
                             title: 'buddy',
@@ -194,7 +196,7 @@ module.exports = {
                         {
                             title: 'ARM',
 			    	        collapsable: true,
-			    	        children: ['/hardware/arm/intro/intro']
+			    	        children: ['/hardware/cpu/arm/intro/intro']
                         }
                     ]
 			    },
@@ -210,8 +212,34 @@ module.exports = {
                         {
                             title: 'ARM',
 			    	        collapsable: true,
-			    	        children: ['/hardware/arm/vmsa/vmsa_intro/vmsa_intro','/hardware/arm/vmsa/vmsa_page/vmsa_page']
+			    	        children: [
+                                '/hardware/memory/arm/vmsa/vmsa_intro/vmsa_intro',
+                                '/hardware/memory/arm/vmsa/vmsa_page/vmsa_page'
+                            ]
                         }
+                    ]
+			    },
+                {
+			    	title: '地址空间',
+			    	collapsable: true,
+			    	children: [
+                        {
+                            title: 'COMMON',
+			    	        collapsable: true,
+			    	        children: [
+                                '/hardware/address-space/common/intro/intro.md',
+                            ]
+                        },
+                        {
+                            title: 'ARM',
+			    	        collapsable: true,
+			    	        children: []
+                        },
+                        {
+                            title: 'X86',
+			    	        collapsable: true,
+			    	        children: []
+                        },
                     ]
 			    }
             ],
