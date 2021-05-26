@@ -254,7 +254,9 @@ module.exports = {
                         {
                             title: 'X86',
 			    	        collapsable: true,
-			    	        children: []
+			    	        children: [
+                                '../hardware/address-space/x86/x86-addr-space/x86-addr-space.md'
+                            ]
                         },
                     ]
 			    }
