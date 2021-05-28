@@ -376,7 +376,7 @@ module.exports = {
                             title: 'glib',
 				            collapsable: true,
                             children: [
-                                '../coding/libs/glib/event-loop.md'
+                                '../coding/libs/glib/noting.md'
                             ]
                         }
                     ]
