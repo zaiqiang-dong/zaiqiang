@@ -344,28 +344,28 @@ module.exports = {
                     title: '数据结构',
 				    collapsable: true,
                     children: [
-                        '../coding/datastruct/datastruct.md'
+                        '../coding/datastruct/noting.md'
                     ]
                 },
                 {
                     title: '算法分析',
 				    collapsable: true,
                     children: [
-                        '../coding/algorithm/algorithm.md'
+                        '../coding/algorithm/noting.md'
                     ]
                 },
                 {
                     title: '并行编程',
 				    collapsable: true,
                     children: [
-                        '../coding/parallel/parallel.md'
+                        '../coding/parallel/noting.md'
                     ]
                 },
                 {
                     title: '系统机制',
 				    collapsable: true,
                     children: [
-                        '../coding/mechanism/mechanism.md'
+                        '../coding/mechanism/noting.md'
                     ]
                 },
                 {
