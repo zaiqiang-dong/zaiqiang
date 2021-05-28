@@ -133,8 +133,8 @@ module.exports = {
                             title: 'barriers',
 			    	        collapsable: true,
 			    	        children: [
-                                '../linux/concurency/barriers/overview/overview.md',
-                                '../linux/concurency/barriers/principle/principle.md'
+                                '../linux/parallel/barriers/overview/overview.md',
+                                '../linux/parallel/barriers/principle/principle.md'
                             ]
                         }
                     ]
