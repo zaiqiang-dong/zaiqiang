@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>制作UBUNTU根文件系统 | 探索者</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/hero.png">
+    <meta name="description" content="-> 在 LINUX ANDROID 中不断探索 <-">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5340219.css" as="style"><link rel="preload" href="/assets/js/app.53007fa8.js" as="script"><link rel="preload" href="/assets/js/2.78f3d7ae.js" as="script"><link rel="preload" href="/assets/js/14.84dc757a.js" as="script"><link rel="prefetch" href="/assets/js/10.3851563e.js"><link rel="prefetch" href="/assets/js/11.79d5b0f2.js"><link rel="prefetch" href="/assets/js/12.57f015fe.js"><link rel="prefetch" href="/assets/js/13.0f2b1f45.js"><link rel="prefetch" href="/assets/js/15.41f195d5.js"><link rel="prefetch" href="/assets/js/16.0560c5ef.js"><link rel="prefetch" href="/assets/js/17.d736ee6a.js"><link rel="prefetch" href="/assets/js/18.c4c56d72.js"><link rel="prefetch" href="/assets/js/19.e2638150.js"><link rel="prefetch" href="/assets/js/20.a403cff4.js"><link rel="prefetch" href="/assets/js/21.7f25b30e.js"><link rel="prefetch" href="/assets/js/22.d787b773.js"><link rel="prefetch" href="/assets/js/23.01658fc7.js"><link rel="prefetch" href="/assets/js/24.ad2f951d.js"><link rel="prefetch" href="/assets/js/25.47aecf47.js"><link rel="prefetch" href="/assets/js/26.dcc6cf82.js"><link rel="prefetch" href="/assets/js/27.717df623.js"><link rel="prefetch" href="/assets/js/28.5c1f7846.js"><link rel="prefetch" href="/assets/js/29.461ac240.js"><link rel="prefetch" href="/assets/js/3.3d3c9e40.js"><link rel="prefetch" href="/assets/js/30.1f7dd2dc.js"><link rel="prefetch" href="/assets/js/31.1ab3e83b.js"><link rel="prefetch" href="/assets/js/32.e307e364.js"><link rel="prefetch" href="/assets/js/33.a40e26f0.js"><link rel="prefetch" href="/assets/js/34.e775af96.js"><link rel="prefetch" href="/assets/js/35.fbfc064e.js"><link rel="prefetch" href="/assets/js/36.8fce5b82.js"><link rel="prefetch" href="/assets/js/37.721af69e.js"><link rel="prefetch" href="/assets/js/38.f8f1cb72.js"><link rel="prefetch" href="/assets/js/39.1e2155e0.js"><link rel="prefetch" href="/assets/js/4.00672a35.js"><link rel="prefetch" href="/assets/js/40.27c4f401.js"><link rel="prefetch" href="/assets/js/41.9e56b49a.js"><link rel="prefetch" href="/assets/js/42.6bb61575.js"><link rel="prefetch" href="/assets/js/43.d6e74cb1.js"><link rel="prefetch" href="/assets/js/44.32e624f9.js"><link rel="prefetch" href="/assets/js/45.3fc8dc78.js"><link rel="prefetch" href="/assets/js/46.2973f6ac.js"><link rel="prefetch" href="/assets/js/47.701affa1.js"><link rel="prefetch" href="/assets/js/48.41c83cdf.js"><link rel="prefetch" href="/assets/js/49.ac8dc4ef.js"><link rel="prefetch" href="/assets/js/5.5a3c916a.js"><link rel="prefetch" href="/assets/js/50.9b2d355c.js"><link rel="prefetch" href="/assets/js/51.a9b562e1.js"><link rel="prefetch" href="/assets/js/52.4fe5c8da.js"><link rel="prefetch" href="/assets/js/53.467a7593.js"><link rel="prefetch" href="/assets/js/54.7bf90d03.js"><link rel="prefetch" href="/assets/js/55.f1becacb.js"><link rel="prefetch" href="/assets/js/56.e1e00d79.js"><link rel="prefetch" href="/assets/js/57.b8af380c.js"><link rel="prefetch" href="/assets/js/58.f10cdd4c.js"><link rel="prefetch" href="/assets/js/59.2f62648b.js"><link rel="prefetch" href="/assets/js/6.875f06b9.js"><link rel="prefetch" href="/assets/js/60.fb07be32.js"><link rel="prefetch" href="/assets/js/61.169d6980.js"><link rel="prefetch" href="/assets/js/62.2df63d66.js"><link rel="prefetch" href="/assets/js/7.3363b9bb.js"><link rel="prefetch" href="/assets/js/8.57b38b19.js"><link rel="prefetch" href="/assets/js/9.a1ee0e63.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5340219.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">探索者</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  内核
+</a></div><div class="nav-item"><a href="/hardware/" class="nav-link">
+  硬件
+</a></div><div class="nav-item"><a href="/tools/" class="nav-link">
+  工具
+</a></div><div class="nav-item"><a href="/coding/" class="nav-link">
+  编码
+</a></div><div class="nav-item"><a href="/virtualization/" class="nav-link">
+  虚拟化
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link router-link-active">
+  内核
+</a></div><div class="nav-item"><a href="/hardware/" class="nav-link">
+  硬件
+</a></div><div class="nav-item"><a href="/tools/" class="nav-link">
+  工具
+</a></div><div class="nav-item"><a href="/coding/" class="nav-link">
+  编码
+</a></div><div class="nav-item"><a href="/virtualization/" class="nav-link">
+  虚拟化
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>内存管理</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>文件系统</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>root-fs</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/linux/filesystem/initrd-principles/initrd-principles.html" class="sidebar-link">根文件系统原理</a></li><li><a href="/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd.html" aria-current="page" class="active sidebar-link">制作UBUNTU根文件系统</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd.html#_1-概述" class="sidebar-link">1.概述</a></li><li class="sidebar-sub-header"><a href="/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd.html#_2-制作" class="sidebar-link">2.制作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd.html#_2-1-获取基础包" class="sidebar-link">2.1 获取基础包</a></li><li class="sidebar-sub-header"><a href="/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd.html#_2-2-配置" class="sidebar-link">2.2 配置</a></li></ul></li><li class="sidebar-sub-header"><a href="/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd.html#_3-测试" class="sidebar-link">3. 测试</a></li><li class="sidebar-sub-header"><a href="/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd.html#_4-小结" class="sidebar-link">4. 小结</a></li></ul></li></ul></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>并发同步</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进程管理</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>中断系统</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>安全机制</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>系统工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>系统机制</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>系统信号</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>电源管理</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>时间系统</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="制作ubuntu根文件系统"><a href="#制作ubuntu根文件系统" class="header-anchor">#</a> 制作UBUNTU根文件系统</h1> <hr> <table><thead><tr><th>软件版本</th> <th>硬件版本</th> <th>更新内容</th></tr></thead> <tbody><tr><td>ubuntu20.04</td> <td>amd64</td> <td></td></tr></tbody></table> <hr> <h2 id="_1-概述"><a href="#_1-概述" class="header-anchor">#</a> 1.概述</h2> <p>之前的文章我们介绍过<a href="https://www.tsz.wiki/linux/filesystem/initrd-principles/initrd-principles.html" target="_blank" rel="noopener noreferrer">根文件系统原理<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>,但是我们使用的 <code>rootfs</code> 是根据<code>busybox</code>制作来出的，但是这个<code>rootfs</code>过于简单，还有很多功能是没有的，今天基于<code>ubuntu</code>提供的base包来制作一个比较完善的<code>rootfs</code>,具备<code>apt install</code>、<code>systemd</code>等功能。</p> <h2 id="_2-制作"><a href="#_2-制作" class="header-anchor">#</a> 2.制作</h2> <h3 id="_2-1-获取基础包"><a href="#_2-1-获取基础包" class="header-anchor">#</a> 2.1 获取基础包</h3> <p>从<a href="http://cdimage.ubuntu.com/ubuntu-base/releases/" target="_blank" rel="noopener noreferrer">这里<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>,可以下载到各个版本的<code>ubuntu base</code>包，这里我用<code>20.04</code>为例，通过下面的方式来下载：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">wget</span> http://cdimage.ubuntu.com/ubuntu-base/releases/20.04/release/ubuntu-base-20.04.1-base-amd64.tar.gz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>之后解压到<code>base</code>目录：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">mkdir</span> base
+<span class="token function">tar</span> -xvf ./ubuntu-base-20.04.1-base-amd64.tar.gz -C base
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>解压之后如所示，这就是最初的包，其实里面已经有很多功能，比如软件安装功能等等</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">ls</span> ./base
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="_2-2-配置"><a href="#_2-2-配置" class="header-anchor">#</a> 2.2 配置</h3> <ol><li>配置DNS,这里我们直接我电脑里的解析文件，我这边是<code>ubuntu</code>,DNS文件在<code>/etc/resolv.conf</code></li></ol> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">cp</span> /etc/resolv.conf ./base/etc
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ol start="2"><li>切换系统根目录
+通过下面的指令就可以切换系统根目录到<code>base</code>目录</li></ol> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">sudo</span> <span class="token function">chroot</span> base /bin/bash
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="custom-block tip"><p class="custom-block-title">Tip</p> <p>后面加 <code>/bin/bash</code> 是因为我使用的<code>shell</code>是<code>zsh</code>,而 <code>base</code> 包里本身不含有 <code>zsh</code></p></div> <p>这样我们就成功切换根目录，如下</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>root@M:/<span class="token comment"># ls</span>
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@M:/<span class="token comment">#</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>之后执行<code>apt update</code>，准备安装软件</p> <p>你可能会遇到如下错误</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>root@M:/<span class="token comment"># apt update</span>
+Get:1 http://archive.ubuntu.com/ubuntu focal InRelease <span class="token punctuation">[</span><span class="token number">265</span> kB<span class="token punctuation">]</span>
+Get:2 http://security.ubuntu.com/ubuntu focal-security InRelease <span class="token punctuation">[</span><span class="token number">109</span> kB<span class="token punctuation">]</span>
+Err:2 http://security.ubuntu.com/ubuntu focal-security InRelease
+  Couldn<span class="token string">'t create temporary file /tmp/apt.conf.HeoxFW for passing config to apt-key
+Err:1 http://archive.ubuntu.com/ubuntu focal InRelease
+  Couldn'</span>t create temporary <span class="token function">file</span> /tmp/apt.conf.t765yW <span class="token keyword">for</span> passing config to apt-key
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease <span class="token punctuation">[</span><span class="token number">114</span> kB<span class="token punctuation">]</span>
+Err:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+  Couldn<span class="token string">'t create temporary file /tmp/apt.conf.I7juzX for passing config to apt-key
+Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Err:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+  Couldn'</span>t create temporary <span class="token function">file</span> /tmp/apt.conf.oD5jt5 <span class="token keyword">for</span> passing config to apt-key
+Reading package lists<span class="token punctuation">..</span>. Done
+W: GPG error: http://security.ubuntu.com/ubuntu focal-security InRelease: Couldn<span class="token string">'t create temporary file /tmp/apt.conf.HeoxFW for passing config to apt-key
+E: The repository '</span>http://security.ubuntu.com/ubuntu focal-security InRelease<span class="token string">' is not signed.
+N: Updating from such a repository can'</span>t be <span class="token keyword">done</span> securely, and is therefore disabled by default.
+N: See apt-secure<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> manpage <span class="token keyword">for</span> repository creation and user configuration details.
+W: GPG error: http://archive.ubuntu.com/ubuntu focal InRelease: Couldn<span class="token string">'t create temporary file /tmp/apt.conf.t765yW for passing config to apt-key
+E: The repository '</span>http://archive.ubuntu.com/ubuntu focal InRelease<span class="token string">' is not signed.
+N: Updating from such a repository can'</span>t be <span class="token keyword">done</span> securely, and is therefore disabled by default.
+N: See apt-secure<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> manpage <span class="token keyword">for</span> repository creation and user configuration details.
+W: GPG error: http://archive.ubuntu.com/ubuntu focal-updates InRelease: Couldn<span class="token string">'t create temporary file /tmp/apt.conf.I7juzX for passing config to apt-key
+E: The repository '</span>http://archive.ubuntu.com/ubuntu focal-updates InRelease<span class="token string">' is not signed.
+N: Updating from such a repository can'</span>t be <span class="token keyword">done</span> securely, and is therefore disabled by default.
+N: See apt-secure<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> manpage <span class="token keyword">for</span> repository creation and user configuration details.
+W: GPG error: http://archive.ubuntu.com/ubuntu focal-backports InRelease: Couldn<span class="token string">'t create temporary file /tmp/apt.conf.oD5jt5 for passing config to apt-key
+E: The repository '</span>http://archive.ubuntu.com/ubuntu focal-backports InRelease<span class="token string">' is not signed.
+N: Updating from such a repository can'</span>t be <span class="token keyword">done</span> securely, and is therefore disabled by default.
+N: See apt-secure<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> manpage <span class="token keyword">for</span> repository creation and user configuration details.
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p>这个错误是因为，当前根目录下的<code>tmp</code>目录不可写的原因，通过<code>chmod 777 ./tmp</code>就可以解决。</p> <p>之后你可能会遇到如下问题</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>root@M:/<span class="token comment"># apt update</span>
+<span class="token number">0</span>% <span class="token punctuation">[</span>Waiting <span class="token keyword">for</span> headers<span class="token punctuation">]</span> <span class="token punctuation">[</span>Waiting <span class="token keyword">for</span> headers<span class="token punctuation">]</span>^C
+root@M:/<span class="token comment">#</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>就是一真卡在这里不动，通过<code>rm /var/lib/apt/lists/* -rf</code>来解决。解决如上问题就可以<code>apt update</code>,之后就可以安装需要的软件了</p> <ol start="3"><li>安装软件</li></ol> <p>下面的软件一般是系统基础软件，还有一些是网络相关的软件</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token comment"># 这个是为了在安装tzdata,避免交互</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">DEBIAN_FRONTEND</span><span class="token operator">=</span>noninteractive
+
+
+<span class="token comment"># 执行更新</span>
+<span class="token function">apt</span> update
+<span class="token function">apt</span> -y upgrade
+
+<span class="token function">apt</span> <span class="token function">install</span> -y <span class="token function">sudo</span>
+<span class="token function">apt</span> <span class="token function">install</span> -y systemd systemd-sysv
+<span class="token function">apt</span> <span class="token function">install</span> -y linux-base
+<span class="token function">apt</span> <span class="token function">install</span> -y util-linux
+<span class="token function">apt</span> <span class="token function">install</span> -y <span class="token function">expect</span>
+<span class="token function">apt</span> <span class="token function">install</span> -y gdisk <span class="token function">parted</span> u-boot-tools
+<span class="token function">apt</span> <span class="token function">install</span> -y <span class="token function">file</span>
+<span class="token function">apt</span> <span class="token function">install</span> -y findutils
+<span class="token function">apt</span> <span class="token function">install</span> -y net-tools
+<span class="token function">apt</span> <span class="token function">install</span> -y network-manager
+<span class="token function">apt</span> <span class="token function">install</span> -y iproute2
+<span class="token function">apt</span> <span class="token function">install</span> -y isc-dhcp-client
+<span class="token function">apt</span> <span class="token function">install</span> -y <span class="token function">ethtool</span>
+<span class="token function">apt</span> <span class="token function">install</span> -y ntp
+<span class="token function">apt</span> <span class="token function">install</span> -y wireless-tools
+<span class="token function">apt</span> <span class="token function">install</span> -y dhcpcd5
+<span class="token function">apt</span> <span class="token function">install</span> -y resolvconf
+<span class="token function">apt</span> <span class="token function">install</span> -y avahi-utils
+<span class="token function">apt</span> <span class="token function">install</span> -y iw
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><ol start="4"><li>配置用户</li></ol> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">passwd</span> root
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>当然也可以通过下面的指令来避免交互</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token builtin class-name">echo</span> <span class="token string">&quot;passwd&quot;</span> <span class="token operator">|</span> <span class="token function">passwd</span> --stdin root
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>这里我只配置的<code>root</code>用户，你也可以配置其他的一些普通用户。</p> <ol start="5"><li>其他配置</li></ol> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">rm</span> -rf /etc/hosts /etc/hostname
+<span class="token function">touch</span> /etc/hosts /etc/hostname
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;-</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span> /etc/hostname</span>
+	<span class="token environment constant">$HOSTNAME</span>
+EOF</span>
+
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;-</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">&gt;</span> /etc/hosts</span>
+    127.0.0.1 localhost
+    127.0.1.1 <span class="token environment constant">$HOSTNAME</span>
+    # The following lines are desirable for IPv6 capable hosts
+    #::1     localhost ip6-localhost ip6-loopback
+    #fe00::0 ip6-localnet
+    #ff00::0 ip6-mcastprefix
+    #ff02::1 ip6-allnodes
+    #ff02::2 ip6-allrouters
+EOF</span>
+
+<span class="token function">chown</span> root:root /usr/bin/sudo
+<span class="token function">chmod</span> <span class="token number">4755</span> /usr/bin/sudo
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><ol start="6"><li>打包rootfs.img</li></ol> <p>通过下面的指令，我们就可以将前面制作的rootfs放到<code>rootfs.img</code>中。</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token assign-left variable">rootfssize</span><span class="token operator">=</span>1024M
+<span class="token assign-left variable">rootfsimg</span><span class="token operator">=</span>rootfs.img
+<span class="token assign-left variable">rootfstmp</span><span class="token operator">=</span>rtmp
+
+<span class="token comment"># 创建img文件</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -f  <span class="token variable">$rootfsimg</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token function">rm</span> -rf <span class="token variable">$rootfsimg</span>
+<span class="token keyword">fi</span>
+<span class="token function">dd</span> <span class="token assign-left variable">if</span><span class="token operator">=</span>/dev/zero <span class="token assign-left variable">of</span><span class="token operator">=</span><span class="token variable">$rootfsimg</span> <span class="token assign-left variable">bs</span><span class="token operator">=</span><span class="token variable">$rootfssize</span> <span class="token assign-left variable">count</span><span class="token operator">=</span><span class="token number">2</span> <span class="token assign-left variable">status</span><span class="token operator">=</span>progress
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -d  <span class="token variable">$rootfstmp</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token function">rm</span> -rf <span class="token variable">$rootfstmp</span>
+<span class="token keyword">fi</span>
+<span class="token comment"># 创建临时挂载目录</span>
+<span class="token function">mkdir</span> <span class="token variable">$rootfstmp</span>
+
+mkfs.ext4 <span class="token variable">$rootfsimg</span>
+
+<span class="token comment"># 挂载img</span>
+<span class="token function">mount</span> -t ext4 <span class="token variable">$rootfsimg</span> <span class="token variable">$rootfstmp</span>
+
+<span class="token comment"># 复制文件到</span>
+<span class="token function">cp</span> -rf ./base/* <span class="token variable">$rootfstmp</span>
+
+<span class="token function">umount</span> <span class="token variable">$rootfstmp</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h2 id="_3-测试"><a href="#_3-测试" class="header-anchor">#</a> 3. 测试</h2> <p>我们使用<code>qemu</code>来测试，命令和参数如下：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>qemu-system-x86_64 <span class="token punctuation">\</span>
+    --enable-kvm -m <span class="token number">1024</span>  -smp <span class="token number">1</span><span class="token punctuation">\</span>
+    -kernel ./x86_64-build-out/arch/x86_64/boot/bzImage <span class="token punctuation">\</span>
+    -hda <span class="token punctuation">..</span>/rootfs/rootfs.img <span class="token punctuation">\</span>
+    -nographic <span class="token punctuation">\</span>
+    -net nic,model<span class="token operator">=</span>e1000,netdev<span class="token operator">=</span>m <span class="token punctuation">\</span>
+    -netdev tap,ifname<span class="token operator">=</span>tap0,script<span class="token operator">=</span>no,downscript<span class="token operator">=</span>no,id<span class="token operator">=</span>m <span class="token punctuation">\</span>
+    -append <span class="token string">&quot;root=/dev/sda console=ttyS0 rootfstype=ext4 rw  &quot;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>根据你自己的环境修改你的参数配置,最好可以把它放到一个脚本中，因为这个命令实在是参数太多，方便修改,我这里放到<code>setup-qemu.sh</code>,另外命令中<code>net</code>的参数是为了我们在启动之后可能有网络使用，所以我这里加入一个tap0虚拟网卡，启动虚拟网卡，可以通过下面的指令：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">sudo</span> brctl addbr br0
+<span class="token function">sudo</span> brctl addif br0 enp4s0
+<span class="token function">sudo</span> <span class="token function">ifconfig</span> enp4s0 <span class="token number">0</span>
+<span class="token function">sudo</span> dhclient br0
+<span class="token function">sudo</span> <span class="token function">ip</span> tuntap <span class="token function">add</span> dev tap0 mode tap
+<span class="token function">sudo</span> brctl addif br0 tap0
+<span class="token function">sudo</span> <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> dev tap0 up
+<span class="token function">sudo</span> <span class="token function">ifconfig</span> tap0 <span class="token number">192.168</span>.122.123 netmask <span class="token number">192.168</span>.122.255
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>其中<code>enp4s0</code> 是我的物理网卡，你修改成你自己的网卡,下面是测试的结果</p> <p><img src="/assets/img/test.c96564f6.svg" alt="test" title="test result"></p> <p>注意</p> <ul><li>在视频最后会出现<code>hostname login: qemu-system-x86_64: terminating on signal 15 from pid 228717 (/bin/zsh)</code>这不是系统异常通过，而我从为了录制的需要，从另外一个终端<code>kill</code>掉了。</li></ul> <h2 id="_4-小结"><a href="#_4-小结" class="header-anchor">#</a> 4. 小结</h2> <p>从上面的过程来看，制作一个基于<code>ubuntu base</code>的包之后，我们几乎就拥有了一个相对完整的系统，即使一些工具没有，也可以通过<code>apt install</code>来安装，甚至你可以安装 <a href="https://www.suckless.org" target="_blank" rel="noopener noreferrer">DWM<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>这种窗口管理系统，成为一个真正的系统。</p> <hr> <div class="custom-block tip"><p class="custom-block-title">Tip</p> <p>欢迎评论、探讨,如果发现错误请指正。转载请注明出处！ <a href="http://www.tsz.wiki" target="_blank" rel="noopener noreferrer">探索者<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <hr> <!----></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新 :</span> <span class="time">4/23/2021, 7:22:53 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/linux/filesystem/initrd-principles/initrd-principles.html" class="prev">
+        根文件系统原理
+      </a></span> <span class="next"><a href="/linux/parallel/barriers/overview/overview.html">
+        概述
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.53007fa8.js" defer></script><script src="/assets/js/2.78f3d7ae.js" defer></script><script src="/assets/js/14.84dc757a.js" defer></script>
+  </body>
+</html>
