@@ -195,7 +195,35 @@ module.exports = {
 			    	        children: []
                         }
                     ]
-			    }
+			    },
+                {
+			    	title: '系统机制',
+			    	collapsable: true,
+			    	children: [
+                        '../linux/mechanism/noting.md'
+                    ]
+			    },
+                {
+			    	title: '系统信号',
+			    	collapsable: true,
+			    	children: [
+                        '../linux/signal/noting.md'
+                    ]
+			    },
+                {
+			    	title: '电源管理',
+			    	collapsable: true,
+			    	children: [
+                        '../linux/power/noting.md'
+                    ]
+			    },
+                {
+			    	title: '时间系统',
+			    	collapsable: true,
+			    	children: [
+                        '../linux/timesystem/noting.md'
+                    ]
+			    },
             ],
 			'/hardware/': [
                 {
@@ -259,7 +287,14 @@ module.exports = {
                             ]
                         },
                     ]
-			    }
+			    },
+                {
+			    	title: '总线协议',
+			    	collapsable: true,
+			    	children: [
+                        '../hardware/bus-protocol/noting.md'
+                    ]
+			    },
             ],
 			'/tools/': [
                 {
@@ -341,7 +376,7 @@ module.exports = {
                             title: 'glib',
 				            collapsable: true,
                             children: [
-                                '../coding/lib/glib/event-loop.md'
+                                '../coding/libs/glib/event-loop.md'
                             ]
                         }
                     ]
@@ -384,12 +419,19 @@ module.exports = {
                     ]
                 },
                 {
+			    	title: 'KVM',
+			    	collapsable: true,
+			    	children: [
+                        '../virtualization/kvm/noting.md'
+                    ]
+			    },
+                {
                     title: '管理工具',
 				    collapsable: true,
                     children: [
                         '../virtualization/tools/virt-install/virt-install.md'
                     ]
-                }
+                },
             ],
 		}
 	},
