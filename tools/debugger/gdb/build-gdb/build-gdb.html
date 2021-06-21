@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>编译全功能GDB | 探索者</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/hero.png">
+    <meta name="description" content="-> 在 LINUX ANDROID 中不断探索 <-">
+    
+    <link rel="preload" href="/assets/css/0.styles.a5340219.css" as="style"><link rel="preload" href="/assets/js/app.3986ebce.js" as="script"><link rel="preload" href="/assets/js/2.aa8d3306.js" as="script"><link rel="preload" href="/assets/js/16.0f83efd4.js" as="script"><link rel="prefetch" href="/assets/js/10.6b3d1b51.js"><link rel="prefetch" href="/assets/js/11.16f8ee53.js"><link rel="prefetch" href="/assets/js/12.446f036f.js"><link rel="prefetch" href="/assets/js/13.e5474b1e.js"><link rel="prefetch" href="/assets/js/14.cd54f087.js"><link rel="prefetch" href="/assets/js/15.d750f315.js"><link rel="prefetch" href="/assets/js/17.d736ee6a.js"><link rel="prefetch" href="/assets/js/18.c4c56d72.js"><link rel="prefetch" href="/assets/js/19.7daadc43.js"><link rel="prefetch" href="/assets/js/20.e251b556.js"><link rel="prefetch" href="/assets/js/21.7f25b30e.js"><link rel="prefetch" href="/assets/js/22.34beb4c0.js"><link rel="prefetch" href="/assets/js/23.8e5b6733.js"><link rel="prefetch" href="/assets/js/24.8051e2f4.js"><link rel="prefetch" href="/assets/js/25.48fb208d.js"><link rel="prefetch" href="/assets/js/26.872a3a0b.js"><link rel="prefetch" href="/assets/js/27.76f7908b.js"><link rel="prefetch" href="/assets/js/28.9db90f18.js"><link rel="prefetch" href="/assets/js/29.05881e90.js"><link rel="prefetch" href="/assets/js/3.46495cfc.js"><link rel="prefetch" href="/assets/js/30.516431b3.js"><link rel="prefetch" href="/assets/js/31.3607b600.js"><link rel="prefetch" href="/assets/js/32.35c5d675.js"><link rel="prefetch" href="/assets/js/33.5d96d3f5.js"><link rel="prefetch" href="/assets/js/34.509c9c79.js"><link rel="prefetch" href="/assets/js/35.7ffd42ce.js"><link rel="prefetch" href="/assets/js/36.1053c9f1.js"><link rel="prefetch" href="/assets/js/37.61c66687.js"><link rel="prefetch" href="/assets/js/38.f2b6d1fe.js"><link rel="prefetch" href="/assets/js/39.0c15bee4.js"><link rel="prefetch" href="/assets/js/4.4c1fbf7f.js"><link rel="prefetch" href="/assets/js/40.0e065e61.js"><link rel="prefetch" href="/assets/js/41.c43aa855.js"><link rel="prefetch" href="/assets/js/42.7b9d1eb6.js"><link rel="prefetch" href="/assets/js/43.21011db4.js"><link rel="prefetch" href="/assets/js/44.110c0ce5.js"><link rel="prefetch" href="/assets/js/45.f69bb09b.js"><link rel="prefetch" href="/assets/js/46.122d5d84.js"><link rel="prefetch" href="/assets/js/47.e280e797.js"><link rel="prefetch" href="/assets/js/48.ca251f3b.js"><link rel="prefetch" href="/assets/js/49.73c0efff.js"><link rel="prefetch" href="/assets/js/5.dff147ca.js"><link rel="prefetch" href="/assets/js/50.f47ad140.js"><link rel="prefetch" href="/assets/js/51.56f9ca45.js"><link rel="prefetch" href="/assets/js/52.e1a618e1.js"><link rel="prefetch" href="/assets/js/53.b8efd89f.js"><link rel="prefetch" href="/assets/js/54.7a820da7.js"><link rel="prefetch" href="/assets/js/55.ce80a87f.js"><link rel="prefetch" href="/assets/js/56.a2fee563.js"><link rel="prefetch" href="/assets/js/57.12b14f2c.js"><link rel="prefetch" href="/assets/js/58.faf6459c.js"><link rel="prefetch" href="/assets/js/59.e50271c0.js"><link rel="prefetch" href="/assets/js/6.dad4ea54.js"><link rel="prefetch" href="/assets/js/60.090711dc.js"><link rel="prefetch" href="/assets/js/61.51a1448f.js"><link rel="prefetch" href="/assets/js/62.215a24b6.js"><link rel="prefetch" href="/assets/js/63.d5cfc07d.js"><link rel="prefetch" href="/assets/js/64.c30c2e64.js"><link rel="prefetch" href="/assets/js/65.0995d442.js"><link rel="prefetch" href="/assets/js/66.a3a58154.js"><link rel="prefetch" href="/assets/js/67.e13b67d1.js"><link rel="prefetch" href="/assets/js/7.86026caa.js"><link rel="prefetch" href="/assets/js/8.29b42fed.js"><link rel="prefetch" href="/assets/js/9.a1ee0e63.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a5340219.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">探索者</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  内核
+</a></div><div class="nav-item"><a href="/hardware/" class="nav-link">
+  硬件
+</a></div><div class="nav-item"><a href="/tools/" class="nav-link router-link-active">
+  工具
+</a></div><div class="nav-item"><a href="/coding/" class="nav-link">
+  编码
+</a></div><div class="nav-item"><a href="/virtualization/" class="nav-link">
+  虚拟化
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/linux/" class="nav-link">
+  内核
+</a></div><div class="nav-item"><a href="/hardware/" class="nav-link">
+  硬件
+</a></div><div class="nav-item"><a href="/tools/" class="nav-link router-link-active">
+  工具
+</a></div><div class="nav-item"><a href="/coding/" class="nav-link">
+  编码
+</a></div><div class="nav-item"><a href="/virtualization/" class="nav-link">
+  虚拟化
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>编译工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>调试工具</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>gdb</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tools/debugger/gdb/build-gdb/build-gdb.html" aria-current="page" class="active sidebar-link">编译全功能GDB</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tools/debugger/gdb/build-gdb/build-gdb.html#_1-概述" class="sidebar-link">1.概述</a></li><li class="sidebar-sub-header"><a href="/tools/debugger/gdb/build-gdb/build-gdb.html#_2-编译python" class="sidebar-link">2.编译python</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tools/debugger/gdb/build-gdb/build-gdb.html#_2-1-下载python" class="sidebar-link">2.1 下载python</a></li><li class="sidebar-sub-header"><a href="/tools/debugger/gdb/build-gdb/build-gdb.html#_2-2-编译python" class="sidebar-link">2.2 编译python</a></li></ul></li><li class="sidebar-sub-header"><a href="/tools/debugger/gdb/build-gdb/build-gdb.html#_3-编译gdb" class="sidebar-link">3.编译GDB</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tools/debugger/gdb/build-gdb/build-gdb.html#_3-1-下载gdb" class="sidebar-link">3.1 下载GDB</a></li><li class="sidebar-sub-header"><a href="/tools/debugger/gdb/build-gdb/build-gdb.html#_3-2-编译带有全功能的gdb" class="sidebar-link">3.2 编译带有全功能的gdb</a></li><li class="sidebar-sub-header"><a href="/tools/debugger/gdb/build-gdb/build-gdb.html#_3-3-测试" class="sidebar-link">3.3 测试</a></li><li class="sidebar-sub-header"><a href="/tools/debugger/gdb/build-gdb/build-gdb.html#_3-4-编译aarch64目标平台gdb" class="sidebar-link">3.4 编译aarch64目标平台gdb</a></li></ul></li><li class="sidebar-sub-header"><a href="/tools/debugger/gdb/build-gdb/build-gdb.html#小结" class="sidebar-link">小结</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>ramdump</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>编辑工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>命令工具</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="编译全功能gdb"><a href="#编译全功能gdb" class="header-anchor">#</a> 编译全功能GDB</h1> <hr> <table><thead><tr><th>软件版本</th> <th>硬件版本</th> <th>更新内容</th></tr></thead> <tbody><tr><td>gdb-10.1</td> <td>amd64</td> <td></td></tr></tbody></table> <hr> <h2 id="_1-概述"><a href="#_1-概述" class="header-anchor">#</a> 1.概述</h2> <p>平时我们使用<code>apt install gdb</code>或者<code>yum install gdb</code>安装的gdb,可能功能不是最全的，比如我的使用场景中会存在如下两个功能需求：</p> <ol><li>host 平台是x86_64，但目标平台是aarch64</li> <li>需要支持python，这样可以装插件或者做一些分析工具</li></ol> <p>普通方式安装的<code>gdb</code>无法满足需求，这时需要我们自己来编译安装具备特定功能的<code>gdb</code>.</p> <h2 id="_2-编译python"><a href="#_2-编译python" class="header-anchor">#</a> 2.编译python</h2> <p>这里为什么要编译python,原因是我们平时安装的python其实只是python的库和python解析器，但是我们在编译一些其他的软件时，是需要<code>libpythonxxx.so</code>,这种动态连接库的，所以我们需要编译python源码，当然你可以通过<code>apt install python-dev</code>来安装，我这里为了展示编译过程，选择从源来编译安装。</p> <h3 id="_2-1-下载python"><a href="#_2-1-下载python" class="header-anchor">#</a> 2.1 下载python</h3> <p>因为我们gdb只支持python2（只是从一些资料了解到，但没有从官方的文档中确认），所以我这下载<code>python2.7.18</code>代码，下载如下</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">wget</span> https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
+<span class="token function">tar</span> -xvf Python-2.7.18.tgz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="_2-2-编译python"><a href="#_2-2-编译python" class="header-anchor">#</a> 2.2 编译python</h3> <p>编译如下：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>
+<span class="token comment"># 新建安装目录</span>
+<span class="token function">mkdir</span> python-install
+
+<span class="token builtin class-name">cd</span> Python-2.7.18
+
+<span class="token comment"># 新建编译目录</span>
+<span class="token function">mkdir</span> build
+<span class="token builtin class-name">cd</span> build
+<span class="token comment"># 配置,这半 --prefix 安装路径必须是绝对路径</span>
+<span class="token punctuation">..</span>/configure --prefix<span class="token operator">=</span>/home/dongzaiq/Downloads/python-install --enable-shared
+
+
+<span class="token comment"># 编译安装</span>
+<span class="token function">make</span>
+<span class="token function">make</span> <span class="token function">install</span>
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>以上过程，如果需要缺少一些，请根据错误提示自行安装</p> <h2 id="_3-编译gdb"><a href="#_3-编译gdb" class="header-anchor">#</a> 3.编译GDB</h2> <h3 id="_3-1-下载gdb"><a href="#_3-1-下载gdb" class="header-anchor">#</a> 3.1 下载GDB</h3> <p>根据需要下载相应的<code>gdb</code>版本，我这里下载<code>8.3</code>版本</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">wget</span> http://ftp.gnu.org/gnu/gdb/gdb-10.1.tar.xz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_3-2-编译带有全功能的gdb"><a href="#_3-2-编译带有全功能的gdb" class="header-anchor">#</a> 3.2 编译带有全功能的gdb</h3> <p>过程如下：</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>
+<span class="token comment"># 解压</span>
+<span class="token function">tar</span> -xvf ./gdb-10.1.tar.xz
+<span class="token builtin class-name">cd</span> gdb-10.1
+
+<span class="token comment"># 新建编译目录</span>
+<span class="token function">mkdir</span> build
+<span class="token builtin class-name">cd</span> build
+
+<span class="token comment"># 这里python-install就是我们在`2.2`编译出来python</span>
+<span class="token punctuation">..</span>/configure --enable-python<span class="token operator">=</span><span class="token punctuation">..</span>/<span class="token punctuation">..</span>/python-install
+
+<span class="token comment"># 编译</span>
+<span class="token function">make</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="_3-3-测试"><a href="#_3-3-测试" class="header-anchor">#</a> 3.3 测试</h3> <p>编译完成，<code>build</code>目录下的内容如下</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>~/Downloads/gdb-10.1/build
+❯ <span class="token function">ls</span>
+bfd  config.log  config.status  etc  gdb  intl  libdecnumber  libiberty  Makefile  opcodes  readline  serdep.tmp  sim  zlib
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>编译好的<code>gdb</code>在<code>gdb/</code>
+测试过程如下：
+<img src="/assets/img/test-python.6fd0619b.svg" alt="test python" title="test python fucntion"></p> <h3 id="_3-4-编译aarch64目标平台gdb"><a href="#_3-4-编译aarch64目标平台gdb" class="header-anchor">#</a> 3.4 编译aarch64目标平台gdb</h3> <p>编译aarch64目标平台gdb，其实大体过程和上面一样，只是在<code>configure</code>时，加下如下选项</p> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code>configure --host<span class="token operator">=</span>x86_64-linux-gnu --target<span class="token operator">=</span>aarch64-linux-gnu
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="小结"><a href="#小结" class="header-anchor">#</a> 小结</h2> <p>在这里我们介绍编译带有<code>python2</code>功能和支持<code>aarch64</code>功能的<code>gdb</code>,如果你需要其实的gdb功能，也可以自己做配置，总之<code>gdb</code>是一个神器，用好它，可以帮助我们解析很多问题。</p> <hr> <div class="custom-block tip"><p class="custom-block-title">Tip</p> <p>欢迎评论、探讨,如果发现错误请指正。转载请注明出处！ <a href="http://www.tsz.wiki" target="_blank" rel="noopener noreferrer">探索者<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <hr> <!----></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新 :</span> <span class="time">4/21/2021, 9:33:46 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tools/builder/builder.html" class="prev">
+        Builder
+      </a></span> <span class="next"><a href="/tools/debugger/ramdump/ramdump.html">
+        RAMDUMP分析
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.3986ebce.js" defer></script><script src="/assets/js/2.aa8d3306.js" defer></script><script src="/assets/js/16.0f83efd4.js" defer></script>
+  </body>
+</html>
