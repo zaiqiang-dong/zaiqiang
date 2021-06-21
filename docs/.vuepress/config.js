@@ -289,7 +289,7 @@ module.exports = {
                     ]
 			    },
                 {
-			    	title: '总线协议',
+			    	title: '协议标准',
 			    	collapsable: true,
 			    	children: [
                         '../hardware/bus-protocol/noting.md'
@@ -426,10 +426,51 @@ module.exports = {
                     ]
 			    },
                 {
-                    title: '管理工具',
+                    title: '原理',
 				    collapsable: true,
                     children: [
-                        '../virtualization/tools/virt-install/virt-install.md'
+                        {
+                            title: 'cpu',
+				            collapsable: true,
+                            children: [
+                                '../virtualization/theory/cpu/noting.md'
+                            ]
+                        },
+                        {
+                            title: 'memory',
+				            collapsable: true,
+                            children: [
+                                '../virtualization/theory/memory/noting.md'
+                            ]
+                        },
+                        {
+                            title: 'interrupt',
+				            collapsable: true,
+                            children: [
+                                '../virtualization/theory/interrupt/full/noting.md'
+                                '../virtualization/theory/interrupt/para/noting.md'
+                                '../virtualization/theory/interrupt/int-mapping/noting.md'
+                            ]
+                        },
+                        {
+                            title: 'io',
+				            collapsable: true,
+                            children: [
+                                '../virtualization/theory/io/full/noting.md'
+                                '../virtualization/theory/io/virtio/noting.md'
+                                '../virtualization/theory/io/vhost/noting.md'
+                                '../virtualization/theory/io/passthrough/noting.md'
+                                '../virtualization/theory/io/sr-iov/noting.md'
+                            ]
+                        },
+                        {
+                            title: 'net',
+				            collapsable: true,
+                            children: [
+                                '../virtualization/theory/net/noting.md'
+                            ]
+                        },
+
                     ]
                 },
             ],
