@@ -447,20 +447,20 @@ module.exports = {
                             title: 'interrupt',
 				            collapsable: true,
                             children: [
-                                '../virtualization/theory/interrupt/full/noting.md'
-                                '../virtualization/theory/interrupt/para/noting.md'
-                                '../virtualization/theory/interrupt/int-mapping/noting.md'
+                                '../virtualization/theory/interrupt/full/noting.md',
+                                '../virtualization/theory/interrupt/para/noting.md',
+                                '../virtualization/theory/interrupt/int-mapping/noting.md',
                             ]
                         },
                         {
                             title: 'io',
 				            collapsable: true,
                             children: [
-                                '../virtualization/theory/io/full/noting.md'
-                                '../virtualization/theory/io/virtio/noting.md'
-                                '../virtualization/theory/io/vhost/noting.md'
-                                '../virtualization/theory/io/passthrough/noting.md'
-                                '../virtualization/theory/io/sr-iov/noting.md'
+                                '../virtualization/theory/io/full/noting.md',
+                                '../virtualization/theory/io/virtio/noting.md',
+                                '../virtualization/theory/io/vhost/noting.md',
+                                '../virtualization/theory/io/passthrough/noting.md',
+                                '../virtualization/theory/io/sr-iov/noting.md',
                             ]
                         },
                         {
