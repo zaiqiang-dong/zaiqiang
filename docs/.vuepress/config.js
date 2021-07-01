@@ -72,6 +72,10 @@ module.exports = {
 		    	link: '/coding/'
 		    },
 		    {
+		    	text: '调优',
+		    	link: '/optimization/'
+		    },
+		    {
 		    	text: '虚拟化',
 		    	link: '/virtualization/'
 		    },
