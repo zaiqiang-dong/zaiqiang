@@ -270,10 +270,10 @@ module.exports = {
             ],
 			'/tools/': [
                 {
-                    title: '编译工具',
+                    title: '命令工具',
 				    collapsable: true,
                     children: [
-                        '../tools/builder/builder.md'
+                        '../tools/cmd/cmd.md'
                     ]
                 },
                 {
@@ -284,14 +284,34 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '命令工具',
+                    title: '编译工具',
 				    collapsable: true,
                     children: [
-                        '../tools/cmd/cmd.md'
+                        '../tools/builder/builder.md'
                     ]
                 },
                 {
-			    	title: '系统工具',
+                    title: '调试工具',
+				    collapsable: true,
+                    children: [
+                        {
+                            title: 'gdb',
+			    	        collapsable: true,
+			    	        children: [
+                                '../tools/debugger/gdb/build-gdb/build-gdb.md'
+                            ]
+                        },
+                        {
+                            title: 'ramdump',
+			    	        collapsable: true,
+			    	        children: [
+                                '../tools/debugger/ramdump/ramdump.md'
+                            ]
+                        }
+                    ]
+                },
+                {
+			    	title: '调优工具',
 			    	collapsable: true,
                     children: [
                         {
@@ -317,27 +337,7 @@ module.exports = {
 			    	        children: []
                         }
                     ]
-			    },
-                {
-                    title: '调试工具',
-				    collapsable: true,
-                    children: [
-                        {
-                            title: 'gdb',
-			    	        collapsable: true,
-			    	        children: [
-                                '../tools/debugger/gdb/build-gdb/build-gdb.md'
-                            ]
-                        },
-                        {
-                            title: 'ramdump',
-			    	        collapsable: true,
-			    	        children: [
-                                '../tools/debugger/ramdump/ramdump.md'
-                            ]
-                        }
-                    ]
-                }
+			    }
             ],
 			'/coding/': [
                 {
