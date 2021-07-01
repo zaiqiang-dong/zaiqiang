@@ -169,34 +169,6 @@ module.exports = {
                     ]
 			    },
                 {
-			    	title: '系统工具',
-			    	collapsable: true,
-                    children: [
-                        {
-                            title: 'common',
-			    	        collapsable: true,
-			    	        children: []
-                        },
-                        {
-                            title: 'ftrace',
-			    	        collapsable: true,
-			    	        children: [
-                                '../linux/tools/ftrace/file-interface/file-interface.md'
-                            ]
-                        },
-                        {
-                            title: 'perf',
-			    	        collapsable: true,
-			    	        children: []
-                        },
-                        {
-                            title: 'bpf',
-			    	        collapsable: true,
-			    	        children: []
-                        }
-                    ]
-			    },
-                {
 			    	title: '系统机制',
 			    	collapsable: true,
 			    	children: [
@@ -305,6 +277,48 @@ module.exports = {
                     ]
                 },
                 {
+                    title: '编辑工具',
+				    collapsable: true,
+                    children: [
+                        '../tools/editor/editor.md'
+                    ]
+                },
+                {
+                    title: '命令工具',
+				    collapsable: true,
+                    children: [
+                        '../tools/cmd/cmd.md'
+                    ]
+                },
+                {
+			    	title: '系统工具',
+			    	collapsable: true,
+                    children: [
+                        {
+                            title: 'common',
+			    	        collapsable: true,
+			    	        children: []
+                        },
+                        {
+                            title: 'ftrace',
+			    	        collapsable: true,
+			    	        children: [
+                                '../tools/kernel-tools/ftrace/file-interface/file-interface.md'
+                            ]
+                        },
+                        {
+                            title: 'perf',
+			    	        collapsable: true,
+			    	        children: []
+                        },
+                        {
+                            title: 'bpf',
+			    	        collapsable: true,
+			    	        children: []
+                        }
+                    ]
+			    },
+                {
                     title: '调试工具',
 				    collapsable: true,
                     children: [
@@ -322,20 +336,6 @@ module.exports = {
                                 '../tools/debugger/ramdump/ramdump.md'
                             ]
                         }
-                    ]
-                },
-                {
-                    title: '编辑工具',
-				    collapsable: true,
-                    children: [
-                        '../tools/editor/editor.md'
-                    ]
-                },
-                {
-                    title: '命令工具',
-				    collapsable: true,
-                    children: [
-                        '../tools/cmd/cmd.md'
                     ]
                 }
             ],
