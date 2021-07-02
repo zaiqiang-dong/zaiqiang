@@ -1,6 +1,6 @@
 module.exports = {
-	title: '探索者',
-	description: '-> 在 LINUX ANDROID 中不断探索 <-',
+    title: '探索者',
+    description: '-> 在 LINUX ANDROID 中不断探索 <-',
     lang : 'zh-CN',
     //git hub
     repo : '/zaiqiang-dong/zaiqiang/',
@@ -11,27 +11,27 @@ module.exports = {
     editLinks: true,
     editLinkText: '帮助我改善此页面！',
     //
-	head: [['link', {
-		rel: 'icon',
-		href: '/hero.png'
-	}]],
-	markdown: {
-		lineNumbers: true,
-	},
-	plugins: [
+    head: [['link', {
+        rel: 'icon',
+        href: '/hero.png'
+    }]],
+    markdown: {
+        lineNumbers: true,
+    },
+    plugins: [
         ['mathjax', {
-		    target: 'svg',
-		    macros: {
-			    '*': '\\times'
-		    }
-	    }],
+            target: 'svg',
+            macros: {
+                '*': '\\times'
+            }
+        }],
         ['container', {
-		    type: 'right',
-		    defaultTitle: '',
-	    }],
+            type: 'right',
+            defaultTitle: '',
+        }],
         ['container', {
-		    type: 'theorem',
-		    before: info => `<div class="theorem"><p class="title">${info}</p>`,
+            type: 'theorem',
+            before: info => `<div class="theorem"><p class="title">${info}</p>`,
             after: '</div>'
         }],
         ['@vuepress/google-analytics',{
@@ -47,338 +47,343 @@ module.exports = {
             clientId: '01a047c7f3aceebf8a0c',
             clientSecret: '419c684ff0462df5cbe99c3d43ef0705ae0297a4',
         }],
-	],
-	themeConfig: {
+    ],
+    themeConfig: {
         lastUpdated: '最近更新 ',
-		nav: [
+        nav: [
             {
-			    text: '主页',
-			    link: '/'
-		    },
-		    {
-			    text: '内核',
-			    link: '/linux/'
-		    },
-		    {
-		    	text: '硬件',
-		    	link: '/hardware/'
-		    },
-		    {
-		    	text: '工具',
-		    	link: '/tools/'
-		    },
-		    {
-		    	text: '编码',
-		    	link: '/coding/'
-		    },
-		    {
-		    	text: '调优',
-		    	link: '/optimization/'
-		    },
-		    {
-		    	text: '虚拟化',
-		    	link: '/virtualization/'
-		    },
-		    {
-		    	text: '关于',
-		    	link: '/about/'
-		    }
+                text: '主页',
+                link: '/'
+            },
+            {
+                text: '内核',
+                link: '/linux/'
+            },
+            {
+                text: '硬件',
+                link: '/hardware/'
+            },
+            {
+                text: '工具',
+                link: '/tools/'
+            },
+            {
+                text: '编码',
+                link: '/coding/'
+            },
+            {
+                text: '调优',
+                link: '/optimization/'
+            },
+            {
+                text: '虚拟化',
+                link: '/virtualization/'
+            },
+            {
+                text: '关于',
+                link: '/about/'
+            }
         ],
-		sidebarDepth: 3,
-		sidebar: {
-			'/linux/': [
+        sidebarDepth: 3,
+        sidebar: {
+            '/linux/': [
                 {
-			    	title: '内存管理',
-			    	collapsable: true,
+                    title: '内存管理',
+                    collapsable: true,
                     children: [
                         {
                             title: 'common',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../linux/memory/common/modle/modle.md',
                             ]
                         },
                         {
                             title: 'buddy',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '/linux/memory/buddy/alloc-flags/alloc-flags.md',
                                 '/linux/memory/buddy/wartermark/watermark.md'
                             ]
                         },
                         {
                             title: 'slxb',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../linux/memory/slub/slub_order/slub_order.md'
                             ]
                         }
                     ]
-			    },
+                },
                 {
-			    	title: '文件系统',
-			    	collapsable: true,
+                    title: '文件系统',
+                    collapsable: true,
                     children: [
                         {
                             title: 'root-fs',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '/linux/filesystem/initrd-principles/initrd-principles.md',
                                 '/linux/filesystem/make-ubuntu-initrd/make-ubuntu-initrd.md'
                             ]
                         }
                     ]
-			    },
+                },
                 {
-			    	title: '并发同步',
-			    	collapsable: true,
-			    	children: [
+                    title: '并发同步',
+                    collapsable: true,
+                    children: [
                         {
                             title: 'barriers',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../linux/parallel/barriers/overview/overview.md',
                                 '../linux/parallel/barriers/principle/principle.md'
                             ]
                         }
                     ]
-			    },
-			    {
-			    	title: '进程管理',
-			    	collapsable: true,
-			    	children: [
+                },
+                {
+                    title: '进程管理',
+                    collapsable: true,
+                    children: [
                         '../linux/process/weight/weight.md',
                         '../linux/process/priority/priority.md',
                         '../linux/process/pelt/pelt.md'
                     ]
-			    },
+                },
                 {
-			    	title: '中断系统',
-			    	collapsable: true,
-			    	children: [
+                    title: '中断系统',
+                    collapsable: true,
+                    children: [
                         {
                             title: 'common',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../linux/interrupt/common/interrupt-sleep/interrupt-sleep.md'
                             ]
                         }
                     ]
-			    },
+                },
                 {
-			    	title: '安全机制',
-			    	collapsable: true,
-			    	children: [
+                    title: '安全机制',
+                    collapsable: true,
+                    children: [
                         '../linux/selinux/AndroidSelinux/Selinux.md'
                     ]
-			    },
+                },
                 {
-			    	title: '系统机制',
-			    	collapsable: true,
-			    	children: [
+                    title: '系统机制',
+                    collapsable: true,
+                    children: [
                         '../linux/mechanism/noting.md'
                     ]
-			    },
+                },
                 {
-			    	title: '系统信号',
-			    	collapsable: true,
-			    	children: [
+                    title: '系统信号',
+                    collapsable: true,
+                    children: [
                         '../linux/signal/noting.md'
                     ]
-			    },
+                },
                 {
-			    	title: '电源管理',
-			    	collapsable: true,
-			    	children: [
+                    title: '电源管理',
+                    collapsable: true,
+                    children: [
                         '../linux/power/noting.md'
                     ]
-			    },
+                },
                 {
-			    	title: '时间系统',
-			    	collapsable: true,
-			    	children: [
+                    title: '时间系统',
+                    collapsable: true,
+                    children: [
                         '../linux/timesystem/noting.md'
                     ]
-			    },
+                },
             ],
-			'/hardware/': [
+            '/hardware/': [
                 {
-			    	title: '处理器',
-			    	collapsable: true,
-			    	children: [
+                    title: '处理器',
+                    collapsable: true,
+                    children: [
                         {
                             title: 'COMMON',
-			    	        collapsable: true,
-			    	        children: []
+                            collapsable: true,
+                            children: []
                         },
                         {
                             title: 'ARM',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../hardware/cpu/arm/intro/intro.md'
                             ]
                         }
                     ]
-			    },
+                },
                 {
-			    	title: '内存',
-			    	collapsable: true,
-			    	children: [
+                    title: '内存',
+                    collapsable: true,
+                    children: [
                         {
                             title: 'COMMON',
-			    	        collapsable: true,
-			    	        children: []
+                            collapsable: true,
+                            children: []
                         },
                         {
                             title: 'ARM',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../hardware/memory/arm/vmsa/vmsa_intro/vmsa_intro.md',
                                 '../hardware/memory/arm/vmsa/vmsa_page/vmsa_page.md'
                             ]
                         }
                     ]
-			    },
+                },
                 {
-			    	title: '地址空间',
-			    	collapsable: true,
-			    	children: [
+                    title: '地址空间',
+                    collapsable: true,
+                    children: [
                         {
                             title: 'COMMON',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../hardware/address-space/common/intro/intro.md',
                             ]
                         },
                         {
                             title: 'ARM',
-			    	        collapsable: true,
-			    	        children: []
+                            collapsable: true,
+                            children: []
                         },
                         {
                             title: 'X86',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../hardware/address-space/x86/x86-addr-space/x86-addr-space.md'
                             ]
                         },
                     ]
-			    },
+                },
                 {
-			    	title: '协议标准',
-			    	collapsable: true,
-			    	children: [
+                    title: '协议标准',
+                    collapsable: true,
+                    children: [
                         '../hardware/bus-protocol/noting.md'
                     ]
-			    },
+                },
             ],
-			'/tools/': [
+            '/tools/': [
                 {
                     title: '命令工具',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         '../tools/cmd/cmd.md'
                     ]
                 },
                 {
                     title: '编辑工具',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         '../tools/editor/editor.md'
                     ]
                 },
                 {
                     title: '编译工具',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
-                        '../tools/builder/builder.md'
+                        {
+                            title: 'common',
+                            collapsable: true,
+                            children: [
+                            ]
+                        },
                     ]
                 },
                 {
                     title: '调试工具',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         {
                             title: 'gdb',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../tools/debugger/gdb/build-gdb/build-gdb.md'
                             ]
                         },
                         {
                             title: 'ramdump',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../tools/debugger/ramdump/ramdump.md'
                             ]
                         }
                     ]
                 },
                 {
-			    	title: '调优工具',
-			    	collapsable: true,
+                    title: '调优工具',
+                    collapsable: true,
                     children: [
                         {
                             title: 'common',
-			    	        collapsable: true,
-			    	        children: []
+                            collapsable: true,
+                            children: []
                         },
                         {
                             title: 'ftrace',
-			    	        collapsable: true,
-			    	        children: [
+                            collapsable: true,
+                            children: [
                                 '../tools/kernel-tools/ftrace/file-interface/file-interface.md'
                             ]
                         },
                         {
                             title: 'perf',
-			    	        collapsable: true,
-			    	        children: []
+                            collapsable: true,
+                            children: []
                         },
                         {
                             title: 'bpf',
-			    	        collapsable: true,
-			    	        children: []
+                            collapsable: true,
+                            children: []
                         }
                     ]
-			    }
+                }
             ],
-			'/coding/': [
+            '/coding/': [
                 {
                     title: '数据结构',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         '../coding/datastruct/noting.md'
                     ]
                 },
                 {
                     title: '算法分析',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         '../coding/algorithm/noting.md'
                     ]
                 },
                 {
                     title: '并行编程',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         '../coding/parallel/noting.md'
                     ]
                 },
                 {
                     title: '系统机制',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         '../coding/mechanism/noting.md'
                     ]
                 },
                 {
                     title: '常用类库',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         {
                             title: 'glib',
-				            collapsable: true,
+                            collapsable: true,
                             children: [
                                 '../coding/libs/glib/noting.md'
                             ]
@@ -387,34 +392,34 @@ module.exports = {
                 },
                 {
                     title: '编程语言',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         {
                             title: 'c',
-				            collapsable: true,
+                            collapsable: true,
                             children: []
                         },
                         {
                             title: 'shell',
-				            collapsable: true,
+                            collapsable: true,
                             children: []
                         },
                         {
                             title: 'python',
-				            collapsable: true,
+                            collapsable: true,
                             children: []
                         }
                     ]
                 }
             ],
-			'/virtualization/': [
+            '/virtualization/': [
                 {
                     title: 'QEMU',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         {
                             title: 'components',
-				            collapsable: true,
+                            collapsable: true,
                             children: [
                                 '../virtualization/qemu/component/qom/qom.md'
                             ]
@@ -423,33 +428,33 @@ module.exports = {
                     ]
                 },
                 {
-			    	title: 'KVM',
-			    	collapsable: true,
-			    	children: [
+                    title: 'KVM',
+                    collapsable: true,
+                    children: [
                         '../virtualization/kvm/noting.md'
                     ]
-			    },
+                },
                 {
                     title: '原理',
-				    collapsable: true,
+                    collapsable: true,
                     children: [
                         {
                             title: 'cpu',
-				            collapsable: true,
+                            collapsable: true,
                             children: [
                                 '../virtualization/theory/cpu/noting.md'
                             ]
                         },
                         {
                             title: 'memory',
-				            collapsable: true,
+                            collapsable: true,
                             children: [
                                 '../virtualization/theory/memory/noting.md'
                             ]
                         },
                         {
                             title: 'interrupt',
-				            collapsable: true,
+                            collapsable: true,
                             children: [
                                 '../virtualization/theory/interrupt/full/noting.md',
                                 '../virtualization/theory/interrupt/para/noting.md',
@@ -458,7 +463,7 @@ module.exports = {
                         },
                         {
                             title: 'io',
-				            collapsable: true,
+                            collapsable: true,
                             children: [
                                 '../virtualization/theory/io/full/noting.md',
                                 '../virtualization/theory/io/virtio/noting.md',
@@ -469,7 +474,7 @@ module.exports = {
                         },
                         {
                             title: 'net',
-				            collapsable: true,
+                            collapsable: true,
                             children: [
                                 '../virtualization/theory/net/noting.md'
                             ]
@@ -478,7 +483,7 @@ module.exports = {
                     ]
                 },
             ],
-		}
-	},
+        }
+    },
 }
 
