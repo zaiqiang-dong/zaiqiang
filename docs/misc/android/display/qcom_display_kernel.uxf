@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1920</x>
+      <y>920</y>
+      <w>210</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>mdss_panel_data
+lw=2
+--
+
+	struct mdss_panel_info panel_info;
+	void (*set_backlight) (struct mdss_panel_data *pdata, u32 bl_level);
+	int (*apply_display_setting)(struct mdss_panel_data *pdata, u32 mode);
+	unsigned char *mmss_cc_base;
+
+	/**
+	 * event_handler() - callback handler for MDP core events
+	 * @pdata:	Pointer refering to the panel struct associated to this
+	 *		event. Can be used to retrieve panel info.
+	 * @e:		Event being generated, see enum mdss_intf_events
+	 * @arg:	Optional argument to pass some info from some events.
+	 *
+	 * Used to register handler to be used to propagate different events
+	 * happening in MDP core driver. Panel driver can listen for any of
+	 * these events to perform appropriate actions for panel initialization
+	 * and teardown.
+	 */
+	int (*event_handler) (struct mdss_panel_data *pdata, int e, void *arg);
+	struct device_node *(*get_fb_node)(struct platform_device *pdev);
+
+	struct list_head timings_list;
+	struct mdss_panel_timing *current_timing;
+	bool active;
+
+	/* To store dsc cfg name passed by bootloader */
+	char dsc_cfg_np_name[MDSS_MAX_PANEL_LEN];
+	struct mdss_panel_data *next;
+
+	/*
+	 * Set when the power of the panel is disabled while dsi/mdp
+	 * are still on; panel will recover after unblank
+	 */
+	bool panel_disable_mode;
+
+	int panel_te_gpio;
+	struct completion te_done;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1580</x>
+      <y>770</y>
+      <w>240</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>mdss_dsi_ctrl_pdata
+lw=2
+--
+
+	int ndx;	/* panel_num */
+	int (*on) (struct mdss_panel_data *pdata);
+	int (*post_panel_on)(struct mdss_panel_data *pdata);
+	int (*off) (struct mdss_panel_data *pdata);
+	int (*low_power_config) (struct mdss_panel_data *pdata, int enable);
+	int (*set_col_page_addr)(struct mdss_panel_data *pdata, bool force);
+	int (*check_status) (struct mdss_dsi_ctrl_pdata *pdata);
+	int (*check_read_status) (struct mdss_dsi_ctrl_pdata *pdata);
+	int (*cmdlist_commit)(struct mdss_dsi_ctrl_pdata *ctrl, int from_mdp);
+	void (*switch_mode) (struct mdss_panel_data *pdata, int mode);
+	struct mdss_panel_data panel_data;
+	unsigned char *ctrl_base;
+	struct dss_io_data ctrl_io;
+	struct dss_io_data mmss_misc_io;
+	struct dss_io_data phy_io;
+	struct dss_io_data phy_regulator_io;
+	int reg_size;
+	u32 flags;
+	struct clk *byte_clk;
+	struct clk *esc_clk;
+	struct clk *pixel_clk;
+	struct clk *mux_byte_clk;
+	struct clk *mux_pixel_clk;
+	struct clk *pll_byte_clk;
+	struct clk *pll_pixel_clk;
+	struct clk *shadow_byte_clk;
+	struct clk *shadow_pixel_clk;
+	struct clk *byte_clk_rcg;
+	struct clk *pixel_clk_rcg;
+	struct clk *vco_dummy_clk;
+	struct clk *byte_intf_clk;
+	u8 ctrl_state;
+	int panel_mode;
+	int irq_cnt;
+	int disp_te_gpio;
+	int rst_gpio;
+	int disp_en_gpio;
+	int bklt_en_gpio;
+	bool bklt_en_gpio_invert;
+	bool bklt_en_gpio_state;
+	int avdd_en_gpio;
+	bool avdd_en_gpio_invert;
+	int lcd_mode_sel_gpio;
+	int bklt_ctrl;	/* backlight ctrl */
+	enum dsi_ctrl_op_mode bklt_dcs_op_mode; /* backlight dcs ctrl mode */
+	bool pwm_pmi;
+	int pwm_period;
+	int pwm_pmic_gpio;
+	int pwm_lpg_chan;
+	int bklt_max;
+	int new_fps;
+	int pwm_enabled;
+	int clk_lane_cnt;
+	bool dmap_iommu_map;
+	bool dsi_irq_line;
+	bool dcs_cmd_insert;
+	atomic_t te_irq_ready;
+
+	bool cmd_sync_wait_broadcast;
+	bool cmd_sync_wait_trigger;
+
+	struct mdss_rect roi;
+	struct mdss_dsi_dual_pu_roi dual_roi;
+	struct pwm_device *pwm_bl;
+	u32 pclk_rate;
+	u32 byte_clk_rate;
+	u32 pclk_rate_bkp;
+	u32 byte_clk_rate_bkp;
+	u32 esc_clk_rate_hz;
+	bool refresh_clk_rate; /* flag to recalculate clk_rate */
+	struct dss_module_power panel_power_data;
+	struct dss_module_power power_data[DSI_MAX_PM]; /* for 8x10 */
+	u32 dsi_irq_mask;
+	struct mdss_hw *dsi_hw;
+	struct mdss_intf_recovery *recovery;
+	struct mdss_intf_recovery *mdp_callback;
+	struct mdss_intf_ulp_clamp *clamp_handler;
+
+	struct dsi_panel_cmds on_cmds;
+	struct dsi_panel_cmds post_dms_on_cmds;
+	struct dsi_panel_cmds post_panel_on_cmds;
+	struct dsi_panel_cmds off_cmds;
+	struct dsi_panel_cmds lp_on_cmds;
+	struct dsi_panel_cmds lp_off_cmds;
+	struct dsi_panel_cmds status_cmds;
+	u32 *status_valid_params;
+	u32 *status_cmds_rlen;
+	u32 *status_value;
+	unsigned char *return_buf;
+	u32 groups; /* several alternative values to compare */
+	u32 status_error_count;
+	u32 max_status_error_count;
+
+	struct dsi_panel_cmds video2cmd;
+	struct dsi_panel_cmds cmd2video;
+
+	char pps_buf[DSC_PPS_LEN];	/* dsc pps */
+
+	struct dcs_cmd_list cmdlist;
+	struct completion dma_comp;
+	struct completion mdp_comp;
+	struct completion video_comp;
+	struct completion dynamic_comp;
+	struct completion bta_comp;
+	spinlock_t irq_lock;
+	spinlock_t mdp_lock;
+	int mdp_busy;
+	struct mutex mutex;
+	struct mutex cmd_mutex;
+	struct mutex cmdlist_mutex;
+	struct regulator *lab; /* vreg handle */
+	struct regulator *ibb; /* vreg handle */
+	struct mutex clk_lane_mutex;
+
+	bool null_insert_enabled;
+	bool ulps;
+	bool core_power;
+	bool mmss_clamp;
+
+	/*
+	 * Data lane swap (logical to physical lane map):
+	 *     dlane_swap: used for DSI controller versions &lt; 2.0, where
+	 *               dlane_swap is of type enum dsi_lane_map_type
+	 *     lane_map: used for DSI controller versions &gt; 2.0, where
+	 *               lane_map[logical_lane_id] = physical_lane_id
+	 */
+	char dlane_swap;
+	uint8_t lane_map[DSI_LOGICAL_LANE_MAX];
+
+	bool is_phyreg_enabled;
+	bool burst_mode_enabled;
+
+	struct dsi_buf tx_buf;
+	struct dsi_buf rx_buf;
+	struct dsi_buf status_buf;
+	int status_mode;
+	int rx_len;
+	int cur_max_pkt_size;
+
+	struct dsi_pinctrl_res pin_res;
+
+	unsigned long dma_size;
+	dma_addr_t dma_addr;
+	bool cmd_cfg_restore;
+	bool do_unicast;
+
+	bool idle_enabled;
+	int horizontal_idle_cnt;
+	struct panel_horizontal_idle *line_idle;
+	struct mdss_util_intf *mdss_util;
+	struct dsi_shared_data *shared_data;
+
+	void *clk_mngr;
+	void *dsi_clk_handle;
+	void *mdp_clk_handle;
+	int m_dsi_vote_cnt;
+	int m_mdp_vote_cnt;
+	/* debugfs structure */
+	struct mdss_dsi_debugfs_info *debugfs_info;
+
+	struct dsi_err_container err_cont;
+
+	struct kobject *kobj;
+	int fb_node;
+
+	/* DBA data */
+	struct workqueue_struct *workq;
+	struct delayed_work dba_work;
+	char bridge_name[MSM_DBA_CHIP_NAME_MAX_LEN];
+	uint32_t bridge_index;
+	bool ds_registered;
+
+	bool timing_db_mode;
+	bool update_phy_timing; /* flag to recalculate PHY timings */
+
+	bool phy_power_off;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1290</x>
+      <y>330</y>
+      <w>210</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>msm_mdp_interface
+lw=2
+--
+
+	int (*fb_mem_alloc_fnc)(struct msm_fb_data_type *mfd);
+	int (*fb_mem_get_iommu_domain)(void);
+	int (*init_fnc)(struct msm_fb_data_type *mfd);
+	int (*on_fnc)(struct msm_fb_data_type *mfd);
+	int (*off_fnc)(struct msm_fb_data_type *mfd);
+	/* called to release resources associated to the process */
+	int (*release_fnc)(struct msm_fb_data_type *mfd, struct file *file);
+	int (*mode_switch)(struct msm_fb_data_type *mfd,
+					u32 mode);
+	int (*mode_switch_post)(struct msm_fb_data_type *mfd,
+					u32 mode);
+	int (*kickoff_fnc)(struct msm_fb_data_type *mfd,
+					struct mdp_display_commit *data);
+	int (*atomic_validate)(struct msm_fb_data_type *mfd, struct file *file,
+				struct mdp_layer_commit_v1 *commit);
+	bool (*is_config_same)(struct msm_fb_data_type *mfd,
+				struct mdp_output_layer *layer);
+	int (*pre_commit)(struct msm_fb_data_type *mfd, struct file *file,
+				struct mdp_layer_commit_v1 *commit);
+	int (*pre_commit_fnc)(struct msm_fb_data_type *mfd);
+	int (*ioctl_handler)(struct msm_fb_data_type *mfd, u32 cmd, void *arg);
+	void (*dma_fnc)(struct msm_fb_data_type *mfd);
+	int (*cursor_update)(struct msm_fb_data_type *mfd,
+				struct fb_cursor *cursor);
+	int (*async_position_update)(struct msm_fb_data_type *mfd,
+				struct mdp_position_update *update_pos);
+	int (*lut_update)(struct msm_fb_data_type *mfd, struct fb_cmap *cmap);
+	int (*do_histogram)(struct msm_fb_data_type *mfd,
+				struct mdp_histogram *hist);
+	int (*ad_calc_bl)(struct msm_fb_data_type *mfd, int bl_in,
+		int *bl_out, bool *bl_out_notify);
+	int (*panel_register_done)(struct mdss_panel_data *pdata);
+	u32 (*fb_stride)(u32 fb_index, u32 xres, int bpp);
+	struct mdss_mdp_format_params *(*get_format_params)(u32 format);
+	int (*splash_init_fnc)(struct msm_fb_data_type *mfd);
+	void (*check_dsi_status)(struct work_struct *work, uint32_t interval);
+	int (*configure_panel)(struct msm_fb_data_type *mfd, int mode,
+				int dest_ctrl);
+	int (*input_event_handler)(struct msm_fb_data_type *mfd);
+	void (*footswitch_ctrl)(bool on);
+	int (*pp_release_fnc)(struct msm_fb_data_type *mfd);
+	void *private1;
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>30</y>
+      <w>220</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>mdss_mdp_data
+lw=2
+--
+	enum mdss_mdp_data_state state;
+	u8 num_planes;
+	struct mdss_mdp_img_data p[MAX_PLANES];
+	struct list_head buf_list;
+	struct list_head pipe_list;
+	struct list_head chunk_list;
+	u64 last_alloc;
+	u64 last_freed;
+	struct mdss_mdp_pipe *last_pipe;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>610</y>
+      <w>220</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>msm_fb_data_type
+lw=2
+--
+
+	u32 key;
+	u32 index;
+	u32 ref_cnt;
+	u32 fb_page;
+
+	struct panel_id panel;
+	struct mdss_panel_info *panel_info;
+	struct mdss_panel_info reconfig_panel_info;
+	int split_mode;
+	int split_fb_left;
+	int split_fb_right;
+
+	u32 dest;
+	struct fb_info *fbi;
+
+	int idle_time;
+	u32 idle_state;
+	struct msm_fb_fps_info fps_info;
+	struct delayed_work idle_notify_work;
+
+	bool atomic_commit_pending;
+
+	int op_enable;
+	u32 fb_imgType;
+	int panel_reconfig;
+	u32 panel_orientation;
+
+	u32 dst_format;
+	int panel_power_state;
+	struct disp_info_type_suspend suspend;
+
+	struct dma_buf *dbuf;
+	struct dma_buf_attachment *attachment;
+	struct sg_table *table;
+	dma_addr_t iova;
+	void *cursor_buf;
+	phys_addr_t cursor_buf_phys;
+	dma_addr_t cursor_buf_iova;
+
+	int ext_ad_ctrl;
+	u32 ext_bl_ctrl;
+	u32 calib_mode;
+	u32 calib_mode_bl;
+	u32 ad_bl_level;
+	u32 bl_level;
+	int bl_extn_level;
+	u32 bl_scale;
+	u32 unset_bl_level;
+	bool allow_bl_update;
+	u32 bl_level_scaled;
+	u32 bl_level_usr;
+	struct mutex bl_lock;
+	struct mutex mdss_sysfs_lock;
+	bool ipc_resume;
+
+	struct platform_device *pdev;
+
+	u32 mdp_fb_page_protection;
+
+	struct disp_info_notify update;
+	struct disp_info_notify no_update;
+	struct completion power_off_comp;
+
+	struct msm_mdp_interface mdp;
+
+	struct msm_sync_pt_data mdp_sync_pt_data;
+
+	/* for non-blocking */
+	struct task_struct *disp_thread;
+	atomic_t commits_pending;
+	atomic_t kickoff_pending;
+	wait_queue_head_t commit_wait_q;
+	wait_queue_head_t idle_wait_q;
+	wait_queue_head_t kickoff_wait_q;
+	bool shutdown_pending;
+
+	struct msm_fb_splash_info splash_info;
+
+	wait_queue_head_t ioctl_q;
+	atomic_t ioctl_ref_cnt;
+
+	struct msm_fb_backup_type msm_fb_backup;
+	struct completion power_set_comp;
+	u32 is_power_setting;
+
+	u32 dcm_state;
+	struct list_head file_list;
+	struct ion_client *fb_ion_client;
+	struct ion_handle *fb_ion_handle;
+	struct dma_buf *fbmem_buf;
+	struct dma_buf_attachment *fb_attachment;
+	struct sg_table *fb_table;
+
+	bool mdss_fb_split_stored;
+
+	u32 wait_for_kickoff;
+	u32 thermal_level;
+
+	int fb_mmap_type;
+	struct led_trigger *boot_notification_led;
+
+	/* Following is used for dynamic mode switch */
+	enum dyn_mode_switch_state switch_state;
+	u32 switch_new_mode;
+	bool pending_switch;
+	struct mutex switch_lock;
+	struct input_handler *input_handler;
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>350</y>
+      <w>240</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>mdss_data_type
+lw=2
+--
+
+	u32 mdp_rev;
+	struct clk *mdp_clk[MDSS_MAX_CLK];
+	struct regulator *fs;
+	struct regulator *core_gdsc;
+	struct regulator *vdd_cx;
+	u32 vdd_cx_min_uv;
+	u32 vdd_cx_max_uv;
+	bool batfet_required;
+	struct regulator *batfet;
+	bool en_svs_high;
+	u32 max_mdp_clk_rate;
+	struct mdss_util_intf *mdss_util;
+	unsigned long mdp_clk_rate;
+
+	struct platform_device *pdev;
+	struct dss_io_data mdss_io;
+	struct dss_io_data vbif_io;
+	struct dss_io_data vbif_nrt_io;
+	char __iomem *mdp_base;
+
+	struct mdss_smmu_client mdss_smmu[MDSS_IOMMU_MAX_DOMAIN];
+	struct mdss_smmu_ops smmu_ops;
+	struct mutex reg_lock;
+
+	/* bitmap to track pipes that have BWC enabled */
+	DECLARE_BITMAP(bwc_enable_map, MAX_DRV_SUP_PIPES);
+	/* bitmap to track hw workarounds */
+	DECLARE_BITMAP(mdss_quirk_map, MDSS_QUIRK_MAX);
+	/* bitmap to track total mmbs in use */
+	DECLARE_BITMAP(mmb_alloc_map, MAX_DRV_SUP_MMB_BLKS);
+	/* bitmap to track qos applicable settings */
+	DECLARE_BITMAP(mdss_qos_map, MDSS_QOS_MAX);
+	/* bitmap to track hw capabilities/features */
+	DECLARE_BITMAP(mdss_caps_map, MDSS_CAPS_MAX);
+
+	u32 has_bwc;
+	/* values used when HW has a common panic/robust LUT */
+	u32 default_panic_lut0;
+	u32 default_panic_lut1;
+	u32 default_robust_lut;
+
+	/* values used when HW has panic/robust LUTs per pipe */
+	u32 default_panic_lut_per_pipe_linear;
+	u32 default_panic_lut_per_pipe_tile;
+	u32 default_robust_lut_per_pipe_linear;
+	u32 default_robust_lut_per_pipe_tile;
+
+	u32 has_decimation;
+	bool has_fixed_qos_arbiter_enabled;
+	bool has_panic_ctrl;
+	u32 wfd_mode;
+	u32 has_no_lut_read;
+	atomic_t sd_client_count;
+	atomic_t sc_client_count;
+	u8 has_wb_ad;
+	u8 has_non_scalar_rgb;
+	bool has_src_split;
+	bool idle_pc_enabled;
+	bool has_pingpong_split;
+	bool has_pixel_ram;
+	bool needs_hist_vote;
+	bool has_ubwc;
+	bool has_wb_ubwc;
+	bool has_separate_rotator;
+
+	u32 default_ot_rd_limit;
+	u32 default_ot_wr_limit;
+
+	struct irq_domain *irq_domain;
+	u32 *mdp_irq_raw;
+	u32 *mdp_irq_export;
+	u32 *mdp_irq_mask;
+	u32 mdp_hist_irq_mask;
+	u32 mdp_intf_irq_mask;
+
+	int suspend_fs_ena;
+	u8 clk_ena;
+	u8 fs_ena;
+	u8 vsync_ena;
+
+	struct notifier_block gdsc_cb;
+
+	u32 res_init;
+
+	u32 highest_bank_bit;
+	u32 smp_mb_cnt;
+	u32 smp_mb_size;
+	u32 smp_mb_per_pipe;
+	u32 pixel_ram_size;
+
+	u32 rot_block_size;
+
+	/* HW RT  bus (AXI) */
+	u32 hw_rt_bus_hdl;
+	u32 hw_rt_bus_ref_cnt;
+
+	/* data bus (AXI) */
+	u32 bus_hdl;
+	u32 bus_ref_cnt;
+	struct mutex bus_lock;
+
+	/* register bus (AHB) */
+	u32 reg_bus_hdl;
+	u32 reg_bus_usecase_ndx;
+	struct list_head reg_bus_clist;
+	struct mutex reg_bus_lock;
+	struct reg_bus_client *reg_bus_clt;
+	struct reg_bus_client *pp_reg_bus_clt;
+
+	u32 axi_port_cnt;
+	u32 nrt_axi_port_cnt;
+	u32 bus_channels;
+	u32 curr_bw_uc_idx;
+	u32 ao_bw_uc_idx; /* active only idx */
+	struct msm_bus_scale_pdata *bus_scale_table;
+	struct msm_bus_scale_pdata *reg_bus_scale_table;
+	struct msm_bus_scale_pdata *hw_rt_bus_scale_table;
+	u32 max_bw_low;
+	u32 max_bw_high;
+	u32 max_bw_per_pipe;
+	u32 *vbif_rt_qos;
+	u32 *vbif_nrt_qos;
+	u32 npriority_lvl;
+
+	struct mult_factor ab_factor;
+	struct mult_factor ib_factor;
+	struct mult_factor ib_factor_overlap;
+	struct mult_factor clk_factor;
+	struct mult_factor per_pipe_ib_factor;
+	bool apply_post_scale_bytes;
+	bool hflip_buffer_reused;
+
+	u32 disable_prefill;
+	u32 *clock_levels;
+	u32 nclk_lvl;
+
+	u32 enable_gate;
+	u32 enable_bw_release;
+	u32 enable_rotator_bw_release;
+	u32 enable_cdp;
+	u32 serialize_wait4pp;
+	u32 wait4autorefresh;
+	u32 lines_before_active;
+
+	struct mdss_hw_settings *hw_settings;
+
+	int rects_per_sspp[MDSS_MDP_PIPE_TYPE_MAX];
+	struct mdss_mdp_pipe *vig_pipes;
+	struct mdss_mdp_pipe *rgb_pipes;
+	struct mdss_mdp_pipe *dma_pipes;
+	struct mdss_mdp_pipe *cursor_pipes;
+	u32 nvig_pipes;
+	u32 nrgb_pipes;
+	u32 ndma_pipes;
+	u32 max_target_zorder;
+	u8  ncursor_pipes;
+	u32 max_cursor_size;
+
+	u32 nppb_ctl;
+	u32 *ppb_ctl;
+	u32 nppb_cfg;
+	u32 *ppb_cfg;
+	char __iomem *slave_pingpong_base;
+
+	struct mdss_mdp_mixer *mixer_intf;
+	struct mdss_mdp_mixer *mixer_wb;
+	u32 nmixers_intf;
+	u32 nmixers_wb;
+	u32 max_mixer_width;
+	u32 max_pipe_width;
+
+	struct mdss_mdp_writeback *wb;
+	u32 nwb;
+	u32 *wb_offsets;
+	u32 nwb_offsets;
+	struct mutex wb_lock;
+
+	struct mdss_mdp_ctl *ctl_off;
+	u32 nctl;
+	u32 ndspp;
+
+	struct mdss_mdp_dp_intf *dp_off;
+	u32 ndp;
+	void *video_intf;
+	u32 nintf;
+
+	struct mdss_mdp_ad *ad_off;
+	struct mdss_ad_info *ad_cfgs;
+	u32 nad_cfgs;
+	u32 nmax_concurrent_ad_hw;
+	struct workqueue_struct *ad_calc_wq;
+	u32 ad_debugen;
+	bool mem_retain;
+
+	struct mdss_intr hist_intr;
+
+	struct ion_client *iclient;
+	int iommu_attached;
+
+	u32 dbg_bus_flags;
+	struct debug_bus *dbg_bus;
+	u32 dbg_bus_size;
+	struct vbif_debug_bus *vbif_dbg_bus;
+	u32 vbif_dbg_bus_size;
+	struct vbif_debug_bus *nrt_vbif_dbg_bus;
+	u32 nrt_vbif_dbg_bus_size;
+	struct mdss_debug_inf debug_inf;
+	bool mixer_switched;
+	struct mdss_panel_cfg pan_cfg;
+	struct mdss_prefill_data prefill_data;
+	u32 min_prefill_lines; /* this changes within different chipsets */
+	u32 props;
+
+	int handoff_pending;
+	bool idle_pc;
+	struct mdss_perf_tune perf_tune;
+	bool traffic_shaper_en;
+	int iommu_ref_cnt;
+	u32 latency_buff_per;
+	atomic_t active_intf_cnt;
+	bool has_rot_dwnscale;
+	bool regulator_notif_register;
+
+	u64 ab[MDSS_MAX_BUS_CLIENTS];
+	u64 ib[MDSS_MAX_BUS_CLIENTS];
+	struct mdss_pp_block_off pp_block_off;
+
+	struct mdss_mdp_cdm *cdm_off;
+	u32 ncdm;
+	struct mutex cdm_lock;
+
+	struct mdss_mdp_dsc *dsc_off;
+	u32 ndsc;
+
+	struct mdss_max_bw_settings *max_bw_settings;
+	u32 bw_mode_bitmap;
+	u32 max_bw_settings_cnt;
+	bool bw_limit_pending;
+
+	struct mdss_max_bw_settings *max_per_pipe_bw_settings;
+	u32 mdss_per_pipe_bw_cnt;
+	u32 min_bw_per_pipe;
+
+	u32 bcolor0;
+	u32 bcolor1;
+	u32 bcolor2;
+	struct mdss_scaler_block *scaler_off;
+
+	u32 max_dest_scaler_input_width;
+	u32 max_dest_scaler_output_width;
+	struct mdss_mdp_destination_scaler *ds;
+	u32 sec_disp_en;
+	u32 sec_cam_en;
+	u32 sec_session_cnt;
+	wait_queue_head_t secure_waitq;
+	struct cx_ipeak_client *mdss_cx_ipeak;
+	struct mult_factor bus_throughput_factor;
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>310</y>
+      <w>270</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>mdss_mdp
+lw=2
+--
+ struct msm_mdp_interface mdp5
+ struct mdss_data_type *mdss_res;
+ struct mdss_data_type *mdata;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>330</y>
+      <w>520</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;500.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>350</y>
+      <w>230</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>570</y>
+      <w>510</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>mdss_fb
+lw=2
+--
+static struct msm_mdp_interface *mdp_instance; 
+struct msm_fb_data_type *mfd
+--
+int mdss_register_panel(struct platform_device *pdev,
+	struct mdss_panel_data *pdata)
+int mdss_fb_register_mdp_instance(struct msm_mdp_interface *mdp)
+int mdss_fb_get_phys_info(dma_addr_t *start, unsigned long *len, int fb_num)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>330</y>
+      <w>160</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0;10.0;270.0;80.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>900</y>
+      <w>320</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>mdss_dsi
+lw=2
+--
+static struct mdss_dsi_data *mdss_dsi_res;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>700</y>
+      <w>420</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>mdss_dsi_data
+lw=2
+--
+	bool res_init;
+	struct platform_device *pdev;
+	/* List of controller specific struct data */
+	struct mdss_dsi_ctrl_pdata *ctrl_pdata[DSI_CTRL_MAX];
+	/*
+	 * This structure should hold common data structures like
+	 * mutex, clocks, regulator information, setup information
+	 */
+	struct dsi_shared_data *shared_data;
+	u32 *dbg_bus;
+	int dbg_bus_size;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1410</x>
+      <y>770</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>700</y>
+      <w>190</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;230.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>630</y>
+      <w>120</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+lw=2</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0;10.0;250.0;100.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>610</y>
+      <w>180</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1810</x>
+      <y>920</y>
+      <w>130</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;110.0;10.0</additional_attributes>
+  </element>
+</diagram>

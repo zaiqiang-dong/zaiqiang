@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>250</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>task_struct
+--
+struct css_set __rcu *cgroups;
+struct list_head cg_list;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>20</y>
+      <w>600</w>
+      <h>1160</h>
+    </coordinates>
+    <panel_attributes>struct css_set
+--
+	/*
+	 * Set of subsystem states, one for each subsystem. This array is
+	 * immutable after creation apart from the init_css_set during
+	 * subsystem registration (at boot time).
+	 */
+	struct cgroup_subsys_state *subsys[CGROUP_SUBSYS_COUNT];
+
+	/* reference count */
+	refcount_t refcount;
+
+	/*
+	 * For a domain cgroup, the following points to self.  If threaded,
+	 * to the matching cset of the nearest domain ancestor.  The
+	 * dom_cset provides access to the domain cgroup and its csses to
+	 * which domain level resource consumptions should be charged.
+	 */
+	struct css_set *dom_cset;
+
+	/* the default cgroup associated with this css_set */
+	struct cgroup *dfl_cgrp;
+
+	/* internal task count, protected by css_set_lock */
+	int nr_tasks;
+
+	/*
+	 * Lists running through all tasks using this cgroup group.
+	 * mg_tasks lists tasks which belong to this cset but are in the
+	 * process of being migrated out or in.  Protected by
+	 * css_set_rwsem, but, during migration, once tasks are moved to
+	 * mg_tasks, it can be read safely while holding cgroup_mutex.
+	 */
+	struct list_head tasks;
+	struct list_head mg_tasks;
+	struct list_head dying_tasks;
+
+	/* all css_task_iters currently walking this cset */
+	struct list_head task_iters;
+
+	/*
+	 * On the default hierarhcy, -&gt;subsys[ssid] may point to a css
+	 * attached to an ancestor instead of the cgroup this css_set is
+	 * associated with.  The following node is anchored at
+	 * -&gt;subsys[ssid]-&gt;cgroup-&gt;e_csets[ssid] and provides a way to
+	 * iterate through all css's attached to a given cgroup.
+	 */
+	struct list_head e_cset_node[CGROUP_SUBSYS_COUNT];
+
+	/* all threaded csets whose -&gt;dom_cset points to this cset */
+	struct list_head threaded_csets;
+	struct list_head threaded_csets_node;
+
+	/*
+	 * List running through all cgroup groups in the same hash
+	 * slot. Protected by css_set_lock
+	 */
+	struct hlist_node hlist;
+
+	/*
+	 * List of cgrp_cset_links pointing at cgroups referenced from this
+	 * css_set.  Protected by css_set_lock.
+	 */
+	struct list_head cgrp_links;
+
+	/*
+	 * List of csets participating in the on-going migration either as
+	 * source or destination.  Protected by cgroup_mutex.
+	 */
+	struct list_head mg_preload_node;
+	struct list_head mg_node;
+
+	/*
+	 * If this cset is acting as the source of migration the following
+	 * two fields are set.  mg_src_cgrp and mg_dst_cgrp are
+	 * respectively the source and destination cgroups of the on-going
+	 * migration.  mg_dst_cset is the destination cset the target tasks
+	 * on this cset should be migrated to.  Protected by cgroup_mutex.
+	 */
+	struct cgroup *mg_src_cgrp;
+	struct cgroup *mg_dst_cgrp;
+	struct css_set *mg_dst_cset;
+
+	/* dead and being drained, ignore for migration */
+	bool dead;
+
+	/* For RCU-protected deletion */
+	struct rcu_head rcu_head;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>20</y>
+      <w>420</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1490</x>
+      <y>120</y>
+      <w>500</w>
+      <h>890</h>
+    </coordinates>
+    <panel_attributes>struct cgroup_subsys_state 
+
+--
+	/* PI: the cgroup that this css is attached to */
+	struct cgroup *cgroup;
+
+	/* PI: the cgroup subsystem that this css is attached to */
+	struct cgroup_subsys *ss;
+
+	/* reference count - access via css_[try]get() and css_put() */
+	struct percpu_ref refcnt;
+
+	/* siblings list anchored at the parent's -&gt;children */
+	struct list_head sibling;
+	struct list_head children;
+
+	/* flush target list anchored at cgrp-&gt;rstat_css_list */
+	struct list_head rstat_css_node;
+
+	/*
+	 * PI: Subsys-unique ID.  0 is unused and root is always 1.  The
+	 * matching css can be looked up using css_from_id().
+	 */
+	int id;
+
+	unsigned int flags;
+
+	/*
+	 * Monotonically increasing unique serial number which defines a
+	 * uniform order among all csses.  It's guaranteed that all
+	 * -&gt;children lists are in the ascending order of -&gt;serial_nr and
+	 * used to allow interrupting and resuming iterations.
+	 */
+	u64 serial_nr;
+
+	/*
+	 * Incremented by online self and children.  Used to guarantee that
+	 * parents are not offlined before their children.
+	 */
+	atomic_t online_cnt;
+
+	/* percpu_ref killing and RCU release */
+	struct work_struct destroy_work;
+	struct rcu_work destroy_rwork;
+
+	/*
+	 * PI: the parent css.	Placed here for cache proximity to following
+	 * fields of the containing structure.
+	 */
+	struct cgroup_subsys_state *parent;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>120</y>
+      <w>280</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2360</x>
+      <y>170</y>
+      <w>420</w>
+      <h>2120</h>
+    </coordinates>
+    <panel_attributes>struct cgroup
+--
+	/* self css with NULL -&gt;ss, points back to this cgroup */
+	struct cgroup_subsys_state self;
+
+	unsigned long flags;		/* "unsigned long" so bitops work */
+
+	/*
+	 * The depth this cgroup is at.  The root is at depth zero and each
+	 * step down the hierarchy increments the level.  This along with
+	 * ancestor_ids[] can determine whether a given cgroup is a
+	 * descendant of another without traversing the hierarchy.
+	 */
+	int level;
+
+	/* Maximum allowed descent tree depth */
+	int max_depth;
+
+	/*
+	 * Keep track of total numbers of visible and dying descent cgroups.
+	 * Dying cgroups are cgroups which were deleted by a user,
+	 * but are still existing because someone else is holding a reference.
+	 * max_descendants is a maximum allowed number of descent cgroups.
+	 *
+	 * nr_descendants and nr_dying_descendants are protected
+	 * by cgroup_mutex and css_set_lock. It's fine to read them holding
+	 * any of cgroup_mutex and css_set_lock; for writing both locks
+	 * should be held.
+	 */
+	int nr_descendants;
+	int nr_dying_descendants;
+	int max_descendants;
+
+	/*
+	 * Each non-empty css_set associated with this cgroup contributes
+	 * one to nr_populated_csets.  The counter is zero iff this cgroup
+	 * doesn't have any tasks.
+	 *
+	 * All children which have non-zero nr_populated_csets and/or
+	 * nr_populated_children of their own contribute one to either
+	 * nr_populated_domain_children or nr_populated_threaded_children
+	 * depending on their type.  Each counter is zero iff all cgroups
+	 * of the type in the subtree proper don't have any tasks.
+	 */
+	int nr_populated_csets;
+	int nr_populated_domain_children;
+	int nr_populated_threaded_children;
+
+	int nr_threaded_children;	/* # of live threaded child cgroups */
+
+	struct kernfs_node *kn;		/* cgroup kernfs entry */
+	struct cgroup_file procs_file;	/* handle for "cgroup.procs" */
+	struct cgroup_file events_file;	/* handle for "cgroup.events" */
+
+	/*
+	 * The bitmask of subsystems enabled on the child cgroups.
+	 * -&gt;subtree_control is the one configured through
+	 * "cgroup.subtree_control" while -&gt;child_ss_mask is the effective
+	 * one which may have more subsystems enabled.  Controller knobs
+	 * are made available iff it's enabled in -&gt;subtree_control.
+	 */
+	u16 subtree_control;
+	u16 subtree_ss_mask;
+	u16 old_subtree_control;
+	u16 old_subtree_ss_mask;
+
+	/* Private pointers for each registered subsystem */
+	struct cgroup_subsys_state __rcu *subsys[CGROUP_SUBSYS_COUNT];
+
+	struct cgroup_root *root;
+
+	/*
+	 * List of cgrp_cset_links pointing at css_sets with tasks in this
+	 * cgroup.  Protected by css_set_lock.
+	 */
+	struct list_head cset_links;
+
+	/*
+	 * On the default hierarchy, a css_set for a cgroup with some
+	 * susbsys disabled will point to css's which are associated with
+	 * the closest ancestor which has the subsys enabled.  The
+	 * following lists all css_sets which point to this cgroup's css
+	 * for the given subsystem.
+	 */
+	struct list_head e_csets[CGROUP_SUBSYS_COUNT];
+
+	/*
+	 * If !threaded, self.  If threaded, it points to the nearest
+	 * domain ancestor.  Inside a threaded subtree, cgroups are exempt
+	 * from process granularity and no-internal-task constraint.
+	 * Domain level resource consumptions which aren't tied to a
+	 * specific task are charged to the dom_cgrp.
+	 */
+	struct cgroup *dom_cgrp;
+	struct cgroup *old_dom_cgrp;		/* used while enabling threaded */
+
+	/* per-cpu recursive resource statistics */
+	struct cgroup_rstat_cpu __percpu *rstat_cpu;
+	struct list_head rstat_css_list;
+
+	/* cgroup basic resource statistics */
+	struct cgroup_base_stat last_bstat;
+	struct cgroup_base_stat bstat;
+	struct prev_cputime prev_cputime;	/* for printing out cputime */
+
+	/*
+	 * list of pidlists, up to two for each namespace (one for procs, one
+	 * for tasks); created on demand.
+	 */
+	struct list_head pidlists;
+	struct mutex pidlist_mutex;
+
+	/* used to wait for offlining of csses */
+	wait_queue_head_t offline_waitq;
+
+	/* used to schedule release agent */
+	struct work_struct release_agent_work;
+
+	/* used to track pressure stalls */
+	struct psi_group psi;
+
+	/* used to store eBPF programs */
+	struct cgroup_bpf bpf;
+
+	/* If there is block congestion on this cgroup. */
+	atomic_t congestion_count;
+
+	/* Used to store internal freezer state */
+	struct cgroup_freezer_state freezer;
+
+	/* ids of the ancestors at each level including self */
+	u64 ancestor_ids[];</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1980</x>
+      <y>170</y>
+      <w>400</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;380.0;10.0</additional_attributes>
+  </element>
+</diagram>

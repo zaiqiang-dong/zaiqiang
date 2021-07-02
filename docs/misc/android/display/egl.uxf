@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>140</x>
+      <y>250</y>
+      <w>640</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes> 86 #elif defined(__ANDROID__) || defined(ANDROID)
+ 87    
+ 88 struct ANativeWindow;
+ 89 struct egl_native_pixmap_t;
+ 90    
+ 91 typedef struct ANativeWindow*           EGLNativeWindowType;           
+ 92 typedef struct egl_native_pixmap_t*     EGLNativePixmapType;
+ 93 typedef void*                           EGLNativeDisplayType;          
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>450</y>
+      <w>370</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>**egl_display_t**
+lw=2
+--
+-static egl_display_t sDisplay[NUM_DISPLAYS];
+--
++get_display()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>680</y>
+      <w>230</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>**egl_display_ptr**
+lw=2
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>470</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>**egl.cpp**
+lw=2
+--
+egl_connection_t gEGLImpl;
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1130</x>
+      <y>360</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Note..
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>390</x>
+      <y>140</y>
+      <w>400</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>eglGetDisplay完成的事情主要有，加载真正的OpenGL ES 
+的动态链接库文件，里面包含各种openGL的操作，这个函数库
+在libGLES_andorid.so中，加载动态链接库之后，会将其中
+的一些函数指针的值传递到全局的gEGLImpl中，通过这个全局
+的结构体，可以访问libGLES_android.so中的所有的函数。
+lw=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

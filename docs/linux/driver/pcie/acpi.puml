@@ -1,0 +1,142 @@
+@startyaml yaml
+O:
+    acpi_scan_handler:
+        - const struct acpi_device_id *ids;
+    	- struct list_head list_node;
+    	- bool (*match)(const char *idstr, const struct acpi_device_id **matchid);
+    	- int (*attach)(struct acpi_device *dev, const struct acpi_device_id *id);
+    	- void (*detach)(struct acpi_device *dev);
+    	- void (*bind)(struct device *phys_dev);
+    	- void (*unbind)(struct device *phys_dev);
+    	- struct acpi_hotplug_profile hotplug;
+    acpi_scan_handlers_list:
+        generic_device_handler:
+            ids: generic_device_ids
+            attach: acpi_generic_device_attach
+        pci_root_handler:
+            ids : root_device_ids,
+            attach : acpi_pci_root_add,
+            detach : acpi_pci_root_remove,
+            hotplug:
+                enabled: true
+                scan_dependent: acpi_pci_root_scan_dependent
+
+O:
+    acpi_handle: typedef void *acpi_handle
+    ACPI_ROOT_OBJECT:((acpi_handle) ACPI_TO_POINTER (ACPI_MAX_PTR))
+O:
+    acpi_object_type:
+        ACPI_TYPE_ANY                   : 0x00
+        ACPI_TYPE_INTEGER               : 0x01
+        ACPI_TYPE_STRING                : 0x02
+        ACPI_TYPE_BUFFER                : 0x03
+        ACPI_TYPE_PACKAGE               : 0x04
+        ACPI_TYPE_FIELD_UNIT            : 0x05
+        ACPI_TYPE_DEVICE                : 0x06
+        ACPI_TYPE_EVENT                 : 0x07
+        ACPI_TYPE_METHOD                : 0x08
+        ACPI_TYPE_MUTEX                 : 0x09
+        ACPI_TYPE_REGION                : 0x0A
+        ACPI_TYPE_POWER                 : 0x0B
+        ACPI_TYPE_PROCESSOR             : 0x0C
+        ACPI_TYPE_THERMAL               : 0x0D
+        ACPI_TYPE_BUFFER_FIELD          : 0x0E
+        ACPI_TYPE_DDB_HANDLE            : 0x0F
+        ACPI_TYPE_DEBUG_OBJECT          : 0x10
+O:
+    descriptor_types:
+        ACPI_DESC_TYPE_CACHED           : 0x01
+        ACPI_DESC_TYPE_STATE            : 0x02
+        ACPI_DESC_TYPE_STATE_UPDATE     : 0x03
+        ACPI_DESC_TYPE_STATE_PACKAGE    : 0x04
+        ACPI_DESC_TYPE_STATE_CONTROL    : 0x05
+        ACPI_DESC_TYPE_STATE_RPSCOPE    : 0x06
+        ACPI_DESC_TYPE_STATE_PSCOPE     : 0x07
+        ACPI_DESC_TYPE_STATE_WSCOPE     : 0x08
+        ACPI_DESC_TYPE_STATE_RESULT     : 0x09
+        ACPI_DESC_TYPE_STATE_NOTIFY     : 0x0A
+        ACPI_DESC_TYPE_STATE_THREAD     : 0x0B
+        ACPI_DESC_TYPE_WALK             : 0x0C
+        ACPI_DESC_TYPE_PARSER           : 0x0D
+        ACPI_DESC_TYPE_OPERAND          : 0x0E
+        ACPI_DESC_TYPE_NAMED            : 0x0F
+        ACPI_DESC_TYPE_MAX              : 0x0F
+
+O:
+    acpi_bus_device_type:
+        - ACPI_BUS_TYPE_DEVICE = 0,
+        - ACPI_BUS_TYPE_POWER,
+        - ACPI_BUS_TYPE_PROCESSOR,
+        - ACPI_BUS_TYPE_THERMAL,
+        - ACPI_BUS_TYPE_POWER_BUTTON,
+        - ACPI_BUS_TYPE_SLEEP_BUTTON,
+        - ACPI_BUS_TYPE_ECDT_EC,
+        - ACPI_BUS_DEVICE_TYPE_COUNT
+
+O:
+    acpi_device:
+        - int device_type;
+        - acpi_handle handle;		/* no handle for fixed hardware */
+        - struct fwnode_handle fwnode;
+        - struct acpi_device *parent;
+        - struct list_head children;
+        - struct list_head node;
+        - struct list_head wakeup_list;
+        - struct list_head del_list;
+        - struct acpi_device_status status;
+        - struct acpi_device_flags flags;
+        - struct acpi_device_pnp pnp:acpi_device_png
+                - acpi_bus_id bus_id;
+                - struct acpi_pnp_type type;	/* ID type */
+                - acpi_bus_address bus_address;	/* _ADR */
+                - char *unique_id;		/* _UID */
+                - struct list_head ids;		/* _HID and _CIDs */
+                - acpi_device_name device_name;	/* Driver-determined */
+                - acpi_device_class device_class;	/*                  */
+                - union acpi_object *str_obj;	/* unicode string for _STR method */
+        - struct acpi_device_power power;
+        - struct acpi_device_wakeup wakeup;
+        - struct acpi_device_perf performance;
+        - struct acpi_device_dir dir;
+        - struct acpi_device_data data;
+        - struct acpi_scan_handler *handler;
+        - struct acpi_hotplug_context *hp;
+        - struct acpi_driver *driver;
+        - const struct acpi_gpio_mapping *driver_gpios;
+        - void *driver_data;
+        - struct device dev;
+        - unsigned int physical_node_count;
+        - unsigned int dep_unmet;
+        - struct list_head physical_node_list;
+        - struct mutex physical_node_lock;
+        - void (*remove)(struct acpi_device *);
+O:
+    acpi_evaluate_info:
+        - struct acpi_namespace_node *prefix_node;	/* Input: starting node */
+        - const char *relative_pathname;	/* Input: path relative to prefix_node */
+        - union acpi_operand_object **parameters;	/* Input: argument list */
+        - struct acpi_namespace_node *node;	/* Resolved node (prefix_node:relative_pathname) */
+        - union acpi_operand_object *obj_desc;	/* Object attached to the resolved node */
+        - char *full_pathname;	/* Full pathname of the resolved node */
+        - const union acpi_predefined_info *predefined;	/* Used if Node is a predefined name */
+        - union acpi_operand_object *return_object;	/* Object returned from the evaluation */
+        - union acpi_operand_object *parent_package;	/* Used if return object is a Package */
+        - u32 return_flags;	/* Used for return value analysis */
+        - u32 return_btype;	/* Bitmapped type of the returned object */
+        - u16 param_count;	/* Count of the input argument list */
+        - u16 node_flags;		/* Same as Node->Flags */
+        - u8 pass_number;		/* Parser pass number */
+        - u8 return_object_type;	/* Object type of the returned object */
+        - u8 flags;		/* General flags */
+
+O:
+    acpi_pci_root:
+        - struct acpi_device * device
+        - struct pci_bus *bus;
+        - u16 segment;
+        - struct resource secondary;	/* downstream bus range */
+        - u32 osc_support_set;	/* _OSC state of support bits */
+        - u32 osc_control_set;	/* _OSC state of control bits */
+        - phys_addr_t mcfg_addr;
+
+@endyaml

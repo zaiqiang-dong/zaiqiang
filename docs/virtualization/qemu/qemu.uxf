@@ -1,0 +1,1947 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>567</x>
+      <y>0</y>
+      <w>224</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>static const QEMUOption qemu_options[]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>903</x>
+      <y>0</y>
+      <w>182</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>typedef struct QEMUOption 
+--
+    const char *name;
+    int flags;
+    int index;
+    uint32_t arch_mask;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>0</y>
+      <w>133</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>294</y>
+      <w>266</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>static QemuOptsList *vm_config_groups[48]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>938</x>
+      <y>294</y>
+      <w>210</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>struct QemuOptsList
+--
+    const char *name;
+    const char *implied_opt_name;
+    bool merge_lists;  /* Merge multiple uses of option into a single list? */
+    QTAILQ_HEAD(, QemuOpts) head;
+    QemuOptDesc desc[];
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>819</x>
+      <y>294</y>
+      <w>133</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>357</y>
+      <w>231</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>typedef struct QemuOptDesc
+--
+    const char *name;
+    enum QemuOptType type;
+    const char *help;
+    const char *def_value_str;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1141</x>
+      <y>357</y>
+      <w>133</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>497</x>
+      <y>749</y>
+      <w>224</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>init_type_list[MODULE_INIT_MAX]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>511</x>
+      <y>861</y>
+      <w>315</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>typedef QTAILQ_HEAD(, ModuleEntry) ModuleTypeList;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>609</x>
+      <y>763</y>
+      <w>21</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>861</y>
+      <w>224</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>typedef struct ModuleEntry
+--
+    void (*init)(void);
+    QTAILQ_ENTRY(ModuleEntry) node;
+    module_init_type type;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>819</x>
+      <y>861</y>
+      <w>105</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>476</x>
+      <y>1190</y>
+      <w>175</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>struct InterfaceInfo
+--
+    const char *type;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1211</x>
+      <y>1337</y>
+      <w>315</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>struct TypeInfo
+--
+    const char *name;
+    const char *parent;
+
+    size_t instance_size;
+    size_t instance_align;
+    void (*instance_init)(Object *obj);
+    void (*instance_post_init)(Object *obj);
+    void (*instance_finalize)(Object *obj);
+
+    bool abstract;
+    size_t class_size;
+
+    void (*class_init)(ObjectClass *klass, void *data);
+    void (*class_base_init)(ObjectClass *klass, void *data);
+    void *class_data;
+
+    InterfaceInfo *interfaces;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1197</x>
+      <y>1911</y>
+      <w>343</w>
+      <h>322</h>
+    </coordinates>
+    <panel_attributes>struct TypeImpl
+--
+    const char *name;
+
+    size_t class_size;
+
+    size_t instance_size;
+    size_t instance_align;
+
+    void (*class_init)(ObjectClass *klass, void *data);
+    void (*class_base_init)(ObjectClass *klass, void *data);
+
+    void *class_data;
+
+    void (*instance_init)(Object *obj);
+    void (*instance_post_init)(Object *obj);
+    void (*instance_finalize)(Object *obj);
+
+    bool abstract;
+
+    const char *parent;
+    TypeImpl *parent_type;
+
+    ObjectClass *class;
+
+    int num_interfaces;
+    InterfaceImpl interfaces[MAX_INTERFACES];
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>1561</y>
+      <w>84</w>
+      <h>364</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+r1=
+m2=1
+r2=
+*type_new v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;500.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>2457</y>
+      <w>196</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>    static GHashTable *type_table;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1344</x>
+      <y>2226</y>
+      <w>21</w>
+      <h>245</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1701</x>
+      <y>1918</y>
+      <w>168</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>typedef struct TypeImpl *Type;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2086</x>
+      <y>1897</y>
+      <w>357</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>struct ObjectClass
+--
+    /* private: */
+    Type type;
+    GSList *interfaces;
+
+    const char *object_cast_cache[OBJECT_CLASS_CAST_CACHE];
+    const char *class_cast_cache[OBJECT_CLASS_CAST_CACHE];
+
+    ObjectUnparent *unparent;
+
+    GHashTable *properties;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>889</x>
+      <y>2912</y>
+      <w>399</w>
+      <h>546</h>
+    </coordinates>
+    <panel_attributes>struct DeviceClass
+--
+    /*&lt; private &gt;*/
+    ObjectClass parent_class;
+    /*&lt; public &gt;*/
+
+    DECLARE_BITMAP(categories, DEVICE_CATEGORY_MAX);
+    const char *fw_name;
+    const char *desc;
+
+    /*
+     * The underscore at the end ensures a compile-time error if someone
+     * assigns to dc-&gt;props instead of using device_class_set_props.
+     */
+    Property *props_;
+
+    /*
+     * Can this device be instantiated with -device / device_add?
+     * All devices should support instantiation with device_add, and
+     * this flag should not exist.  But we're not there, yet.  Some
+     * devices fail to instantiate with cryptic error messages.
+     * Others instantiate, but don't work.  Exposing users to such
+     * behavior would be cruel; clearing this flag will protect them.
+     * It should never be cleared without a comment explaining why it
+     * is cleared.
+     * TODO remove once we're there
+     */
+    bool user_creatable;
+    bool hotpluggable;
+
+    /* callbacks */
+    /*
+     * Reset method here is deprecated and replaced by methods in the
+     * resettable class interface to implement a multi-phase reset.
+     * TODO: remove once every reset callback is unused
+     */
+    DeviceReset reset;
+    DeviceRealize realize;
+    DeviceUnrealize unrealize;
+
+    /* device state */
+    const VMStateDescription *vmsd;
+
+    /* Private to qdev / bus.  */
+    const char *bus_type;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1085</x>
+      <y>2037</y>
+      <w>1022</w>
+      <h>889</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1440.0;10.0;1440.0;1010.0;10.0;1010.0;10.0;1250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2772</x>
+      <y>2912</y>
+      <w>385</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>typedef struct AccelClass
+--
+    /*&lt; private &gt;*/
+    ObjectClass parent_class;
+    /*&lt; public &gt;*/
+
+    const char *name;
+#ifndef CONFIG_USER_ONLY
+    int (*init_machine)(MachineState *ms);
+    void (*setup_post)(MachineState *ms, AccelState *accel);
+    bool (*has_memory)(MachineState *ms, AddressSpace *as,
+                       hwaddr start_addr, hwaddr size);
+#endif
+    bool *allowed;
+    /*
+     * Array of global properties that would be applied when specific
+     * accelerator is chosen. It works like MachineClass.compat_props
+     * but it's for accelerators not machines. Accelerator-provided
+     * global properties may be overridden by machine-type
+     * compat_props or user-provided global properties.
+     */
+    GPtrArray *compat_props;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2429</x>
+      <y>2037</y>
+      <w>581</w>
+      <h>889</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;990.0;810.0;990.0;810.0;1250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1862</x>
+      <y>1925</y>
+      <w>238</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1533</x>
+      <y>1918</y>
+      <w>182</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4543</x>
+      <y>1897</y>
+      <w>231</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>struct Object
+--
+    /* private: */
+    ObjectClass *class;
+    ObjectFree *free;
+    GHashTable *properties;
+    uint32_t ref;
+    Object *parent;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2436</x>
+      <y>1897</y>
+      <w>2121</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;3010.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3731</x>
+      <y>2891</y>
+      <w>259</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>struct DeviceState
+--
+    /*&lt; private &gt;*/
+    Object parent_obj;
+    /*&lt; public &gt;*/
+
+    const char *id;
+    char *canonical_path;
+    bool realized;
+    bool pending_deleted_event;
+    QemuOpts *opts;
+    int hotplugged;
+    bool allow_unplug_during_migration;
+    BusState *parent_bus;
+    QLIST_HEAD(, NamedGPIOList) gpios;
+    QLIST_HEAD(, NamedClockList) clocks;
+    QLIST_HEAD(, BusState) child_bus;
+    int num_child_bus;
+    int instance_id_alias;
+    int alias_required_for_version;
+    ResettableState reset;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3822</x>
+      <y>2016</y>
+      <w>763</w>
+      <h>889</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>1070.0;10.0;1070.0;160.0;10.0;160.0;20.0;1250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5628</x>
+      <y>2828</y>
+      <w>231</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>typedef struct AccelState
+--
+    /*&lt; private &gt;*/
+    Object parent_obj;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4683</x>
+      <y>2016</y>
+      <w>1078</w>
+      <h>826</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0;1520.0;200.0;1520.0;1160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>3066</y>
+      <w>210</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>struct Property 
+--
+    const char   *name;
+    const PropertyInfo *info;
+    ptrdiff_t    offset;
+    uint8_t      bitnr;
+    bool         set_default;
+    union {
+        int64_t i;
+        uint64_t u;
+    } defval;
+    int          arrayoffset;
+    const PropertyInfo *arrayinfo;
+    int          arrayfieldsize;
+    const char   *link_type;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>707</x>
+      <y>3066</y>
+      <w>196</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>3094</y>
+      <w>371</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>struct PropertyInfo
+--
+    const char *name;
+    const char *description;
+    const QEnumLookup *enum_table;
+    int (*print)(DeviceState *dev, Property *prop, char *dest, size_t len);
+    void (*set_default_value)(ObjectProperty *op, const Property *prop);
+    void (*create)(ObjectClass *oc, Property *prop);
+    ObjectPropertyAccessor *get;
+    ObjectPropertyAccessor *set;
+    ObjectPropertyRelease *release;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>364</x>
+      <y>3094</y>
+      <w>154</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>847</x>
+      <y>2198</y>
+      <w>189</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>struct InterfaceImpl
+--
+    const char *typename;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1029</x>
+      <y>2198</y>
+      <w>182</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2919</x>
+      <y>2016</y>
+      <w>196</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>struct ObjectProperty
+--
+    char *name;
+    char *type;
+    char *description;
+    ObjectPropertyAccessor *get;
+    ObjectPropertyAccessor *set;
+    ObjectPropertyResolve *resolve;
+    ObjectPropertyRelease *release;
+    ObjectPropertyInit *init;
+    void *opaque;
+    QObject *defval;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2436</x>
+      <y>2016</y>
+      <w>497</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;690.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3108</x>
+      <y>1946</y>
+      <w>1449</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>2050.0;10.0;330.0;10.0;330.0;110.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2317</x>
+      <y>5152</y>
+      <w>322</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>struct AddressSpace
+--
+    /* private: */
+    struct rcu_head rcu;
+    char *name;
+    MemoryRegion *root;
+
+    /* Accessed via RCU.  */
+    struct FlatView *current_map;
+
+    int ioeventfd_nb;
+    struct MemoryRegionIoeventfd *ioeventfds;
+    QTAILQ_HEAD(, MemoryListener) listeners;
+    QTAILQ_ENTRY(AddressSpace) address_spaces_link;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2919</x>
+      <y>5194</y>
+      <w>315</w>
+      <h>462</h>
+    </coordinates>
+    <panel_attributes>struct MemoryRegion 
+--
+    Object parent_obj;
+
+    /* private: */
+
+    /* The following fields should fit in a cache line */
+    bool romd_mode;
+    bool ram;
+    bool subpage;
+    bool readonly; /* For RAM regions */
+    bool nonvolatile;
+    bool rom_device;
+    bool flush_coalesced_mmio;
+    uint8_t dirty_log_mask;
+    bool is_iommu;
+    RAMBlock *ram_block;
+    Object *owner;
+
+    const MemoryRegionOps *ops;
+    void *opaque;
+    MemoryRegion *container;
+    Int128 size;
+    hwaddr addr;
+    void (*destructor)(MemoryRegion *mr);
+    uint64_t align;
+    bool terminates;
+    bool ram_device;
+    bool enabled;
+    bool warning_printed; /* For reservations */
+    uint8_t vga_logging_count;
+    MemoryRegion *alias;
+    hwaddr alias_offset;
+    int32_t priority;
+    QTAILQ_HEAD(, MemoryRegion) subregions;
+    QTAILQ_ENTRY(MemoryRegion) subregions_link;
+    QTAILQ_HEAD(, CoalescedMemoryRange) coalesced;
+    const char *name;
+    unsigned ioeventfd_nb;
+    MemoryRegionIoeventfd *ioeventfds;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2632</x>
+      <y>5194</y>
+      <w>301</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;410.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1540</x>
+      <y>5236</y>
+      <w>252</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>struct FlatView 
+--
+    struct rcu_head rcu;
+    unsigned ref;
+    FlatRange *ranges;
+    unsigned nr;
+    unsigned nr_allocated;
+    struct AddressSpaceDispatch *dispatch;
+    MemoryRegion *root;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1785</x>
+      <y>5236</y>
+      <w>546</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>760.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1855</x>
+      <y>5733</y>
+      <w>287</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>struct MemoryListener
+--
+    /**
+     * @begin:
+     *
+     * Called at the beginning of an address space update transaction.
+     * Followed by calls to #MemoryListener.region_add(),
+     * #MemoryListener.region_del(), #MemoryListener.region_nop(),
+     * #MemoryListener.log_start() and #MemoryListener.log_stop() in
+     * increasing address order.
+     *
+     * @listener: The #MemoryListener.
+     */
+    void (*begin)(MemoryListener *listener);
+
+    /**
+     * @commit:
+     *
+     * Called at the end of an address space update transaction,
+     * after the last call to #MemoryListener.region_add(),
+     * #MemoryListener.region_del() or #MemoryListener.region_nop(),
+     * #MemoryListener.log_start() and #MemoryListener.log_stop().
+     *
+     * @listener: The #MemoryListener.
+     */
+    void (*commit)(MemoryListener *listener);
+
+    /**
+     * @region_add:
+     *
+     * Called during an address space update transaction,
+     * for a section of the address space that is new in this address space
+     * space since the last transaction.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The new #MemoryRegionSection.
+     */
+    void (*region_add)(MemoryListener *listener, MemoryRegionSection *section);
+
+    /**
+     * @region_del:
+     *
+     * Called during an address space update transaction,
+     * for a section of the address space that has disappeared in the address
+     * space since the last transaction.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The old #MemoryRegionSection.
+     */
+    void (*region_del)(MemoryListener *listener, MemoryRegionSection *section);
+
+    /**
+     * @region_nop:
+     *
+     * Called during an address space update transaction,
+     * for a section of the address space that is in the same place in the address
+     * space as in the last transaction.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The #MemoryRegionSection.
+     */
+    void (*region_nop)(MemoryListener *listener, MemoryRegionSection *section);
+
+    /**
+     * @log_start:
+     *
+     * Called during an address space update transaction, after
+     * one of #MemoryListener.region_add(),#MemoryListener.region_del() or
+     * #MemoryListener.region_nop(), if dirty memory logging clients have
+     * become active since the last transaction.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The #MemoryRegionSection.
+     * @old: A bitmap of dirty memory logging clients that were active in
+     * the previous transaction.
+     * @new: A bitmap of dirty memory logging clients that are active in
+     * the current transaction.
+     */
+    void (*log_start)(MemoryListener *listener, MemoryRegionSection *section,
+                      int old, int new);
+
+    /**
+     * @log_stop:
+     *
+     * Called during an address space update transaction, after
+     * one of #MemoryListener.region_add(), #MemoryListener.region_del() or
+     * #MemoryListener.region_nop() and possibly after
+     * #MemoryListener.log_start(), if dirty memory logging clients have
+     * become inactive since the last transaction.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The #MemoryRegionSection.
+     * @old: A bitmap of dirty memory logging clients that were active in
+     * the previous transaction.
+     * @new: A bitmap of dirty memory logging clients that are active in
+     * the current transaction.
+     */
+    void (*log_stop)(MemoryListener *listener, MemoryRegionSection *section,
+                     int old, int new);
+
+    /**
+     * @log_sync:
+     *
+     * Called by memory_region_snapshot_and_clear_dirty() and
+     * memory_global_dirty_log_sync(), before accessing QEMU's "official"
+     * copy of the dirty memory bitmap for a #MemoryRegionSection.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The #MemoryRegionSection.
+     */
+    void (*log_sync)(MemoryListener *listener, MemoryRegionSection *section);
+
+    /**
+     * @log_clear:
+     *
+     * Called before reading the dirty memory bitmap for a
+     * #MemoryRegionSection.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The #MemoryRegionSection.
+     */
+    void (*log_clear)(MemoryListener *listener, MemoryRegionSection *section);
+
+    /**
+     * @log_global_start:
+     *
+     * Called by memory_global_dirty_log_start(), which
+     * enables the %DIRTY_LOG_MIGRATION client on all memory regions in
+     * the address space.  #MemoryListener.log_global_start() is also
+     * called when a #MemoryListener is added, if global dirty logging is
+     * active at that time.
+     *
+     * @listener: The #MemoryListener.
+     */
+    void (*log_global_start)(MemoryListener *listener);
+
+    /**
+     * @log_global_stop:
+     *
+     * Called by memory_global_dirty_log_stop(), which
+     * disables the %DIRTY_LOG_MIGRATION client on all memory regions in
+     * the address space.
+     *
+     * @listener: The #MemoryListener.
+     */
+    void (*log_global_stop)(MemoryListener *listener);
+
+    /**
+     * @log_global_after_sync:
+     *
+     * Called after reading the dirty memory bitmap
+     * for any #MemoryRegionSection.
+     *
+     * @listener: The #MemoryListener.
+     */
+    void (*log_global_after_sync)(MemoryListener *listener);
+
+    /**
+     * @eventfd_add:
+     *
+     * Called during an address space update transaction,
+     * for a section of the address space that has had a new ioeventfd
+     * registration since the last transaction.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The new #MemoryRegionSection.
+     * @match_data: The @match_data parameter for the new ioeventfd.
+     * @data: The @data parameter for the new ioeventfd.
+     * @e: The #EventNotifier parameter for the new ioeventfd.
+     */
+    void (*eventfd_add)(MemoryListener *listener, MemoryRegionSection *section,
+                        bool match_data, uint64_t data, EventNotifier *e);
+
+    /**
+     * @eventfd_del:
+     *
+     * Called during an address space update transaction,
+     * for a section of the address space that has dropped an ioeventfd
+     * registration since the last transaction.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The new #MemoryRegionSection.
+     * @match_data: The @match_data parameter for the dropped ioeventfd.
+     * @data: The @data parameter for the dropped ioeventfd.
+     * @e: The #EventNotifier parameter for the dropped ioeventfd.
+     */
+    void (*eventfd_del)(MemoryListener *listener, MemoryRegionSection *section,
+                        bool match_data, uint64_t data, EventNotifier *e);
+
+    /**
+     * @coalesced_io_add:
+     *
+     * Called during an address space update transaction,
+     * for a section of the address space that has had a new coalesced
+     * MMIO range registration since the last transaction.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The new #MemoryRegionSection.
+     * @addr: The starting address for the coalesced MMIO range.
+     * @len: The length of the coalesced MMIO range.
+     */
+    void (*coalesced_io_add)(MemoryListener *listener, MemoryRegionSection *section,
+                               hwaddr addr, hwaddr len);
+
+    /**
+     * @coalesced_io_del:
+     *
+     * Called during an address space update transaction,
+     * for a section of the address space that has dropped a coalesced
+     * MMIO range since the last transaction.
+     *
+     * @listener: The #MemoryListener.
+     * @section: The new #MemoryRegionSection.
+     * @addr: The starting address for the coalesced MMIO range.
+     * @len: The length of the coalesced MMIO range.
+     */
+    void (*coalesced_io_del)(MemoryListener *listener, MemoryRegionSection *section,
+                               hwaddr addr, hwaddr len);
+    /**
+     * @priority:
+     *
+     * Govern the order in which memory listeners are invoked. Lower priorities
+     * are invoked earlier for "add" or "start" callbacks, and later for "delete"
+     * or "stop" callbacks.
+     */
+    unsigned priority;
+
+    /* private: */
+    AddressSpace *address_space;
+    QTAILQ_ENTRY(MemoryListener) link;
+    QTAILQ_ENTRY(MemoryListener) link_as;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2135</x>
+      <y>5285</y>
+      <w>196</w>
+      <h>469</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;10.0;90.0;10.0;90.0;650.0;10.0;650.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1183</x>
+      <y>5271</y>
+      <w>147</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>struct FlatRange 
+--
+    MemoryRegion *mr;
+    hwaddr offset_in_region;
+    AddrRange addr;
+    uint8_t dirty_log_mask;
+    bool romd_mode;
+    bool readonly;
+    bool nonvolatile;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1323</x>
+      <y>5271</y>
+      <w>231</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>310.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1015</x>
+      <y>5460</y>
+      <w>329</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>struct AddressSpaceDispatch
+--
+    MemoryRegionSection *mru_section;
+    /* This is a multi-level map on the physical address space.
+     * The bottom level has pointers to MemoryRegionSections.
+     */
+    PhysPageEntry phys_map;
+    PhysPageMap map;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1337</x>
+      <y>5306</y>
+      <w>217</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>290.0;10.0;160.0;10.0;160.0;240.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4522</x>
+      <y>2877</y>
+      <w>182</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>MachineState</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1722</x>
+      <y>2926</y>
+      <w>301</w>
+      <h>385</h>
+    </coordinates>
+    <panel_attributes>
+struct MachineClass
+--
+    /*&lt; private &gt;*/
+    ObjectClass parent_class;
+    /*&lt; public &gt;*/
+
+    const char *family; /* NULL iff @name identifies a standalone machtype */
+    char *name;
+    const char *alias;
+    const char *desc;
+    const char *deprecation_reason;
+
+    void (*init)(MachineState *state);
+    void (*reset)(MachineState *state);
+    void (*wakeup)(MachineState *state);
+    int (*kvm_type)(MachineState *machine, const char *arg);
+    void (*smp_parse)(MachineState *ms, QemuOpts *opts);
+
+    BlockInterfaceType block_default_type;
+    int units_per_default_bus;
+    int max_cpus;
+    int min_cpus;
+    int default_cpus;
+    unsigned int no_serial:1,
+        no_parallel:1,
+        no_floppy:1,
+        no_cdrom:1,
+        no_sdcard:1,
+        pci_allow_0_address:1,
+        legacy_fw_cfg_order:1;
+    bool is_default;
+    const char *default_machine_opts;
+    const char *default_boot_order;
+    const char *default_display;
+    GPtrArray *compat_props;
+    const char *hw_version;
+    ram_addr_t default_ram_size;
+    const char *default_cpu_type;
+    bool default_kernel_irqchip_split;
+    bool option_rom_has_mr;
+    bool rom_file_has_mr;
+    int minimum_page_bits;
+    bool has_hotpluggable_cpus;
+    bool ignore_memory_transaction_failures;
+    int numa_mem_align_shift;
+    const char **valid_cpu_types;
+    strList *allowed_dynamic_sysbus_devices;
+    bool auto_enable_numa_with_memhp;
+    bool auto_enable_numa_with_memdev;
+    bool ignore_boot_device_suffixes;
+    bool smbus_no_migration_support;
+    bool nvdimm_supported;
+    bool numa_mem_supported;
+    bool auto_enable_numa;
+    const char *default_ram_id;
+
+    HotplugHandler *(*get_hotplug_handler)(MachineState *machine,
+                                           DeviceState *dev);
+    bool (*hotplug_allowed)(MachineState *state, DeviceState *dev,
+                            Error **errp);
+    CpuInstanceProperties (*cpu_index_to_instance_props)(MachineState *machine,
+                                                         unsigned cpu_index);
+    const CPUArchIdList *(*possible_cpu_arch_ids)(MachineState *machine);
+    int64_t (*get_default_cpu_node_id)(const MachineState *ms, int idx);
+    ram_addr_t (*fixup_ram_size)(ram_addr_t size);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1701</x>
+      <y>3430</y>
+      <w>252</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>struct X86MachineClass 
+--
+    /*&lt; private &gt;*/
+    MachineClass parent;
+
+    /*&lt; public &gt;*/
+
+    /* TSC rate migration: */
+    bool save_tsc_khz;
+    /* Enables contiguous-apic-ID mode */
+    bool compat_apic_id_mode;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4522</x>
+      <y>3052</y>
+      <w>182</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>X86MachineState</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1708</x>
+      <y>3689</y>
+      <w>406</w>
+      <h>532</h>
+    </coordinates>
+    <panel_attributes>struct PCMachineClass
+--
+    /*&lt; private &gt;*/
+    X86MachineClass parent_class;
+
+    /*&lt; public &gt;*/
+
+    /* Device configuration: */
+    bool pci_enabled;
+    bool kvmclock_enabled;
+    const char *default_nic_model;
+
+    /* Compat options: */
+
+    /* Default CPU model version.  See x86_cpu_set_default_version(). */
+    int default_cpu_version;
+
+    /* ACPI compat: */
+    bool has_acpi_build;
+    bool rsdp_in_ram;
+    int legacy_acpi_table_size;
+    unsigned acpi_data_size;
+    bool do_not_add_smb_acpi;
+
+    /* SMBIOS compat: */
+    bool smbios_defaults;
+    bool smbios_legacy_mode;
+    bool smbios_uuid_encoded;
+
+    /* RAM / address space compat: */
+    bool gigabyte_align;
+    bool has_reserved_memory;
+    bool enforce_aligned_dimm;
+    bool broken_reserved_end;
+
+    /* generate legacy CPU hotplug AML */
+    bool legacy_cpu_hotplug;
+
+    /* use DMA capable linuxboot option rom */
+    bool linuxboot_dma_enabled;
+
+    /* use PVH to load kernels that support this feature */
+    bool pvh_enabled;
+
+    /* create kvmclock device even when KVM PV features are not exposed */
+    bool kvmclock_create_always;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4522</x>
+      <y>3220</y>
+      <w>182</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>PCMachineState</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4599</x>
+      <y>2905</y>
+      <w>21</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1799</x>
+      <y>3304</y>
+      <w>21</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1799</x>
+      <y>3549</y>
+      <w>21</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4606</x>
+      <y>3080</y>
+      <w>21</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3346</x>
+      <y>5369</y>
+      <w>378</w>
+      <h>469</h>
+    </coordinates>
+    <panel_attributes>struct RAMBlock
+--
+    struct rcu_head rcu;
+    struct MemoryRegion *mr;
+    uint8_t *host;
+    uint8_t *colo_cache; /* For colo, VM's ram cache */
+    ram_addr_t offset;
+    ram_addr_t used_length;
+    ram_addr_t max_length;
+    void (*resized)(const char*, uint64_t length, void *host);
+    uint32_t flags;
+    /* Protected by iothread lock.  */
+    char idstr[256];
+    /* RCU-enabled, writes protected by the ramlist lock */
+    QLIST_ENTRY(RAMBlock) next;
+    QLIST_HEAD(, RAMBlockNotifier) ramblock_notifiers;
+    int fd;
+    size_t page_size;
+    /* dirty bitmap used during migration */
+    unsigned long *bmap;
+    /* bitmap of already received pages in postcopy */
+    unsigned long *receivedmap;
+
+    /*
+     * bitmap to track already cleared dirty bitmap.  When the bit is
+     * set, it means the corresponding memory chunk needs a log-clear.
+     * Set this up to non-NULL to enable the capability to postpone
+     * and split clearing of dirty bitmap on the remote node (e.g.,
+     * KVM).  The bitmap will be set only when doing global sync.
+     *
+     * NOTE: this bitmap is different comparing to the other bitmaps
+     * in that one bit can represent multiple guest pages (which is
+     * decided by the `clear_bmap_shift' variable below).  On
+     * destination side, this should always be NULL, and the variable
+     * `clear_bmap_shift' is meaningless.
+     */
+    unsigned long *clear_bmap;
+    uint8_t clear_bmap_shift;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3227</x>
+      <y>5369</y>
+      <w>133</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1848</x>
+      <y>2037</y>
+      <w>294</w>
+      <h>903</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>400.0;10.0;400.0;1100.0;10.0;1100.0;10.0;1270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>4599</x>
+      <y>2016</y>
+      <w>28</w>
+      <h>875</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>20.0;10.0;10.0;1230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1785</x>
+      <y>6468</y>
+      <w>350</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>struct AddressSpaceDispatch 
+--
+    MemoryRegionSection *mru_section;
+    /* This is a multi-level map on the physical address space.
+     * The bottom level has pointers to MemoryRegionSections.
+     */
+    PhysPageEntry phys_map;
+    PhysPageMap map;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2247</x>
+      <y>6482</y>
+      <w>252</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>struct MemoryRegionSection
+--
+    Int128 size;
+    MemoryRegion *mr;
+    FlatView *fv;
+    hwaddr offset_within_region;
+    hwaddr offset_within_address_space;
+    bool readonly;
+    bool nonvolatile;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2128</x>
+      <y>6482</y>
+      <w>133</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1652</x>
+      <y>5348</y>
+      <w>679</w>
+      <h>1148</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>950.0;1620.0;950.0;1070.0;10.0;1070.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2415</x>
+      <y>5649</y>
+      <w>693</w>
+      <h>847</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;1190.0;10.0;650.0;970.0;650.0;970.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1673</x>
+      <y>5348</y>
+      <w>168</w>
+      <h>1134</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0;220.0;250.0;220.0;1600.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2716</x>
+      <y>7763</y>
+      <w>266</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>typedef struct GSIState
+--
+    qemu_irq i8259_irq[ISA_NUM_IRQS];
+    qemu_irq ioapic_irq[IOAPIC_NUM_PINS];</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2247</x>
+      <y>7742</y>
+      <w>224</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>struct IRQState
+--
+    Object parent_obj;
+
+    qemu_irq_handler handler;
+    void *opaque;
+    int n;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2247</x>
+      <y>7644</y>
+      <w>231</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>typedef struct IRQState *qemu_irq;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2352</x>
+      <y>7658</y>
+      <w>21</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1603</x>
+      <y>7707</y>
+      <w>168</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>X86MachineState
+--
+gsi
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1883</x>
+      <y>7728</y>
+      <w>105</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>qemu_irq[GSI_NUM_PINS]
+--
+gsi[0]
+gsi[1]
+gsi[2]
+gsi[3]
+gsi[4]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1764</x>
+      <y>7728</y>
+      <w>133</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1981</x>
+      <y>7749</y>
+      <w>280</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>380.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2464</x>
+      <y>7763</y>
+      <w>266</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;360.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2478</x>
+      <y>8036</y>
+      <w>105</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>IRQState[]
+--
+IRQState[0]
+IRQState[1]
+IRQState[2]
+IRQState[3]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2352</x>
+      <y>7819</y>
+      <w>140</w>
+      <h>259</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;350.0;180.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2576</x>
+      <y>7784</y>
+      <w>154</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;370.0;110.0;370.0;110.0;10.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2009</x>
+      <y>9478</y>
+      <w>294</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>struct VirtIOBalloonPCI
+--
+    VirtIOPCIProxy parent_obj;
+    VirtIOBalloon vdev;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1981</x>
+      <y>8953</y>
+      <w>252</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>struct VirtIOPCIProxy
+--
+    PCIDevice pci_dev;
+    MemoryRegion bar;
+    union {
+        struct {
+            VirtIOPCIRegion common;
+            VirtIOPCIRegion isr;
+            VirtIOPCIRegion device;
+            VirtIOPCIRegion notify;
+            VirtIOPCIRegion notify_pio;
+        };
+        VirtIOPCIRegion regs[5];
+    };
+    MemoryRegion modern_bar;
+    MemoryRegion io_bar;
+    uint32_t legacy_io_bar_idx;
+    uint32_t msix_bar_idx;
+    uint32_t modern_io_bar_idx;
+    uint32_t modern_mem_bar_idx;
+    int config_cap;
+    uint32_t flags;
+    bool disable_modern;
+    bool ignore_backend_features;
+    OnOffAuto disable_legacy;
+    uint32_t class_code;
+    uint32_t nvectors;
+    uint32_t dfselect;
+    uint32_t gfselect;
+    uint32_t guest_features[2];
+    VirtIOPCIQueue vqs[VIRTIO_QUEUE_MAX];
+
+    VirtIOIRQFD *vector_irqfd;
+    int nvqs_with_notifiers;
+    VirtioBusState bus;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2688</x>
+      <y>9639</y>
+      <w>266</w>
+      <h>378</h>
+    </coordinates>
+    <panel_attributes>struct VirtIOBalloon
+--
+    VirtIODevice parent_obj;
+    VirtQueue *ivq, *dvq, *svq, *free_page_vq, *reporting_vq;
+    uint32_t free_page_hint_status;
+    uint32_t num_pages;
+    uint32_t actual;
+    uint32_t free_page_hint_cmd_id;
+    uint64_t stats[VIRTIO_BALLOON_S_NR];
+    VirtQueueElement *stats_vq_elem;
+    size_t stats_vq_offset;
+    QEMUTimer *stats_timer;
+    IOThread *iothread;
+    QEMUBH *free_page_bh;
+    /*
+     * Lock to synchronize threads to access the free page reporting related
+     * fields (e.g. free_page_hint_status).
+     */
+    QemuMutex free_page_lock;
+    QemuCond  free_page_cond;
+    /*
+     * Set to block iothread to continue reading free page hints as the VM is
+     * stopped.
+     */
+    bool block_iothread;
+    NotifierWithReturn free_page_hint_notify;
+    int64_t stats_last_update;
+    int64_t stats_poll_interval;
+    uint32_t host_features;
+
+    bool qemu_4_0_config_size;
+    uint32_t poison_val;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2296</x>
+      <y>9513</y>
+      <w>406</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;280.0;10.0;280.0;190.0;560.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3353</x>
+      <y>9667</y>
+      <w>399</w>
+      <h>399</h>
+    </coordinates>
+    <panel_attributes>struct VirtIODevice
+--
+    DeviceState parent_obj;
+    const char *name;
+    uint8_t status;
+    uint8_t isr;
+    uint16_t queue_sel;
+    uint64_t guest_features;
+    uint64_t host_features;
+    uint64_t backend_features;
+    size_t config_len;
+    void *config;
+    uint16_t config_vector;
+    uint32_t generation;
+    int nvectors;
+    VirtQueue *vq;
+    MemoryListener listener;
+    uint16_t device_id;
+    bool vm_running;
+    bool broken; /* device in invalid state, needs reset */
+    bool use_disabled_flag; /* allow use of 'disable' flag when needed */
+    bool disabled; /* device in temporarily disabled state */
+    bool use_started;
+    bool started;
+    bool start_on_kick; /* when virtio 1.0 feature has not been negotiated */
+    bool disable_legacy_check;
+    VMChangeStateEntry *vmstate;
+    char *bus_name;
+    uint8_t device_endian;
+    bool use_guest_notifier_mask;
+    AddressSpace *dma_as;
+    QLIST_HEAD(, VirtQueue) *vector_queues;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2947</x>
+      <y>9667</y>
+      <w>420</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;580.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3353</x>
+      <y>10129</y>
+      <w>420</w>
+      <h>427</h>
+    </coordinates>
+    <panel_attributes>struct VirtQueue
+--
+    VRing vring;
+    VirtQueueElement *used_elems;
+
+    /* Next head to pop */
+    uint16_t last_avail_idx;
+    bool last_avail_wrap_counter;
+
+    /* Last avail_idx read from VQ. */
+    uint16_t shadow_avail_idx;
+    bool shadow_avail_wrap_counter;
+
+    uint16_t used_idx;
+    bool used_wrap_counter;
+
+    /* Last used index value we have signalled on */
+    uint16_t signalled_used;
+
+    /* Last used index value we have signalled on */
+    bool signalled_used_valid;
+
+    /* Notification enabled? */
+    bool notification;
+
+    uint16_t queue_index;
+
+    unsigned int inuse;
+
+    uint16_t vector;
+    VirtIOHandleOutput handle_output;
+    VirtIOHandleAIOOutput handle_aio_output;
+    VirtIODevice *vdev;
+    EventNotifier guest_notifier;
+    EventNotifier host_notifier;
+    bool host_notifier_enabled;
+    QLIST_ENTRY(VirtQueue) node;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2947</x>
+      <y>9674</y>
+      <w>420</w>
+      <h>476</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;10.0;290.0;660.0;580.0;660.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2072</x>
+      <y>8834</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>PCIDevice</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2100</x>
+      <y>8848</y>
+      <w>21</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2121</x>
+      <y>9366</y>
+      <w>21</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+</diagram>
