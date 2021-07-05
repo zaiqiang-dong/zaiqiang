@@ -295,6 +295,7 @@ module.exports = {
                             title: 'common',
                             collapsable: true,
                             children: [
+                                '../tools/builder/common/front-backend/front-backend.md'
                             ]
                         },
                     ]
