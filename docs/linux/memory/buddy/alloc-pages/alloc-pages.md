@@ -14,13 +14,13 @@
 ## 1. 接口函数
 
 ### 1.1 alloc_page
-```
+```c
 #define alloc_page(gfp_mask) alloc_pages(gfp_mask, 0)
 ```
 从代码可以看出`alloc_page`最终调用的是`alloc_pages`,只是在第二个参数的位置写0,表示 $2^0$,也就是1个页面。
 
 ### 1.2 __get_free_pages
-```
+```c
 unsigned long __get_free_pages(gfp_t gfp_mask, unsigned int order)
 {
 	struct page *page;
@@ -34,7 +34,7 @@ unsigned long __get_free_pages(gfp_t gfp_mask, unsigned int order)
 同样的`__get_free_pages`也是调用了调用了`alloc_pages`,只是在`gfp_mask`参数部分清除了`__GFP_HIGHMEM`,也就是不能从高端内存部分分配。这里最后一行`page_address`,表示返回的是页面的虚拟地址。
 
 ### 1.3 __get_free_page
-```
+```c
 #define __get_free_page(gfp_mask) \
 		__get_free_pages((gfp_mask), 0)
 
@@ -42,7 +42,7 @@ unsigned long __get_free_pages(gfp_t gfp_mask, unsigned int order)
 这个很明显调用了`__get_free_pages`,只是页面个数为1.
 
 ### 1.4 get_zeroed_page
-```
+```c
 unsigned long get_zeroed_page(gfp_t gfp_mask)
 {
 	return __get_free_pages(gfp_mask | __GFP_ZERO, 0);
@@ -51,7 +51,7 @@ unsigned long get_zeroed_page(gfp_t gfp_mask)
 这个函数调用了上面的`__get_free_pages`,只是设置了`__GFP_ZERO`,表示需要将页面进行清0处理。另外页面个数部分为0,表示只分配一个页面。
 
 ### 1.5 __get_dma_pages
-```
+```c
 #define __get_dma_pages(gfp_mask, order) \
 		__get_free_pages((gfp_mask) | GFP_DMA, (order))
 ```
@@ -60,8 +60,7 @@ unsigned long get_zeroed_page(gfp_t gfp_mask)
 
 ## 2. alloc_pages
 从上面的接口分析中可以看出所有的接口最终都是调用了`alloc_pages`,下面我重点分析这个函数。
-
-```
+```c
 #ifdef CONFIG_NUMA
 extern struct page *alloc_pages_current(gfp_t gfp_mask, unsigned order);
 
@@ -86,7 +85,7 @@ extern struct page *alloc_pages_vma(gfp_t gfp_mask, int order,
 
 ```
 从宏定义可以看出在`NUMA`和非`NUMA`,存在不同，我们这里按非`NUMA`来分析。也就是如下：
-```
+```c
 #define alloc_pages(gfp_mask, order) \
 		alloc_pages_node(numa_node_id(), gfp_mask, order)
 ```
@@ -97,7 +96,7 @@ extern struct page *alloc_pages_vma(gfp_t gfp_mask, int order,
 
 从上面的分析最终是调用了`alloc_pages_node`,代码如下：
 
-```
+```c
 static inline struct page *alloc_pages_node(int nid, gfp_t gfp_mask,
 						unsigned int order)
 {
@@ -111,7 +110,7 @@ static inline struct page *alloc_pages_node(int nid, gfp_t gfp_mask,
 代码很简单就是调用`__alloc_pages_node`
 
 ### 2.2 __alloc_pages_node
-```
+```c
 static inline struct page *
 __alloc_pages_node(int nid, gfp_t gfp_mask, unsigned int order)
 {
@@ -124,7 +123,7 @@ __alloc_pages_node(int nid, gfp_t gfp_mask, unsigned int order)
 ```
 
 ### 2.3 __alloc_pages
-```
+```c
 struct page *
 __alloc_pages_nodemask(gfp_t gfp_mask, unsigned int order, int preferred_nid,
 							nodemask_t *nodemask);
@@ -139,7 +138,7 @@ __alloc_pages(gfp_t gfp_mask, unsigned int order, int preferred_nid)
 
 
 ### 3. __alloc_pages_nodemask
-```
+```c
 struct page *
 __alloc_pages_nodemask(gfp_t gfp_mask, unsigned int order, int preferred_nid,
 							nodemask_t *nodemask)
