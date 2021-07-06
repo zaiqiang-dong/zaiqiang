@@ -137,7 +137,7 @@ __alloc_pages(gfp_t gfp_mask, unsigned int order, int preferred_nid)
 上面代码很简单，`__alloc_pages_nodemask`是真正的内存分配函数。
 
 
-### 3. __alloc_pages_nodemask
+## 3. __alloc_pages_nodemask
 ```c
 struct page *
 __alloc_pages_nodemask(gfp_t gfp_mask, unsigned int order, int preferred_nid,
