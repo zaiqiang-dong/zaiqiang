@@ -102,8 +102,9 @@ module.exports = {
                             title: 'buddy',
                             collapsable: true,
                             children: [
-                                '/linux/memory/buddy/alloc-flags/alloc-flags.md',
-                                '/linux/memory/buddy/wartermark/watermark.md'
+                                '../linux/memory/buddy/alloc-flags/alloc-flags.md',
+                                '../linux/memory/buddy/wartermark/watermark.md',
+                                '../linux/memory/buddy/alloc-pages/alloc-pages.md'
                             ]
                         },
                         {
