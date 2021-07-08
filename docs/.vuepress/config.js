@@ -104,7 +104,8 @@ module.exports = {
                             children: [
                                 '../linux/memory/buddy/alloc-flags/alloc-flags.md',
                                 '../linux/memory/buddy/wartermark/watermark.md',
-                                '../linux/memory/buddy/alloc-pages/alloc-pages.md'
+                                '../linux/memory/buddy/alloc-pages/alloc-pages.md',
+                                '../linux/memory/buddy/zone-split/zone-split.md'
                             ]
                         },
                         {
