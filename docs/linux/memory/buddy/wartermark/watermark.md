@@ -95,9 +95,7 @@ static unsigned long nr_free_zone_pages(int offset)
 在初始化的时候上面的代码，计算出来的high其实是0,这个水位还没有设置，都是默认0.而且会遍历所有的zone,把各个zone管理的页面都加起来，所以`lowmem_kbytes`其实就是系统总内存量，就是总的页数×4。
 第7行`new_min_free_kbytes`，计算公式如下
 
-$$
-new\_min\_free\_kbytes = \sqrt{lowmem_kbytes * 16}
-$$
+$$new\_min\_free\_kbytes = \sqrt {lowmem\_kbytes * 16}$$
 
 说明一下这个公式的设计思想，代码作者认为，随着系统内存总量的增加，那个应该保留的最低内存也应该增加，但不应该随着内存增加而线性的增加，原因是网络带宽的增加不是线性的，这个我认为是机器的负载不是线性的增加，更加直观如下图所示：
 
