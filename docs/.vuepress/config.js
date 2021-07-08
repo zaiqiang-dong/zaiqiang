@@ -47,6 +47,11 @@ module.exports = {
             clientId: '01a047c7f3aceebf8a0c',
             clientSecret: '419c684ff0462df5cbe99c3d43ef0705ae0297a4',
         }],
+        ['@vuepress/medium-zoom',{
+            options:{
+                margin:24,
+            }
+        }]
     ],
     themeConfig: {
         lastUpdated: '最近更新 ',
