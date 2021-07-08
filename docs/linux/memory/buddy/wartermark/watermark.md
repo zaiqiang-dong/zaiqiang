@@ -59,9 +59,9 @@ postcore_initcall(init_per_zone_wmark_min)
 
 - 代码6～7行：
 这里的lowmem_kbytes，不要被变量名迷惑，这个值其实是系统总内存使用KB计量。
-看一下`nr_free_buffer_pages`就明白了
+看一下nr_free_buffer_pages就明白了
 
-```c {.line-numbers}
+```c
 
 unsigned long nr_free_buffer_pages(void)
 {
